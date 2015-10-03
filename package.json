@@ -1,0 +1,22 @@
+{
+  "name": "rolspace",
+  "version": "1.0.0",
+  "description": "My personal website",
+  "main": "none",
+  "dependencies": {
+    "grunt": "^0.4.5"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "none"
+  },
+  "keywords": [
+    "none"
+  ],
+  "author": "Rolando Ramos",
+  "license": "ISC"
+}

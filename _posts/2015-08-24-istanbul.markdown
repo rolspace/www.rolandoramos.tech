@@ -1,0 +1,13 @@
+---
+layout: post
+title: "Istanbul"
+date: 2015-08-24 21:30:46
+categories:
+- Uncategorized
+tags:
+- hello world
+---
+<img class="img-responsive" src="/_assets/istanbul.jpg" alt="Galata Bridge">
+
+I am definitely returning to Istanbul, hopefully the wait will not be too long. If you haven't been, then you must go, it is a great place to visit.
+<!more>

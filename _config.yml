@@ -4,6 +4,8 @@ email: rolandorramos@gmail.com
 description: "...on life, the universe, and everything"
 baseurl: ""
 url: "http://www.rolspace.com"
+paginate: 5
+paginate_path: "/page:num/"
 
 # Build settings
 markdown: kramdown

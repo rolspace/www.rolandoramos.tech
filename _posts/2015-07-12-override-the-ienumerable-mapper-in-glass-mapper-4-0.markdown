@@ -15,58 +15,66 @@ I had to come up with a way to modify how Glass.Mapper handles fields that map t
 
 To get started, I needed to create a custom attribute class that would allow me to specify a custom type mapper. The custom attribute could be used like this on type that needed this behavior:
 
-<pre class="lang:c# decode:true">public class Model<br />
-{<br />
-    [CustomIEnumerable]<br />
-    public virtual IEnumerable<CollectionItem> Collection { get; set; }<br />
-}<&#47;pre>
+{% highlight c# %}
+public class Model
+{
+   [CustomIEnumerable]
+   public virtual IEnumerable<CollectionItem> Collection { get; set; }
+}
+{% endhighlight %}
 
 This custom attribute will map to a field similar to the one shown in this image:
 
-<img class="img-responsive" src="/_assets/overrideienumerable-1.jpg" alt="Galata Bridge">
+<img class="img-responsive" src="/_assets/overrideienumerable-1.png" alt="Sample Sitecore Field">
 
 In order to create this custom attribute, it is necessary to inherit from the *SitecoreFieldAttribute* class from the Glass.Mapper.Sc.Configuration.Attributes namespace. In this scenario, the *Configure* method from the SitecoreFieldAttribute class must be overridden to setup the Attribute's configuration:
 
-<pre class="lang:c# decode:true">public class CustomIEnumerableAttribute : SitecoreFieldAttribute<br />
-{<br />
-    public CustomIEnumerableAttribute()<br />
-        : base() { }</p>
-<p>    public CustomIEnumerableAttribute(string fieldName)<br />
-        : base(fieldName) { }</p>
-<p>    public CustomIEnumerableAttribute(string fieldId, SitecoreFieldType fieldType,<br />
-        string sectionName, bool codeFirst)<br />
-        : base(fieldId, fieldType, sectionName, codeFirst) { }</p>
-<p>    public override AbstractPropertyConfiguration Configure(PropertyInfo propertyInfo)<br />
-    {<br />
-        var config = new CustomIEnumerableConfiguration();<br />
-        this.Configure(propertyInfo, config);</p>
-<p>        return config;<br />
-    }<br />
-}<&#47;pre>
+{% highlight c# %}
+public class CustomIEnumerableAttribute : SitecoreFieldAttribute
+{
+   public CustomIEnumerableAttribute()
+      : base() { }
+
+   public CustomIEnumerableAttribute(string fieldName)
+      : base(fieldName) { }
+
+   public CustomIEnumerableAttribute(string fieldId, SitecoreFieldType fieldType, string sectionName, bool codeFirst)
+      : base(fieldId, fieldType, sectionName, codeFirst) { }
+
+   public override AbstractPropertyConfiguration Configure(PropertyInfo propertyInfo)
+   {
+      var config = new CustomIEnumerableConfiguration();
+      this.Configure(propertyInfo, config);
+      return config;
+   }
+}
+{% endhighlight %}
 
 The *Configure* method of our *CustomIEnumerableAttribute* requires an object of type *AbstractPropertyConfiguration*, which we do not have yet. I will create a new class called *CustomIEnumerableConfiguration* which inherits from *SitecoreFieldConfiguration*, which in turn inherits from *AbstractPropertyConfiguration*. This way I can avoid writing a full implementation, when I only need to override the *Copy* method from the *SitecoreFieldConfiguration* class:
 
-<pre class="lang:c# decode:true">public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration<br />
-{<br />
-    public override SitecoreFieldConfiguration Copy()<br />
-    {<br />
-        return new CustomIEnumerableConfiguration<br />
-        {<br />
-            CodeFirst = this.CodeFirst,<br />
-            FieldId = this.FieldId,<br />
-            FieldName = this.FieldName,<br />
-            FieldSource = this.FieldSource,<br />
-            FieldTitle = this.FieldTitle,<br />
-            FieldType = this.FieldType,<br />
-            IsShared = this.IsShared,<br />
-            IsUnversioned = this.IsUnversioned,<br />
-            PropertyInfo = this.PropertyInfo,<br />
-            ReadOnly = this.ReadOnly,<br />
-            SectionName = this.SectionName,<br />
-            Setting = this.Setting<br />
-        };<br />
-    }<br />
-}<&#47;pre>
+{% highlight c# %}
+public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration
+{
+   public override SitecoreFieldConfiguration Copy()
+   {
+      return new CustomIEnumerableConfiguration
+      {
+         CodeFirst = this.CodeFirst,
+         FieldId = this.FieldId,
+         FieldName = this.FieldName,
+         FieldSource = this.FieldSource,
+         FieldTitle = this.FieldTitle,
+         FieldType = this.FieldType,
+         IsShared = this.IsShared,
+         IsUnversioned = this.IsUnversioned,
+         PropertyInfo = this.PropertyInfo,
+         ReadOnly = this.ReadOnly,
+         SectionName = this.SectionName,
+         Setting = this.Setting<
+       };
+    }
+}
+{% endhighlight %}
 
 Since the CustomIEnumerableConfiguration class is complete, then the CustomIEnumerableAttribute class is completed as well. Now the final piece of the code is the custom type mapper class I need to implement.
 For this, I will inherit from the *AbstractSitecoreFieldMapper* class in the Glass.Mapper.Sc.DataMappers namespace. This is the base class from which all mappers in Glass.Mapper assembly inherit.
@@ -74,63 +82,79 @@ For this, I will inherit from the *AbstractSitecoreFieldMapper* class in the Gla
 The implementation for the *CustomIEnumerableMapper* class is shown below. For the purpose of this post I have borrowed the implementation from the *SitecoreFieldIEnumerableMapper* class used by Glass.Mapper.
 I have only added a few lines of code, in order to write to the Sitecore Log and demonstrate the use of the custom type mapper class:
 
-<pre class="tab-size:3 lang:c# decode:true ">public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper<br />
-{<br />
-   public override object GetFieldValue(string fieldValue,<br />
-      SitecoreFieldConfiguration config, SitecoreDataMappingContext context)<br />
-   {<br />
-      Type genericArgument =<br />
-         Glass.Mapper.Utilities.GetGenericArgument(config.PropertyInfo.PropertyType);</p>
-<p>      &#47;&#47;Write to the Sitecore Log<br />
-      Sitecore.Diagnostics.Log.Info(<br />
-         string.Format("Mapping Type: {0}", genericArgument), this);</p>
-<p>      IEnumerable<object> enumerable = (IEnumerable<object>)Enumerable.ToArray<object>(<br />
-         Enumerable.Select<string, object>(<br />
-            (IEnumerable<string>)Enumerable.ToArray<string>(<br />
-               Enumerable.Select<string, string>(<br />
-                  (IEnumerable<string>)fieldValue.Split(<br />
-                     new char[1] { '|' }, StringSplitOptions.RemoveEmptyEntries),<br />
-                  (Func<string, string>)(x => x.Replace(Global.PipeEncoding, "|")))),<br />
-                  (Func<string, object>)(x => Context.Database.GetItem(new ID(x)))));</p>
-<p>      IList list = Glass.Mapper.Sc.Utilities.CreateGenericType(typeof(List<>),<br />
-         new Type[1] { genericArgument }) as IList;</p>
-<p>      foreach (object obj in enumerable)<br />
-      {<br />
-         if (obj != null)<br />
-            list.Add(context.Service.CreateType(<br />
-              genericArgument, (Item)obj, false, false, null));<br />
-      }</p>
-<p>      return (object)list;<br />
-    }</p>
-<p>   public override string SetFieldValue(object value,<br />
-      SitecoreFieldConfiguration config, SitecoreDataMappingContext context)<br />
-   {<br />
-      IEnumerable enumerable = value as IEnumerable;<br />
-      if (enumerable == null)<br />
-         return (string) null;</p>
-<p>      List<string> list = new List<string>();<br />
-      foreach (object obj in enumerable)<br />
-      {<br />
-         string str = this.Mapper.SetFieldValue(obj, config, context);<br />
-         if (!ExtensionMethods.IsNullOrEmpty(str))<br />
-            list.Add(str);<br />
-      }</p>
-<p>      Type genericArgument =<br />
-         Glass.Mapper.Utilities.GetGenericArgument(config.PropertyInfo.PropertyType);</p>
-<p>      &#47;&#47;Write to the Sitecore Log<br />
-      Sitecore.Diagnostics.Log.Info(<br />
-         string.Format("Storing Type: {0}", genericArgument), this);</p>
-<p>      if (Enumerable.Any<string>((IEnumerable<string>) list))<br />
-         return Enumerable.Aggregate<string>((IEnumerable<string>) list,<br />
-            (Func<string, string, string>) ((x, y) => x + "|" + y));</p>
-<p>      return (string) null;<br />
-   }</p>
-<p>   public override bool CanHandle(AbstractPropertyConfiguration configuration,<br />
-      Glass.Mapper.Context context)<br />
-   {<br />
-      return configuration is CustomIEnumerableConfiguration;<br />
-   }<br />
-}<&#47;pre>
+{% highlight c# %}
+public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper
+{
+   public override object GetFieldValue(string fieldValue,
+      SitecoreFieldConfiguration config, SitecoreDataMappingContext context)
+   {
+      Type genericArgument =
+         Glass.Mapper.Utilities.GetGenericArgument(config.PropertyInfo.PropertyType);
+
+      //Write to the Sitecore Log
+      Sitecore.Diagnostics.Log.Info(
+        string.Format("Mapping Type: {0}", genericArgument), this);
+
+      IEnumerable<object> enumerable = (IEnumerable<object>)Enumerable.ToArray<object>(
+         Enumerable.Select<string, object>(
+            (IEnumerable<string>)Enumerable.ToArray<string>(
+               Enumerable.Select<string, string>(
+                  (IEnumerable<string>)fieldValue.Split(
+                     new char[1] { '|' }, StringSplitOptions.RemoveEmptyEntries),
+                  (Func<string, string>)(x => x.Replace(Global.PipeEncoding, "|")))),
+                  (Func<string, object>)(x => Context.Database.GetItem(new ID(x)))));
+
+      IList list = Glass.Mapper.Sc.Utilities.CreateGenericType(typeof(List<>),
+         new Type[1] { genericArgument }) as IList;
+
+      foreach (object obj in enumerable)
+      {
+         if (obj != null)
+            list.Add(context.Service.CreateType(
+               genericArgument, (Item)obj, false, false, null));
+      }
+
+      return (object)list;
+   }
+
+   public override string SetFieldValue(object value,
+      SitecoreFieldConfiguration config, SitecoreDataMappingContext context)
+   {
+      IEnumerable enumerable = value as IEnumerable;
+      
+      if (enumerable == null)
+         return (string) null;
+
+      List<string> list = new List<string>();
+      
+      foreach (object obj in enumerable)
+      {
+         string str = this.Mapper.SetFieldValue(obj, config, context);
+         if (!ExtensionMethods.IsNullOrEmpty(str))
+            list.Add(str);
+      }
+
+      Type genericArgument =
+         Glass.Mapper.Utilities.GetGenericArgument(config.PropertyInfo.PropertyType);
+
+      //Write to the Sitecore Log
+      Sitecore.Diagnostics.Log.Info(
+         string.Format("Storing Type: {0}", genericArgument), this);
+
+      if (Enumerable.Any<string>((IEnumerable<string>) list))
+         return Enumerable.Aggregate<string>((IEnumerable<string>) list,
+            (Func<string, string, string>) ((x, y) => x + "|" + y));
+
+      return (string) null;
+   }
+
+   public override bool CanHandle(AbstractPropertyConfiguration configuration,
+      Glass.Mapper.Context context)
+   {
+      return configuration is CustomIEnumerableConfiguration;
+   }
+}
+{% endhighlight %}
 
 There are three methods that need to be overridden in order to properly implement our custom *IEnumerable\<T\>* type mapper:
 
@@ -140,24 +164,30 @@ There are three methods that need to be overridden in order to properly implemen
 
 Once this is all completed, it is possible to include this type mapper in the *CreateResolverMethod* of the *GlassMapperScCustom* class:
 
-<pre class="lang:c# decode:true">public static IDependencyResolver CreateResolver()<br />
-{<br />
-    var config = new Glass.Mapper.Sc.Config();<br />
-    var container = new Castle.Windsor.WindsorContainer();</p>
-<p>    container.Register(<br />
-        Component.For<AbstractDataMapper>()<br />
-            .ImplementedBy<CustomFieldMapper>().LifestyleTransient(),<br />
-        Component.For<AbstractDataMapper>()<br />
-            .ImplementedBy<CustomIEnumerableMapper>().LifestyleTransient()<br />
-    );</p>
-<p>    container.Install(new Glass.Mapper.Sc.CastleWindsor.WindsorSitecoreInstaller(config));</p>
-<p>    var resolver = new Glass.Mapper.Sc.CastleWindsor.DependencyResolver(container);</p>
-<p>    return resolver;<br />
-}<&#47;pre>
+{% highlight c# %}
+public static IDependencyResolver CreateResolver()
+{
+   var config = new Glass.Mapper.Sc.Config();
+   var container = new Castle.Windsor.WindsorContainer();
+
+   container.Register(
+      Component.For<AbstractDataMapper>()
+         .ImplementedBy<CustomFieldMapper>().LifestyleTransient(),
+      Component.For<AbstractDataMapper>()
+         .ImplementedBy<CustomIEnumerableMapper>().LifestyleTransient()
+   );
+
+   container.Install(new Glass.Mapper.Sc.CastleWindsor.WindsorSitecoreInstaller(config));
+
+   var resolver = new Glass.Mapper.Sc.CastleWindsor.DependencyResolver(container);
+
+   return resolver;
+}
+{% endhighlight %}
 
 After this code is deployed to the Sitecore instance, it is easy to determine that the code used in the *CustomIEnumerableMapper* class is being executed:
 
-<img class="img-responsive" src="/_assets/overrideienumerable-2.jpg" alt="Galata Bridge">
+<img class="img-responsive" src="/_assets/overrideienumerable-2.png" alt="Sitecore Log">
 
 As a final note, it is important to point out that this approach will work if you are using Glass.Mapper v4 together with the *Glass.Mapper.Sc.CastleWindsor* v4 assembly in your solution.
 

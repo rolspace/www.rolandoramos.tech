@@ -45,10 +45,21 @@ module.exports = function(grunt) {
 				],
 			},
 		},
+		concat: {
+			options: {
+				separator: ' '
+			},
+			build: {
+				src: ['css/bootstrap.min.css', 'css/rolspace.css'],
+				dest: 'css/rolspace.min.css'
+			}
+		}
 	});
 
 	grunt.loadNpmTasks('grunt-contrib-less');
+	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('build', ['less','copy']);
+	grunt.registerTask('demo', ['less:dev', 'copy', 'concat']);
+	grunt.registerTask('release', ['less:release', 'copy', 'concat']);
 }

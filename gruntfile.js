@@ -1,7 +1,28 @@
 module.exports = function(grunt) {
 	grunt.initConfig({
+		//Less Config: take files from _less folder and generate CSS result
+		less: {
+			options: {
+				paths: ['_less']
+			},
+			//In dev mode do not concatenate or clean any of the files
+			dev: {
+				files: {
+					'css/rolspace.css': '_less/rolspace.less'
+				}
+			},
+			release: {
+				options: {
+					compress: true
+				},
+				files: {
+					'css/rolspace.css': '_less/rolspace.less'
+				}
+			}
+		},
+		//Copy Config: copy specific files required from bower components
 		copy: {
-			main: {
+			build: {
 				files: [
 					{
 						src: 'bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -26,7 +47,8 @@ module.exports = function(grunt) {
 		},
 	});
 
+	grunt.loadNpmTasks('grunt-contrib-less');
 	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	grunt.registerTask('build', ['copy']);
+	grunt.registerTask('build', ['less','copy']);
 }

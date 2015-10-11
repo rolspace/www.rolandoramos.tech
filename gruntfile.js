@@ -52,9 +52,8 @@ module.exports = function(grunt) {
 				report: ['min', 'gzip']
 			},
 			build: {
-				cwd: 'css',
 				files: {
-					'rolspace.min.css': ['rolspace.css']
+					'css/rolspace.min.css': ['css/rolspace.css']
 				}
 			}
 		},

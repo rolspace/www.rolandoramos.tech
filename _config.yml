@@ -10,7 +10,7 @@ paginate_path: "/page:num/"
 # Build settings
 markdown: kramdown
 include: [ _assets ]
-exclude: [ bower_components, node_modules, bower.json ]
+exclude: [ bower_components, node_modules, bower.json, package.json, gruntfile.js ]
 
 # Post settings
 excerpt_separator: "<!more>"

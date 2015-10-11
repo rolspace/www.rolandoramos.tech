@@ -1,22 +1,15 @@
 module.exports = function(grunt) {
+	require('grunt-task-loader')(grunt);
+
 	grunt.initConfig({
 		//Less Config: take files from _less folder and generate CSS result
 		less: {
 			options: {
 				paths: ['_less']
 			},
-			//In dev mode do not concatenate or clean any of the files
-			dev: {
+			build: {
 				files: {
-					'css/rolspace.css': '_less/rolspace.less'
-				}
-			},
-			release: {
-				options: {
-					compress: true
-				},
-				files: {
-					'css/rolspace.css': '_less/rolspace.less'
+					'css/temp.css': '_less/rolspace.less'
 				}
 			}
 		},
@@ -50,16 +43,35 @@ module.exports = function(grunt) {
 				separator: ' '
 			},
 			build: {
-				src: ['css/bootstrap.min.css', 'css/rolspace.css'],
-				dest: 'css/rolspace.min.css'
+				src: ['css/bootstrap.min.css', 'css/temp.css'],
+				dest: 'css/rolspace.css'
+			}
+		},
+		cssmin: {
+			options: {
+				report: ['min', 'gzip']
+			},
+			build: {
+				cwd: 'css',
+				files: {
+					'rolspace.min.css': ['rolspace.css']
+				}
+			}
+		},
+		shell: {
+			options: {
+
+			},
+			demo: {
+				command: 'jekyll serve --watch --config _config.demo.yml'
+			},
+			release: {
+				command: 'jekyll serve --watch --config _config.yml'
 			}
 		}
+
 	});
 
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-concat');
-	grunt.loadNpmTasks('grunt-contrib-copy');
-
-	grunt.registerTask('demo', ['less:dev', 'copy', 'concat']);
-	grunt.registerTask('release', ['less:release', 'copy', 'concat']);
+	grunt.registerTask('demo', ['less', 'copy', 'concat', 'shell:demo']);
+	grunt.registerTask('release', ['less', 'copy', 'concat', 'cssmin', 'shell:release']);
 }

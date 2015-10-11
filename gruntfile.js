@@ -58,19 +58,24 @@ module.exports = function(grunt) {
 			}
 		},
 		shell: {
-			options: {
-
-			},
 			demo: {
-				command: 'jekyll serve --watch --config _config.demo.yml'
+				command: 'jekyll serve --config _config.demo.yml'
 			},
 			release: {
-				command: 'jekyll serve --watch --config _config.yml'
+				command: 'jekyll serve --config _config.yml'
 			}
+		},
+		watch: {
+			options: {
+				atBegin: true,
+				interrupt: true
+			},
+			files: ['_less/*.less'],
+			tasks: ['debug']
 		}
-
 	});
 
-	grunt.registerTask('demo', ['less', 'copy', 'concat', 'shell:demo']);
+	grunt.registerTask('demo', ['watch']);
+	grunt.registerTask('debug', ['less', 'copy', 'concat', 'shell:demo'])
 	grunt.registerTask('release', ['less', 'copy', 'concat', 'cssmin', 'shell:release']);
 }

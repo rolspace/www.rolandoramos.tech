@@ -2,18 +2,18 @@ module.exports = function(grunt) {
 	require('grunt-task-loader')(grunt);
 
 	grunt.initConfig({
-		//Less Config: take files from _less folder and generate CSS result
+		//Less: take files from _less folder and generate CSS result
 		less: {
 			options: {
 				paths: ['_less']
 			},
 			build: {
 				files: {
-					'css/temp.css': '_less/rolspace.less'
+					'css/rolspace.css': '_less/rolspace.less'
 				}
 			}
 		},
-		//Copy Config: copy specific files required from bower components
+		//Copy: copy specific files required from bower components
 		copy: {
 			build: {
 				files: [
@@ -43,7 +43,7 @@ module.exports = function(grunt) {
 				separator: ' '
 			},
 			build: {
-				src: ['css/bootstrap.min.css', 'css/temp.css'],
+				src: ['css/bootstrap.min.css', 'css/rolspace.css'],
 				dest: 'css/rolspace.css'
 			}
 		},

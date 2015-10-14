@@ -1,7 +1,129 @@
-/* Media Queries */
+/* Bootstrap Modifications */
+/*=========================*/
+body {
+    font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+}
 
-/* Main Container */
+.navbar {
+	background-color: #ddd;
+}
 
-body div#main {
+.navbar-inverse {
+	border-bottom: none;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+}
+
+.navbar-inverse .navbar-nav > li > a {
+	color: #000;
+	letter-spacing: 1px;
+}
+
+.navbar-inverse .navbar-nav > li > a:hover {
+	color: #000;
+}
+
+.navbar-toggle {
+	margin-top: 18px;
+	margin-right: 12px;
+	padding: 4px;
+}
+
+.navbar-inverse .navbar-toggle {
+	border-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+	background-color: transparent;
+}
+
+.navbar-inverse .navbar-toggle [class^="icon-"],
+.navbar-inverse .navbar-toggle [class*="icon-"] {
+	font-size: 1.4em;
+}
+
+.navbar-inverse .navbar-toggle:hover [class^="icon-"],
+.navbar-inverse .navbar-toggle:hover [class*="icon-"] {
+	color: #fff;
+}
+
+.navbar-inverse .navbar-collapse,
+.navbar-inverse .navbar-form {
+	border-color: #ddd;
+}
+
+.navbar-collapse {
+	box-shadow: none;
+}
+
+.navbar-brand {
+	color: #000 !important;
+	font-size: 40px;
+	letter-spacing: 4px;
+	line-height: 30px;
+	text-decoration: none;
+	text-shadow: none;
+}
+
+@media (max-width: 767px) {
+	.navbar-inverse .navbar-nav > li >a {
+		line-height: 47px;
+		height: 47px;
+		padding-top: 0;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-nav {
+		float: right;
+	}
+
+	.navbar-inverse .navbar-nav > li >a {
+		line-height: 65px;
+		height: 65px;
+		padding-top: 0;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-inverse .navbar-nav > li > a:hover {
+		text-decoration: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-inverse .navbar-nav > li > a:hover {
+		text-decoration: underline;
+	}
+}
+
+@media (max-width: 767px) {
+	.navbar-inverse .navbar-nav > .active > a,
+	.navbar-inverse .navbar-nav > .active > a:hover,
+	.navbar-inverse .navbar-nav > .active > a:focus {
+		background-color: #080808;
+		color: #fff;
+		text-decoration: none;
+	}
+}
+
+@media (min-width: 768px) {
+	.navbar-inverse .navbar-nav > .active > a,
+	.navbar-inverse .navbar-nav > .active > a:hover,
+	.navbar-inverse .navbar-nav > .active > a:focus {
+		background-color: #ddd;
+		color: #000;
+		text-decoration: underline;
+	}
+}
+
+/* Custom Selectors */
+/*=========================*/
+
+//main page container
+#main {
 	margin-top: 60px;
 }

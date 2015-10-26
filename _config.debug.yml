@@ -1,0 +1,17 @@
+# Site settings
+title: debug
+email: rolandorramos@gmail.com
+description: "...on life, the universe, and everything"
+baseurl: ""
+url: "http://www.rolspace.com"
+paginate: 5
+paginate_path: "/page:num/"
+
+# Build settings
+markdown: kramdown
+include: [ _assets ]
+exclude: [ bower_components, node_modules, bower.json, package.json, gruntfile.js ]
+
+# Post settings
+excerpt_separator: "<!more>"
+highlighter: pygments

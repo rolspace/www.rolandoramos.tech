@@ -7,7 +7,7 @@ module.exports = function(grunt) {
 			options: {
 				paths: ['_less']
 			},
-			build: {
+			main: {
 				files: {
 					'css/rolspace.css': '_less/rolspace.less'
 				}
@@ -15,7 +15,7 @@ module.exports = function(grunt) {
 		},
 		//Copy: copy specific files required from bower components
 		copy: {
-			build: {
+			main: {
 				files: [
 					{
 						src: 'bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -42,7 +42,7 @@ module.exports = function(grunt) {
 			options: {
 				separator: ' '
 			},
-			build: {
+			main: {
 				src: ['css/bootstrap.min.css', 'css/rolspace.css'],
 				dest: 'css/rolspace.css'
 			}
@@ -51,18 +51,18 @@ module.exports = function(grunt) {
 			options: {
 				report: ['min', 'gzip']
 			},
-			build: {
+			main: {
 				files: {
 					'css/rolspace.min.css': ['css/rolspace.css']
 				}
 			}
 		},
 		shell: {
-			demo: {
-				command: 'jekyll serve --config _config.demo.yml'
+			debug: {
+				command: 'jekyll serve --config _config.debug.yml'
 			},
 			release: {
-				command: 'jekyll serve --config _config.yml'
+				command: 'jekyll build --config _config.yml'
 			}
 		},
 		watch: {
@@ -76,6 +76,7 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('demo', ['watch']);
-	grunt.registerTask('debug', ['less', 'copy', 'concat', 'shell:demo'])
+
+	grunt.registerTask('debug', ['less', 'copy', 'concat', 'shell:debug'])
 	grunt.registerTask('release', ['less', 'copy', 'concat', 'cssmin', 'shell:release']);
 }

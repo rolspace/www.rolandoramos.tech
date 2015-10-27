@@ -62,7 +62,7 @@ module.exports = function(grunt) {
 				command: 'jekyll serve --config _config.debug.yml'
 			},
 			release: {
-				command: 'jekyll build --config _config.yml'
+				command: 'jekyll serve --config _config.yml'
 			}
 		},
 		watch: {
@@ -74,8 +74,6 @@ module.exports = function(grunt) {
 			tasks: ['debug']
 		}
 	});
-
-	grunt.registerTask('demo', ['watch']);
 
 	grunt.registerTask('debug', ['less', 'copy', 'concat', 'shell:debug'])
 	grunt.registerTask('release', ['less', 'copy', 'concat', 'cssmin', 'shell:release']);

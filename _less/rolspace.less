@@ -16,12 +16,12 @@ body {
 	width: 100%;
 }
 
-.navbar-inverse .navbar-nav > li > a {
+.navbar-inverse .navbar-nav > li a {
 	color: #000;
 	letter-spacing: 1px;
 }
 
-.navbar-inverse .navbar-nav > li > a:hover {
+.navbar-inverse .navbar-nav > li a:hover {
 	color: #000;
 }
 
@@ -69,38 +69,16 @@ body {
 }
 
 @media (max-width: 767px) {
-	.navbar-inverse .navbar-nav > li >a {
+	.navbar-inverse .navbar-nav > li > a {
 		line-height: 47px;
 		height: 47px;
 		padding-top: 0;
 	}
-}
 
-@media (min-width: 768px) {
-	.navbar-nav {
-		float: right;
-	}
-
-	.navbar-inverse .navbar-nav > li >a {
-		line-height: 65px;
-		height: 65px;
-		padding-top: 0;
-	}
-}
-
-@media (max-width: 767px) {
 	.navbar-inverse .navbar-nav > li > a:hover {
 		text-decoration: none;
 	}
-}
 
-@media (min-width: 768px) {
-	.navbar-inverse .navbar-nav > li > a:hover {
-		text-decoration: underline;
-	}
-}
-
-@media (max-width: 767px) {
 	.navbar-inverse .navbar-nav > .active > a,
 	.navbar-inverse .navbar-nav > .active > a:hover,
 	.navbar-inverse .navbar-nav > .active > a:focus {
@@ -111,6 +89,26 @@ body {
 }
 
 @media (min-width: 768px) {
+	.navbar-nav {
+		float: right;
+	}
+
+	.navbar-inverse .navbar-nav > li {
+		height: 65px;
+	}
+
+	.navbar-inverse .navbar-nav > li > span > a {
+		line-height: 65px;
+	}
+
+	.navbar-inverse .navbar-nav > li a {
+		padding: 0 15px;
+	}
+
+	.navbar-inverse .navbar-nav > li a:hover {
+		text-decoration: underline;
+	}
+
 	.navbar-inverse .navbar-nav > .active > a,
 	.navbar-inverse .navbar-nav > .active > a:hover,
 	.navbar-inverse .navbar-nav > .active > a:focus {
@@ -120,10 +118,16 @@ body {
 	}
 }
 
+@media (min-width: 1200px){
+	.container {
+		max-width: 1200px;
+	}
+}
+
 /* Custom Selectors */
 /*=========================*/
 
 //main page container
 #main {
-	margin-top: 60px;
+	margin-top: 80px;
 }

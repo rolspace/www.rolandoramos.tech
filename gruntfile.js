@@ -58,12 +58,12 @@ module.exports = function(grunt) {
 		shell: {
 			debug: {
 				command: function (generate) {
-					return 'jekyll ' + generate + ' --config _config.debug.yml';
+					return 'jekyll ' + generate + ' --config _config.debug.yml --force';
 				}
 			},
 			release: {
 				command: function(generate) {
-					return 'jekyll ' + generate + ' --config _config.yml'
+					return 'jekyll ' + generate + ' --config _config.yml --force'
 				}
 			}
 		},

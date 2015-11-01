@@ -20,6 +20,10 @@ module.exports = function(grunt) {
 						dest: 'css/bootstrap.min.css'
 					},
 					{
+						src: 'bower_components/font-awesome/css/font-awesome.min.css',
+						dest: 'css/font-awesome.min.css'
+					},
+					{
 						src: 'bower_components/bootstrap/dist/js/bootstrap.min.js',
 						dest: 'js/bootstrap.min.js'
 					},
@@ -33,6 +37,12 @@ module.exports = function(grunt) {
 						src: ['*'],
 						dest: 'fonts/'
 					},
+					{
+						expand: true,
+						cwd: 'bower_components/font-awesome/fonts/',
+						src: ['*'],
+						dest: 'fonts/'
+					}
 				],
 			},
 		},
@@ -41,7 +51,7 @@ module.exports = function(grunt) {
 				separator: ' '
 			},
 			main: {
-				src: ['css/bootstrap.min.css', 'css/rolspace.css'],
+				src: ['css/bootstrap.min.css', 'css/font-awesome.min.css', 'css/rolspace.css'],
 				dest: 'css/rolspace.css'
 			}
 		},

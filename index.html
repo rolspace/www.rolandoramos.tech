@@ -10,14 +10,20 @@ layout: default
             <h2 class="article-title">
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h2>
-            <span class="article-meta">{{ post.date | date: "%b %-d, %Y" }}</span>
+            <span class="article-meta">
+              <i class="fa fa-calendar"></i>{{ post.date | date: "%b %-d, %Y" }}
+            </span>
             <div class="article-content">
               {{ post.excerpt }}
             </div>
           </div>
         </div>
         <div class="row">
-          <a href="{{ post.url | prepend: site.baseurl }}"><span class="read-more">Read More</span></a>
+          <div class="col-md-12">
+            <a href="{{ post.url | prepend: site.baseurl }}">
+              <span class="read-more pull-right">Read More</span>
+            </a>
+          </div>
         </div>
       </article>
     {% endfor %}

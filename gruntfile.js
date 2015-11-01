@@ -82,7 +82,8 @@ module.exports = function(grunt) {
 				atBegin: true,
 				interrupt: true
 			},
-			files: ['_less/*.less'],
+			files: ['_less/*.less', '_assets/*.*', '_includes/*.*', '_layouts/*.*',
+					'_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
 			tasks: ['debug']
 		}
 	});

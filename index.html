@@ -20,12 +20,31 @@ layout: default
         </div>
         <div class="row">
           <div class="col-md-12">
-            <a href="{{ post.url | prepend: site.baseurl }}">
-              <span class="read-more pull-right">Read More<i class="fa fa-angle-right"></i></span>
-            </a>
+              <span class="read-more pull-right">
+                <a href="{{ post.url | prepend: site.baseurl }}">
+                  Read More
+                  <i class="fa fa-angle-right"></i>
+                </a>
+              </span>
           </div>
         </div>
       </article>
     {% endfor %}
+  </div>
+</div>
+<div id="paginator" class="row">
+  <div class="col-md-5 col-md-offset-1">
+  {% if paginator.next_page %}
+    <a href="{{ paginator.next_page_path }}" class="previous">
+      <i class="fa fa-angle-left"></i>Older Posts
+    </a>
+  {% endif %}
+  </div>
+  <div class="col-md-5">
+  {% if paginator.previous_page %}
+    <a href="{{ paginator.previous_page_path }}" class="next">
+      Newer Posts<i class="fa fa-angle-right"></i>
+    </a>
+  {% endif %}
   </div>
 </div>

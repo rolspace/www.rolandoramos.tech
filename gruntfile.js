@@ -67,13 +67,13 @@ module.exports = function(grunt) {
 		},
 		shell: {
 			debug: {
-				command: function (generate) {
-					return 'jekyll ' + generate + ' --config _config.debug.yml --force';
+				command: function (config) {
+					return 'jekyll ' + config + ' --config _config.debug.yml --force';
 				}
 			},
 			release: {
-				command: function(generate) {
-					return 'jekyll ' + generate + ' --config _config.yml --force'
+				command: function(config) {
+					return 'jekyll ' + config + ' --config _config.yml --force'
 				}
 			}
 		},

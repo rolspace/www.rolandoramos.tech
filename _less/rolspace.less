@@ -1,5 +1,6 @@
 /* Bootstrap Modifications */
 /*=========================*/
+
 body {
     font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
@@ -19,10 +20,10 @@ body {
 .navbar-inverse .navbar-nav > li a {
 	color: #000;
 	letter-spacing: 1px;
-}
 
-.navbar-inverse .navbar-nav > li a:hover {
-	color: #000;
+	&:hover {
+		color: #000;	
+	}
 }
 
 .navbar-toggle {
@@ -118,25 +119,68 @@ body {
 	}
 }
 
-@media (min-width: 1200px){
-	.container {
-		max-width: 1200px;
-	}
-}
-
 /* Custom Selectors */
-/*=========================*/
+/*==================*/
 
-//main page container
 #main {
 	margin-top: 80px;
+
+	@media (max-width: 1400px) {
+		max-width: 960px;
+	}
+
+	@media (min-width: 1401px) {
+		max-width: 1200px;
+	}
+
+	a {
+		color: #333;
+
+		&:hover, &:active, &:focus {
+			color: #117ACA;
+			outline: none;
+			text-decoration: none;
+		}
+	}
 }
 
-.article-meta {
-	display: block;
-	margin-bottom: 10px;
+article {
+	border-bottom: 1px solid #ddd;
+	padding-bottom: 15px;
 
-	i {
-		margin-right: 5px;
+	.article-meta {
+		display: block;
+		margin-bottom: 10px;
+
+		i {
+			margin-right: 5px;
+		}
 	}
+
+	.article-title {
+
+	}
+
+	span.read-more {
+		a {
+			color: #333;
+
+			&:hover, &:active, &:focus {
+				color: #117ACA;
+				outline: none;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+#paginator {
+	margin-top: 20px;
+	margin-bottom: 20px;
+}
+
+.footer {
+	background: #ddd;
+	height: 55px;
+	line-height: 55px;
 }

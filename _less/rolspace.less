@@ -1,9 +1,15 @@
+@base: #333;
+@secondary: #1281d3;
+
 /* Bootstrap Modifications */
 /*=========================*/
 
 body {
-    font-family: "Noto Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
     font-size: 16px;
+}
+
+a:active, a:focus {
+	outline: none;
 }
 
 .navbar {
@@ -132,25 +138,25 @@ body {
 	@media (min-width: 1401px) {
 		max-width: 1200px;
 	}
-
-	a {
-		color: #333;
-
-		&:hover, &:active, &:focus {
-			color: #117ACA;
-			outline: none;
-			text-decoration: none;
-		}
-	}
 }
 
 article {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 15px;
 
+	a {
+		color: #1281d3;
+
+		&:hover, &:active, &:focus {
+			color: #0c568d;
+			text-decoration: underline;
+		}
+	}
+
 	.article-meta {
 		color: #888;
 		display: block;
+		font-size: 0.875em;
 		margin-bottom: 10px;
 
 		i {
@@ -159,32 +165,71 @@ article {
 	}
 
 	.article-title {
+		font-family: Impact, Charcoal, sans-serif;
+		font-size: 2.125em;
+		font-weight: 600;
 
-	}
-
-	span.read-more {
 		a {
 			color: #333;
 
 			&:hover, &:active, &:focus {
-				color: #117ACA;
-				outline: none;
+				color: #1281d3;
 				text-decoration: none;
 			}
 		}
 	}
+
+	.article-content {
+		p {
+			line-height: 24px;
+			margin-bottom: 20px;
+			text-align: justify;
+		}
+	}
+
+	span.read-more {
+		color: #1281d3;
+		font-size: 0.875em;
+		margin-top: 10px;
+
+		&:hover, &:active, &:focus {
+			color: #0c568d;
+		}
+
+		a {
+			display: inline-block;
+
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+		}
+
+		i {
+			display: inline;
+		}
+	}
 }
 
-#paginator {
+.paginator {
+	font-size: 1.125em;
 	margin-top: 20px;
 	margin-bottom: 20px;
 
-	a.previous i {
-		margin-right: 3px;
-	}
+	a {
+		color: @base;
 
-	a.next i {
-		margin-left: 3px;
+		&.previous i {
+			margin-right: 3px;	
+		}
+
+		&.next i {
+			margin-left: 3px;	
+		}
+
+		&:hover, &:active, &:focus {
+			color: @secondary;
+			text-decoration: none;
+		}
 	}
 }
 
@@ -193,12 +238,22 @@ article {
 	height: 55px;
 	line-height: 55px;
 
+	span.copyright {
+		a {
+			color: #333;
+			padding: 0px 0px 0px 3px;
+
+			&:hover, &:active, &:focus {
+				text-decoration: underline;
+			}
+		}
+	}
+
 	span a {
 		padding: 0px 3px;
 		text-decoration: none;
 
 		&:hover, &:active, &:focus {
-			outline: none;
 			text-decoration: none;
 		}
 

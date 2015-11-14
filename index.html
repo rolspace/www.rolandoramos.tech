@@ -11,7 +11,7 @@ layout: default
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h2>
             <span class="article-meta">
-              <i class="fa fa-calendar"></i>{{ post.date | date: "%b %-d, %Y" }}
+              <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
             </span>
             <div class="article-content">
               {{ post.excerpt }}
@@ -23,8 +23,8 @@ layout: default
               <span class="read-more pull-right">
                 <a href="{{ post.url | prepend: site.baseurl }}">
                   Read More
-                  <i class="fa fa-angle-right"></i>
                 </a>
+                <i class="fa fa-angle-right"></i>
               </span>
           </div>
         </div>
@@ -32,7 +32,7 @@ layout: default
     {% endfor %}
   </div>
 </div>
-<div id="paginator" class="row">
+<div class="paginator row">
   <div class="col-md-5 col-md-offset-1">
   {% if paginator.next_page %}
     <a href="{{ paginator.next_page_path }}" class="previous">

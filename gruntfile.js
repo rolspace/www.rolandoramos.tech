@@ -67,14 +67,10 @@ module.exports = function(grunt) {
 		},
 		shell: {
 			debug: {
-				command: function (config) {
-					return 'jekyll ' + config + ' --config _config.debug.yml --force';
-				}
+				command: 'jekyll serve --config _config.debug.yml --force'
 			},
 			release: {
-				command: function(config) {
-					return 'jekyll ' + config + ' --config _config.yml --force'
-				}
+				command: 'jekyll serve --config _config.yml --force'
 			}
 		},
 		watch: {
@@ -89,25 +85,10 @@ module.exports = function(grunt) {
 	});
 
 	grunt.registerTask('debug', 'Deploy debug version', function(n) {
-		DebugTask(grunt.option('serve') ? 'serve' : 'build');
+		grunt.task.run('less', 'copy', 'concat', 'shell:debug');
 	});
 
 	grunt.registerTask('release', 'Deploy release version', function(n) {
-		ReleaseTask(grunt.option('serve') ? 'serve' : 'build');
+			grunt.task.run('less', 'copy', 'concat', 'cssmin', 'shell:release');
 	});
-
-	function DebugTask(option) {
-		var shellCommand = CreateShellCommand('debug', option);
-		grunt.task.run('less', 'copy', 'concat', shellCommand);
-	};
-
-	function ReleaseTask(option) {
-		var shellCommand = CreateShellCommand('release', option);
-		grunt.task.run('less', 'copy', 'concat', 'cssmin', shellCommand);
-	};
-
-	function CreateShellCommand(config, option) {
-		var command = 'shell:{0}:{1}';
-		return command.replace('{0}', config).replace('{1}', option);
-	};
 }

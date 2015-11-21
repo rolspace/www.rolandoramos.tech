@@ -1,5 +1,7 @@
-@base: #333;
-@secondary: #1281d3;
+@base-color: #333;
+@base-background-color: #ddd;
+@light-blue: #1281d3;
+@dark-blue: #0c568d;
 
 /* Bootstrap Modifications */
 /*=========================*/
@@ -13,7 +15,7 @@ a:active, a:focus {
 }
 
 .navbar {
-	background-color: #ddd;
+	background-color: @base-background-color;
 }
 
 .navbar-inverse {
@@ -24,8 +26,9 @@ a:active, a:focus {
 }
 
 .navbar-inverse .navbar-nav > li a {
-	color: #000;
-	letter-spacing: 1px;
+	color: #222;
+	font-size: 18px;
+	letter-spacing: 2px;
 
 	&:hover {
 		color: #000;	
@@ -59,20 +62,25 @@ a:active, a:focus {
 
 .navbar-inverse .navbar-collapse,
 .navbar-inverse .navbar-form {
-	border-color: #ddd;
+	border-color: @base-background-color;
 }
 
 .navbar-collapse {
 	box-shadow: none;
 }
 
-.navbar-brand {
-	color: #000 !important;
-	font-size: 40px;
+.navbar-inverse .navbar-brand {
+	color: #222;
+	font-size: 42px;
+	height: 65px;
 	letter-spacing: 4px;
 	line-height: 30px;
 	text-decoration: none;
 	text-shadow: none;
+
+	&:hover {
+		color: #222;
+	}
 }
 
 @media (max-width: 767px) {
@@ -145,10 +153,10 @@ article {
 	padding-bottom: 15px;
 
 	a {
-		color: #1281d3;
+		color: @light-blue;
 
 		&:hover, &:active, &:focus {
-			color: #0c568d;
+			color: @dark-blue;
 			text-decoration: underline;
 		}
 	}
@@ -156,8 +164,10 @@ article {
 	.article-meta {
 		color: #888;
 		display: block;
-		font-size: 0.875em;
+		font-family: Verdana, Geneva, sans-serif;
+		font-size: 0.750em;
 		margin-bottom: 10px;
+		text-transform: uppercase;
 
 		i {
 			margin-right: 5px;
@@ -167,13 +177,12 @@ article {
 	.article-title {
 		font-family: Impact, Charcoal, sans-serif;
 		font-size: 2.125em;
-		font-weight: 600;
 
 		a {
-			color: #333;
+			color: @base-color;
 
 			&:hover, &:active, &:focus {
-				color: #1281d3;
+				color: @light-blue;
 				text-decoration: none;
 			}
 		}
@@ -188,19 +197,19 @@ article {
 	}
 
 	span.read-more {
-		color: #1281d3;
+		color: @light-blue;
 		font-size: 0.875em;
 		margin-top: 10px;
 
 		&:hover, &:active, &:focus {
-			color: #0c568d;
+			color: @dark-blue;
 		}
 
 		a {
 			display: inline-block;
 
 			&:hover, &:active, &:focus {
-				text-decoration: none;
+				text-decoration: underline;
 			}
 		}
 
@@ -216,7 +225,7 @@ article {
 	margin-bottom: 20px;
 
 	a {
-		color: @base;
+		color: @base-color;
 
 		&.previous i {
 			margin-right: 3px;	
@@ -227,20 +236,20 @@ article {
 		}
 
 		&:hover, &:active, &:focus {
-			color: @secondary;
+			color: @light-blue;
 			text-decoration: none;
 		}
 	}
 }
 
 .footer {
-	background: #ddd;
+	background: @base-background-color;
 	height: 55px;
 	line-height: 55px;
 
 	span.copyright {
 		a {
-			color: #333;
+			color: @base-color;
 			padding: 0px 0px 0px 3px;
 
 			&:hover, &:active, &:focus {

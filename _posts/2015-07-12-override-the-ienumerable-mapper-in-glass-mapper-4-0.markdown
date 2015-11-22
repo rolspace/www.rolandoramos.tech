@@ -1,7 +1,8 @@
 ---
 layout: post
+published: true
 title: Override the IEnumerable Mapper in Glass.Mapper 4.0
-date: 2015-07-12 21:54:16
+date: 2015-07-12
 categories:
 - Uncategorized
 tags:
@@ -11,7 +12,8 @@ tags:
 A few weeks ago I needed to write a specific implementation of the type mapper used in Glass.Mapper to handle *IEnumerable\<T\>* Types. This was necessary because the Sitecore instance I was working with had a customized implementation for handling language fallbacks. This did not play well with the default Glass.Mapper implementation.
 
 I had to come up with a way to modify how Glass.Mapper handles fields that map to an *IEnumerable\<T\>* type, such as Multilists or Treelists. This is what I did.
-<!more>
+
+<!--more-->
 
 To get started, I needed to create a custom attribute class that would allow me to specify a custom type mapper. The custom attribute could be used like this on type that needed this behavior:
 

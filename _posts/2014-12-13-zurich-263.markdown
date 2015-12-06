@@ -1,30 +1,12 @@
 ---
 layout: post
-status: publish
 published: true
 title: 'Z&uuml;rich: 263'
-author:
-  display_name: admin_rolspace
-  login: admin_rolspace
-  email: rolandorramos@gmail.com
-  url: ''
-author_login: admin_rolspace
-author_email: rolandorramos@gmail.com
-excerpt: "<img class=\" size-full wp-image-439 aligncenter\" src=\"http:&#47;&#47;www.rolspace.com&#47;wp-content&#47;uploads&#47;2014&#47;12&#47;zurich-263.jpg\"
-  alt=\"\" width=\"1200\" height=\"750\" &#47;>\r\n\r\nOur first winter in Zurich
-  is almost here.&nbsp;Little by little the clouds have taken over and temperature
-  has been dropping gradually&nbsp;in the past few weeks.\r\n\r\nSeptember and October
-  were quite&nbsp;good in terms of temperature and sunshine. Unlike August, which
-  was the&nbsp;anti-Summer: lots of cloudy days and&nbsp;lots of rain.\r\n"
-wordpress_id: 403
-wordpress_url: http://www.rolspace.com/?p=403
-date: '2014-12-13 20:16:01 +0100'
-date_gmt: '2014-12-13 20:16:01 +0100'
+date: 2014-12-13
 categories:
 - Uncategorized
 tags:
 - zurich
-comments: []
 ---
 <p><img class=" size-full wp-image-439 aligncenter" src="http:&#47;&#47;www.rolspace.com&#47;wp-content&#47;uploads&#47;2014&#47;12&#47;zurich-263.jpg" alt="" width="1200" height="750" &#47;></p>
 <p>Our first winter in Zurich is almost here.&nbsp;Little by little the clouds have taken over and temperature has been dropping gradually&nbsp;in the past few weeks.</p>

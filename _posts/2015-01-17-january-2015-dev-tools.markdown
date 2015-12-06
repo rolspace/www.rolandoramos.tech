@@ -11,6 +11,9 @@ tags:
 ---
 [CommandPrompt]: http://michaelcrump.net/power-tip-elevated-command-prompt-here-in-windows-8-1 "Admin Command Prompt"
 [VSCommands]: http://vscommands.squaredinfinity.com "VS Commands"
+[NodeSchool]: http://nodeschool.io "Node School"
+[LearnYouNode]: https://github.com/rvagg/learnyounode "LearnYouNode"
+[ArtOfNode]: https://github.com/maxogden/art-of-node "Art of Node"
 
 Recently, I came across some useful development tools, maybe they'll help you out as well.
 
@@ -34,22 +37,25 @@ A colleague of mine told me about this Visual Studio extension some time ago. It
 
 My three favorite commands from this extension are:
 
-*Attach to IIS*: displays a dialog window in Visual Studio with the available IIS websites you can attach your code to.
++ *Attach to IIS*: displays a dialog window in Visual Studio with the available IIS websites you can attach your code to.
 
-*Locate in Solution Explorer*: shows the location of a file in the editor on the Solution Explorer.
++ *Locate in Solution Explorer*: shows the location of a file in the editor on the Solution Explorer.
 
-*Locate in TFS*: finds the location of a file in the editor (or the Solution Explorer) on the Source Control Explorer.
++ *Locate in TFS*: finds the location of a file in the editor (or the Solution Explorer) on the Source Control Explorer.
 
 You can read more about this extension here: [http://vscommands.squaredinfinity.com][VSCommands]
 
 
 ### Node School ###
 
-I have become quite interested in Node in the past few months. So, when I finally decided to really get into it, the&nbsp;first thing I did was to go to&nbsp;<a href="http:&#47;&#47;nodeschool.io&#47;">nodeschool.io<&#47;a>&nbsp;and check out which tutorials I could find&nbsp;to get started.</p>
-<p><img class="aligncenter wp-image-495 size-full" src="http:&#47;&#47;www.rolspace.com&#47;wp-content&#47;uploads&#47;2015&#47;01&#47;learnyounode1.png" alt="learnyounode" width="565" height="279" &#47;></p>
-<p>A few days ago I completed the <em>learnyounode <&#47;em>tutorial, which I thoroughly enjoyed and gave me a pretty good start into the Node world. I strongly recommend it, you can find it&nbsp;here:</p>
-<p><a href="https:&#47;&#47;github.com&#47;rvagg&#47;learnyounode">https:&#47;&#47;github.com&#47;rvagg&#47;learnyounode<&#47;a></p>
-<p>While completing the <em>learnyounode<&#47;em>&nbsp;exercises&nbsp;I came across this GitHub repo:</p>
-<p><a href="https:&#47;&#47;github.com&#47;maxogden&#47;art-of-node">https:&#47;&#47;github.com&#47;maxogden&#47;art-of-node<&#47;a></p>
-<p>I do not remember how I found this link while I was doing the tutorial. Nevertheless,&nbsp;the information presented in the document provides some good background details&nbsp;about the core Node concepts.</p>
-<p>This extremely helpful if you are trying to become more familiar with Node.js. It is definitely worth a read. Also, the author provides some additional resources to continue your Node learning, which is always welcome.</p>
+I have become quite interested in Node in the past few months. So, when I finally decided to really get into it, the first thing I did was to go to [http://nodeschool.io][NodeSchool] and check out which tutorials I could find to get started.
+
+<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2015/01/learnyounode1.png" alt="learnyounode" />
+
+A few days ago I completed the learnyounode tutorial, which I thoroughly enjoyed and gave me a pretty good start into the Node world. I strongly recommend it, you can find it here: [https://github.com/rvagg/learnyounode][LearnYouNode].
+
+While completing the learnyounode exercises I came across this GitHub repo: [https://github.com/maxogden/art-of-node][ArtOfNode]
+
+I do not remember how I found this link while I was doing the tutorial. Nevertheless, the information presented in the document provides some good background details about the core Node concepts.
+
+This is extremely helpful if you are getting started with Node. It is definitely worth a read. Also, the author provides some additional resources to continue your Node learning.

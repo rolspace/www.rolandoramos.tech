@@ -66,7 +66,7 @@ module.exports = function(grunt) {
 			}
 		},
 		shell: {
-			debug: {
+			demo: {
 				command: 'jekyll serve --config _config.debug.yml --force'
 			},
 			release: {
@@ -80,15 +80,17 @@ module.exports = function(grunt) {
 			},
 			files: ['_less/*.less', '_assets/*.*', '_includes/*.*', '_layouts/*.*',
 					'_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
-			tasks: ['debug']
+			tasks: ['demo']
 		}
 	});
 
-	grunt.registerTask('debug', 'Deploy debug version', function(n) {
-		grunt.task.run('less', 'copy', 'concat', 'shell:debug');
+	grunt.registerTask('start', 'Start "demo" task with "grunt watch"', function() {
+		grunt.task.run('watch');
 	});
 
-	grunt.registerTask('release', 'Deploy release version', function(n) {
-			grunt.task.run('less', 'copy', 'concat', 'cssmin', 'shell:release');
-	});
+	grunt.registerTask('demo', 'Deploy demo website using "jekyll serve"',
+		['less', 'copy', 'concat', 'shell:demo']);
+
+	grunt.registerTask('release', 'Deploy release website using "jekyll serve"',
+		['less', 'copy', 'concat', 'cssmin', 'shell:release']);
 }

@@ -9,7 +9,7 @@ tags:
 - c#
 - code
 ---
-A few weeks ago I needed to write a specific implementation of the type mapper used in Glass.Mapper to handle *IEnumerable\<T\>* Types. This was necessary because the Sitecore instance I was working with had a customized implementation for handling language fallbacks. This did not play well with the default Glass.Mapper implementation.
+A few weeks ago I needed to write a specific implementation of the type mapper used in Glass.Mapper to handle <code>IEnumerable<T></code> Types. This was necessary because the Sitecore instance I was working with had a customized implementation for handling language fallbacks. This did not play well with the default Glass.Mapper implementation.
 
 I had to come up with a way to modify how Glass.Mapper handles fields that map to an *IEnumerable\<T\>* type, such as Multilists or Treelists. This is what I did.
 

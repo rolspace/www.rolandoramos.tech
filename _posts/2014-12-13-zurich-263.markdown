@@ -1,17 +1,23 @@
 ---
 layout: post
 published: true
-title: 'Z&uuml;rich: 263'
+title: 'Zürich: 263'
 date: 2014-12-13
 categories:
 - Uncategorized
 tags:
 - zurich
 ---
-<p><img class=" size-full wp-image-439 aligncenter" src="http:&#47;&#47;www.rolspace.com&#47;wp-content&#47;uploads&#47;2014&#47;12&#47;zurich-263.jpg" alt="" width="1200" height="750" &#47;></p>
-<p>Our first winter in Zurich is almost here.&nbsp;Little by little the clouds have taken over and temperature has been dropping gradually&nbsp;in the past few weeks.</p>
-<p>September and October were quite&nbsp;good in terms of temperature and sunshine. Unlike August, which was the&nbsp;anti-Summer: lots of cloudy days and&nbsp;lots of rain.<br />
-<a id="more"></a><a id="more-403"></a></p>
-<p>Things have clearly changed in December, where we've had a few days with near 0 degree temperatures, or less. There has been no snow yet, but hopefully some will fall when winter gets going for good.</p>
-<p>At the beginning of November, I had a chance to go up to the Uetliberg's summit on a Sunday afternoon without the need to wear a heavy jacket. It's great that only a 30 minute hike takes you all the way to the top, and you get a great view of the city. Thanks to the good weather there were tons of people around and enjoying themselves.</p>
-<p>I'll be coming back here many more times I hope.</p>
+<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/12/zurich-263.jpg" alt="Zürich: 263" />
+
+Our first winter in Zurich is almost here. Little by little the clouds have taken over and temperature has been dropping gradually in the past few weeks.
+
+September and October were quite&nbsp;good in terms of temperature and sunshine. Unlike August, which was the anti-Summer: lots of cloudy days and lots of rain.
+
+<!--more-->
+
+Things have clearly changed in December, where we've had a few days with near 0 degree temperatures, or less. There has been no snow yet, but hopefully some will fall when winter gets going for good.
+
+At the beginning of November, I had a chance to go up to the Uetliberg's summit on a Sunday afternoon without the need to wear a heavy jacket. It's great that only a 30 minute hike takes you all the way to the top, and you get a great view of the city. Thanks to the good weather there were tons of people around and enjoying themselves.
+
+I'll be coming back here many more times I hope.

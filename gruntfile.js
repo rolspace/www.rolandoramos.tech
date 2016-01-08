@@ -16,14 +16,6 @@ module.exports = function(grunt) {
 			main: {
 				files: [
 					{
-						src: 'bower_components/bootstrap/dist/js/bootstrap.min.js',
-						dest: 'js/bootstrap.min.js'
-					},
-					{
-						src: 'bower_components/jquery/dist/jquery.min.js',
-						dest: 'js/jquery.min.js'
-					},
-					{
 						expand: true,
 						cwd: 'bower_components/bootstrap/dist/fonts/',
 						src: ['*'],
@@ -39,15 +31,21 @@ module.exports = function(grunt) {
 			},
 		},
 		concat: {
-			options: {
+			/*options: {
 				separator: ' '
-			},
+			},*/
 			main: {
-				src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
-					  'bower_components/font-awesome/css/font-awesome.min.css',
-					  'css/rolspace.css'
-					 ],
-				dest: 'css/rolspace.css'
+				files: [
+					{ src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
+					  		'bower_components/font-awesome/css/font-awesome.min.css',
+				  			'css/rolspace.css'],
+					  dest: 'css/rolspace.css'
+					},
+					{ src: ['bower_components/jquery/dist/jquery.min.js',
+							'bower_components/bootstrap/dist/js/bootstrap.min.js'],
+					  dest: 'js/rolspace.min.js'
+					}
+				]
 			}
 		},
 		cssmin: {
@@ -63,8 +61,6 @@ module.exports = function(grunt) {
 		shell: {
 			main: {
 				command: function(demo) {
-
-
 					return 'jekyll serve --config _config' + demo + '.yml --force'
 				}
 			}
@@ -80,16 +76,7 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('start', 'Start the website', function() {
-		//Include the --demo option to start
-		//the demo website with the "watch" task
-		if (grunt.option('demo')) {
-			grunt.task.run('watch');
-		}
+	grunt.registerTask('demo', 'Host the demo website using grunt-watch',['watch']);
 
-		grunt.task.run('release');
-	});
-
-	grunt.registerTask('release', 'Start the release version of the website',
-		['less', 'copy', 'concat', 'cssmin', 'shell:main:']);
+	grunt.registerTask('release', 'Host the release website', ['less', 'copy', 'concat', 'cssmin', 'shell:main:']);
 }

@@ -31,9 +31,6 @@ module.exports = function(grunt) {
 			},
 		},
 		concat: {
-			/*options: {
-				separator: ' '
-			},*/
 			main: {
 				files: [
 					{ src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',

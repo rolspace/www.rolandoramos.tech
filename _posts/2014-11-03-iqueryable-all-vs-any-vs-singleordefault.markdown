@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: 'IQueryable: All() vs. Any() vs. SingleOrDefault()'
+title: IQueryable: All() vs. Any() vs. SingleOrDefault()
 date: 2014-11-03
 categories:
 - Uncategorized
@@ -57,104 +57,111 @@ if (context.Customer.FirstOrDefault(c => c.CustomerID == customerId) == null)
 
 **So which is the right method to use?** Using <code>IQueryable.Any()</code> or <code>IQueryable.SingleOrDefault()</code> made the Exceptions go away. However, the best way to find out is the best approach is to measure the execution time for the SQL queries generated through these <code>IQueryable</code> methods.
 
-To do this, I wrote a small program that would execute each method a total of 1.000 times and log the results using a custom class inheriting from the <a href="http:&#47;&#47;msdn.microsoft.com&#47;en-us&#47;library&#47;system.data.entity.infrastructure.interception.databaselogformatter(v=vs.113).aspx" target="_blank">DatabaseLogFormatter</a> class. This way I could obtain information about the average execution time of these methods.
+To do this, I wrote a small program that would execute each method a total of 1.000 times and log the results using a custom class inheriting from the <a href="http://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.interception.databaselogformatter(v=vs.113).aspx" target="_blank">DatabaseLogFormatter</a> class. This way I could obtain information about the average execution time of these methods.
 
 The test table in the database contains approximately 200.000 records. Both the database and the executable are in the same machine.
 
 In the first run, I executed the program assuming that there is no match in the table:
 
 <div class="table-responsive">
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<th>&nbsp;No Match<&#47;th></p>
-<th>SingleOrDefault()<&#47;th></p>
-<th>Any()<&#47;th></p>
-<th>All()<&#47;th><br />
-<&#47;tr><br />
-<&#47;thead></p>
+<th>No Match</th>
+<th>SingleOrDefault()</th>
+<th>Any()</th>
+<th>All()</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>Average (ms)<&#47;td></p>
-<td>6.25<&#47;td></p>
-<td>5.45<&#47;td></p>
-<td>25.37<&#47;td><br />
-<&#47;tr></p>
+<td>Average (ms)</td>
+<td>6.25</td>
+<td>5.45</td>
+<td>25.37</td>
+</tr>
 <tr>
-<td>Minimum (ms)<&#47;td></p>
-<td>6<&#47;td></p>
-<td>5<&#47;td></p>
-<td>23<&#47;td><br />
-<&#47;tr></p>
+<td>Minimum (ms)</td>
+<td>6</td>
+<td>5</td>
+<td>23</td>
+</tr>
 <tr>
-<td>Maximum (ms)<&#47;td></p>
-<td>13<&#47;td></p>
-<td>8<&#47;td></p>
-<td>32<&#47;td><br />
-<&#47;tr><br />
-<&#47;tbody><br />
-<&#47;table><br />
-<&#47;div><br />
-In the second run, I executed the program assuming that there is a match in the table:</p>
+<td>Maximum (ms)</td>
+<td>13</td>
+<td>8</td>
+<td>32</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+In the second run, I executed the program assuming that there is a match in the table:
+
 <div class="table-responsive">
-<table>
+<table class="table table-bordered">
 <thead>
 <tr>
-<th>&nbsp;Match<&#47;th></p>
-<th>SingleOrDefault()<&#47;th></p>
-<th>Any()<&#47;th></p>
-<th>All()<&#47;th><br />
-<&#47;tr><br />
-<&#47;thead></p>
+<th>Match</th>
+<th>SingleOrDefault()</th>
+<th>Any()</th>
+<th>All()</th>
+</tr>
+</thead>
 <tbody>
 <tr>
-<td>Average (ms)<&#47;td></p>
-<td>6.21<&#47;td></p>
-<td>5.49<&#47;td></p>
-<td>14.90<&#47;td><br />
-<&#47;tr></p>
+<td>Average (ms)</td>
+<td>6.21</td>
+<td>5.49</td>
+<td>14.90</td>
+</tr>
 <tr>
-<td>Minimum (ms)<&#47;td></p>
-<td>6<&#47;td></p>
-<td>5<&#47;td></p>
-<td>14<&#47;td><br />
-<&#47;tr></p>
+<td>Minimum (ms)</td>
+<td>6</td>
+<td>5</td>
+<td>14</td>
+</tr>
 <tr>
-<td>Maximum (ms)<&#47;td></p>
-<td>16<&#47;td></p>
-<td>19<&#47;td></p>
-<td>27<&#47;td><br />
-<&#47;tr><br />
-<&#47;tbody><br />
-<&#47;table><br />
-<&#47;div><br />
-The results show that the <em>IQueryable.All()<&#47;em> method is not the best option for any of the scenarios tested. Using <em>Any()<&#47;em> or <em>SingleOrDefault()<&#47;em> will provide much faster results using&nbsp;less time in either case. Clearly the time difference is accentuated when comparing the <em>worst case<&#47;em> results.</p>
-<p>If you take a look at the SQL code generated from the <em>IQueryable.All()<&#47;em> and <em>IQueryable.Any()<&#47;em>&nbsp;methods&nbsp;you can immediately notice the difference between them. For my specific scenario, using <em>All()&nbsp;<&#47;em>was the incorrect choice from the beginning...the logic should have been written with <em>Any().<&#47;em></p>
-<pre class="striped:false lang:tsql mark:7-15,24-25 decode:true ">DECLARE @Id INT;<br />
-SET @Id = 0;</p>
-<p>--IQueryable.All()<br />
-SELECT<br />
-   CASE<br />
-      WHEN (NOT EXISTS (SELECT 1 AS [C1] FROM Customer<br />
-         WHERE (CustomerID = @Id)<br />
-         OR<br />
-         (CASE<br />
-            WHEN (CustomerID <> @Id)<br />
-               THEN cast(1 as bit)<br />
-            WHEN (CustomerID = @Id)<br />
-               THEN cast(0 as bit)<br />
-         END IS NULL)))<br />
-      THEN cast(1 as bit)<br />
-      ELSE cast(0 as bit)<br />
-   END AS [C1]<br />
-FROM ( SELECT 1 AS X ) AS [SingleRowTable1]</p>
-<p>--IQueryable.Any()<br />
-SELECT<br />
-   CASE<br />
-      WHEN (EXISTS (SELECT 1 AS [C1] FROM Customer<br />
-         WHERE CustomerID = @Id))<br />
-      THEN cast(1 as bit)<br />
-      ELSE cast(0 as bit)<br />
-   END AS [C1]<br />
-FROM ( SELECT 1 AS X ) AS [SingleRowTable1]<&#47;pre><br />
-There will be some specific cases in which <em>IQueryable.All()<&#47;em>&nbsp;must be used in order to verify a condition on all the elements of a sequence. It important to recognize these situations and plan accordingly, in order to minimize the impact of this call on the performance of an application.</p>
+<td>Maximum (ms)</td>
+<td>16</td>
+<td>19</td>
+<td>27</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+The results show that the <code>IQueryable.All()</code> method is not the best option for any of the scenarios tested. Using <code>Any()</code> or <code>SingleOrDefault()</code> will provide much faster results. Clearly the time difference is accentuated when comparing the worst scenario results.
+
+If you take a look at the SQL code generated from the <code>IQueryable.All()</code> and <code>IQueryable.Any()</code> methods you can immediately notice the difference between them. For my specific scenario, using <code>All()</code> was the incorrect choice from the beginning...the logic should have been written with <code>Any()</code>.
+
+{% highlight sql %}
+SET @Id = 0;
+--IQueryable.All()
+SELECT
+   CASE
+      WHEN (NOT EXISTS (SELECT 1 AS [C1] FROM Customer
+         WHERE (CustomerID = @Id)
+         OR
+         (CASE
+            WHEN (CustomerID <> @Id)
+               THEN cast(1 as bit)
+            WHEN (CustomerID = @Id)
+               THEN cast(0 as bit)
+         END IS NULL)))
+      THEN cast(1 as bit)
+      ELSE cast(0 as bit)
+   END AS [C1]
+FROM ( SELECT 1 AS X ) AS [SingleRowTable1]
+--IQueryable.Any()
+SELECT
+   CASE
+      WHEN (EXISTS (SELECT 1 AS [C1] FROM Customer
+         WHERE CustomerID = @Id))
+      THEN cast(1 as bit)
+      ELSE cast(0 as bit)
+   END AS [C1]
+FROM ( SELECT 1 AS X ) AS [SingleRowTable1]
+{% endhighlight %}
+
+There will be some specific cases in which <code>IQueryable.All()</code> must be used in order to verify a condition on all the elements of a sequence. It important to recognize these situations and plan accordingly, in order to minimize the impact of this call on the performance of an application.

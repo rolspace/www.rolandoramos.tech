@@ -9,9 +9,9 @@ tags:
 - c#
 - code
 ---
-A few weeks ago I needed to write a specific implementation of the type mapper used in Glass.Mapper to handle <code>IEnumerable<T></code> Types. This was necessary because the Sitecore instance I was working with had a customized implementation for handling language fallbacks. This did not play well with the default Glass.Mapper implementation.
+A few weeks ago I needed to write a specific implementation of the type mapper used in Glass.Mapper to handle `IEnumerable<T>` Types. This was necessary because the Sitecore instance I was working with had a customized implementation for handling language fallbacks. This did not play well with the default Glass.Mapper implementation.
 
-I had to come up with a way to modify how Glass.Mapper handles fields that map to an *IEnumerable\<T\>* type, such as Multilists or Treelists. This is what I did.
+I had to come up with a way to modify how Glass.Mapper handles fields that map to an `IEnumerable<T>` type, such as Multilists or Treelists. This is what I did.
 
 <!--more-->
 
@@ -29,7 +29,7 @@ This custom attribute will map to a field similar to the one shown in this image
 
 <img class="img-responsive" src="/_assets/overrideienumerable-1.png" alt="Sample Sitecore Field">
 
-In order to create this custom attribute, it is necessary to inherit from the *SitecoreFieldAttribute* class from the Glass.Mapper.Sc.Configuration.Attributes namespace. In this scenario, the *Configure* method from the SitecoreFieldAttribute class must be overridden to setup the Attribute's configuration:
+In order to create this custom attribute, it is necessary to inherit from the `SitecoreFieldAttribute` class from the `Glass.Mapper.Sc.Configuration.Attributes` namespace. In this scenario, the Configure method from the `SitecoreFieldAttribute` class must be overridden to setup the Attribute's configuration:
 
 {% highlight c# %}
 public class CustomIEnumerableAttribute : SitecoreFieldAttribute
@@ -52,7 +52,7 @@ public class CustomIEnumerableAttribute : SitecoreFieldAttribute
 }
 {% endhighlight %}
 
-The *Configure* method of our *CustomIEnumerableAttribute* requires an object of type *AbstractPropertyConfiguration*, which we do not have yet. I will create a new class called *CustomIEnumerableConfiguration* which inherits from *SitecoreFieldConfiguration*, which in turn inherits from *AbstractPropertyConfiguration*. This way I can avoid writing a full implementation, when I only need to override the *Copy* method from the *SitecoreFieldConfiguration* class:
+The Configure method of our `CustomIEnumerableAttribute` class requires an object of type `AbstractPropertyConfiguration`. I will create a new class called `CustomIEnumerableConfiguration`. This class is derived from the `SitecoreFieldConfiguration` class, which inherits from the `AbstractPropertyConfiguration` class. This way I can avoid writing a full implementation, when I only need to override the Copy method from the `SitecoreFieldConfiguration` class:
 
 {% highlight c# %}
 public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration
@@ -78,7 +78,7 @@ public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration
 }
 {% endhighlight %}
 
-Since the CustomIEnumerableConfiguration class is complete, then the CustomIEnumerableAttribute class is completed as well. Now the final piece of the code is the custom type mapper class I need to implement.
+Once the `CustomIEnumerableConfiguration` class is complete, then the `CustomIEnumerableAttribute` class is completed as well. Now the final piece of the code is the custom type mapper class I need to implement.
 For this, I will inherit from the *AbstractSitecoreFieldMapper* class in the Glass.Mapper.Sc.DataMappers namespace. This is the base class from which all mappers in Glass.Mapper assembly inherit.
 
 The implementation for the *CustomIEnumerableMapper* class is shown below. For the purpose of this post I have borrowed the implementation from the *SitecoreFieldIEnumerableMapper* class used by Glass.Mapper.

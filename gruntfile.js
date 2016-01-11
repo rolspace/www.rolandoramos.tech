@@ -58,9 +58,12 @@ module.exports = function(grunt) {
 		shell: {
 			main: {
 				command: function(demo) {
-					return 'jekyll serve --config _config' + demo + '.yml --force'
+					return 'jekyll serve --config _config' + demo + '.yml --force';
 				}
 			}
+		},
+		jshint: {
+			main: 'gruntfile.js'
 		},
 		watch: {
 			options: {
@@ -69,11 +72,13 @@ module.exports = function(grunt) {
 			},
 			files: ['_less/*.less', '_assets/*.*', '_includes/*.*', '_layouts/*.*',
 					'_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
-			tasks: ['less', 'copy', 'concat', 'shell:main:.demo']
+			tasks: ['less', 'copy', 'concat', 'jshint', 'shell:main:.demo']
 		}
 	});
 
-	grunt.registerTask('demo', 'Host the demo website using grunt-watch',['watch']);
+	grunt.registerTask('demo',
+		'Host the demo website using grunt-watch',['watch']);
 
-	grunt.registerTask('release', 'Host the release website', ['less', 'copy', 'concat', 'cssmin', 'shell:main:']);
-}
+	grunt.registerTask('release',
+		'Host the release website', ['less','copy','concat','jshint','cssmin','shell:main:']);
+};

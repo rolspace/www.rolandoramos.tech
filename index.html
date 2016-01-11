@@ -35,14 +35,14 @@ layout: default
 <div class="paginator row">
   <div class="col-md-5 col-md-offset-1">
   {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="previous">
+    <a href="{{ paginator.next_page_path }}" class="previous pull-left">
       <i class="fa fa-angle-left"></i>Older Posts
     </a>
   {% endif %}
   </div>
   <div class="col-md-5">
   {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="next">
+    <a href="{{ paginator.previous_page_path }}" class="next pull-right">
       Newer Posts<i class="fa fa-angle-right"></i>
     </a>
   {% endif %}

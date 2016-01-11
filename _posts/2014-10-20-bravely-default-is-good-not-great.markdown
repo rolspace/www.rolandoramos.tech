@@ -32,11 +32,16 @@ For the most part I feel that the design and graphics were the right style choic
 
 And finally, the one I believe is the best feature in the game: the ability to increase decrease the game's difficulty and or to turn off enemy encounters. This is extremely useful, especially for older gamers like myself. Now that I have used this, it will be very hard to play an RPG without something similar, for me, it changes the whole experience. Random encounters are the devil!
 
-<p>Now, onto the bad things...</p>
-<p><strong>[SPOILERS AHEAD]<&#47;strong></p>
-<p>The game has a huge pacing problem. Everything seems fine until you reach a specific point in the story, and then, it seems like you got your own Norende sized hole to deal with.</p>
-<p>After finally beating the game I could not help but wonder why this decision was made. Why would the people who made the game decide that you had to repeat a specific section of the game four times (was it four or five?). In fact, that's not really the problem. The problem is that the repetition is boring. For me, it almost killed the game.</p>
-<p>By Chapter 6 I was saying to myself: <strong>"This has got to be the last time, right? Right??"<&#47;strong> And then there were <em>two<&#47;em> more go-rounds.</p>
-<p>Unfortunately, this game&nbsp;is&nbsp;not going to&nbsp;win any RPG of the Decade awards, and one specific design choice turned&nbsp;what had been&nbsp;really fun game into a hassle I am not planning to repeat. I'm glad it's over.</p>
-<p><strong>[END SPOILERS]<&#47;strong></p>
-<p>In the end, Bravely Default does a lot of things right, and it is one of the best games available for the 3DS. I say that if you have time to spare, then go ahead and play it, especially now that it should be a bit&nbsp;cheaper. It has one glaring flaw that drags&nbsp;down&nbsp;the last part of the game, but as a whole, Bravely Default&nbsp;is a good gaming experience.</p>
+Now, onto the bad things...
+
+**[SPOILERS AHEAD]**
+
+The game has a pacing problem. Everything seems fine until you reach a specific point in the story, and then, it seems like you got your own Norende sized hole to deal with.
+After finally beating the game I could not help but wonder why this decision was made. Why would the people who made the game decide that you had to repeat a specific section of the game four times (was it four or five?). In fact, that's not really the problem. The problem is that the repetition is boring. For me, it almost killed the game.
+By Chapter 6 I was saying to myself: **"This has got to be the last time, right? Right??"** And then there were <em>two</em> more go-rounds.
+
+Unfortunately, this game is not going to win any RPG of the Decade awards, and one specific design choice turned what had been really fun game into a hassle I am not planning to repeat. I'm glad it's over.
+
+**[END SPOILERS]**
+
+In the end, Bravely Default does a lot of things right, and it is one of the best games available for the 3DS. I say that if you have time to spare, then go ahead and play it, especially now that it should be a bit cheaper. It has one glaring flaw that drags down the last part of the game, but as a whole, Bravely Default is a good gaming experience.

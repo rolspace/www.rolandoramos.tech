@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: IQueryable: All() vs. Any() vs. SingleOrDefault()
+title: IQueryable&#58; All() vs. Any() vs. SingleOrDefault()
 date: 2014-11-03
 categories:
 - Uncategorized

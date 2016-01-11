@@ -15,7 +15,7 @@ tags:
 
 Here's a few more development tools, to make your life easier:
 
-### Unicorn ###
+<p class="subtitle">Unicorn</p>
 
 
 In the past year I have done a fair amount of work using the Sitecore CMS. During this time, I researched various tools and software applications to help make the process of Sitecore development easier and more productive.
@@ -30,7 +30,7 @@ If you are looking for a lightweight, easy to use tool to achieve Sitecore seria
 
 [https://github.com/kamsar/Unicorn][Unicorn]
 
-### dotPeek ###
+<p class="subtitle">dotPeek</p>
 
 A few months ago I was testing the performance of an application using the RedGate Performance Profiler when I came across dotPeek and I am very, very glad I did.
 
@@ -42,7 +42,7 @@ I will need to explore dotPeek a bit more to really get more out of it, but so f
 
 [https://www.jetbrains.com/decompiler/][dotPeek]
 
-### LinqPad ###
+<p class="subtitle">LinqPad</p>
 
 I remember using LinqPad sometime in 2009 when I was working on a project using Linq-to-SQL in order to create mappings between classes and SQL tables. For one reason or another I completely forgot its existence, until I rediscovered it a few weeks ago.
 

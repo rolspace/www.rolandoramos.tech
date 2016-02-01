@@ -9,7 +9,7 @@ tags:
 - pc
 - tools
 ---
-<img class="img-responsive" style="border-radius: 0px;" src="http://www.rolspace.com/wp-content/uploads/2015/06/reserve-windows.png" alt="Reserve Windows 10" width="815" height="531" />
+<img class="img-responsive" style="border-radius: 0px;" src="_assets/150601/windows10.png" alt="Windows 10" />
 
 I really liked Windows 8, so I am definitely hoping Windows 10 makes improvements to an already great OS.
 

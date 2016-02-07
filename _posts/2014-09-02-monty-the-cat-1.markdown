@@ -8,4 +8,4 @@ categories:
 tags:
 - monty
 ---
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/09/montythecat1.jpg" alt="Monty the Cat #1" width="1200" height="855" />
+<img class="img-responsive" src="/_assets/140902/montythecat.jpg" alt="Monty the Cat #1" alt="Monty" />

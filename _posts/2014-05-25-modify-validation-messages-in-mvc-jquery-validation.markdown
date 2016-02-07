@@ -68,7 +68,7 @@ In order to edit items from this class, we will use a view with a form that cont
 {% endhighlight %}
 
 Such a view would provide the following result:
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/05/standardunobstrusive.png" />
+<img class="img-responsive" src="/_assets/140525/standardunobstrusive.png" alt="Standard Unobstrusive Validation"/>
 
 In order to modify the way in which the unobstrusive validation messages are displayed, we need to access one of the methods provided by the jQuery Validator that is packaged with ASP.NET MVC. The <code>setDefaults</code> method allows us to modify the jQuery Validator's default settings.
 
@@ -113,4 +113,4 @@ In order to remove the tooltip if the element becomes valid, we are taking advan
 
 Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View, so only one set of validation messages is displayed for the input elements:
 
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/05/tooltipunobtrusive.png" alt="tooltipunobtrusive" />
+<img class="img-responsive" src="/_assets/140525/tooltipunobstrusive.png" alt="Tooltip Unobstrusive Validation" />

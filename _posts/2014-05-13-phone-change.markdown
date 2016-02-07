@@ -10,8 +10,6 @@ tags:
 ---
 Four and a half years and <em>three Android phones</em> later I felt it was time to give Windows Phone a chance.
 
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/05/windowsphone-e1434052735872.png" alt="Phone Change" />
-
 I admit that some of the recent Android devices made me really consider the idea of changing ecosystems, especially the <em>Nexus 5. </em>I had previously owned a <em>Nexus S</em> and I still consider it the best smartphone I have ever owned.
 
 <!--more-->

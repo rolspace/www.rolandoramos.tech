@@ -8,7 +8,7 @@ categories:
 tags:
 - zurich
 ---
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/12/zurich-263.jpg" alt="Zürich: 263" />
+<img class="img-responsive" src="/_assets/141213/zurich-263.jpg" alt="Zürich: 263" />
 
 Our first winter in Zurich is almost here. Little by little the clouds have taken over and temperature has been dropping gradually in the past few weeks.
 

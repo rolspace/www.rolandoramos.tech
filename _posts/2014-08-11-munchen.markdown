@@ -8,7 +8,7 @@ categories:
 tags:
 - hello world
 ---
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/08/munchen-e1433685625410.jpg" alt="München" />
+<img class="img-responsive" src="/_assets/140811/munchen.jpg" alt="München" />
 
 My stay in Munich was a bit short, even so, the fact is that M&uuml;nich is a GREAT place to visit. The weather was right, the food was tasty, and the beer was cold.
 

@@ -8,7 +8,7 @@ categories:
 tags:
 - zurich
 ---
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/07/zurich-113-e1433685087376.jpg" alt="Zürich" />
+<img class="img-responsive" src="/_assets/140703/zurich-113.jpg" alt="Zürich" />
 
 It has been 113 days since the move to Z&uuml;rich.
 

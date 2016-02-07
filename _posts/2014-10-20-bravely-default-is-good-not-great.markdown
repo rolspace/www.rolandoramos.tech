@@ -10,7 +10,7 @@ tags:
 - late reviews
 - games
 ---
-<img class="img-responsive" src="http://www.rolspace.com/wp-content/uploads/2014/10/bravelydefault.jpg" alt="Bravely Default">
+<img class="img-responsive" src="/_assets/141020/bravelydefault.jpg" alt="Bravely Default">
 
 This game was on my radar for a quite a while. Initially, it was released only in Japan, but there were many gaming websites with information about the game (story, characters, features, etc).
 

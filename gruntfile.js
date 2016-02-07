@@ -12,6 +12,13 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		autoprefixer: {
+			main: {
+				files: {
+					'css/rolspace.css': 'css/rolspace.css'	
+				}
+			}
+		},
 		copy: {
 			main: {
 				files: [
@@ -72,13 +79,22 @@ module.exports = function(grunt) {
 			},
 			files: ['_less/*.less', '_assets/*.*', '_includes/*.*', '_layouts/*.*',
 					'_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
-			tasks: ['less', 'copy', 'concat', 'jshint', 'shell:main:.demo']
+			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:main:.demo']
 		}
 	});
 
+	grunt.registerTask('css',
+		'Run tasks for custom css generation', ['less','autoprefixer']);
+
 	grunt.registerTask('demo',
+		'Build the demo website', ['less','autoprefixer','copy','concat','jshint']);
+
+	grunt.registerTask('host-demo',
 		'Host the demo website using grunt-watch',['watch']);
 
 	grunt.registerTask('release',
-		'Host the release website', ['less','copy','concat','jshint','cssmin','shell:main:']);
+		'Build the release website', ['less','autoprefixer','copy','concat','cssmin','jshint']);
+
+	grunt.registerTask('host-release',
+		'Host the release website', ['less','autoprefixer','copy','concat','cssmin','jshint','shell:main:']);
 };

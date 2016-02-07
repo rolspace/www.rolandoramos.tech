@@ -29,7 +29,7 @@ This custom attribute will map to a field similar to the one shown in this image
 
 <img class="img-responsive" src="/_assets/150712/sitecorefield.png" alt="Sample Sitecore Field">
 
-In order to create this custom attribute, it is necessary to inherit from the `SitecoreFieldAttribute` class from the `Glass.Mapper.Sc.Configuration.Attributes` namespace. In this scenario, the Configure method from the `SitecoreFieldAttribute` class must be overridden to setup the Attribute's configuration:
+In order to create this custom attribute, it is necessary to inherit from the `SitecoreFieldAttribute` class from the Glass.Mapper.Sc.Configuration.Attributes namespace. In this scenario, the Configure method from the `SitecoreFieldAttribute` class must be overridden to setup the Attribute's configuration:
 
 {% highlight c# %}
 public class CustomIEnumerableAttribute : SitecoreFieldAttribute
@@ -52,7 +52,7 @@ public class CustomIEnumerableAttribute : SitecoreFieldAttribute
 }
 {% endhighlight %}
 
-The Configure method of our `CustomIEnumerableAttribute` class requires an object of type `AbstractPropertyConfiguration`. I will create a new class called `CustomIEnumerableConfiguration`. This class is derived from the `SitecoreFieldConfiguration` class, which inherits from the `AbstractPropertyConfiguration` class. This way I can avoid writing a full implementation, when I only need to override the Copy method from the `SitecoreFieldConfiguration` class:
+The Configure method of the class shown above requires an object of type `AbstractPropertyConfiguration`. This means I need create another class. I will name this class `CustomIEnumerableConfiguration`. This class will be derived from the `SitecoreFieldConfiguration` class, which in turn, inherits from the `AbstractPropertyConfiguration` class. This way I can avoid writing a full implementation in the new class, and I only need to override the Copy method from the `SitecoreFieldConfiguration` class:
 
 {% highlight c# %}
 public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration
@@ -79,9 +79,9 @@ public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration
 {% endhighlight %}
 
 Once the `CustomIEnumerableConfiguration` class is complete, then the `CustomIEnumerableAttribute` class is completed as well. Now the final piece of the code is the custom type mapper class I need to implement.
-For this, I will inherit from the *AbstractSitecoreFieldMapper* class in the Glass.Mapper.Sc.DataMappers namespace. This is the base class from which all mappers in Glass.Mapper assembly inherit.
+For this, I will inherit from the `AbstractSitecoreFieldMapper` class in the Glass.Mapper.Sc.DataMappers namespace. This is the base class from which all mappers in Glass.Mapper assembly inherit.
 
-The implementation for the *CustomIEnumerableMapper* class is shown below. For the purpose of this post I have borrowed the implementation from the *SitecoreFieldIEnumerableMapper* class used by Glass.Mapper.
+The implementation for the `CustomIEnumerableMapper` class is shown below. For the purpose of this post I have borrowed the implementation from the `SitecoreFieldIEnumerableMapper` class used by Glass.Mapper.
 I have only added a few lines of code, in order to write to the Sitecore Log and demonstrate the use of the custom type mapper class:
 
 {% highlight c# %}
@@ -158,13 +158,13 @@ public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper
 }
 {% endhighlight %}
 
-There are three methods that need to be overridden in order to properly implement our custom *IEnumerable\<T\>* type mapper:
+There are three methods that need to be overridden in order to properly implement our custom `IEnumerable<T>` type mapper:
 
-* GetFieldValue: this method will obtain the field's value in raw format and convert each of the referenced items to the generic type used in the *IEnumerable\<T\>*.
-* SetFieldValue: as the name implies, this method will take the value of the *IEnumerable\<T\>* instance and store it in the field.
-* CanHandle: this method defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type *CustomIEnumerableConfiguration*.
+* *GetFieldValue*: this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the `IEnumerable<T>`.
+* *SetFieldValue*: this method will take the value of the `IEnumerable<T>` instance and store it in the field.
+* *CanHandle*: defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type `CustomIEnumerableConfiguration`.
 
-Once this is all completed, it is possible to include this type mapper in the *CreateResolverMethod* of the *GlassMapperScCustom* class:
+Once this is all completed, it is possible to include this type mapper in the CreateResolverMethod of the `GlassMapperScCustom` class:
 
 {% highlight c# %}
 public static IDependencyResolver CreateResolver()
@@ -191,6 +191,6 @@ After this code is deployed to the Sitecore instance, it is easy to determine th
 
 <img class="img-responsive" src="/_assets/150712/sitecorelog.png" alt="Sitecore Log">
 
-As a final note, it is important to point out that this approach will work if you are using Glass.Mapper v4 together with the *Glass.Mapper.Sc.CastleWindsor* v4 assembly in your solution.
+As a final note, it is important to point out that this approach will work if you are using Glass.Mapper 4.0 together with Glass.Mapper.Sc.CastleWindsor 4.0 library in your solution.
 
-Unfortunately, I have not been able to test this functionality in Glass.Mapper.Sc v4 using a different IoC container. However, the code provided here serves as a good starting point for anyone trying to achieve something similar.
+Unfortunately, I have not been able to test this functionality in Glass.Mapper.Sc 4.0 using a different IoC container. However, the code provided here serves as a good starting point for anyone trying to achieve a similar result.

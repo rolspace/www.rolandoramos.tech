@@ -1,5 +1,6 @@
 module.exports = function(grunt) {
 	require('grunt-task-loader')(grunt);
+	require('time-grunt')(grunt);
 
 	grunt.initConfig({
 		less: {

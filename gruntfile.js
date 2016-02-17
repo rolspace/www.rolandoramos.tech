@@ -89,8 +89,8 @@ module.exports = function(grunt) {
 		}
 	});
 
-	grunt.registerTask('css',
-		'Run tasks for custom css generation', ['less','autoprefixer']);
+	grunt.registerTask('css-js',
+		'Run tasks for css/js generation', ['less','autoprefixer','copy','concat','cssmin']);
 
 	grunt.registerTask('demo',
 		'Build the demo website', ['less','autoprefixer','copy','concat','jshint','shell:build:.demo']);

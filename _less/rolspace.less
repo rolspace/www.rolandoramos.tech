@@ -1,4 +1,4 @@
-@base-color: #333;
+@base-font-color: #333;
 @base-background-color: #ddd;
 @light-blue: #1281d3;
 @dark-blue: #0c568d;
@@ -16,85 +16,103 @@ a:active, a:focus {
 
 .navbar {
 	background-color: @base-background-color;
-}
 
-.navbar-inverse {
-	border-bottom: none;
-	position: fixed;
-	top: 0px;
-	width: 100%;
-}
+	&.navbar-inverse {
+		border-bottom: none;
+		position: fixed;
+		top: 0px;
+		width: 100%;
 
-.navbar-inverse .navbar-nav > li a {
-	color: #222;
-	font-size: 0.875em;
-	letter-spacing: 1px;
-	text-transform: uppercase;
+		.navbar-nav {
+			@media (min-width: 768px)
+			{
+				float: right;
+			}
 
-	&:hover {
-		color: #000;	
-	}
-}
+			& > li {
+				@media (min-width: 768px) {
+					height: 65px;
+				}
 
-.navbar-toggle {
-	margin-top: 18px;
-	margin-right: 12px;
-	padding: 4px;
-}
+				a {
+					color: #222;
+					font-size: 0.875em;
+					letter-spacing: 1px;
+					text-transform: uppercase;
 
-.navbar-inverse .navbar-toggle {
-	border-color: transparent;
-}
+					@media (max-width: 767px)
+					{
+						line-height: 47px;
+						height: 47px;
+						padding-top: 0;
+					}
 
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-	background-color: transparent;
-}
+					@media (min-width: 768px)
+					{
+						line-height: 65px;
+						padding: 0 15px;
+					}
 
-.navbar-inverse .navbar-toggle [class^="icon-"],
-.navbar-inverse .navbar-toggle [class*="icon-"] {
-	font-size: 1.4em;
-}
+					&:hover {
+						color: #000;
 
-.navbar-inverse .navbar-toggle:hover [class^="icon-"],
-.navbar-inverse .navbar-toggle:hover [class*="icon-"] {
-	color: #fff;
-}
+						@media (max-width: 767px)
+						{
+							text-decoration: none;
+						}
+						@media (min-width: 768px)
+						{
+							text-decoration: underline;
+						}
+					}
+				}
+			}
+		}
 
-.navbar-inverse .navbar-collapse,
-.navbar-inverse .navbar-form {
-	border-color: @base-background-color;
-}
+		.navbar-brand {
+			color: #222;
+			font-size: 2.625em;
+			height: 65px;
+			letter-spacing: 4px;
+			line-height: 30px;
+			text-decoration: none;
+			text-shadow: none;
 
-.navbar-collapse {
-	box-shadow: none;
-}
+			&:hover {
+				color: #222;
+			}
+		}
 
-.navbar-inverse .navbar-brand {
-	color: #222;
-	font-size: 2.625em;
-	height: 65px;
-	letter-spacing: 4px;
-	line-height: 30px;
-	text-decoration: none;
-	text-shadow: none;
+		.navbar-toggle {
+			border-color: transparent;
+			margin-top: 18px;
+			margin-right: 12px;
+			padding: 4px;
 
-	&:hover {
-		color: #222;
+			&:hover, &:focus {
+				background-color: transparent;
+			}
+
+			& [class^="icon-"], & [class*="icon-"] {
+				font-size: 1.4em;
+			}
+
+			&:hover [class^="icon-"], &:hover [class*="icon-"] {
+				color: #fff;
+			}
+		}
+
+		.navbar-collapse {
+			box-shadow: none;
+		}
+
+		.navbar-collapse, .navbar-form {
+			border-color: @base-background-color;
+		}
 	}
 }
 
 @media (max-width: 767px) {
-	.navbar-inverse .navbar-nav > li > a {
-		line-height: 47px;
-		height: 47px;
-		padding-top: 0;
-	}
-
-	.navbar-inverse .navbar-nav > li > a:hover {
-		text-decoration: none;
-	}
-
 	.navbar-inverse .navbar-nav > .active > a,
 	.navbar-inverse .navbar-nav > .active > a:hover,
 	.navbar-inverse .navbar-nav > .active > a:focus {
@@ -105,26 +123,6 @@ a:active, a:focus {
 }
 
 @media (min-width: 768px) {
-	.navbar-nav {
-		float: right;
-	}
-
-	.navbar-inverse .navbar-nav > li {
-		height: 65px;
-	}
-
-	.navbar-inverse .navbar-nav > li > span > a {
-		line-height: 65px;
-	}
-
-	.navbar-inverse .navbar-nav > li a {
-		padding: 0 15px;
-	}
-
-	.navbar-inverse .navbar-nav > li a:hover {
-		text-decoration: underline;
-	}
-
 	.navbar-inverse .navbar-nav > .active > a,
 	.navbar-inverse .navbar-nav > .active > a:hover,
 	.navbar-inverse .navbar-nav > .active > a:focus {
@@ -180,7 +178,7 @@ article {
 		font-size: 2.125em;
 
 		a {
-			color: @base-color;
+			color: @base-font-color;
 
 			&:hover, &:active, &:focus {
 				color: @light-blue;
@@ -231,7 +229,7 @@ article {
 	margin-bottom: 20px;
 
 	a {
-		color: @base-color;
+		color: @base-font-color;
 
 		&.previous i {
 			margin-right: 3px;	
@@ -250,12 +248,12 @@ article {
 
 .footer {
 	background: @base-background-color;
-	height: 55px;
-	line-height: 55px;
+	height: 40px;
+	line-height: 40px;
 
 	span.copyright {
 		a {
-			color: @base-color;
+			color: @base-font-color;
 			padding: 0px 0px 0px 3px;
 
 			&:hover, &:active, &:focus {

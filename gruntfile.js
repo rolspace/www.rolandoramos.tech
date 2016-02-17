@@ -64,11 +64,16 @@ module.exports = function(grunt) {
 			}
 		},
 		shell: {
-			main: {
+			serve: {
 				command: function(demo) {
 					return 'jekyll serve --config _config' + demo + '.yml --force';
 				}
-			}
+			},
+			build: {
+				command: function(demo) {
+					return 'jekyll build --config _config' + demo + '.yml --force';
+				}
+			},
 		},
 		jshint: {
 			main: 'gruntfile.js'
@@ -80,7 +85,7 @@ module.exports = function(grunt) {
 			},
 			files: ['_less/*.less', '_assets/*.*', '_includes/*.*', '_layouts/*.*',
 					'_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
-			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:main:.demo']
+			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:serve:.demo']
 		}
 	});
 
@@ -88,14 +93,14 @@ module.exports = function(grunt) {
 		'Run tasks for custom css generation', ['less','autoprefixer']);
 
 	grunt.registerTask('demo',
-		'Build the demo website', ['less','autoprefixer','copy','concat','jshint']);
+		'Build the demo website', ['less','autoprefixer','copy','concat','jshint','shell:build:.demo']);
 
 	grunt.registerTask('host-demo',
 		'Host the demo website using grunt-watch',['watch']);
 
 	grunt.registerTask('release',
-		'Build the release website', ['less','autoprefixer','copy','concat','cssmin','jshint']);
+		'Build the release website', ['less','autoprefixer','copy','concat','cssmin','jshint','shell:build:']);
 
 	grunt.registerTask('host-release',
-		'Host the release website', ['less','autoprefixer','copy','concat','cssmin','jshint','shell:main:']);
+		'Host the release website', ['less','autoprefixer','copy','concat','cssmin','jshint','shell:serve:']);
 };

@@ -18,3 +18,21 @@ layout: default
 		</article>
   </div>
 </div>
+<div class="paginator row">
+	{{% if page.previous.url %}}
+	<div class="col-md-10 col-md-offset-1">
+		<span>Previous:</span>
+		<a href="{{ page.previous.url }}" class="previous">
+      		{{ page.previous.title }}
+    	</a>
+	</div>
+	{{% endif %}}
+	{{% if page.next.url %}}
+	<div class="col-md-10 col-md-offset-1">
+		<span>Next:</span>
+		<a href="{{ page.next.url }}" class="next">
+      		{{ page.next.title }}
+    	</a>
+	</div>
+	{{% endif %}}
+</div>

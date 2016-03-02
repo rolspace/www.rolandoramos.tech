@@ -16,119 +16,115 @@ a:active, a:focus {
 
 .navbar {
 	background-color: @base-background-color;
+}
 
-	&.navbar-inverse {
-		border-bottom: none;
-		position: fixed;
-		top: 0px;
-		width: 100%;
+.navbar-nav {
+	@media (min-width: 768px)
+	{
+		float: right;
+	}
 
-		.navbar-nav {
+	& > li {
+		@media (min-width: 768px) {
+			height: 65px;
+		}
+
+		a {
+			color: #222;
+			font-size: 0.875em;
+			letter-spacing: 1px;
+			text-transform: uppercase;
+
+			@media (max-width: 767px)
+			{
+				line-height: 47px;
+				height: 47px;
+				padding-top: 0;
+			}
+
 			@media (min-width: 768px)
 			{
-				float: right;
+				line-height: 65px;
+				padding: 0 15px;
 			}
-
-			& > li {
-				@media (min-width: 768px) {
-					height: 65px;
-				}
-
-				a {
-					color: #222;
-					font-size: 0.875em;
-					letter-spacing: 1px;
-					text-transform: uppercase;
-
-					@media (max-width: 767px)
-					{
-						line-height: 47px;
-						height: 47px;
-						padding-top: 0;
-					}
-
-					@media (min-width: 768px)
-					{
-						line-height: 65px;
-						padding: 0 15px;
-					}
-
-					&:hover {
-						color: #000;
-
-						@media (max-width: 767px)
-						{
-							text-decoration: none;
-						}
-						@media (min-width: 768px)
-						{
-							text-decoration: underline;
-						}
-					}
-				}
-			}
-		}
-
-		.navbar-brand {
-			color: #222;
-			font-size: 2.625em;
-			height: 65px;
-			letter-spacing: 4px;
-			line-height: 30px;
-			text-decoration: none;
-			text-shadow: none;
 
 			&:hover {
-				color: #222;
+				color: #000;
+
+				@media (max-width: 767px)
+				{
+					text-decoration: none;
+				}
+				@media (min-width: 768px)
+				{
+					text-decoration: underline;
+				}
 			}
 		}
+	}
 
-		.navbar-toggle {
-			border-color: transparent;
-			margin-top: 18px;
-			margin-right: 12px;
-			padding: 4px;
-
-			&:hover, &:focus {
-				background-color: transparent;
-			}
-
-			& [class^="icon-"], & [class*="icon-"] {
-				font-size: 1.4em;
-			}
-
-			&:hover [class^="icon-"], &:hover [class*="icon-"] {
-				color: #fff;
-			}
+	& > .active > a,
+	& > .active > a:hover,
+	& > .active > a:focus {
+		@media (max-width: 767px){
+			background-color: #080808;
+			color: #fff;
+			text-decoration: none;	
 		}
-
-		.navbar-collapse {
-			box-shadow: none;
-		}
-
-		.navbar-collapse, .navbar-form {
-			border-color: @base-background-color;
+		@media (min-width: 768px) {
+			background-color: #ddd;
+			color: #000;
+			text-decoration: underline;
 		}
 	}
 }
 
-@media (max-width: 767px) {
-	.navbar-inverse .navbar-nav > .active > a,
-	.navbar-inverse .navbar-nav > .active > a:hover,
-	.navbar-inverse .navbar-nav > .active > a:focus {
-		background-color: #080808;
-		color: #fff;
+.navbar-inverse {
+	border-bottom: none;
+	position: fixed;
+	top: 0px;
+	width: 100%;
+
+	.navbar-brand {
+		color: #222;
+		font-size: 2.625em;
+		height: 65px;
+		letter-spacing: 4px;
+		line-height: 30px;
 		text-decoration: none;
-	}
-}
+		text-shadow: none;
 
-@media (min-width: 768px) {
-	.navbar-inverse .navbar-nav > .active > a,
-	.navbar-inverse .navbar-nav > .active > a:hover,
-	.navbar-inverse .navbar-nav > .active > a:focus {
-		background-color: #ddd;
-		color: #000;
-		text-decoration: underline;
+		&:hover,
+		&:focus {
+			color: #222;
+		}
+	}
+
+	.navbar-toggle {
+		border-color: transparent;
+		margin-top: 18px;
+		margin-right: 12px;
+		padding: 4px;
+
+		&:hover, &:focus {
+			background-color: transparent;
+		}
+
+		& [class^="icon-"], & [class*="icon-"] {
+			font-size: 1.4em;
+		}
+
+		&:hover [class^="icon-"], &:hover [class*="icon-"] {
+			color: #fff;
+		}
+	}
+
+	.navbar-collapse {
+		box-shadow: none;
+	}
+
+	.navbar-collapse, .navbar-form {
+		border-color: @base-background-color;
 	}
 }
 
@@ -249,6 +245,7 @@ article {
 .footer {
 	background: @base-background-color;
 	height: 40px;
+	font-size: 0.857em;
 	line-height: 40px;
 
 	span.copyright {
@@ -262,16 +259,22 @@ article {
 		}
 	}
 
-	span a {
-		padding: 0px 3px;
-		text-decoration: none;
-
-		&:hover, &:active, &:focus {
+	span.social-links {
+		a {
+			padding: 0px 1px;
 			text-decoration: none;
-		}
 
-		i {
-			vertical-align: middle;
+			&:hover, &:active, &:focus {
+				text-decoration: none;
+			}
+
+			& .fa-stack {
+				color:#000;
+			}
+
+			i {
+				vertical-align: middle;
+			}
 		}
 	}
 }

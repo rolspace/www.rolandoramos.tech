@@ -7,7 +7,7 @@
 /*=========================*/
 
 body {
-    font-size: 16px;
+	font-size: 16px;
 }
 
 a:active, a:focus {
@@ -173,6 +173,11 @@ article {
 		font-family: Impact, Charcoal, sans-serif;
 		font-size: 2.125em;
 
+		@media (max-width: 767px)
+		{
+			font-size: 1.750em;
+		}
+
 		a {
 			color: @base-font-color;
 
@@ -184,6 +189,10 @@ article {
 	}
 
 	.article-content {
+		@media (max-width: 767px) {
+			font-size: 0.925em;
+		}
+
 		p.subtitle {
 			margin-bottom: 10px;
 			text-decoration: underline;
@@ -235,6 +244,15 @@ article {
 			margin-left: 3px;	
 		}
 
+		span.post-arrow {
+			margin-right: 5px;
+
+			i {
+				margin-left: 0px;
+				margin-right: 0px;			
+			}
+		}
+
 		&:hover, &:active, &:focus {
 			color: @light-blue;
 			text-decoration: none;
@@ -244,11 +262,22 @@ article {
 
 .footer {
 	background: @base-background-color;
-	height: 40px;
 	font-size: 0.857em;
 	line-height: 40px;
+	margin-top: 50px;
+
+	div[class^=col-md] {
+		@media (max-width: 767px)
+		{
+			text-align: center;
+		}
+	}
 
 	span.copyright {
+		@media (min-width: 768px) {
+			float: left;
+		}
+
 		a {
 			color: @base-font-color;
 			padding: 0px 0px 0px 3px;
@@ -260,9 +289,31 @@ article {
 	}
 
 	span.social-links {
+		@media (min-width: 768px) {
+			float: right;
+		}
+
 		a {
 			padding: 0px 1px;
 			text-decoration: none;
+
+			& .linkedin {
+				&:hover, &:active, &:focus {
+					color: #0077b5;
+				}
+			}
+
+			& .googleplus {
+				&:hover, &:active, &:focus {
+					color: #dd4b39;
+				}
+			}
+
+			& .instagram {
+				&:hover, &:active, &:focus {
+					color: #125688;
+				}
+			}
 
 			&:hover, &:active, &:focus {
 				text-decoration: none;

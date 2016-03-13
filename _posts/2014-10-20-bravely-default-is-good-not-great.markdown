@@ -18,7 +18,7 @@ The general feeling I got from reading all the information available was that th
 
 <!--more-->
 
-The game was finally announced for release in the west, and I decided that I would buy it on day one (note: I very rarely do this). I felt that if I was going to use my limited gaming time on a 40+ hour RPG, it had to be this game.
+When game was finally announced for release in the west, I decided that I would buy it on day one (note: I very rarely do this). I felt that if I was going to use my limited gaming time on a 40+ hour RPG, it had to be Bravely Default.
 
 Not too long ago I finished the game, and I feel...relieved. It was definitely a good game, but I think it has one major flaw that is very hard to overlook. So let's start with the good things.
 
@@ -38,7 +38,7 @@ Now, onto the bad things...
 
 The game has a pacing problem. Everything seems fine until you reach a specific point in the story, and then, it seems like you got your own Norende sized hole to deal with.
 After finally beating the game I could not help but wonder why this decision was made. Why would the people who made the game decide that you had to repeat a specific section of the game four times (was it four or five?). In fact, that's not really the problem. The problem is that the repetition is boring. For me, it almost killed the game.
-By Chapter 6 I was saying to myself: **"This has got to be the last time, right? Right??"** And then there were <em>two</em> more go-rounds.
+By Chapter 6 I was saying to myself: <em>"This has got to be the last time, right? Right??"</em> And then there were <em>two</em> more go-rounds.
 
 Unfortunately, this game is not going to win any RPG of the Decade awards, and one specific design choice turned what had been really fun game into a hassle I am not planning to repeat. I'm glad it's over.
 

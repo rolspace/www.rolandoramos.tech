@@ -18,19 +18,21 @@ layout: default
 		</article>
   </div>
 </div>
-<div class="paginator row">
-	{{% if page.previous.url %}}
-	<div class="col-md-10 col-md-offset-1">
-		<a href="{{ page.previous.url }}" class="previous" title="Previous">
-      		<span class="post-arrow"><i class="fa fa-angle-left"></i></span>{{ page.previous.title }}
-    	</a>
+<div class="paginator">
+	<div class="row">
+		{% if page.previous %}
+			<div class="col-md-10 col-md-offset-1">
+				<a href="{{ page.previous.url }}" class="previous-page" title="Previous">
+		      		<span><i class="fa fa-angle-left"></i></span>{{ page.previous.title }}
+		    	</a>
+			</div>
+		{% endif %}
+		{% if page.next %}
+			<div class="col-md-10 col-md-offset-1">
+				<a href="{{ page.next.url }}" class="next-page" title="Next">
+		      		<span><i class="fa fa-angle-right"></i></span>{{ page.next.title }}
+		    	</a>
+			</div>
+		{% endif %}
 	</div>
-	{{% endif %}}
-	{{% if page.next.url %}}
-	<div class="col-md-10 col-md-offset-1">
-		<a href="{{ page.next.url }}" class="next" title="Next">
-      		<span class="post-arrow"><i class="fa fa-angle-right"></i></span>{{ page.next.title }}
-    	</a>
-	</div>
-	{{% endif %}}
 </div>

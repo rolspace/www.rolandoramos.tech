@@ -143,6 +143,12 @@ a:active, a:focus {
 	}
 }
 
+#read {
+	.article-title {
+		font-size: 1.5em;
+	}	
+}
+
 article {
 	border-bottom: 1px solid #ddd;
 	padding-bottom: 15px;
@@ -189,10 +195,6 @@ article {
 	}
 
 	.article-content {
-		@media (max-width: 767px) {
-			font-size: 0.925em;
-		}
-
 		p.subtitle {
 			margin-bottom: 10px;
 			text-decoration: underline;
@@ -229,28 +231,33 @@ article {
 }
 
 .paginator {
-	font-size: 1.125em;
+	font-size: 0.875em;
+	font-weight: bold;
 	margin-top: 20px;
 	margin-bottom: 20px;
+	text-transform: uppercase;
 
 	a {
 		color: @base-font-color;
 
-		&.previous i {
+		&.next-page,
+		&.previous-page {
+			& span {
+				margin-right: 5px;
+
+				i {
+					margin-left: 0px;
+					margin-right: 0px;			
+				}	
+			}
+		}
+
+		&.next-page i {
 			margin-right: 3px;	
 		}
 
-		&.next i {
+		&.previous-page i {
 			margin-left: 3px;	
-		}
-
-		span.post-arrow {
-			margin-right: 5px;
-
-			i {
-				margin-left: 0px;
-				margin-right: 0px;			
-			}
 		}
 
 		&:hover, &:active, &:focus {

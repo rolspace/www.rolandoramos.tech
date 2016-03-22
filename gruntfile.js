@@ -9,7 +9,7 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'css/rolspace.css': '_less/rolspace.less'
+					'css/rolspace.css': '_less/*'
 				}
 			}
 		},

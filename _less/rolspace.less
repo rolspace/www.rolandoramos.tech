@@ -24,6 +24,12 @@ a:active, a:focus {
 		float: right;
 	}
 
+	@media (max-width: 767px)
+	{
+		margin-bottom: 0px;
+		margin-top: 0px;
+	}
+
 	& > li {
 		@media (min-width: 768px) {
 			height: 65px;
@@ -61,20 +67,26 @@ a:active, a:focus {
 				}
 			}
 		}
-	}
 
-	& > .active > a,
-	& > .active > a:hover,
-	& > .active > a:focus {
-		@media (max-width: 767px){
-			background-color: #080808;
-			color: #fff;
-			text-decoration: none;	
+		&.active {
+			@media (max-width: 767px) {
+				background-color: #666;
+			}
 		}
-		@media (min-width: 768px) {
-			background-color: #ddd;
-			color: #000;
-			text-decoration: underline;
+
+		&.active a,
+		&.active a:hover,
+		&.active a:focus {
+			@media (max-width: 767px){
+				color: #fff !important;
+				text-decoration: none;	
+			}
+
+			@media (min-width: 768px) {
+				background-color: #ddd;
+				color: #000;
+				text-decoration: underline;
+			}
 		}
 	}
 }
@@ -94,6 +106,10 @@ a:active, a:focus {
 		text-decoration: none;
 		text-shadow: none;
 
+		@media (max-width: 767px) {
+			padding-left: 0px;
+		}
+
 		&:hover,
 		&:focus {
 			color: #222;
@@ -102,9 +118,13 @@ a:active, a:focus {
 
 	.navbar-toggle {
 		border-color: transparent;
-		margin-top: 18px;
-		margin-right: 12px;
+		margin-top: 21px;
+		margin-right: 5px;
 		padding: 4px;
+
+		& .icon-bar {
+			background-color: #000;
+		}
 
 		&:hover, &:focus {
 			background-color: transparent;

@@ -12,15 +12,19 @@ tags:
 ---
 <img class="img-responsive" src="/_assets/141020/bravelydefault.jpg" alt="Bravely Default">
 
-This game was on my radar for a quite a while. Initially, it was released only in Japan, but there were many gaming websites with information about the game (story, characters, features, etc).
+Bravely Default was first released in Japan in October 2012. Soon after its release (or even before) it received a lot of coverage from Western gaming media. Due to this, it was easy to find information about the game online. Some time after its release in Japan, it was announced that the game would be localized and released in western markets, to the joy of RPG fans everywhere.
 
-The general feeling I got from reading all the information available was that the game was pretty great, even though it had a few minor flaws. The way people were writing about it, it felt like Bravely Default was the next *Great RPG*.
+It had been a while since I had the time available to play a 40+ hour RPG, so Bravely Default caught my attention as the time drew near for its western release. I decided to go against my nature and buy it on release date, taking a chance on all the positive comments and reviews coming from Japan.
 
 <!--more-->
 
-When game was finally announced for release in the west, I decided that I would buy it on day one (note: I very rarely do this). I felt that if I was going to use my limited gaming time on a 40+ hour RPG, it had to be Bravely Default.
+Not too long ago I finally finished the game, and I feel...relieved. Bravely Default was definitely a good game, but I believe that its one major flaw is extremely hard to overlook. It is a game that is easy to enjoy, however, there is a moment when it will test your patience and willingness to go all the way to the end.
 
-Not too long ago I finished the game, and I feel...relieved. It was definitely a good game, but I think it has one major flaw that is very hard to overlook. So let's start with the good things.
+The game starts as one of its protagonists, Tiz Arrior, wakes up in the town of {town name} after a giant chasm appeared and destroyed his home village, Norende. Tiz is the only survivor from the disaster, and he journeys to the chasm hoping to find his brother. There, he find Agnes Oblige, the Vestal of Wind, trying to find clues to explain the disaster. Together, they decide to travel together, in order to awaken the four crystals so that the damage from the chasm can be repaired.
+
+For the most part, the story does a good job in advancing the game from one location to another, while letting the characters gain experience and Jobs during the quests. Unfortunately, there is a specific point in the story that changes the way the game progresses, and it forces the player to run through the same cycle 5 different times.
+
+This is by far the biggest flaw in Bravely Default. In order to achieve the True Ending, the player must awaken all 4 Crystals in 5 alternate worlds, essentially having to fight the same battles each time. 
 
 The battle system in Bravely Default is somewhat different from your typical turn based RPG. During a turn, the player can select to either <em>Brave</em> or <em>Default</em> for a character in the battle. If you select Brave you use BP (battle points) and the character will unleash multiple attacks (max 4) on the enemy. If you select Default, then the character will store 1 BP for the next turn and defend from any enemy attacks.
 

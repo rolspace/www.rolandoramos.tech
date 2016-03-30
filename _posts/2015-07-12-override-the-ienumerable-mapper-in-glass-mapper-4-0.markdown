@@ -27,7 +27,7 @@ public class Model
 
 This custom attribute will map to a field similar to the one shown in this image:
 
-<img class="img-responsive" src="/_assets/150712/sitecorefield.png" alt="Sample Sitecore Field">
+<img class="img-responsive center-block" src="/_assets/150712/sitecorefield.png" alt="Sample Sitecore Field">
 
 In order to create this custom attribute, it is necessary to inherit from the `SitecoreFieldAttribute` class from the Glass.Mapper.Sc.Configuration.Attributes namespace. In this scenario, the Configure method from the `SitecoreFieldAttribute` class must be overridden to setup the Attribute's configuration:
 
@@ -52,7 +52,7 @@ public class CustomIEnumerableAttribute : SitecoreFieldAttribute
 }
 {% endhighlight %}
 
-The Configure method of the class shown above requires an object of type `AbstractPropertyConfiguration`. This means I need create another class. I will name this class `CustomIEnumerableConfiguration`. This class will be derived from the `SitecoreFieldConfiguration` class, which in turn, inherits from the `AbstractPropertyConfiguration` class. This way I can avoid writing a full implementation in the new class, and I only need to override the Copy method from the `SitecoreFieldConfiguration` class:
+The Configure method of the class shown above requires an object of type `AbstractPropertyConfiguration`. This means I need to create another class. I will name this class `CustomIEnumerableConfiguration` and it will be derived from the `SitecoreFieldConfiguration` class, which already inherits from the `AbstractPropertyConfiguration` class. This way I can avoid writing a full implementation for the new class, and I only need to override the Copy method:
 
 {% highlight c# %}
 public class CustomIEnumerableConfiguration : SitecoreFieldConfiguration
@@ -189,7 +189,7 @@ public static IDependencyResolver CreateResolver()
 
 After this code is deployed to the Sitecore instance, it is easy to determine that the code used in the *CustomIEnumerableMapper* class is being executed:
 
-<img class="img-responsive" src="/_assets/150712/sitecorelog.png" alt="Sitecore Log">
+<img class="img-responsive center-block" src="/_assets/150712/sitecorelog.png" alt="Sitecore Log">
 
 As a final note, it is important to point out that this approach will work if you are using Glass.Mapper 4.0 together with Glass.Mapper.Sc.CastleWindsor 4.0 library in your solution.
 

@@ -65,16 +65,16 @@ module.exports = function(grunt) {
 			}
 		},
 		shell: {
-			serve: {
-				command: function(demo) {
-					return 'jekyll serve --config _config' + demo + '.yml --force';
-				}
-			},
 			build: {
 				command: function(demo) {
 					return 'jekyll build --config _config' + demo + '.yml --force';
 				}
 			},
+			serve: {
+				command: function(demo) {
+					return 'jekyll serve --config _config' + demo + '.yml --force';
+				}
+			}
 		},
 		jshint: {
 			main: ['gruntfile.js', 'js/rolspace.js']

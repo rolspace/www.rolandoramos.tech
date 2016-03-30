@@ -47,7 +47,8 @@ module.exports = function(grunt) {
 					  dest: 'css/rolspace.css'
 					},
 					{ src: ['bower_components/jquery/dist/jquery.min.js',
-							'bower_components/bootstrap/dist/js/bootstrap.min.js'],
+							'bower_components/bootstrap/dist/js/bootstrap.min.js',
+							'js/rolspace.js'],
 					  dest: 'js/rolspace.min.js'
 					}
 				]
@@ -76,15 +77,15 @@ module.exports = function(grunt) {
 			},
 		},
 		jshint: {
-			main: 'gruntfile.js'
+			main: ['gruntfile.js', 'js/rolspace.js']
 		},
 		watch: {
 			options: {
 				atBegin: true,
 				interrupt: true
 			},
-			files: ['_less/*.less', '_assets/*.*', '_includes/*.*', '_layouts/*.*',
-					'_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
+			files: ['_less/*.less', 'js/rolspace.js', '_assets/*.*', '_includes/*.*', 'gruntfile.js',
+					 '_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
 			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:serve:.demo']
 		}
 	});

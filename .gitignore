@@ -5,7 +5,7 @@ _site/
 
 node_modules/
 bower_components/
-js/
+js/rolspace.min.js
 fonts/
 
 css/

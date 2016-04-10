@@ -187,7 +187,7 @@ article {
 		color: #888;
 		display: block;
 		font-family: Verdana, Geneva, sans-serif;
-		font-size: 0.750em;
+		font-size: 0.875em;
 		margin-bottom: 10px;
 		text-transform: uppercase;
 
@@ -230,7 +230,6 @@ article {
 
 	span.read-more {
 		color: @light-blue;
-		font-size: 0.875em;
 		margin-top: 10px;
 
 		&:hover, &:active, &:focus {
@@ -293,6 +292,10 @@ article {
 	font-size: 0.857em;
 	line-height: 40px;
 	margin-top: 50px;
+
+	@media (max-width: 767px) {
+		line-height: 30px;
+	}
 
 	div[class^=col-md] {
 		@media (max-width: 767px)

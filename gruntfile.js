@@ -85,7 +85,7 @@ module.exports = function(grunt) {
 				interrupt: true
 			},
 			files: ['_less/*.less', 'js/rolspace.js', '_assets/*.*', '_includes/*.*', 'gruntfile.js',
-					 '_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', 'index.html'],
+					 '_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', '404.html', 'index.html'],
 			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:serve:.demo']
 		}
 	});

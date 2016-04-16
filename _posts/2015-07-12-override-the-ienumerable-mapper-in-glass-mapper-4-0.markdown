@@ -82,7 +82,7 @@ Once the `CustomIEnumerableConfiguration` class is complete, then the `CustomIEn
 For this, I will inherit from the `AbstractSitecoreFieldMapper` class in the Glass.Mapper.Sc.DataMappers namespace. This is the base class from which all mappers in Glass.Mapper assembly inherit.
 
 The implementation for the `CustomIEnumerableMapper` class is shown below. For the purpose of this post I have borrowed the implementation from the `SitecoreFieldIEnumerableMapper` class used by Glass.Mapper.
-I have only added a few lines of code, in order to write to the Sitecore Log and demonstrate the use of the custom type mapper class:
+I have only added a couple of lines of code to the new class, in order to demonstrate that the custom mapper is being used:
 
 {% highlight c# %}
 public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper
@@ -160,11 +160,19 @@ public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper
 
 There are three methods that need to be overridden in order to properly implement our custom `IEnumerable<T>` type mapper:
 
-* *GetFieldValue*: this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the `IEnumerable<T>`.
-* *SetFieldValue*: this method will take the value of the `IEnumerable<T>` instance and store it in the field.
-* *CanHandle*: defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type `CustomIEnumerableConfiguration`.
+<ul>
+   <li>
+      <em>GetFieldValue</em>: this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the <code>IEnumerable&#60;T&#62;</code>.
+   </li>
+   <li style="margin-top: 5px">
+      <em>SetFieldValue</em>: this method will take the value of the <code>IEnumerable&#60;T&#62;</code> instance and store it in the field.
+   </li>
+   <li style="margin-top: 5px">
+      <em>CanHandle</em>: defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type <code>CustomIEnumerableConfiguration</code>.
+   </li>
+</ul>
 
-Once this is all completed, it is possible to include this type mapper in the CreateResolverMethod of the `GlassMapperScCustom` class:
+Once this is completed, it is possible to include the custom type mapper in the CreateResolverMethod of the `GlassMapperScCustom` class:
 
 {% highlight c# %}
 public static IDependencyResolver CreateResolver()
@@ -187,7 +195,7 @@ public static IDependencyResolver CreateResolver()
 }
 {% endhighlight %}
 
-After this code is deployed to the Sitecore instance, it is easy to determine that the code used in the *CustomIEnumerableMapper* class is being executed:
+Once the code is deployed to a Sitecore instance, we can quickly show that the custom mapper implemented in the *CustomIEnumerableMapper* class is being executed:
 
 <img class="img-responsive center-block" src="/_assets/150712/sitecorelog.png" alt="Sitecore Log">
 

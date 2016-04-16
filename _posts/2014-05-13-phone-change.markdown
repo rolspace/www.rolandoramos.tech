@@ -3,8 +3,6 @@ layout: post
 published: true
 title: Phone Change
 date: 2014-05-13
-categories:
-- Uncategorized
 tags:
 - gadgets
 ---

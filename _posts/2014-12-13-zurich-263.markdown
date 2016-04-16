@@ -3,8 +3,6 @@ layout: post
 published: true
 title: 'Zürich: 263'
 date: 2014-12-13
-categories:
-- Uncategorized
 tags:
 - zurich
 ---

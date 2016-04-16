@@ -4,8 +4,6 @@ status: publish
 published: true
 title: 'SQL Server: the PIVOT operator'
 date: 2014-09-24
-categories:
-- Uncategorized
 tags:
 - sql server
 - code

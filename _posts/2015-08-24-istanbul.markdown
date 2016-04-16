@@ -2,8 +2,6 @@
 layout: post
 title: Istanbul
 date: 2015-08-24 21:30:46
-categories:
-- Uncategorized
 tags:
 - hello world
 ---

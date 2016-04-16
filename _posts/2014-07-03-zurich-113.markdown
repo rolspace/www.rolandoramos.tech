@@ -3,8 +3,6 @@ layout: post
 published: true
 title: 'Z&uuml;rich: 113'
 date: 2014-07-03
-categories:
-- Uncategorized
 tags:
 - zurich
 ---

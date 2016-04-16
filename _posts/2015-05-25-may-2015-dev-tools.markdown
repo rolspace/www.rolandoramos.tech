@@ -3,8 +3,6 @@ layout: post
 published: true
 title: May 2015 Dev Tools
 date: 2015-05-25
-categories:
-- Uncategorized
 tags:
 - tools
 - code

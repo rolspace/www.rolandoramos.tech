@@ -3,8 +3,6 @@ layout: post
 published: true
 title: Windows 10 is coming
 date: 2015-06-01
-categories:
-- Uncategorized
 tags:
 - pc
 - tools

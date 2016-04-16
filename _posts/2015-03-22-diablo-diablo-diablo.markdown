@@ -3,8 +3,6 @@ layout: post
 published: true
 title: Diablo, Diablo, Diablo
 date: 2015-03-22
-categories:
-- Uncategorized
 tags:
 - late reviews
 - games

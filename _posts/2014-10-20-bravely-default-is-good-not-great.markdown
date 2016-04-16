@@ -3,8 +3,6 @@ layout: post
 published: true
 title: Bravely Default is quite good, but not great
 date: 2014-10-20
-categories:
-- Uncategorized
 tags:
 - 3ds
 - late reviews

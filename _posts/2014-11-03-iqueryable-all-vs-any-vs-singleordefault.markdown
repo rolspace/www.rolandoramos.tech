@@ -3,8 +3,6 @@ layout: post
 published: true
 title: IQueryable&#58; All() vs. Any() vs. SingleOrDefault()
 date: 2014-11-03
-categories:
-- Uncategorized
 tags:
 - c#
 - code

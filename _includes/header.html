@@ -1,36 +1,29 @@
 <header class="navbar navbar-inverse navbar-fixed-top rolspace-header" role="navigation">
   <div class="container">
-    <div class="row">
-      <div class="col-md-10 col-md-offset-1">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-          <a class="navbar-brand" href="{{ site.baseurl }}/">
-            <h1>{{ site.title }}</h1>
-          </a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li>
-              <span><a href="{{ site.baseurl }}/read/">read</a></span>
-            </li>
-            <li>
-              <span><a href="{{ site.baseurl }}/about/">about</a></span>
-            </li>
-          </ul>
-        </div>
-        <!-- <div class="trigger">
-          {% for page in site.pages %}
-            {% if page.title %}
-              <a class="page-link" href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
-            {% endif %}
-          {% endfor %}
-        </div> -->
+    <!--<div class="row">-->
+      <!--<div class="col-md-10 col-md-offset-1">-->
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="{{ site.baseurl }}/">
+          <h1>{{ site.title }}</h1>
+        </a>
       </div>
-    </div>
+      <div id="navbar" class="collapse navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li>
+            <span><a href="{{ site.baseurl }}/read/">read</a></span>
+          </li>
+          <li>
+            <span><a href="{{ site.baseurl }}/about/">about</a></span>
+          </li>
+        </ul>
+      </div>
+      <!--</div>-->
+    <!--</div>-->
   </div>
 </header>

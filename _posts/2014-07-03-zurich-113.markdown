@@ -6,7 +6,7 @@ date: 2014-07-03
 tags:
 - zurich
 ---
-<img class="img-responsive" src="/_assets/140703/zurich-113.jpg" alt="Zürich" />
+<img class="img-responsive" src="/assets/140703/zurich-113.jpg" alt="Zürich" />
 
 It has been 113 days since the move to Z&uuml;rich.
 

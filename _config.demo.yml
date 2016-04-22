@@ -9,7 +9,7 @@ paginate_path: "/page:num/"
 
 # Build settings
 markdown: kramdown
-include: [ _assets, 404.html ]
+include: [ assets, 404.html ]
 exclude: [ bower_components, node_modules, bower.json, package.json, gruntfile.js,
 			rolspace.sublime-project, rolspace.sublime-workspace ]
 

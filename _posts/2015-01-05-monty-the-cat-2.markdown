@@ -6,4 +6,4 @@ date: 2015-01-05
 tags:
 - monty
 ---
-<img class="img-responsive" src="/_assets/150105/montythecat.jpg" alt="Monty The Cat #2" />
+<img class="img-responsive" src="/assets/150105/montythecat.jpg" alt="Monty The Cat #2" />

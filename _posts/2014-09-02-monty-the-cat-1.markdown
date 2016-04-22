@@ -6,4 +6,4 @@ date: 2014-09-02
 tags:
 - monty
 ---
-<img class="img-responsive" src="/_assets/140902/montythecat.jpg" alt="Monty the Cat #1" alt="Monty" />
+<img class="img-responsive" src="/assets/140902/montythecat.jpg" alt="Monty the Cat #1" alt="Monty" />

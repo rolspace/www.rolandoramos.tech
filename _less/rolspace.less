@@ -197,7 +197,7 @@ article {
 		color: #888;
 		display: block;
 		font-family: Verdana, Geneva, sans-serif;
-		font-size: 0.875em;
+		font-size: 0.813em;
 		margin-bottom: 10px;
 		text-transform: uppercase;
 
@@ -207,12 +207,11 @@ article {
 	}
 
 	.article-title {
-		font-family: Impact, Charcoal, sans-serif;
 		font-size: 2.125em;
 
 		@media (max-width: 767px)
 		{
-			font-size: 1.750em;
+			font-size: 1.875em;
 		}
 
 		a {
@@ -235,6 +234,10 @@ article {
 			line-height: 24px;
 			margin-bottom: 20px;
 			text-align: justify;
+		}
+
+		ul {
+			padding-left: 10px;
 		}
 	}
 
@@ -268,6 +271,10 @@ article {
 	margin-bottom: 20px;
 	text-transform: uppercase;
 
+	.article-previous-page {
+		margin-bottom: 10px;
+	}
+
 	a {
 		color: @base-font-color;
 
@@ -284,11 +291,11 @@ article {
 		}
 
 		&.next-page i {
-			margin-right: 3px;	
+			margin-right: 3px;
 		}
 
 		&.previous-page i {
-			margin-left: 3px;	
+			margin-left: 3px;
 		}
 
 		&:hover, &:active, &:focus {
@@ -300,12 +307,13 @@ article {
 
 .footer {
 	background: @base-background-color;
-	font-size: 0.857em;
+	font-size: 0.875em;
 	line-height: 40px;
 	margin-top: 50px;
 
 	@media (max-width: 767px) {
 		line-height: 30px;
+		padding-bottom: 10px;
 	}
 
 	div[class^=col-md] {
@@ -316,12 +324,17 @@ article {
 	}
 
 	span.copyright {
+		@media (max-width: 767px) {
+			font-size: 0.929em
+		}
+
 		@media (min-width: 768px) {
 			float: left;
 		}
 
 		a {
 			color: @base-font-color;
+			text-transform: capitalize;
 			padding: 0px 0px 0px 3px;
 
 			&:hover, &:active, &:focus {

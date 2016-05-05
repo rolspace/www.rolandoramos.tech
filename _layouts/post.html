@@ -21,16 +21,22 @@ layout: default
 <div class="paginator">
 	<div class="row">
 		{% if page.previous %}
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-10 col-md-offset-1 article-previous-page">
 				<a href="{{ page.previous.url }}" class="previous-page" title="Previous">
-		      		<span><i class="fa fa-angle-left"></i></span>{{ page.previous.title }}
+		      		<span>
+		      			<i class="fa fa-angle-left"></i>
+	      			</span>
+	      			<span>{{ page.previous.title }}</span>
 		    	</a>
 			</div>
 		{% endif %}
 		{% if page.next %}
-			<div class="col-md-10 col-md-offset-1">
+			<div class="col-md-10 col-md-offset-1 article-next-page">
 				<a href="{{ page.next.url }}" class="next-page" title="Next">
-		      		<span><i class="fa fa-angle-right"></i></span>{{ page.next.title }}
+		      		<span>
+		      			<i class="fa fa-angle-right"></i>
+	      			</span>
+	      			<span>{{ page.next.title }}</span>
 		    	</a>
 			</div>
 		{% endif %}

@@ -9,7 +9,7 @@ I was born and raised in Panama City, Panama where I lived for most of my life. 
 
 Currently I reside in Z&uuml;rich, which is a great place to be. Still getting used to it, but I am definitely having a good time here.
 
-I have been a web developer for 7+ years, designing technical solutions and developing applications with Microsoft products. Even though .NET takes up most of my time, I dedicate myself to learn...to learn as much as possible about technology and life.
+I have been a software engineer for 8+ years, designing technical solutions and developing applications with Microsoft products. Even though .NET takes up most of my time, I dedicate myself to learn...to learn as much as possible about technology and life.
 
 You can also find me on <a href="http://ch.linkedin.com/in/rolandoramosrestrepo">LinkedIn</a>, <a href="http://instagram.com/rolspace">Instagram</a>, and <a href="https://plus.google.com/u/0/+RolandoRamosRestrepo/about">Google+</a>. If you get in touch, I'll be sure to answer as quickly as I can.
 

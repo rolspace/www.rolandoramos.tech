@@ -3,10 +3,24 @@
 @light-blue: #1281d3;
 @dark-blue: #0c568d;
 
+/* Fonts */
+/*=========================*/
+@font-face {
+    font-family: 'Noto Sans';
+    src: url('/fonts/noto-regular/NotoSans-Regular-webfont.eot');
+    src: url('/fonts/noto-regular/NotoSans-Regular-webfont.eot?#iefix') format('embedded-opentype'),
+         url('/fonts/noto-regular/NotoSans-Regular-webfont.woff') format('woff'),
+         url('/fonts/noto-regular/NotoSans-Regular-webfont.ttf') format('truetype'),
+         url('/fonts/noto-regular/NotoSans-Regular-webfont.svg#noto_sansregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
 /* Bootstrap Modifications */
 /*=========================*/
 
 body {
+	font-family: 'Noto Sans';
 	font-size: 16px;
 }
 
@@ -112,6 +126,7 @@ a:active, a:focus {
 		h1 {
 			color: #222;
 			font-size: 2.625em;
+			font-weight: bold;
 			letter-spacing: 4px;
 			line-height: 30px;
 			margin-bottom: 0px;
@@ -176,7 +191,7 @@ a:active, a:focus {
 
 #read {
 	.article-title {
-		font-size: 1.5em;
+		font-size: 1.6em;
 	}	
 }
 
@@ -225,6 +240,7 @@ article {
 	}
 
 	.article-content {
+
 		p.subtitle {
 			margin-bottom: 10px;
 			text-decoration: underline;
@@ -237,13 +253,13 @@ article {
 		}
 
 		ul {
-			padding-left: 10px;
+			padding-left: 20px;
 		}
 	}
 
 	span.read-more {
 		color: @light-blue;
-		font-size: 0.813em;
+		font-size: 0.875em;
 		text-transform: uppercase;
 		margin-top: 10px;
 

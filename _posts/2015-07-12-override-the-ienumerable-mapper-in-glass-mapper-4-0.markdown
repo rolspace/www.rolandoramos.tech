@@ -160,13 +160,13 @@ There are three methods that need to be overridden in order to properly implemen
 
 <ul>
    <li>
-      <em>GetFieldValue</em>: this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the <code>IEnumerable&#60;T&#62;</code>.
+      <em>GetFieldValue:</em> this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the <code>IEnumerable&#60;T&#62;</code>.
    </li>
    <li style="margin-top: 5px">
-      <em>SetFieldValue</em>: this method will take the value of the <code>IEnumerable&#60;T&#62;</code> instance and store it in the field.
+      <em>SetFieldValue:</em> this method will take the value of the <code>IEnumerable&#60;T&#62;</code> instance and store it in the field.
    </li>
    <li style="margin-top: 5px">
-      <em>CanHandle</em>: defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type <code>CustomIEnumerableConfiguration</code>.
+      <em>CanHandle:</em> defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type <code>CustomIEnumerableConfiguration</code>.
    </li>
 </ul>
 

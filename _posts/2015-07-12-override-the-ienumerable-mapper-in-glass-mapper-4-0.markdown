@@ -197,6 +197,6 @@ Once the code is deployed to a Sitecore instance, we can quickly show that the c
 
 <img class="img-responsive center-block" src="/assets/150712/sitecorelog.png" alt="Sitecore Log">
 
-As a final note, it is important to point out that this approach will work if you are using Glass.Mapper 4.0 together with Glass.Mapper.Sc.CastleWindsor 4.0 library in your solution.
+As a final note, it is important to point out that this approach will work if you are using Glass.Mapper 4.0 together with the Glass.Mapper.Sc.CastleWindsor 4.0 library in your solution.
 
 Unfortunately, I have not been able to test this functionality in Glass.Mapper.Sc 4.0 using a different IoC container. However, the code provided here serves as a good starting point for anyone trying to achieve a similar result.

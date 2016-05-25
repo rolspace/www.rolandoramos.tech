@@ -44,7 +44,7 @@ module.exports = function(grunt) {
 					{ src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
 					  		'bower_components/font-awesome/css/font-awesome.min.css',
 				  			'css/rolspace.css'],
-					  dest: 'css/rolspace.css'
+					  dest: 'css/rolspace.min.css'
 					},
 					{ src: ['bower_components/jquery/dist/jquery.min.js',
 							'bower_components/bootstrap/dist/js/bootstrap.min.js',
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'css/rolspace.min.css': ['css/rolspace.css']
+					'css/rolspace.min.css': ['css/rolspace.min.css']
 				}
 			}
 		},

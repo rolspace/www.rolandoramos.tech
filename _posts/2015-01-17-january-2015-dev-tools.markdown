@@ -13,9 +13,7 @@ tags:
 [LearnYouNode]: https://github.com/rvagg/learnyounode "LearnYouNode"
 [ArtOfNode]: https://github.com/maxogden/art-of-node "Art of Node"
 
-Recently, I came across some useful development tools, maybe they'll help you out as well.
-
-<p class="subtitle">Admin Command Prompt in Windows</p>
+<p class="subtitle">Admin Command Prompt for Windows 8 in the context menu</p>
 
 <img class="img-responsive" src="/assets/150117/cmdpromptfolder.png" alt="Admin Command Prompt" />
 

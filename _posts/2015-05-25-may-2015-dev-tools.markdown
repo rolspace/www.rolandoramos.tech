@@ -11,8 +11,6 @@ tags:
 [dotPeek]: https://www.jetbrains.com/decompiler/ "dotPeek"
 [LinqPad]: https://www.linqpad.net/ "LinqPad"
 
-Here's a few more development tools, to make your life easier:
-
 <p class="subtitle">Unicorn</p>
 
 

@@ -9,14 +9,14 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'css/rolspace.css': '_less/*'
+					'dist/css/rolspace.css': '_less/*'
 				}
 			}
 		},
 		autoprefixer: {
 			main: {
 				files: {
-					'css/rolspace.css': 'css/rolspace.css'	
+					'dist/css/rolspace.css': 'dist/css/rolspace.css'	
 				}
 			}
 		},
@@ -27,13 +27,13 @@ module.exports = function(grunt) {
 						expand: true,
 						cwd: 'bower_components/bootstrap/dist/fonts/',
 						src: ['*'],
-						dest: 'fonts/'
+						dest: 'dist/fonts/'
 					},
 					{
 						expand: true,
 						cwd: 'bower_components/font-awesome/fonts/',
 						src: ['*'],
-						dest: 'fonts/'
+						dest: 'dist/fonts/'
 					}
 				],
 			},
@@ -43,13 +43,13 @@ module.exports = function(grunt) {
 				files: [
 					{ src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
 					  		'bower_components/font-awesome/css/font-awesome.min.css',
-				  			'css/rolspace.css'],
-					  dest: 'css/rolspace.min.css'
+				  			'dist/css/rolspace.css'],
+					  dest: 'dist/css/rolspace.min.css'
 					},
 					{ src: ['bower_components/jquery/dist/jquery.min.js',
 							'bower_components/bootstrap/dist/js/bootstrap.min.js',
-							'js/rolspace.js'],
-					  dest: 'js/rolspace.min.js'
+							'dist/js/rolspace.js'],
+					  dest: 'dist/js/rolspace.min.js'
 					}
 				]
 			}
@@ -60,7 +60,7 @@ module.exports = function(grunt) {
 			},
 			main: {
 				files: {
-					'css/rolspace.min.css': ['css/rolspace.min.css']
+					'dist/css/rolspace.min.css': ['css/rolspace.min.css']
 				}
 			}
 		},
@@ -80,7 +80,7 @@ module.exports = function(grunt) {
 				atBegin: true,
 				interrupt: true
 			},
-			files: ['_less/*.less', 'js/rolspace.js', '_assets/*.*', '_includes/*.*', 'gruntfile.js',
+			files: ['_less/*.less', 'dist/js/rolspace.js', '_assets/*.*', '_includes/*.*', 'gruntfile.js',
 					 '_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', '404.html', 'index.html'],
 			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:serve']
 		}

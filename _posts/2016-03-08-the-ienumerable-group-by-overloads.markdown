@@ -6,7 +6,7 @@ tags:
 - hello world
 ---
 
-From time to time, I have needed to create a few Linq queries using the GroupBy command, and for some reason, I always found it easier to use the query syntax, instead of Lambda expressions.
+From time to time, I have had the need to create a few Linq queries using the GroupBy command. For some reason, I have always found it easier to use the query syntax, instead of Lambda expressions.
 
 Today I decided to go through each of the GroupBy overloads in order to clarify things and make life easier on my end (and maybe for you as well!). One note though, I have decided not include the overloads using the <code>IEqualityComparer</code>, as they are the same version of another overload with just an additional parameter.
 
@@ -181,7 +181,7 @@ public class Person
 
 Now it is time to start calling the GroupBy methods. This post will discuss the Lamdba implementation of each overload, however, the Linq syntax implementation is included as well. Here we go:
 
-<p class="subtitle-small">1. Enumerable.GroupBy&lt;TSource, TKey&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</p>
+<p class="subtitle">1. Enumerable.GroupBy&lt;TSource, TKey&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</p>
 
 The first GroupBy overload is the simplest to use. The method takes two parameters, the first parameter is the <code>IEnumerable</code> collection to be grouped, while the second parameter defines the key that will be used to group the collection.
 
@@ -224,13 +224,13 @@ The items in the collection are being grouped by the Type property into a collec
 <td>Person { Id = 17, FirstName = David, LastName = Robinett, Age = 33 }</td>
 </tr>
 <tr>
-<td colspan="2">…and so on…</td>
+<td colspan="2">…etc, etc…</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<p class="subtitle-small">2. Enumerable.GroupBy&lt;TSource, TKey, TElement&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</p>
+<p class="subtitle">2. Enumerable.GroupBy&lt;TSource, TKey, TElement&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</p>
 
 The second overload takes three parameters, two of which we have already seen in overload #1. The third parameter is:  <code>Func&lt;TSource, TElement&gt;</code>. This parameter defines a delegate that will project the elements in the source collection into a new collection.
 
@@ -280,13 +280,13 @@ The code sample produces the following grouped result:
 <td>{ FullName = David Robinett, Age = 33 }</td>
 </tr>
 <tr>
-<td colspan="2">…and so on…</td>
+<td colspan="2">…etc, etc…</td>
 </tr>
 </tbody>
 </table>
 </div>
 
-<p class="subtitle-small">3. Enumerable.GroupBy&lt;TSource, TKey, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</p>
+<p class="subtitle">3. Enumerable.GroupBy&lt;TSource, TKey, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</p>
 
 The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is:  <code>Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;</code>. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.
 
@@ -347,7 +347,7 @@ The sample generates a new collection where the items contain the key used to cr
 </table>
 </div>
 
-<p class="subtitle-small">4. Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;)</p>
+<p class="subtitle">4. Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;)</p>
 
 The final overload combines all the parameters added in the previous overloads. Using this, the overload allows the caller to create the key to group the source collection, to project the source collection into a collection of a different type, and to project the grouped result into a collection of a different type:
 

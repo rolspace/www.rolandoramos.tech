@@ -13,7 +13,7 @@ tags:
 [LearnYouNode]: https://github.com/rvagg/learnyounode "LearnYouNode"
 [ArtOfNode]: https://github.com/maxogden/art-of-node "Art of Node"
 
-<p class="subtitle">Admin Command Prompt for Windows 8 in the context menu</p>
+<p class="subtitle-large">Admin Command Prompt for Windows 8 in the context menu</p>
 
 <img class="img-responsive" src="/assets/150117/cmdpromptfolder.png" alt="Admin Command Prompt" />
 
@@ -25,7 +25,7 @@ Using this registry edit, you can open a Command Prompt with Admin privileges fr
 
 [http://michaelcrump.net/power-tip-elevated-command-prompt-here-in-windows-8-1][CommandPrompt]
 
-<p class="subtitle">VSCommands for Visual Studio</p>
+<p class="subtitle-large">VSCommands for Visual Studio</p>
 
 A colleague of mine told me about this Visual Studio extension some time ago. It provides some very useful features and tools to enhance your Visual Studio productivity.
 
@@ -42,7 +42,7 @@ My three favorite commands from this extension are:
 You can read more about this extension here: [http://vscommands.squaredinfinity.com][VSCommands]
 
 
-<p class="subtitle">Node School</p>
+<p class="subtitle-large">Node School</p>
 
 I have become quite interested in Node in the past few months. So, when I finally decided to really get into it, the first thing I did was to go to [http://nodeschool.io][NodeSchool] and check out which tutorials I could find to get started.
 

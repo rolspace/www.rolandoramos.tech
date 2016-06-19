@@ -181,7 +181,7 @@ public class Person
 
 Now it is time to start calling the GroupBy methods. This post will discuss the Lamdba implementation of each overload, however, the Linq syntax implementation is included as well. Here we go:
 
-<p class="subtitle-small">1.Enumerable.GroupBy&lt;TSource, TKey&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</p>
+<p class="subtitle-small">1. Enumerable.GroupBy&lt;TSource, TKey&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</p>
 
 The first GroupBy overload is the simplest to use. The method takes two parameters, the first parameter is the <code>IEnumerable</code> collection to be grouped, while the second parameter defines the key that will be used to group the collection.
 
@@ -230,7 +230,7 @@ The items in the collection are being grouped by the Type property into a collec
 </table>
 </div>
 
-<p class="subtitle-small">2.Enumerable.GroupBy&lt;TSource, TKey, TElement&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</p>
+<p class="subtitle-small">2. Enumerable.GroupBy&lt;TSource, TKey, TElement&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</p>
 
 The second overload takes three parameters, two of which we have already seen in overload #1. The third parameter is:  <code>Func&lt;TSource, TElement&gt;</code>. This parameter defines a delegate that will project the elements in the source collection into a new collection.
 
@@ -252,8 +252,10 @@ group new {
 } by person.Type;
 {% endhighlight %}
 
-<p>The code sample produces the following grouped result:</p>
-<table>
+The code sample produces the following grouped result:
+
+<div class="table-responsive">
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Key</th>
@@ -282,30 +284,44 @@ group new {
 </tr>
 </tbody>
 </table>
-<p>3. Enumerable.GroupBy&lt;TSource, TKey, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</p>
-<p>The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is:  <code>Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;</code>. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.</p>
-<p>Basically, the method will project the key of a specific grouping, and the elements associated to that key. This overload allows the caller to project the grouped collection into a collection of a different type:</p><!-- Crayon Syntax Highlighter v2.6.9 -->
-<link rel="stylesheet" type="text/css" href="http://www.rolspace.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css">
+</div>
 
-		<div id="crayon-575f10bd11731716685164" class="crayon-syntax crayon-theme-vs2012 crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover" style="margin-top: 20px; margin-bottom: 20px; font-size: 12px !important; line-height: 20px !important; height: auto;">
-		
-			<div class="crayon-plain-wrap"></div>
-			<div class="crayon-main" style="position: relative; z-index: 1;">
-				<table class="crayon-table">
-					<tbody><tr class="crayon-row">
-				<td class="crayon-nums " data-settings="show">
-					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-575f10bd11731716685164-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-2">2</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-4">4</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-6">6</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-8">8</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-10">10</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-12">12</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-14">14</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-16">16</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd11731716685164-18">18</div><div class="crayon-num" data-line="crayon-575f10bd11731716685164-19">19</div></div>
-				</td>
-						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-575f10bd11731716685164-1"><span class="crayon-c">//Lambda</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-2"><span class="crayon-v">Enumerable</span><span class="crayon-sy">.</span><span class="crayon-e">GroupBy</span><span class="crayon-sy">(</span><span class="crayon-v">context</span><span class="crayon-sy">.</span><span class="crayon-v">People</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-sy">.</span><span class="crayon-v">Type</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-3"><span class="crayon-h">   </span><span class="crayon-sy">(</span><span class="crayon-v">key</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-4"><span class="crayon-h">   </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-5"><span class="crayon-h">      </span><span class="crayon-v">Key</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">key</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-6"><span class="crayon-h">      </span><span class="crayon-v">Count</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Count</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-7"><span class="crayon-h">      </span><span class="crayon-v">MaxAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Max</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-8"><span class="crayon-h">      </span><span class="crayon-v">MinAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Min</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-9"><span class="crayon-h">   </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-10"> </div><div class="crayon-line" id="crayon-575f10bd11731716685164-11"><span class="crayon-c">//Linq</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-12"><span class="crayon-e">from </span><span class="crayon-e">person </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">.</span><span class="crayon-e">People</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-13"><span class="crayon-e">   </span><span class="crayon-e">group </span><span class="crayon-e">person </span><span class="crayon-e">by </span><span class="crayon-v">person</span><span class="crayon-sy">.</span><span class="crayon-e">Type </span><span class="crayon-e">into</span><span class="crayon-h"> </span><span class="crayon-e">temp</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-14"><span class="crayon-h">   </span><span class="crayon-e">select</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-15"><span class="crayon-h">      </span><span class="crayon-v">Key</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-v">Key</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-16"><span class="crayon-h">      </span><span class="crayon-v">Count</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Count</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-17"><span class="crayon-h">      </span><span class="crayon-v">MaxAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Max</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd11731716685164-18"><span class="crayon-h">      </span><span class="crayon-v">MinAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Min</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-575f10bd11731716685164-19"><span class="crayon-h">   </span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div></div></td>
-					</tr>
-				</tbody></table>
-			</div>
-		</div>
-<!-- [Format Time: 0.0040 seconds] -->
-<p>One important difference between this overload and the previous two overloads, is that the return value of the method is no longer a collection of type  <code>IEnumerable&lt;IGrouping&lt;TKey, TSource&gt;&gt;</code>, where TKey is the type of the key and TSource is the type of the grouped items.</p>
-<p>In this case, the type of the grouped collection depends on the third parameter discussed earlier. In the example, the return value of the method is a collection of type  <code>IEnumerable&lt;“AnonymousType”&gt;</code>, where the Anonymous Type has four properties: Key, Count, MaxAge, and MinAge.</p>
-<p>The sample generates a new collection where the items contain the key used to create the grouping, the number of elements in the group, and the maximum/minimum age within that group:</p>
-<table>
+<p class="subtitle-small">3. Enumerable.GroupBy&lt;TSource, TKey, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</p>
+
+The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is:  <code>Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;</code>. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.
+
+Basically, the method will project the key of a specific grouping, and the elements associated to that key. This overload allows the caller to project the grouped collection into a collection of a different type:
+
+{% highlight c# %}
+//Lambda
+Enumerable.GroupBy(context.People, p => p.Type,
+   (key, temp) =>
+   new {
+      Key = key,
+      Count = temp.Count(),
+      MaxAge = temp.Max(a => a.Age),
+      MinAge = temp.Min(a => a.Age)
+   });
+ 
+//Linq
+from person in context.People
+   group person by person.Type into temp
+   select new {
+      Key = temp.Key,
+      Count = temp.Count(),
+      MaxAge = temp.Max(a => a.Age),
+      MinAge = temp.Min(a => a.Age)
+   };
+{% endhighlight %}
+
+One important difference between this overload and the previous two overloads, is that the return value of the method is no longer a collection of type  <code>IEnumerable&lt;IGrouping&lt;TKey, TSource&gt;&gt;</code>, where TKey is the type of the key and TSource is the type of the grouped items.
+
+In this case, the type of the grouped collection depends on the third parameter discussed earlier. In the example, the return value of the method is a collection of type  <code>IEnumerable&lt;“AnonymousType”&gt;</code>, where the Anonymous Type has four properties: Key, Count, MaxAge, and MinAge.
+
+The sample generates a new collection where the items contain the key used to create the grouping, the number of elements in the group, and the maximum/minimum age within that group:
+
+<div class="table-responsive">
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Value</th>
@@ -329,27 +345,47 @@ group new {
 </tr>
 </tbody>
 </table>
-<p>4. Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;)</p>
-<p>The final overload combines all the parameters added in the previous overloads. Using this, the overload allows the caller to create the key to group the source collection, to project the source collection into a collection of a different type, and to project the grouped result into a collection of a different type:</p><!-- Crayon Syntax Highlighter v2.6.9 -->
-<link rel="stylesheet" type="text/css" href="http://www.rolspace.com/wp-content/plugins/crayon-syntax-highlighter/fonts/monaco.css">
+</div>
 
-		<div id="crayon-575f10bd1173a987258701" class="crayon-syntax crayon-theme-vs2012 crayon-font-monaco crayon-os-pc print-yes notranslate" data-settings=" touchscreen minimize scroll-mouseover" style="margin-top: 20px; margin-bottom: 20px; font-size: 12px !important; line-height: 20px !important; height: auto;">
-		
-			<div class="crayon-plain-wrap"></div>
-			<div class="crayon-main" style="position: relative; z-index: 1;">
-				<table class="crayon-table">
-					<tbody><tr class="crayon-row">
-				<td class="crayon-nums " data-settings="show">
-					<div class="crayon-nums-content" style="font-size: 12px !important; line-height: 20px !important;"><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-1">1</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-2">2</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-3">3</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-4">4</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-5">5</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-6">6</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-7">7</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-8">8</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-9">9</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-10">10</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-11">11</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-12">12</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-13">13</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-14">14</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-15">15</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-16">16</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-17">17</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-18">18</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-19">19</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-20">20</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-21">21</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-22">22</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-23">23</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-24">24</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-25">25</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-26">26</div><div class="crayon-num" data-line="crayon-575f10bd1173a987258701-27">27</div><div class="crayon-num crayon-striped-num" data-line="crayon-575f10bd1173a987258701-28">28</div></div>
-				</td>
-						<td class="crayon-code"><div class="crayon-pre" style="font-size: 12px !important; line-height: 20px !important; -moz-tab-size:4; -o-tab-size:4; -webkit-tab-size:4; tab-size:4;"><div class="crayon-line" id="crayon-575f10bd1173a987258701-1"><span class="crayon-c">//Lambda</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-2"><span class="crayon-v">Enumerable</span><span class="crayon-sy">.</span><span class="crayon-e">GroupBy</span><span class="crayon-sy">(</span><span class="crayon-v">context</span><span class="crayon-sy">.</span><span class="crayon-v">People</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-sy">.</span><span class="crayon-v">Type</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-3"><span class="crayon-h">   </span><span class="crayon-v">p</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-4"><span class="crayon-h">      </span><span class="crayon-v">FullName</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">string</span><span class="crayon-sy">.</span><span class="crayon-e">Format</span><span class="crayon-sy">(</span><span class="crayon-s">"{0} {1}"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-sy">.</span><span class="crayon-v">FirstName</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-sy">.</span><span class="crayon-v">LastName</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-5"><span class="crayon-h">      </span><span class="crayon-v">Age</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">p</span><span class="crayon-sy">.</span><span class="crayon-i">Age</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-6"><span class="crayon-h">   </span><span class="crayon-sy">}</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-7"><span class="crayon-h">   </span><span class="crayon-sy">(</span><span class="crayon-v">key</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">)</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-8"><span class="crayon-h">      </span><span class="crayon-v">Key</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">key</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-9"><span class="crayon-h">      </span><span class="crayon-v">Count</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Count</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-10"><span class="crayon-h">      </span><span class="crayon-i">Oldest</span> <span class="crayon-o">=</span> <span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">FirstOrDefault</span><span class="crayon-sy">(</span><span class="crayon-v">t</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span> <span class="crayon-v">t</span><span class="crayon-sy">.</span><span class="crayon-i">Age</span> <span class="crayon-o">==</span> <span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Min</span><span class="crayon-sy">(</span><span class="crayon-i">a</span> <span class="crayon-o">=</span><span class="crayon-o">&gt;</span> <span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">FullName</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-11"><span class="crayon-h">      </span><span class="crayon-v">MaxAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Max</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-12"><span class="crayon-h">      </span><span class="crayon-v">MinAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Min</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-13"><span class="crayon-h">   </span><span class="crayon-sy">}</span><span class="crayon-sy">)</span><span class="crayon-sy">;</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-14"> </div><div class="crayon-line" id="crayon-575f10bd1173a987258701-15"><span class="crayon-c">//Linq</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-16"><span class="crayon-e">from </span><span class="crayon-e">person </span><span class="crayon-st">in</span><span class="crayon-h"> </span><span class="crayon-v">context</span><span class="crayon-sy">.</span><span class="crayon-e">People</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-17"><span class="crayon-e">   </span><span class="crayon-e">group</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-18"><span class="crayon-h">      </span><span class="crayon-v">FullName</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-t">string</span><span class="crayon-sy">.</span><span class="crayon-e">Format</span><span class="crayon-sy">(</span><span class="crayon-s">"{0} {1}"</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">person</span><span class="crayon-sy">.</span><span class="crayon-v">FirstName</span><span class="crayon-sy">,</span><span class="crayon-h"> </span><span class="crayon-v">person</span><span class="crayon-sy">.</span><span class="crayon-v">LastName</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-19"><span class="crayon-h">      </span><span class="crayon-v">Age</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">person</span><span class="crayon-sy">.</span><span class="crayon-i">Age</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-20"><span class="crayon-h">   </span><span class="crayon-sy">}</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-21"><span class="crayon-h">   </span><span class="crayon-e">by </span><span class="crayon-v">person</span><span class="crayon-sy">.</span><span class="crayon-e">Type </span><span class="crayon-e">into</span><span class="crayon-h"> </span><span class="crayon-e">temp</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-22"><span class="crayon-h">   </span><span class="crayon-e">select</span><span class="crayon-h"> </span><span class="crayon-r">new</span><span class="crayon-h"> </span><span class="crayon-sy">{</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-23"><span class="crayon-h">      </span><span class="crayon-v">Key</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-v">Key</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-24"><span class="crayon-h">      </span><span class="crayon-v">Count</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Count</span><span class="crayon-sy">(</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-25"><span class="crayon-h">      </span><span class="crayon-i">Oldest</span> <span class="crayon-o">=</span> <span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">FirstOrDefault</span><span class="crayon-sy">(</span><span class="crayon-i">t</span> <span class="crayon-o">=</span><span class="crayon-o">&gt;</span> <span class="crayon-v">t</span><span class="crayon-sy">.</span><span class="crayon-i">Age</span> <span class="crayon-o">==</span> <span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Min</span><span class="crayon-sy">(</span><span class="crayon-i">a</span> <span class="crayon-o">=</span><span class="crayon-o">&gt;</span> <span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span><span class="crayon-sy">)</span><span class="crayon-sy">.</span><span class="crayon-v">FullName</span><span class="crayon-sy">,</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-26"><span class="crayon-h">      </span><span class="crayon-v">MaxAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Max</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span><span class="crayon-sy">,</span></div><div class="crayon-line" id="crayon-575f10bd1173a987258701-27"><span class="crayon-h">      </span><span class="crayon-v">MinAge</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-h"> </span><span class="crayon-v">temp</span><span class="crayon-sy">.</span><span class="crayon-e">Min</span><span class="crayon-sy">(</span><span class="crayon-v">a</span><span class="crayon-h"> </span><span class="crayon-o">=</span><span class="crayon-o">&gt;</span><span class="crayon-h"> </span><span class="crayon-v">a</span><span class="crayon-sy">.</span><span class="crayon-v">Age</span><span class="crayon-sy">)</span></div><div class="crayon-line crayon-striped-line" id="crayon-575f10bd1173a987258701-28"><span class="crayon-h">   </span><span class="crayon-sy">}</span><span class="crayon-sy">;</span></div></div></td>
-					</tr>
-				</tbody></table>
-			</div>
-		</div>
-<!-- [Format Time: 0.0072 seconds] -->
-<p>The result from the code sample is the following.</p>
-<table>
+<p class="subtitle-small">4. Enumerable.GroupBy&lt;TSource, TKey, TElement, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;, Func&lt;TKey, IEnumerable&lt;TElement&gt;, TResult&gt;)</p>
+
+The final overload combines all the parameters added in the previous overloads. Using this, the overload allows the caller to create the key to group the source collection, to project the source collection into a collection of a different type, and to project the grouped result into a collection of a different type:
+
+{% highlight c# %}
+//Lambda
+Enumerable.GroupBy(context.People, p => p.Type,
+   p => new {
+      FullName = string.Format("{0} {1}", p.FirstName, p.LastName),
+      Age = p.Age
+   },
+   (key, temp) => new {
+      Key = key,
+      Count = temp.Count(),
+      Oldest = temp.FirstOrDefault(t => t.Age == temp.Min(a => a.Age)).FullName,
+      MaxAge = temp.Max(a => a.Age),
+      MinAge = temp.Min(a => a.Age)
+   });
+ 
+//Linq
+from person in context.People
+   group new {
+      FullName = string.Format("{0} {1}", person.FirstName, person.LastName),
+      Age = person.Age
+   }
+   by person.Type into temp
+   select new {
+      Key = temp.Key,
+      Count = temp.Count(),
+      Oldest = temp.FirstOrDefault(t => t.Age == temp.Min(a => a.Age)).FullName,
+      MaxAge = temp.Max(a => a.Age),
+      MinAge = temp.Min(a => a.Age)
+   };
+{% endhighlight %}
+
+The result from the code sample is the following:
+
+<div class="table-responsive">
+<table class="table table-bordered">
 <thead>
 <tr>
 <th>Value</th>
@@ -373,4 +409,6 @@ group new {
 </tr>
 </tbody>
 </table>
-<p>The GroupBy method and its overloads are quite useful when it is necessary to manipulate the data from a collection in C#. In complex scenarios it is probably better to use the standard Linq query syntax, as that will most likely help with code readability and organization. Nevertheless, it is always helpful to gain information about how to use a specific method in our code.</p>
+</div>
+
+The GroupBy method and its overloads are quite useful when it is necessary to manipulate the data from a collection in C#. In complex scenarios it is probably better to use the standard Linq query syntax, as that will most likely help with code readability and organization. Nevertheless, it is always helpful to gain information about how to use a specific method in our code.

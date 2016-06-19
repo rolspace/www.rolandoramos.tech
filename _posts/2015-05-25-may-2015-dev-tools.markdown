@@ -18,7 +18,7 @@ In the past year I have done a fair amount of work using the Sitecore CMS. Durin
 
 <img class="img-responsive" src="/assets/150525/unicorn.png" alt="Unicorn" />
 
-Thanks to one of my teammates I heard about Unicorn, and then, I got to take it for a spin. Unicorn is a very handy tool that will allow you to serialize Sitecore items (templates, layouts, etc) to disk. Setting up and using Unicorn is pretty straightforward process.
+Thanks to one of my teammates I heard about the Unicorn project, so I decided to take it for a spin. Unicorn is a very handy tool that will allow you to serialize Sitecore items (templates, layouts, etc) to disk. Setting up and using Unicorn is pretty straightforward process.
 
 <!--more-->
 

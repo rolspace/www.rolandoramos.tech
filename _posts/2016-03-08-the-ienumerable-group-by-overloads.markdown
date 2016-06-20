@@ -1,9 +1,10 @@
 ---
-layout: post
+layout: default/post
 title: The IEnumerable.GroupBy Overloads
 date: 2016-03-08
 tags:
-- hello world
+- c#
+- code
 ---
 
 From time to time, I have had the need to create a few Linq queries using the GroupBy command. For some reason, I have always found it easier to use the query syntax, instead of Lambda expressions.

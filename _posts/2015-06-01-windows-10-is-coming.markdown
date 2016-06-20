@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default/post
 published: true
 title: Windows 10 is coming
 date: 2015-06-01

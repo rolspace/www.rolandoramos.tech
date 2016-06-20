@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default/post
 published: true
 title: Phone Change
 date: 2014-05-13

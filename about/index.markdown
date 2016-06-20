@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: default/page
 ---
 <h2>Welcome!</h2>
 

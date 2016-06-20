@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default/post
 published: true
 title: Bravely Default is quite good, but not great
 date: 2014-10-20

@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default/post
 published: true
 title: Monty the Cat #1
 date: 2014-09-02

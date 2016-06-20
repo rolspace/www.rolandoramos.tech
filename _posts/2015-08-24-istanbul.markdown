@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default/post
 title: Istanbul
 date: 2015-08-24 21:30:46
 tags:

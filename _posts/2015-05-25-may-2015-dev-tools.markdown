@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: default/post
 published: true
 title: May 2015 Dev Tools
 date: 2015-05-25

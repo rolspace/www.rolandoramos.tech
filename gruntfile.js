@@ -48,8 +48,9 @@ module.exports = function(grunt) {
 					},
 					{ src: ['bower_components/jquery/dist/jquery.min.js',
 							'bower_components/bootstrap/dist/js/bootstrap.min.js',
-							'dist/js/rolspace.js'],
-					  dest: 'dist/js/rolspace.min.js'
+							'_scripts/main.js',
+							'_scripts/ui-setup.js'],
+					  dest: 'dist/js/rolspace.js'
 					}
 				]
 			}
@@ -64,6 +65,16 @@ module.exports = function(grunt) {
 				}
 			}
 		},
+		jshint: {
+			main: ['gruntfile.js', 'js/rolspace.js']
+		},
+		uglify: {
+			main: {
+				files: {
+					'dist/js/rolspace.min.js': ['dist/js/rolspace.js']
+				}
+			}
+		},
 		shell: {
 			build: {
 				command: 'jekyll build --config _config.yml --force'
@@ -72,32 +83,29 @@ module.exports = function(grunt) {
 				command: 'jekyll serve --config _config.yml --force'
 			}
 		},
-		jshint: {
-			main: ['gruntfile.js', 'js/rolspace.js']
-		},
 		watch: {
 			options: {
 				atBegin: true,
 				interrupt: true
 			},
-			files: ['_less/*.less', 'dist/js/rolspace.js', '_assets/*.*', '_includes/*.*', 'gruntfile.js',
-					 '_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', '404.html', 'index.html'],
-			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'shell:serve']
+			files: ['_less/*.*', '_assets/*.*', '_includes/*.*', '_scripts/*.*', 'gruntfile.js',
+					'_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', '404.html', 'index.html'],
+			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'uglify', 'shell:serve']
 		}
 	});
 
 	grunt.registerTask('css-js',
-		'Run tasks for css/js generation', ['less','autoprefixer','copy','concat','cssmin']);
+		'Run tasks for css/js generation', ['less', 'autoprefixer', 'copy', 'concat', 'cssmin', 'jshint', 'uglify']);
 
 	grunt.registerTask('demo',
-		'Build the demo website', ['less','autoprefixer','copy','concat','jshint','shell:build']);
+		'Build the demo website', ['less','autoprefixer','copy','concat','jshint', 'uglify', 'shell:build']);
 
 	grunt.registerTask('host-demo',
 		'Host the demo website using grunt-watch',['watch']);
 
 	grunt.registerTask('release',
-		'Build the release website', ['less','autoprefixer','copy','concat','cssmin','jshint','shell:build']);
+		'Build the release website', ['less','autoprefixer','copy','concat','cssmin','jshint', 'uglify', 'shell:build']);
 
 	grunt.registerTask('host-release',
-		'Host the release website', ['less','autoprefixer','copy','concat','cssmin','jshint','shell:serve']);
+		'Host the release website', ['less','autoprefixer','copy','concat','cssmin','jshint', 'uglify','shell:serve']);
 };

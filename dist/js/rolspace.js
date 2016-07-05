@@ -21,5 +21,5 @@ var UISetup = (function($){
 
 	return {
 		init: highlightMenuItem
-	}
+	};
 }(jQuery));

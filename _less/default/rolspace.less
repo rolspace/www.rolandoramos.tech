@@ -203,6 +203,65 @@ a:active, a:focus {
 	}	
 }
 
+#page {
+	.border-bottom-1px-ddd;
+	margin-bottom: 30px;
+	padding-bottom: 15px;
+
+	a {
+		color: @light-blue;
+
+		&:hover, &:active, &:focus {
+			color: @dark-blue;
+			text-decoration: underline;
+		}
+	}
+
+	.page-title {
+		font-size: 1.875em;
+
+		@media (max-width: 767px)
+		{
+			font-size: 1.875em;
+		}
+
+		a {
+			color: @base-font-color;
+
+			&:hover, &:active, &:focus {
+				color: @light-blue;
+				text-decoration: none;
+			}
+		}
+	}
+
+	.page-content {
+		p {
+			line-height: 24px;
+			margin-bottom: 20px;
+			text-align: justify;
+
+			&.subtitle-large {
+				.subtitle-base;
+				font-size: @font-large;
+			}
+
+			&.subtitle {
+				.subtitle-base;
+			}
+		}
+
+		ul {
+			padding-left: 20px;
+			text-align: justify;
+
+			& li {
+				margin-bottom: 15px;
+			}
+		}
+	}
+}
+
 article {
 	.border-bottom-1px-ddd;
 	padding-bottom: 15px;

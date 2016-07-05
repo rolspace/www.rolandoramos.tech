@@ -1,7 +1,7 @@
 # Site settings
 title: rolspace
 email: rolandorramos@gmail.com
-description: " | on code, life, and everything"
+description: " - on code, life, and everything"
 baseurl: ""
 url: "http://www.rolspace.com"
 paginate: 5

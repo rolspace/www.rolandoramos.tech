@@ -5,11 +5,11 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 		less: {
 			options: {
-				paths: ['_less/default']
+				paths: ['_less/default', '_less/default/includes']
 			},
 			main: {
 				files: {
-					'dist/css/rolspace.css': '_less/default/*'
+					'dist/css/rolspace.css': '_less/default/rolspace.less'
 				}
 			}
 		},

@@ -3,7 +3,7 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	grunt.initConfig({
-		less: {
+		/*less: {
 			options: {
 				paths: ['_less/default', '_less/default/includes']
 			},
@@ -12,14 +12,14 @@ module.exports = function(grunt) {
 					'dist/css/rolspace.css': '_less/default/rolspace.less'
 				}
 			}
-		},
-		autoprefixer: {
+		},*/
+		/*autoprefixer: {
 			main: {
 				files: {
 					'dist/css/rolspace.css': 'dist/css/rolspace.css'	
 				}
 			}
-		},
+		},*/
 		copy: {
 			main: {
 				files: [
@@ -41,11 +41,11 @@ module.exports = function(grunt) {
 		concat: {
 			main: {
 				files: [
-					{ src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
+					/*{ src: ['bower_components/bootstrap/dist/css/bootstrap.min.css',
 					  		'bower_components/font-awesome/css/font-awesome.min.css',
 				  			'dist/css/rolspace.css'],
 					  dest: 'dist/css/rolspace.css'
-					},
+					},*/
 					{ src: ['bower_components/jquery/dist/jquery.min.js',
 							'bower_components/bootstrap/dist/js/bootstrap.min.js',
 							'_scripts/main.js',
@@ -55,7 +55,7 @@ module.exports = function(grunt) {
 				]
 			}
 		},
-		cssmin: {
+		/*cssmin: {
 			options: {
 				report: ['min', 'gzip']
 			},
@@ -64,7 +64,7 @@ module.exports = function(grunt) {
 					'dist/css/rolspace.min.css': ['dist/css/rolspace.css']
 				}
 			}
-		},
+		},*/
 		jshint: {
 			main: ['gruntfile.js', '_scripts/main.js', '_scripts/ui-setup.js']
 		},
@@ -90,22 +90,22 @@ module.exports = function(grunt) {
 			},
 			files: ['_less/*.*', '_assets/*.*', '_includes/*.*', '_scripts/*.*', 'gruntfile.js',
 					'_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', '404.html', 'index.html'],
-			tasks: ['less', 'autoprefixer', 'copy', 'concat', 'jshint', 'uglify', 'shell:serve']
+			tasks: [/*'less', 'autoprefixer', 'copy', 'concat',*/ 'jshint', 'uglify', 'shell:serve']
 		}
 	});
 
 	grunt.registerTask('css-js',
-		'Run tasks for css/js generation', ['less', 'autoprefixer', 'copy', 'concat', 'cssmin', 'jshint', 'uglify']);
+		'Run tasks for css/js generation', [/*'less', 'autoprefixer', 'copy', 'concat', 'cssmin',*/ 'jshint', 'uglify']);
 
 	grunt.registerTask('demo',
-		'Build the demo website', ['less','autoprefixer','copy','concat','jshint', 'uglify', 'shell:build']);
+		'Build the demo website', [/*'less','autoprefixer','copy','concat',*/'jshint', 'uglify', 'shell:build']);
 
 	grunt.registerTask('host-demo',
 		'Host the demo website using grunt-watch',['watch']);
 
 	grunt.registerTask('release',
-		'Build the release website', ['less','autoprefixer','copy','concat','cssmin','jshint', 'uglify', 'shell:build']);
+		'Build the release website', [/*'less','autoprefixer','copy','concat','cssmin',*/ 'jshint', 'uglify', 'shell:build']);
 
 	grunt.registerTask('host-release',
-		'Host the release website', ['less','autoprefixer','copy','concat','cssmin','jshint', 'uglify','shell:serve']);
+		'Host the release website', [/*'less','autoprefixer','copy','concat','cssmin',*/ 'jshint', 'uglify','shell:serve']);
 };

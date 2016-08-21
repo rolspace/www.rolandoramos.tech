@@ -17,21 +17,26 @@ It had been a while since I had the time to play a 40+ hour RPG, so Bravely Defa
 
 <!--more-->
 
-Not too long ago I finally finished the game, and I feel...relieved. Bravely Default was definitely a good game, but I believe that its one major flaw is extremely hard to overlook. It is a game that is easy to enjoy, however, there is a moment when it will test your patience and willingness to go all the way to the end...but more on this later.
+Not long ago, I finally finished the game, and I feel...relieved. Bravely Default was definitely a good game, but I believe that its one major flaw is extremely hard to overlook. It is a game that is easy to enjoy, however, there is a moment when it will test your patience and willingness to go all the way to the end...but more on this later.
 
-The game starts as one of its protagonists, Tiz Arrior, wakes up in the city of Caldisla, a week after a giant chasm suddenly appeared and destroyed his home village, Norende. Tiz is the only survivor from the disaster and he decides to return to the chasm hoping to find his brother. There, he find Agnès Oblige, the Vestal of Wind, who is accompanied by a fairy, named Airy. Agnès wishes to free the Wind Crystal from the darkness that has surrounded it, and in doing so, undo the damage caused to the land.
+The game starts as one of its protagonists, Tiz Arrior, wakes up in the city of Caldisla, a week after a giant chasm suddenly appeared and destroyed his home village, Norende. Tiz is the only survivor from the disaster and he decides to return to the chasm hoping to find his brother. There, he finds Agnès Oblige, the Vestal of Wind, who is accompanied by a fairy, named Airy. Agnès wishes to free the Wind Crystal from the darkness that has surrounded it, and in doing so, undo the damage caused to the land.
 
-This is where the main quest begins, as you begin your journey with these two characters in order to find a way to heal the land of Luxendarc. For the most part, the story does a good job of advancing the game from one location to another, while uncovering the story and all the hidden plots surrounding the 4 Crystals (Water, Fire, Wind, and Earth).
+This is where the main quest begins, as you begin your journey with Tiz and Agnès in order to find a way to heal the land of Luxendarc. For the most part, the story does a good job of advancing the game from one location to another, while uncovering the story and all the hidden plots surrounding the 4 Crystals (Water, Fire, Wind, and Earth).
 
-As your quest progresses you come across two more characters, Edea Lee and Ringabel. Edea was a member of a group who tried to capture Agnés, but she decides to switch her allegiance when confronted with the atrocities committed by her countrymen. Ringabel is a man with no memories, however, he possesses a book, which can predict the future. These are the 4 playable characters in the game.
+As your quest progresses youtwo more characters will join you party, Edea Lee and Ringabel. Edea is a member of the Sky Knights, dispatched from the Kingdom of Eternia, to capture Agnés. She decides to switch her allegiance when confronted with the atrocities committed by her allies. Ringabel has no memories and nowhere to go, however, he possesses a book which seems to predict the future called D's Journal. Together, these 4 characters join forces to free the 4 Crystals from the darkness that engulfs them.
 
-The battle system in Bravely Default is somewhat different from your typical turn based RPG. On every battle, on each character's turn, the player must choose first between two actions: <em>Brave</em> or <em>Default</em>. If you choose <em>Default</em>, the character will defend, and accumulate one <em>Brave Point</em> to be used in a another turn. If you choose <em>Brave</em> the character will perform an action (Attack, Magic, Item, etc). Selecting <em>Brave</em> consumes <em>Brave Points</em>. If you have a positive number of <em>Brave Points</em> you are able to consume up to four <em>BP</em>. If you do this, then that character will end up with negative <em>Brave Points</em>, so he/she will be unactive in that turn, being vulnerable to damage.
+The battle system in Bravely Default is somewhat different from your typical turn based RPG. On every battle, on each character's turn, the player must choose first between two actions: <i>Brave</i> or <i>Default</i>. If you choose <i>Default</i>, the character will defend, and accumulate one <i>Brave Point</i> to be used in a another turn. If you choose <i>Brave</i> the character will perform an action (Attack, Magic, Item, etc).
 
-Fortunately, the Job system in Bravely Default provides a nice addition to the battle system, giving players many different strategies to use in combat. All the Jobs in the game, with the exception of the Freelancer, are obtained by defeating specific bosses.
+Selecting <i>Brave</i> consumes <i>Brave Points</i>. If you have a positive number of <i>Brave Points</i> you are able to consume up to four <i>BP</i>. If the player decides to use the 4 available <i>Brave Points</i> and the character has not saved up enough <i>Defaults</i>, then that character will end up with negative point. This means the selected character will be inactive during the turn and will be vulnerable to damage.
 
-During a turn, the player can select to either  for a character in the battle. If you select Brave you use BP (battle points) and the character will unleash multiple attacks (max 4) on the enemy. If you select Default, then the character will store 1 BP for the next turn and defend from any enemy attacks.
+In addition to using <i>Braves</i> or <i>Defaults</i> during battle, the characters can choose from various jobs obtained during the game. These jobs really make the game come together during enemy encounters and boss battles. They bring a lot of variety to combat and will present the player with many options to choose from.
 
-Joining this feature with the abilities provided by the game's job system, gives players the option to use different approaches in enemy encounters. The jobs available in the game are quite diverse and most of them have at least one skill that can be helful in a character's abilities setup.
+Each of the 4 characters can be assigned a separate job, providing a variety of strengths and weaknesses to the character stats in line with the job's purpose. For example, 
+
+
+
+
+
 
 One of the best things about Bravely Default is the soundtrack. I never got tired of hearing the music in this game, I definitely need to get my hands on the soundtrack at some point. Even if you don't enjoy the game that much, the music will keep you in it.
 

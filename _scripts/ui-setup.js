@@ -1,10 +1,9 @@
 var UISetup = (function($){
-
-	function highlightMenuItem() {
+	"use strict";
+	function activateMenuItem() {
 		$('a[href="' + window.location.pathname + '"]').parents('li').addClass('active');
 	}
-
 	return {
-		init: highlightMenuItem
+		init: activateMenuItem
 	};
 }(jQuery));

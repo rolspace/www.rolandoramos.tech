@@ -1,15 +1,9 @@
 'use strict';
 
-var runSequence = require('run-sequence');
+var spawn = require('child_process').spawn;
 
-var cleanCss = require('gulp-clean-css');
-var sourceMaps = require('gulp-sourcemaps');
-var autoprefixer = require('gulp-autoprefixer');
-var replace = require('gulp-replace');
-var rename = require('gulp-rename');
-var concat = require('gulp-concat');
-var eslint = require('gulp-eslint');
-var less = require('gulp-less');
+var sequence = require('run-sequence');
+var plugins = require('gulp-load-plugins')();
 var gulp = require('gulp');
 
 var config = {
@@ -26,55 +20,82 @@ var config = {
 var css = {
 	concat: function() {
 		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './dist/css/rolspace.css'])
-			.pipe(concat('rolspace.css'))
-			.pipe(gulp.dest('./dist/css'));
+			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
+			.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.concat('rolspace.css'))
+			.pipe(plugins.sourcemaps.write('./'))
+			.pipe(gulp.dest('./dist/css/'));
 	},
 	less: function() {
 		return gulp.src(['./_less/default/*.less'])
-			.pipe(less({
+			.pipe(plugins.less({
 				filename: 'rolspace.css',
 				paths: [ './_less/default/includes' ]
 			}))
-			.pipe(autoprefixer({
+			.pipe(plugins.autoprefixer({
 				browsers: ['last 2 versions']
 			}))
 			.pipe(gulp.dest('./dist/css/'));
 	},
 	minify: function(callback) {
 		gulp.src(['./dist/css/rolspace.css'])
-			.pipe(replace(/\/*# sourceMappingURL[^\n]*/g, ''))
-			.pipe(sourceMaps.init())
-			.pipe(cleanCss())
-			.pipe(rename('rolspace.min.css'))
-			.pipe(sourceMaps.write('./'))
+			.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.cleanCss())
+			.pipe(plugins.rename('rolspace.min.css'))
+			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
 		callback();
-	}
+	},
 };
 
 var js = {
 	concat: function() {
 		return gulp.src([config.js.jquery, config.js.bootstrap, './_scripts/ui-setup.js', './_scripts/main.js'])
-			.pipe(concat('rolspace.js'))
-			.pipe(gulp.dest('./dist/js'));
+			.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.concat('rolspace.js'))
+			.pipe(plugins.sourcemaps.write('./'))
+			.pipe(gulp.dest('./dist/js/'));
 	},
-	lint: function(callback) {
-		gulp.src(['./_scripts/rolspace.js', './gulpfile.js'])
-			.pipe(eslint())
-			.pipe(eslint.format())
-			.pipe(eslint.failAfterError());
+	lint: function() {
+		return gulp.src(['./_scripts/rolspace.js', './gulpfile.js'])
+			.pipe(plugins.eslint())
+			.pipe(plugins.eslint.format())
+			.pipe(plugins.eslint.failAfterError());
+	},
+	minify: function(callback) {
+		gulp.src(['./dist/js/rolspace.js'])
+			.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.uglify())
+			.pipe(plugins.rename('rolspace.min.js'))
+			.pipe(plugins.sourcemaps.write('./'))
+			.pipe(gulp.dest('./dist/js/'));
 		callback();
 	}
 };
 
-gulp.task('css:less', css.less);
+gulp.task('jekyll', function() {
+	var jekyll = spawn('jekyll', [ 'serve' ]);
+
+	var jekyllLogger = function(buffer) {
+		buffer.toString()
+			.split(/\n/)
+			.forEach(function(message) { return plugins.util.log('Jekyll: ' + message); });
+	}
+
+	jekyll.stdout.on('data', jekyllLogger);
+});
+
 gulp.task('css:concat', css.concat);
+gulp.task('css:less', css.less);
 gulp.task('css:minify', css.minify);
-gulp.task('css', function(callback) { runSequence('css:less', 'css:concat', 'css:minify', callback); });
+gulp.task('css', function(callback) { sequence('css:concat', 'css:less', 'css:minify', callback); });
 
 gulp.task('js:concat', js.concat);
 gulp.task('js:lint', js.lint);
-gulp.task('js', function(callback) { runSequence('js:concat', 'js:lint', callback); });
+gulp.task('js:minify', js.minify);
+gulp.task('js', function(callback) { sequence('js:concat', 'js:lint', 'js:minify', callback); });
 
-gulp.task('dev', ['css']);
+gulp.task('clean', null);
+
+gulp.task('dev', ['css', 'js']);
 //gulp.task('prod');

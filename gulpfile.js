@@ -48,6 +48,11 @@ var css = {
 	},
 };
 
+gulp.task('css:concat', css.concat);
+gulp.task('css:less', css.less);
+gulp.task('css:minify', css.minify);
+gulp.task('css', function(callback) { sequence('css:concat', 'css:less', 'css:minify', callback); });
+
 var js = {
 	concat: function() {
 		return gulp.src([config.js.jquery, config.js.bootstrap, './_scripts/ui-setup.js', './_scripts/main.js'])
@@ -75,6 +80,11 @@ var js = {
 
 gulp.task('jekyll', function() {
 	var jekyll = spawn('jekyll', [ 'serve' ]);
+gulp.task('js:concat', js.concat);
+gulp.task('js:lint', js.lint);
+gulp.task('js:minify', js.minify);
+gulp.task('js', function(callback) { sequence('js:concat', 'js:lint', 'js:minify', callback); });
+
 
 	var jekyllLogger = function(buffer) {
 		buffer.toString()
@@ -85,15 +95,6 @@ gulp.task('jekyll', function() {
 	jekyll.stdout.on('data', jekyllLogger);
 });
 
-gulp.task('css:concat', css.concat);
-gulp.task('css:less', css.less);
-gulp.task('css:minify', css.minify);
-gulp.task('css', function(callback) { sequence('css:concat', 'css:less', 'css:minify', callback); });
-
-gulp.task('js:concat', js.concat);
-gulp.task('js:lint', js.lint);
-gulp.task('js:minify', js.minify);
-gulp.task('js', function(callback) { sequence('js:concat', 'js:lint', 'js:minify', callback); });
 
 gulp.task('clean', null);
 

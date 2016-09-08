@@ -3,19 +3,19 @@ module.exports = function(grunt) {
 	require('time-grunt')(grunt);
 
 	grunt.initConfig({
-		uglify: {
+		/*uglify: {
 			main: {
 				files: {
 					'dist/js/rolspace.min.js': ['dist/js/rolspace.js']
 				}
 			}
-		},
+		},*/
 		shell: {
 			build: {
-				command: 'jekyll build --config _config.yml --force'
+				command: 'jekyll build'
 			},
 			serve: {
-				command: 'jekyll serve --config _config.yml --force'
+				command: 'jekyll serve'
 			}
 		},
 		watch: {
@@ -25,22 +25,19 @@ module.exports = function(grunt) {
 			},
 			files: ['_less/*.*', '_assets/*.*', '_includes/*.*', '_scripts/*.*', 'gruntfile.js',
 					'_layouts/*.*', '_posts/*.*', 'about/*.*', 'read/*.*', '404.html', 'index.html'],
-			tasks: ['uglify', 'shell:serve']
+			tasks: ['shell:serve']
 		}
 	});
 
-	grunt.registerTask('css-js',
-		'Run tasks for css/js generation', ['uglify']);
-
 	grunt.registerTask('demo',
-		'Build the demo website', ['uglify', 'shell:build']);
+		'Build the demo website', ['shell:build']);
 
 	grunt.registerTask('host-demo',
 		'Host the demo website using grunt-watch',['watch']);
 
 	grunt.registerTask('release',
-		'Build the release website', ['uglify', 'shell:build']);
+		'Build the release website', ['shell:build']);
 
 	grunt.registerTask('host-release',
-		'Host the release website', ['uglify','shell:serve']);
+		'Host the release website', ['shell:serve']);
 };

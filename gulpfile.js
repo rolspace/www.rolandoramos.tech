@@ -78,25 +78,26 @@ var js = {
 	}
 };
 
-gulp.task('jekyll', function() {
-	var jekyll = spawn('jekyll', [ 'serve' ]);
 gulp.task('js:concat', js.concat);
 gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
 gulp.task('js', function(callback) { sequence('js:concat', 'js:lint', 'js:minify', callback); });
 
+gulp.task('clean', null);
+
+gulp.task('jekyll', function(callback) {
+	var jekyll = spawn('jekyll', [ 'serve', '--watch']);
 
 	var jekyllLogger = function(buffer) {
 		buffer.toString()
 			.split(/\n/)
 			.forEach(function(message) { return plugins.util.log('Jekyll: ' + message); });
-	}
+	};
 
 	jekyll.stdout.on('data', jekyllLogger);
+	jekyll.stderr.on('data', jekyllLogger);
+
+	callback();
 });
 
-
-gulp.task('clean', null);
-
-gulp.task('dev', ['css', 'js']);
-//gulp.task('prod');
+gulp.task('dev', function(callback) { sequence('css', 'js', 'jekyll', callback); });

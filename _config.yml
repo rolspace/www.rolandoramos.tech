@@ -10,8 +10,8 @@ paginate_path: "/page:num/"
 # Build settings
 markdown: kramdown
 include: [ assets, 404.html ]
-exclude: [ bower_components, node_modules, bower.json, package.json, gruntfile.js,
-			rolspace.sublime-project, rolspace.sublime-workspace ]
+exclude: [ _less, _scripts, bower_components, node_modules, bower.json, package.json, gruntfile.js,
+			gulpfile.js, rolspace.sublime-project, rolspace.sublime-workspace ]
 
 # Post settings
 excerpt_separator: <!--more-->

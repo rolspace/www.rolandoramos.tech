@@ -1,4 +1,4 @@
-var UISetup = (function($){
+var uiSetup = (function($){
 	"use strict";
 	function activateMenuItem() {
 		$('a[href="' + window.location.pathname + '"]').parents('li').addClass('active');

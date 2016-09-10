@@ -1,4 +1,4 @@
 $(function(){
 	"use strict";
-	UISetup.init();
+	uiSetup.init();
 });

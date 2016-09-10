@@ -1,7 +1,7 @@
 'use strict';
 
+var browserSync = require('browser-sync').create();
 var spawn = require('child_process').spawn;
-
 var sequence = require('run-sequence');
 var plugins = require('gulp-load-plugins')();
 var gulp = require('gulp');
@@ -14,7 +14,8 @@ var config = {
 	js: {
 		jquery: 'bower_components/jquery/dist/jquery.min.js',
 		bootstrap: 'bower_components/bootstrap/dist/js/bootstrap.min.js'
-	}
+	},
+	newLine: '\r\n\r\n'
 };
 
 var css = {
@@ -22,7 +23,7 @@ var css = {
 		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './dist/css/rolspace.css'])
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
 			.pipe(plugins.sourcemaps.init())
-			.pipe(plugins.concat('rolspace.css'))
+			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
 	},
@@ -57,7 +58,7 @@ var js = {
 	concat: function() {
 		return gulp.src([config.js.jquery, config.js.bootstrap, './_scripts/ui-setup.js', './_scripts/main.js'])
 			.pipe(plugins.sourcemaps.init())
-			.pipe(plugins.concat('rolspace.js'))
+			.pipe(plugins.concat('rolspace.js', { newLine: config.newLine }))
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/js/'));
 	},
@@ -86,7 +87,7 @@ gulp.task('js', function(callback) { sequence('js:concat', 'js:lint', 'js:minify
 gulp.task('clean', null);
 
 gulp.task('jekyll', function(callback) {
-	var jekyll = spawn('jekyll', [ 'serve', '--watch']);
+	var jekyll = spawn('jekyll', [ 'build', '--watch' ]);
 
 	var jekyllLogger = function(buffer) {
 		buffer.toString()
@@ -100,4 +101,17 @@ gulp.task('jekyll', function(callback) {
 	callback();
 });
 
-gulp.task('dev', function(callback) { sequence('css', 'js', 'jekyll', callback); });
+gulp.task('sync', function(callback) {
+	browserSync.init({
+		files: '_site/**',
+		port: 4000,
+		server: {
+			baseDir: '_site'
+		}
+	});
+	gulp.watch('_less/default/*.*', ['css']);
+	gulp.watch('_scripts/*.*', ['js']);
+	callback();
+});
+
+gulp.task('dev', function(callback) { sequence('css', 'js', 'jekyll', 'sync', callback); });

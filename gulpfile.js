@@ -8,23 +8,23 @@ var gulp = require('gulp');
 
 var config = {
 	css: {
+		dist: './dist/css/',
 		bootstrap: './bower_components/bootstrap/dist/css/bootstrap.min.css',
 		fontAwesome: './bower_components/font-awesome/css/font-awesome.min.css'
 	},
 	js: {
-		jquery: 'bower_components/jquery/dist/jquery.min.js',
-		bootstrap: 'bower_components/bootstrap/dist/js/bootstrap.min.js'
+		dist: './dist/js/',
+		bootstrap: './bower_components/bootstrap/dist/js/bootstrap.min.js',
+		jquery: './bower_components/jquery/dist/jquery.min.js'
 	},
 	newLine: '\r\n\r\n'
 };
 
 var css = {
 	concat: function() {
-		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './dist/css/rolspace.css'])
+		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/default/rolspace.css'])
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
-			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
-			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
 	},
 	less: function() {
@@ -36,7 +36,7 @@ var css = {
 			.pipe(plugins.autoprefixer({
 				browsers: ['last 2 versions']
 			}))
-			.pipe(gulp.dest('./dist/css/'));
+			.pipe(gulp.dest('./_less/default/'));
 	},
 	minify: function(callback) {
 		gulp.src(['./dist/css/rolspace.css'])
@@ -49,10 +49,10 @@ var css = {
 	},
 };
 
-gulp.task('css:concat', css.concat);
 gulp.task('css:less', css.less);
+gulp.task('css:concat', css.concat);
 gulp.task('css:minify', css.minify);
-gulp.task('css', function(callback) { sequence('css:concat', 'css:less', 'css:minify', callback); });
+gulp.task('css', function(callback) { sequence('css:less', 'css:concat', 'css:minify', callback); });
 
 var js = {
 	concat: function() {
@@ -109,8 +109,8 @@ gulp.task('sync', function(callback) {
 			baseDir: '_site'
 		}
 	});
-	gulp.watch('_less/default/*.*', ['css']);
-	gulp.watch('_scripts/*.*', ['js']);
+	gulp.watch('./_less/default/*.less', ['css']);
+	gulp.watch('./_scripts/*.js', ['js']);
 	callback();
 });
 

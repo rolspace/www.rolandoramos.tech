@@ -2,6 +2,7 @@
 
 var browserSync = require('browser-sync').create();
 var spawn = require('child_process').spawn;
+var del = require('del');
 var sequence = require('run-sequence');
 var plugins = require('gulp-load-plugins')();
 var gulp = require('gulp');
@@ -21,10 +22,19 @@ var config = {
 };
 
 var css = {
+	clean: function () {
+		return del([
+				'_less/default/rolspace.css',
+				'dist/css/**'
+			]);
+	},
 	concat: function() {
 		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/default/rolspace.css'])
+			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
+			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts'))
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
+			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
 	},
 	less: function() {
@@ -49,12 +59,16 @@ var css = {
 	},
 };
 
+gulp.task('css:clean', css.clean);
 gulp.task('css:less', css.less);
 gulp.task('css:concat', css.concat);
 gulp.task('css:minify', css.minify);
-gulp.task('css', function(callback) { sequence('css:less', 'css:concat', 'css:minify', callback); });
+gulp.task('css', function(callback) { sequence('css:clean', 'css:less', 'css:concat', 'css:minify', callback); });
 
 var js = {
+	clean: function() {
+		return del(['dist/js/**']);
+	},
 	concat: function() {
 		return gulp.src([config.js.jquery, config.js.bootstrap, './_scripts/ui-setup.js', './_scripts/main.js'])
 			.pipe(plugins.sourcemaps.init())
@@ -79,10 +93,11 @@ var js = {
 	}
 };
 
+gulp.task('js:clean', js.clean);
 gulp.task('js:concat', js.concat);
 gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
-gulp.task('js', function(callback) { sequence('js:concat', 'js:lint', 'js:minify', callback); });
+gulp.task('js', function(callback) { sequence('js:clean', 'js:concat', 'js:lint', 'js:minify', callback); });
 
 gulp.task('clean', null);
 

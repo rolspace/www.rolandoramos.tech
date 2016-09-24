@@ -1,5 +1,5 @@
 ---
-layout: default/post
+layout: v1/post
 published: true
 title: 'M&uuml;nchen'
 date: 2014-08-11

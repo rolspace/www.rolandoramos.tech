@@ -1,5 +1,5 @@
 ---
-layout: default/post
+layout: v1/post
 published: true
 title: 'Z&uuml;rich: 113'
 date: 2014-07-03

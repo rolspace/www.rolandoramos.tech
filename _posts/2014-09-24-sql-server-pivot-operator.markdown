@@ -1,5 +1,5 @@
 ---
-layout: default/post
+layout: v1/post
 status: publish
 published: true
 title: 'SQL Server: the PIVOT operator'

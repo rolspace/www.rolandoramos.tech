@@ -35,15 +35,15 @@ const css = {
 	concat: () => {
 		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_temp/css/rolspace.css'])
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
-			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts'))
+			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts/v1'))
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
 			.pipe(gulp.dest('./dist/css/'));
 	},
 	less: () => {
-		return gulp.src(['./_less/default/*.less'])
+		return gulp.src(['./_less/v1/*.less'])
 			.pipe(plugins.less({
 				filename: 'rolspace.css',
-				paths: [ './_less/default/includes' ]
+				paths: [ './_less/v1/includes' ]
 			}))
 			.pipe(plugins.autoprefixer({
 				browsers: ['last 2 versions']
@@ -69,7 +69,7 @@ gulp.task('css', (callback) => { sequence('css:clean', 'css:less', 'css:concat',
 
 const js = {
 	babel: () => {
-		return gulp.src(['./_scripts/setup.js', './_scripts/main.js'])
+		return gulp.src(['./_scripts/v1/setup.js', './_scripts/v1/main.js'])
 			.pipe(plugins.babel())
 			.pipe(gulp.dest('./_temp/js'));
 	},
@@ -138,8 +138,8 @@ gulp.task('sync', (callback) => {
 			baseDir: '_site'
 		}
 	});
-	gulp.watch('./_less/default/*.less', ['css']);
-	gulp.watch('./_scripts/*.js', ['js']);
+	gulp.watch('./_less/v1/*.less', ['css']);
+	gulp.watch('./_scripts/v1/*.js', ['js']);
 	callback();
 });
 

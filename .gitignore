@@ -1,4 +1,5 @@
 _site/
+_temp/
 .sass-cache/
 .jekyll-metadata
 *.sublime-workspace

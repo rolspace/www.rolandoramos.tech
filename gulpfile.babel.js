@@ -3,6 +3,9 @@
 import { create as loadBrowserSync } from 'browser-sync';
 import loadPlugins from 'gulp-load-plugins';
 import sequence from 'run-sequence';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
 import cp from 'child_process';
 import del from 'del';
 import gulp from 'gulp';
@@ -26,13 +29,13 @@ const config = {
 };
 
 const css = {
-	clean: function () {
+	clean: () => {
 		return del([
 				'_less/default/rolspace.css',
 				'dist/css/**'
 			]);
 	},
-	concat: function() {
+	concat: () => {
 		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/default/rolspace.css'])
 			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
@@ -41,7 +44,7 @@ const css = {
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
 	},
-	less: function() {
+	less: () => {
 		return gulp.src(['./_less/default/*.less'])
 			.pipe(plugins.less({
 				filename: 'rolspace.css',
@@ -52,7 +55,7 @@ const css = {
 			}))
 			.pipe(gulp.dest('./_less/default/'));
 	},
-	minify: function(callback) {
+	minify: (callback) => {
 		gulp.src(['./dist/css/rolspace.css'])
 			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.cleanCss())
@@ -67,26 +70,38 @@ gulp.task('css:clean', css.clean);
 gulp.task('css:less', css.less);
 gulp.task('css:concat', css.concat);
 gulp.task('css:minify', css.minify);
-gulp.task('css', function(callback) { sequence('css:clean', 'css:less', 'css:concat', 'css:minify', callback); });
+gulp.task('css', (callback) => { sequence('css:clean', 'css:less', 'css:concat', 'css:minify', callback); });
 
 const js = {
-	clean: function() {
+	babel: () => {
+		return gulp.src(['./_scripts/setup.js', './_scripts/main.js'])
+			.pipe(plugins.babel())
+			.pipe(gulp.dest('./_temp/js'));
+	},
+	browserify: () => {
+		return browserify('./_temp/js/main.js')
+			.bundle()
+			.pipe(source('temp.js'))
+			.pipe(gulp.dest('./_temp/js'));
+	},
+	clean: () => {
 		return del(['dist/js/**']);
 	},
-	concat: function() {
-		return gulp.src([config.js.jquery, config.js.bootstrap, './_scripts/ui-setup.js', './_scripts/main.js'])
+	concat: () => {
+		return gulp.src([config.js.jquery, config.js.bootstrap, './_temp/js/temp.js'])
 			.pipe(plugins.sourcemaps.init())
+			.pipe(plugins.babel())
 			.pipe(plugins.concat('rolspace.js', { newLine: config.newLine }))
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/js/'));
 	},
-	lint: function() {
-		return gulp.src(['./_scripts/rolspace.js', './gulpfile.js'])
+	lint: () => {
+		return gulp.src(['./temp/js/temp.js', './gulpfile.js'])
 			.pipe(plugins.eslint())
 			.pipe(plugins.eslint.format())
 			.pipe(plugins.eslint.failAfterError());
 	},
-	minify: function(callback) {
+	minify: (callback) => {
 		gulp.src(['./dist/js/rolspace.js'])
 			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.uglify())
@@ -97,19 +112,21 @@ const js = {
 	}
 };
 
+gulp.task('js:babel', js.babel);
+gulp.task('js:browserify', js.browserify);
 gulp.task('js:clean', js.clean);
 gulp.task('js:concat', js.concat);
 gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
-gulp.task('js', function(callback) { sequence('js:clean', 'js:concat', 'js:lint', 'js:minify', callback); });
+gulp.task('js', (callback) => { sequence('js:clean', 'js:babel', 'js:browserify', 'js:lint', 'js:concat', 'js:minify', callback); });
 
-gulp.task('jekyll', function(callback) {
+gulp.task('jekyll', (callback) => {
 	var jekyll = child('jekyll', [ 'build', '--watch' ]);
 
-	var jekyllLogger = function(buffer) {
+	var jekyllLogger = (buffer) => {
 		buffer.toString()
 			.split(/\n/)
-			.forEach(function(message) { return plugins.util.log('Jekyll: ' + message); });
+			.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
 	};
 
 	jekyll.stdout.on('data', jekyllLogger);
@@ -118,7 +135,7 @@ gulp.task('jekyll', function(callback) {
 	callback();
 });
 
-gulp.task('sync', function(callback) {
+gulp.task('sync', (callback) => {
 	browserSync.init({
 		files: '_site/**',
 		port: 4000,
@@ -131,4 +148,4 @@ gulp.task('sync', function(callback) {
 	callback();
 });
 
-gulp.task('dev', function(callback) { sequence('css', 'js', 'jekyll', 'sync', callback); });
+gulp.task('dev', (callback) => { sequence('css', 'js', 'jekyll', 'sync', callback); });

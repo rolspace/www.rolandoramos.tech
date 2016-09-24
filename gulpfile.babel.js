@@ -1,13 +1,17 @@
 'use strict';
 
-var browserSync = require('browser-sync').create();
-var spawn = require('child_process').spawn;
-var del = require('del');
-var sequence = require('run-sequence');
-var plugins = require('gulp-load-plugins')();
-var gulp = require('gulp');
+import { create as loadBrowserSync } from 'browser-sync';
+import loadPlugins from 'gulp-load-plugins';
+import sequence from 'run-sequence';
+import cp from 'child_process';
+import del from 'del';
+import gulp from 'gulp';
 
-var config = {
+const browserSync = loadBrowserSync();
+const plugins = loadPlugins();
+const child = cp.spawn;
+
+const config = {
 	css: {
 		dist: './dist/css/',
 		bootstrap: './bower_components/bootstrap/dist/css/bootstrap.min.css',
@@ -21,7 +25,7 @@ var config = {
 	newLine: '\r\n\r\n'
 };
 
-var css = {
+const css = {
 	clean: function () {
 		return del([
 				'_less/default/rolspace.css',
@@ -65,7 +69,7 @@ gulp.task('css:concat', css.concat);
 gulp.task('css:minify', css.minify);
 gulp.task('css', function(callback) { sequence('css:clean', 'css:less', 'css:concat', 'css:minify', callback); });
 
-var js = {
+const js = {
 	clean: function() {
 		return del(['dist/js/**']);
 	},
@@ -102,7 +106,7 @@ gulp.task('js', function(callback) { sequence('js:clean', 'js:concat', 'js:lint'
 gulp.task('clean', null);
 
 gulp.task('jekyll', function(callback) {
-	var jekyll = spawn('jekyll', [ 'build', '--watch' ]);
+	var jekyll = child('jekyll', [ 'build', '--watch' ]);
 
 	var jekyllLogger = function(buffer) {
 		buffer.toString()

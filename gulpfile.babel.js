@@ -103,8 +103,6 @@ gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
 gulp.task('js', function(callback) { sequence('js:clean', 'js:concat', 'js:lint', 'js:minify', callback); });
 
-gulp.task('clean', null);
-
 gulp.task('jekyll', function(callback) {
 	var jekyll = child('jekyll', [ 'build', '--watch' ]);
 

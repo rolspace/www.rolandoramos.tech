@@ -1,4 +1,8 @@
+import { Setup } from './setup.js';
+
 $(function(){
-	"use strict";
-	uiSetup.init();
+	'use strict';
+
+	const setup = new Setup();
+	setup.init();
 });

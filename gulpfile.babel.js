@@ -68,12 +68,10 @@ gulp.task('css:minify', css.minify);
 gulp.task('css', (callback) => { sequence('css:clean', 'css:less', 'css:concat', 'css:minify', callback); });
 
 const js = {
-	babel: () => {
-		return gulp.src(['./_scripts/v1/setup.js', './_scripts/v1/main.js'])
+	babelify: () => {
+		gulp.src(['./_scripts/v1/setup.js', './_scripts/v1/main.js'])
 			.pipe(plugins.babel())
 			.pipe(gulp.dest('./_temp/js'));
-	},
-	browserify: () => {
 		return browserify('./_temp/js/main.js')
 			.bundle()
 			.pipe(source('temp.js'))
@@ -107,13 +105,12 @@ const js = {
 	}
 };
 
-gulp.task('js:babel', js.babel);
-gulp.task('js:browserify', js.browserify);
+gulp.task('js:babelify', js.babelify);
 gulp.task('js:clean', js.clean);
 gulp.task('js:concat', js.concat);
 gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
-gulp.task('js', (callback) => { sequence('js:clean', 'js:babel', 'js:browserify', 'js:lint', 'js:concat', 'js:minify', callback); });
+gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', 'js:minify', callback); });
 
 gulp.task('jekyll', (callback) => {
 	var jekyll = child('jekyll', [ 'build', '--watch' ]);

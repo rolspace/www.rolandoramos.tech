@@ -6,6 +6,7 @@ import sequence from 'run-sequence';
 import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
+import yargs from 'yargs';
 import cp from 'child_process';
 import del from 'del';
 import gulp from 'gulp';
@@ -13,6 +14,7 @@ import gulp from 'gulp';
 const browserSync = loadBrowserSync();
 const plugins = loadPlugins();
 const child = cp.spawn;
+const argv = yargs.argv;
 
 const config = {
 	css: {
@@ -26,6 +28,20 @@ const config = {
 		jquery: './bower_components/jquery/dist/jquery.min.js'
 	},
 	newLine: '\r\n\r\n'
+};
+
+const serve = () => {
+	setTimeout(() => {
+		browserSync.init({
+			files: '_site/**',
+			port: 4000,
+			server: {
+				baseDir: '_site'
+			}
+		});
+		gulp.watch('./_less/v1/*.less', ['css']);
+		gulp.watch('./_scripts/v1/*.js', ['js']);
+	}, 3000);
 };
 
 const css = {
@@ -113,31 +129,28 @@ gulp.task('js:minify', js.minify);
 gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', 'js:minify', callback); });
 
 gulp.task('jekyll', (callback) => {
-	var jekyll = child('jekyll', [ 'build', '--watch' ]);
+	setTimeout(() => {
+		var jekyll = child('jekyll', [ 'build' ]);
 
-	var jekyllLogger = (buffer) => {
-		buffer.toString()
+		var jekyllLogger = (buffer) => {
+			buffer.toString()
 			.split(/\n/)
 			.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
-	};
+		};
+	}, 2000);
 
-	jekyll.stdout.on('data', jekyllLogger);
-	jekyll.stderr.on('data', jekyllLogger);
+	if (argv.serve) {
+		serve();
+	}
 
 	callback();
 });
 
-gulp.task('sync', (callback) => {
-	browserSync.init({
-		files: '_site/**',
-		port: 4000,
-		server: {
-			baseDir: '_site'
-		}
-	});
-	gulp.watch('./_less/v1/*.less', ['css']);
-	gulp.watch('./_scripts/v1/*.js', ['js']);
+gulp.task('serve', (callback) => {
+	serve();
+
 	callback();
 });
 
-gulp.task('dev', (callback) => { sequence('css', 'js', 'jekyll', 'sync', callback); });
+gulp.task('dev', (callback) => { sequence('css', 'js', 'jekyll', callback); });
+//gul.task('release', () => {  })

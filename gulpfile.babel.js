@@ -129,6 +129,8 @@ gulp.task('js:minify', js.minify);
 gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', 'js:minify', callback); });
 
 gulp.task('jekyll', (callback) => {
+	del(['_site/**']);
+
 	setTimeout(() => {
 		var jekyll = child('jekyll', [ 'build' ]);
 
@@ -153,4 +155,4 @@ gulp.task('serve', (callback) => {
 });
 
 gulp.task('dev', (callback) => { sequence('css', 'js', 'jekyll', callback); });
-//gul.task('release', () => {  })
+gulp.task('release', ['jekyll']);

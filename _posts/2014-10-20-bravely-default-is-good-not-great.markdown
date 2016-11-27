@@ -6,8 +6,8 @@ categories:
 - Uncategorized
 tags:
 - 3ds
-- late reviews
 - games
+- late reviews
 ---
 <img class="img-responsive" src="/assets/141020/bravelydefault.jpg" alt="Bravely Default">
 

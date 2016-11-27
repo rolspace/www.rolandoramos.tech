@@ -5,8 +5,8 @@ published: true
 title: 'SQL Server: the PIVOT operator'
 date: 2014-09-24
 tags:
-- sql server
 - code
+- sql server
 ---
  The SQL Server Pivot feature is quite useful in scenarios that require a slight manipulation of a table's structure in order to display unique column values as column headers.
 

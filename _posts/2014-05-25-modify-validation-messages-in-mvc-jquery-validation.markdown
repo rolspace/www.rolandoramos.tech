@@ -4,8 +4,8 @@ published: true
 title: Modify Validation Messages in ASP.NET MVC with jQuery Validation
 date: 2014-05-25
 tags:
-- c#
 - ".net mvc"
+- c#
 - code
 ---
 Some time ago I needed to change the way in which the unobtrusive validation messages were displayed in a form part of an ASP.NET MVC application.

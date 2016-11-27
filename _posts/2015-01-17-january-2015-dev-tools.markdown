@@ -4,8 +4,8 @@ published: true
 title: January 2015 Dev Tools
 date: 2015-01-17
 tags:
-- tools
 - code
+- tools
 ---
 [CommandPrompt]: http://michaelcrump.net/power-tip-elevated-command-prompt-here-in-windows-8-1 "Admin Command Prompt"
 [VSCommands]: http://vscommands.squaredinfinity.com "VS Commands"

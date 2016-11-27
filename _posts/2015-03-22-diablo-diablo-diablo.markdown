@@ -4,8 +4,8 @@ published: true
 title: Diablo, Diablo, Diablo
 date: 2015-03-22
 tags:
-- late reviews
 - games
+- late reviews
 - pc
 ---
 I purchased Diablo 3 almost two years after the original release date. I bought it right when Blizzard was running a 50% discount on the price, so at 20€ it was the perfect time to get back to point-and-clicking like it was the year 2000.

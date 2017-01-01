@@ -20,7 +20,7 @@ Here is an example to demonstrate how to achieve this functionality.
 
 Let's create an Employee class with the following class definition. A few data annotations have been added to the properties of the class in order to trigger specific validation messages.
 
-{%highlight c# %}
+{% highlight c# %}
 public class Employee
 {
     [Required]

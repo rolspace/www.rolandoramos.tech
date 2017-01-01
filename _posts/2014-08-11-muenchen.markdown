@@ -6,7 +6,7 @@ date: 2014-08-11
 tags:
 - hello world
 ---
-<img class="img-responsive" src="/assets/140811/munchen.jpg" alt="München" />
+<img class="img-responsive" src="/assets/140811/muenchen.jpg" alt="München" />
 
 My stay in Munich was a bit short, even so, the fact is that M&uuml;nich is a GREAT place to visit. The weather was right, the food was tasty, and the beer was cold.
 
@@ -14,8 +14,8 @@ The one place I liked the most after visiting Munich is definitely <em>Viktualie
 
 <!--more-->
 
-Having said that, I am glad it rained during one of the afternoons I was there, or else I would not have had the chance to check out the <em>Lenbachhaus</em>. There is some really good artwork there and you can easily spend 2-3 hours going through the museum.
+Having said that, I am glad it rained during one of the afternoons I was there, or else I would not have had the chance to check out the <em>Lenbachhaus</em>. There is some really good artwork there and you can easily spend 2-3 (or more) hours going through the museum.
 
-And DO NOT miss the views from St. Peter&acute;s. Be warned though, the walk up the tower takes a bit of time, and it might be a bit cramped.
+And DO NOT miss the views from St. Peter&acute;s. Be warned though, the walk up the tower takes a bit of time, and it will probably be a bit cramped.
 
 I am definitely going back to Munich at some point in the future.

@@ -4,6 +4,7 @@ published: true
 title: 'Z&uuml;rich: 113'
 date: 2014-07-03
 tags:
+- hello world
 - zurich
 ---
 <img class="img-responsive" src="/assets/140703/zurich-113.jpg" alt="Zürich" />

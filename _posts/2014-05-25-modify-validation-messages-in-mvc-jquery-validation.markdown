@@ -4,7 +4,6 @@ published: true
 title: Modify Validation Messages in ASP.NET MVC with jQuery Validation
 date: 2014-05-25
 tags:
-- ".net mvc"
 - c#
 - code
 ---

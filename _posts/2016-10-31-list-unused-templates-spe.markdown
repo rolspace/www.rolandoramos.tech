@@ -3,10 +3,11 @@ layout: v1/post
 title: List unused Sitecore Templates with SPE
 date: 2016-10-31
 tags:
-- this
+- code
+- sitecore
 ---
 
-This is a simple PowerShell script that you can use in Sitecore with the SPE, in order to find all templates in a template path which are not being referenced. The script will remove __StandardValues from the referrers, so any templates with only Standard Values as Referrers will not be ignored.
+This is a simple PowerShell script that you can use in Sitecore with the SPE, in order to find all templates in a template path which are not being referenced. The script will remove __Standard Values from the referrers, so any templates with only the __Standard Values as a referrer will not be ignored.
 
 {% highlight powershell %}
 #Get all templates that are not being referenced in a template path.
@@ -31,3 +32,6 @@ foreach ($template in $templates) {
 $myArray | Format-Table Name, @{ Label = 'Path'; Expression={ $_.Paths.Path } }
 
 {% endhighlight %}
+
+This script can be used as a started for additional actions like archiving or deleting the unused templates, or even setting up an SPE Report to filter the query with additional parameters.
+

@@ -1,6 +1,7 @@
 ---
 layout: v1/post
 title: List unused Sitecore Templates with SPE
+published: true
 date: 2016-10-31
 tags:
 - code

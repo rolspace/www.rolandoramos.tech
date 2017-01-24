@@ -23,9 +23,13 @@ Of course, not all the things you read will apply to your situation. Try to iden
 
 There are many sources to look for insight and opinions, some of my favorites are: [https://hbr.org/][The Hardvard Business Review], [https://www.linkedin.com][LinkedIn], and [https://medium.com][Medium].
 
-3. Set expectations and goals
+3. Establish expectations and goals
 This is an important part of a team's path to success. Every team should know what is expected of it and what its goals are.
 
-Most people know that everyone should be treated with respect, people should be on time, etc, but establishing these expectations verbally (and in writing) in front of all team members will increase the team's commitment in meeting these expectations.
+Most people know that everyone should be treated with respect, they should be on time, etc, but establishing these expectations verbally (and in writing) in front of all team members will increase the team's commitment in meeting these expectations.
 
-In the same way, when you establish short-term and long-term goals, the team will know that you, as the manager, are invested in guiding the team to achieve these goals. These goals need to be defined for the team as a group and for individual team members as well.
+In the same way, when you setup short-term and long-term goals, the team will know that you are invested in guiding them to achieve these goals. These goals need to be defined for the team as a whole and for individual team members as well.
+
+These goals need to be challenging, but they also need to be attainable. It is also important that you can support the people in your team as a coach and mentor. Your team members will need help from you to find the time and motivation to reach them.
+
+4. Empathy is key

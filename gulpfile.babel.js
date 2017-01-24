@@ -130,7 +130,6 @@ gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', '
 
 gulp.task('jekyll', (callback) => {
 	del(['_site/**']);
-
 	setTimeout(() => {
 		var jekyll = child('jekyll', [ 'build' ]);
 
@@ -150,7 +149,6 @@ gulp.task('jekyll', (callback) => {
 
 gulp.task('serve', (callback) => {
 	serve();
-
 	callback();
 });
 

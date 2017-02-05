@@ -1,7 +1,7 @@
 ---
 layout: v1/post
 title: What I know now as a Manager
-date: 2016-09-28
+date: 2017-02-20
 tags:
 - team
 ---
@@ -32,13 +32,16 @@ In the same way, when you setup short-term and long-term goals, the team will kn
 
 These goals need to be challenging, but they also need to be attainable. It is also important that you can support the people in your team as a coach and mentor. Your team members will need help from you to find the time and motivation to reach them.
 
-4. Maximize Strenghts
+4. Maximize the strenghts of the team
 If you are able to recognize each team member´s strenghts, then you will be better equipped to help them become more valuable to the team. By playing for a team member´s best qualities, you are recognizing that person´s skills and giving them the opportunity to excel at what they do best.
 
 In regards to this, it is important to avoid letting team members stay too long in their comfort zone, there need to be challenges for them to hone their skills and test their limits.
 
 5. Don't be afraid of weaknesses
 
-Even your own. It is important to recognize that we all have skills and abilities which we haven't fully developed, either through lack of training or adequate opportunities. After identifying these areas for improvement, have an open conversation with the team member to determine if they feel the same way about these "weaknesses" you have identified. It is very possible that they have a different opinion about themselves. We should listen and understand their version of the story.
+Even your own. It is important to recognize that we all have skills and abilities which we haven't fully developed, either through lack of training or adequate opportunities.
+
+After identifying these areas for improvement, have an open conversation with the team member to determine if they feel the same way about these "weaknesses" you have identified. It is very possible that they have a different opinion about themselves. We should listen and understand their version of the story.
 
 In the end, you will come to a conclusion together, about what should be done to make these improvements happen. At the same time, the bond of trust within the team will be stronger.
+

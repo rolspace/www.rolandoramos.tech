@@ -1,7 +1,7 @@
 ---
 layout: v1/post
 published: true
-title: List unused Sitecore Templates with SPE
+title: List unreferenced Sitecore Templates with SPE
 date: 2016-10-31
 tags:
 - code
@@ -10,12 +10,10 @@ tags:
 [SPE]: https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/ "Sitecore PowerShell Extensions"
 [SPE Reports]: https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/reports.html "SPE Reports"
 
-This is a simple PowerShell script that you can use in Sitecore with the [SPE][SPE], in order to find all templates in a template path which are not being referenced. The script will remove __Standard Values from the referrers list, so any templates that are referred only by the __Standard Values will be ignored.
+This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. __Standard Values will not be counted as a referrer.
 
 {% highlight powershell %}
-#Get all templates that are not being referenced in a template path.
-
-#Get the Templates, but exclude default Templates and __Standard Values
+#Get the Templates in the path, excluding default Sitecore Templates and __Standard Values
 $templates = Get-ChildItem -Path 'master:\sitecore\templates\path\to\templates' -Recurse |`
     Where-Object { $_.TemplateName -ne 'Template Folder' `
     	-and $_.TemplateName -ne 'Template field' `
@@ -25,10 +23,11 @@ $templates = Get-ChildItem -Path 'master:\sitecore\templates\path\to\templates' 
 $myArray = New-Object System.Collections.ArrayList
 
 foreach ($template in $templates) {
-    #Get Referrers, and exclude __Standard Values
+    #Get Referrers, excluding __Standard Values
     $links = $template | Get-ItemReferrer -ErrorAction SilentlyContinue | `
         Where-Object { $_.Paths.Path -notlike '*' + $_.Template.FullName + '*' }
     
+    #If there are not Referrers, add the template to the result
     if ($links.Count -eq 0) {
         [void]$myArray.Add($template)
     }

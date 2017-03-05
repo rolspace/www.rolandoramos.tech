@@ -152,5 +152,5 @@ gulp.task('serve', (callback) => {
 	callback();
 });
 
-gulp.task('dev', (callback) => { sequence('css', 'js', 'jekyll', callback); });
+gulp.task('debug', (callback) => { sequence('css', 'js', 'jekyll', callback); });
 gulp.task('release', ['jekyll']);

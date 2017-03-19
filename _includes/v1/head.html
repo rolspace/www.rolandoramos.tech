@@ -5,7 +5,11 @@
   {% assign title = site.title | append: site.description %}
   <title>{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}</title>
   <meta name="description" content="">
+  {% if site.env == 'production' %}
   <link rel="stylesheet" href="{{ "/dist/css/rolspace.min.css" | prepend: site.baseurl }}">
+  {% else %}
+  <link rel="stylesheet" href="{{ "/dist/css/rolspace.css" | prepend: site.baseurl }}">
+  {% endif %}
   <link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" />
   {% if site.env == 'production' %}

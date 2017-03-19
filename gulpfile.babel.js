@@ -51,8 +51,10 @@ const css = {
 	concat: () => {
 		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_temp/css/rolspace.css'])
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
+			.pipe(plugins.sourcemaps.init({ loadMaps: true }))
 			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts/v1'))
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
+			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
 	},
 	less: () => {

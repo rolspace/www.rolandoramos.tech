@@ -16,3 +16,6 @@ exclude: [ .babelrc, .eslintrc.json, .gitignore, _temp, _less, _scripts, bower_c
 # Post settings
 excerpt_separator: <!--more-->
 highlighter: pygments
+
+# Gems
+gems: [jekyll-paginate]

@@ -41,7 +41,7 @@ const css = {
 		return del(['dist/css/**']);
 	},
 	concat: () => {
-		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_temp/css/rolspace.css'])
+		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/v1/rolspace.css'])
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
 			.pipe(plugins.sourcemaps.init({ loadMaps: true }))
 			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts/v1'))
@@ -58,7 +58,7 @@ const css = {
 			.pipe(plugins.autoprefixer({
 				browsers: ['last 2 versions']
 			}))
-			.pipe(gulp.dest('./_temp/css/'));
+			.pipe(gulp.dest('./_less/v1/'));
 	},
 	minify: (callback) => {
 		gulp.src(['./dist/css/rolspace.css'])

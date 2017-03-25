@@ -30,6 +30,11 @@ const config = {
 	newLine: '\r\n\r\n'
 };
 
+const images = gulp.task('images', () => {
+	return gulp.src('assets/**/*.jpg')
+		.pipe(plugins.imagemin([plugins.imagemin.jpegtran({ progressive: true })]))
+		.pipe(gulp.dest('assets/'));
+});
 
 const css = {
 	clean: () => {

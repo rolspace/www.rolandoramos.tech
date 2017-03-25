@@ -30,19 +30,6 @@ const config = {
 	newLine: '\r\n\r\n'
 };
 
-const serve = () => {
-	setTimeout(() => {
-		browserSync.init({
-			files: '_site/**',
-			port: 4000,
-			server: {
-				baseDir: '_site'
-			}
-		});
-		gulp.watch('./_less/v1/*.less', ['css']);
-		gulp.watch('./_scripts/v1/*.js', ['js']);
-	}, 3000);
-};
 
 const css = {
 	clean: () => {
@@ -130,8 +117,22 @@ gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
 gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', 'js:minify', callback); });
 
+const startServer = () => {
+	setTimeout(() => {
+		browserSync.init({
+			files: 'site/**',
+			port: 4000,
+			server: {
+				baseDir: 'site'
+			}
+		});
+		gulp.watch('./_less/v1/*.less', ['css']);
+		gulp.watch('./_scripts/v1/*.js', ['js']);
+	}, 3000);
+};
+
 gulp.task('jekyll', (callback) => {
-	del(['_site/**']);
+	del(['site/**']);
 	setTimeout(() => {
 		var jekyll = child('jekyll', [ 'build' ]);
 
@@ -143,14 +144,14 @@ gulp.task('jekyll', (callback) => {
 	}, 2000);
 
 	if (argv.serve) {
-		serve();
+		startServer();
 	}
 
 	callback();
 });
 
-gulp.task('serve', (callback) => {
-	serve();
+gulp.task('server', (callback) => {
+	startServer();
 	callback();
 });
 

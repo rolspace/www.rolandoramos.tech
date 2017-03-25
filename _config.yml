@@ -4,6 +4,7 @@ email: rolandorramos@gmail.com
 description: " - on code, life, and everything"
 baseurl: ""
 url: "http://www.rolspace.com"
+destination: site
 paginate: 5
 paginate_path: "/page:num/"
 

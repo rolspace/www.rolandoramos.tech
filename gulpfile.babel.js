@@ -27,6 +27,13 @@ const config = {
 		bootstrap: './bower_components/bootstrap/dist/js/bootstrap.min.js',
 		jquery: './bower_components/jquery/dist/jquery.min.js'
 	},
+	gzip: {
+		append: true,
+		skipGrowingFiles: true,
+		gzipOptions: {
+			level: 9
+		}
+	},	
 	newLine: '\r\n\r\n'
 };
 
@@ -47,6 +54,11 @@ const css = {
 			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts/v1'))
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
 			.pipe(plugins.sourcemaps.write('./'))
+			.pipe(gulp.dest('./dist/css/'));
+	},
+	gzip: () => {
+		return gulp.src('./dist/css/rolspace.min.css')
+			.pipe(plugins.gzip(config.gzip))
 			.pipe(gulp.dest('./dist/css/'));
 	},
 	less: () => {
@@ -72,6 +84,7 @@ const css = {
 };
 
 gulp.task('css:clean', css.clean);
+gulp.task('css:gzip', css.gzip);
 gulp.task('css:less', css.less);
 gulp.task('css:concat', css.concat);
 gulp.task('css:minify', css.minify);
@@ -98,6 +111,11 @@ const js = {
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/js/'));
 	},
+	gzip: () => {
+		return gulp.src('./dist/js/rolspace.min.js')
+			.pipe(plugins.gzip(config.gzip))
+			.pipe(gulp.dest('./dist/js'));
+	},
 	lint: () => {
 		return gulp.src(['./temp/js/temp.js', './gulpfile.js'])
 			.pipe(plugins.eslint())
@@ -118,6 +136,7 @@ const js = {
 gulp.task('js:babelify', js.babelify);
 gulp.task('js:clean', js.clean);
 gulp.task('js:concat', js.concat);
+gulp.task('js:gzip', js.gzip);
 gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
 gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', 'js:minify', callback); });

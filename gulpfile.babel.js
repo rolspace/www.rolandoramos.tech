@@ -19,13 +19,13 @@ const argv = yargs.argv;
 const config = {
 	css: {
 		dist: './dist/css/',
-		bootstrap: './bower_components/bootstrap/dist/css/bootstrap.min.css',
-		fontAwesome: './bower_components/font-awesome/css/font-awesome.min.css'
+		bootstrap: './node_modules/bootstrap/dist/css/bootstrap.min.css',
+		fontAwesome: './node_modules/font-awesome/css/font-awesome.min.css'
 	},
 	js: {
 		dist: './dist/js/',
-		bootstrap: './bower_components/bootstrap/dist/js/bootstrap.min.js',
-		jquery: './bower_components/jquery/dist/jquery.min.js'
+		bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
+		jquery: './node_modules/jquery/dist/jquery.min.js'
 	},
 	gzip: {
 		append: true,

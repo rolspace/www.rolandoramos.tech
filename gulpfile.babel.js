@@ -178,4 +178,6 @@ gulp.task('server', (callback) => {
 });
 
 gulp.task('debug', (callback) => { sequence('css', 'js', 'jekyll', callback); });
+
+//export JEKYLL_ENV=production
 gulp.task('release', ['jekyll']);

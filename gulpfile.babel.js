@@ -13,7 +13,7 @@ import gulp from 'gulp';
 
 const browserSync = loadBrowserSync();
 const plugins = loadPlugins();
-const child = cp.spawn;
+const spawn = cp.spawn;
 const argv = yargs.argv;
 
 const config = {
@@ -157,19 +157,19 @@ const startServer = () => {
 
 gulp.task('jekyll', (callback) => {
 	del(['site/**']);
-	setTimeout(() => {
-		var jekyll = child('jekyll', [ 'build' ]);
+	const jekyll = spawn('jekyll', [ 'build' ]);
 
-		var jekyllLogger = (buffer) => {
-			buffer.toString()
-			.split(/\n/)
-			.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
-		};
-	}, 2000);
+	jekyll.on('exit', () => {
+		if (argv.serve) {
+			startServer();
+		}
+	});
 
-	if (argv.serve) {
-		startServer();
-	}
+	var jekyllLogger = (buffer) => {
+		buffer.toString()
+		.split(/\n/)
+		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
+	};
 
 	callback();
 });

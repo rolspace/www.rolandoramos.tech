@@ -142,17 +142,15 @@ gulp.task('js:debug', (callback) => { sequence('js:clean', 'js:babelify', 'js:li
 gulp.task('js', (callback) => { sequence('js:debug', 'js:minify', 'js:gzip', callback); });
 
 const startServer = () => {
-	setTimeout(() => {
-		browserSync.init({
-			files: 'site/**',
-			port: 4000,
-			server: {
-				baseDir: 'site'
-			}
-		});
-		gulp.watch('./_less/v1/*.less', ['css']);
-		gulp.watch('./_scripts/v1/*.js', ['js']);
-	}, 3000);
+	browserSync.init({
+		files: 'site/**',
+		port: 4000,
+		server: {
+			baseDir: 'site'
+		}
+	});
+	gulp.watch('./_less/v1/*.less', ['css']);
+	gulp.watch('./_scripts/v1/*.js', ['js']);
 };
 
 gulp.task('jekyll', (callback) => {

@@ -110,10 +110,11 @@ const js = {
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/js/'));
 	},
-	gzip: () => {
-		return gulp.src('./dist/js/rolspace.min.js')
+	gzip: (callback) => {
+		gulp.src('./dist/js/rolspace.min.js')
 			.pipe(plugins.gzip(config.gzip))
 			.pipe(gulp.dest('./dist/js'));
+		callback();
 	},
 	lint: () => {
 		return gulp.src(['./temp/js/temp.js', './gulpfile.js'])
@@ -121,14 +122,13 @@ const js = {
 			.pipe(plugins.eslint.format())
 			.pipe(plugins.eslint.failAfterError());
 	},
-	minify: (callback) => {
-		gulp.src(['./dist/js/rolspace.js'])
+	minify: () => {
+		return gulp.src(['./dist/js/rolspace.js'])
 			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.uglify())
 			.pipe(plugins.rename('rolspace.min.js'))
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/js/'));
-		callback();
 	}
 };
 
@@ -138,7 +138,8 @@ gulp.task('js:concat', js.concat);
 gulp.task('js:gzip', js.gzip);
 gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
-gulp.task('js', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', 'js:minify', callback); });
+gulp.task('js:debug', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', callback) });
+gulp.task('js', (callback) => { sequence('js:debug', 'js:minify', 'js:gzip', callback); });
 
 const startServer = () => {
 	setTimeout(() => {

@@ -54,10 +54,11 @@ const css = {
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
 			.pipe(gulp.dest('./dist/css/'));
 	},
-	gzip: () => {
-		return gulp.src('./dist/css/rolspace.min.css')
+	gzip: (callback) => {
+		gulp.src('./dist/css/rolspace.min.css')
 			.pipe(plugins.gzip(config.gzip))
 			.pipe(gulp.dest('./dist/css/'));
+		callback();
 	},
 	less: () => {
 		return gulp.src(['./_less/v1/*.less'])
@@ -70,14 +71,13 @@ const css = {
 			}))
 			.pipe(gulp.dest('./_less/v1/'));
 	},
-	minify: (callback) => {
-		gulp.src(['./dist/css/rolspace.css'])
-			.pipe(plugins.sourcemaps.init({ loadMaps: true }))
+	minify: () => {
+		return gulp.src(['./dist/css/rolspace.css'])
+			.pipe(plugins.sourcemaps.init({ loadMaps: false }))
 			.pipe(plugins.cleanCss())
 			.pipe(plugins.rename('rolspace.min.css'))
 			.pipe(plugins.sourcemaps.write('./'))
 			.pipe(gulp.dest('./dist/css/'));
-		callback();
 	},
 };
 
@@ -86,7 +86,8 @@ gulp.task('css:gzip', css.gzip);
 gulp.task('css:less', css.less);
 gulp.task('css:concat', css.concat);
 gulp.task('css:minify', css.minify);
-gulp.task('css', (callback) => { sequence('css:clean', 'css:less', 'css:concat', 'css:minify', callback); });
+gulp.task('css:debug', (callback) => { sequence('css:clean', 'css:less', 'css:concat', callback); });
+gulp.task('css', (callback) => { sequence('css:debug', 'css:minify', 'css:gzip', callback); });
 
 const js = {
 	babelify: () => {

@@ -28,7 +28,7 @@ const config = {
 		jquery: './node_modules/jquery/dist/jquery.min.js'
 	},
 	gzip: {
-		append: true,
+		append: false,
 		skipGrowingFiles: true,
 		gzipOptions: {
 			level: 9

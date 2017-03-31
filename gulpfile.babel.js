@@ -37,6 +37,9 @@ const config = {
 	newLine: '\r\n\r\n'
 };
 
+let currentTask = '';
+let isWatching = false;
+
 const images = gulp.task('images', () => {
 	return gulp.src('assets/**/*.jpg')
 		.pipe(plugins.imagemin([plugins.imagemin.jpegtran({ progressive: true })]))
@@ -149,8 +152,15 @@ const startServer = () => {
 			baseDir: 'site'
 		}
 	});
-	gulp.watch('./_less/v1/*.less', ['css']);
-	gulp.watch('./_scripts/v1/*.js', ['js']);
+
+	isWatching = true;
+
+	//only use the watch if we are on debug mode
+	if (currentTask === 'debug') {
+		gulp.watch('./_less/v1/*.less', ['debug']);
+		gulp.watch('./_scripts/v1/*.js', ['debug']);
+		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*'], ['debug']);
+	}
 };
 
 gulp.task('jekyll', (callback) => {
@@ -158,7 +168,9 @@ gulp.task('jekyll', (callback) => {
 	const jekyll = spawn('jekyll', [ 'build' ]);
 
 	jekyll.on('exit', () => {
-		if (argv.serve) {
+		//if the serve flag is active and the watcher has started,
+		//then do not start the dev server
+		if (argv.serve && !isWatching) {
 			startServer();
 		}
 	});
@@ -177,7 +189,13 @@ gulp.task('server', (callback) => {
 	callback();
 });
 
-gulp.task('debug', (callback) => { sequence('css', 'js', 'jekyll', callback); });
+gulp.task('debug', (callback) => {
+	currentTask = 'debug';
+	sequence('css:debug', 'js:debug', 'jekyll', callback);
+});
 
 //export JEKYLL_ENV=production
-gulp.task('release', ['jekyll']);
+gulp.task('release', (callback) => {
+	currentTask = 'release';
+	sequence('css', 'js', 'jekyll', callback);
+});

@@ -1,10 +1,10 @@
 <head>
-	<title>{% if page.title %}{{ page.title }}{% else %}{{ title }}{% endif %}</title>
-	<meta name="description" content="My name is Rolando Ramos and this is my personal blog on programming and few other things.">
+{% assign title = site.title | append: site.description %}
+	<title>{% if page.title %}{{ page.title | append: " | " | append: site.title }}{% else %}{{ title }}{% endif %}</title>
+	<meta name="description" content="Rolando Ramos' personal blog">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	{% assign title = site.title | append: site.description %}
 	<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
 	<link rel="apple-touch-icon" sizes="57x57" href="assets/icons/apple-icon-57x57.png">
 	<link rel="apple-touch-icon" sizes="60x60" href="assets/icons/apple-icon-60x60.png">

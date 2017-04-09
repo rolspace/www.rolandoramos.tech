@@ -1,26 +1,26 @@
 {
-  "name": "rolspace-website",
-  "version": "1.0.0",
-  "description": "Personal website",
-  "authors": [
-    "Rolando Ramos"
-  ],
-  "license": "MIT",
-  "homepage": "http://www.rolspace.com",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "bootstrap": "~3.3.5",
-    "font-awesome": "fontawesome#~4.4.0"
-  },
-  "main": "",
-  "moduleType": [
-    "globals"
-  ],
-  "private": true
+	"name": "rolspace-website",
+	"version": "1.0.0",
+	"description": "Personal website",
+	"authors": [
+		"Rolando Ramos"
+	],
+	"license": "MIT",
+	"homepage": "http://www.rolspace.com",
+	"ignore": [
+		"**/.*",
+		"node_modules",
+		"bower_components",
+		"test",
+		"tests"
+	],
+	"dependencies": {
+		"bootstrap": "~3.3.5",
+		"font-awesome": "fontawesome#~4.4.0"
+	},
+	"main": "",
+	"moduleType": [
+		"globals"
+	],
+	"private": true
 }

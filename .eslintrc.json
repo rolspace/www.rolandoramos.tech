@@ -1,17 +1,17 @@
 {
-    "env": {
-        "browser": true,
-        "node": true
-    },
-    "extends": "eslint:recommended",
-    "rules": {
-        "indent": [
-            "error",
-            "tab"
-        ],
-        "quotes": [
-            "error",
-            "single"
-        ]
-    }
+	"env": {
+		"browser": true,
+		"node": true
+	},
+	"extends": "eslint:recommended",
+	"rules": {
+		"indent": [
+			"error",
+			"tab"
+		],
+		"quotes": [
+			"error",
+			"single"
+		]
+	}
 }

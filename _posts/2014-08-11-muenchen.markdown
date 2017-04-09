@@ -5,6 +5,7 @@ title: 'M&uuml;nchen'
 date: 2014-08-11
 tags:
 - hello world
+- photos
 ---
 <img class="img-responsive" src="/assets/140811/muenchen.jpg" alt="München" />
 

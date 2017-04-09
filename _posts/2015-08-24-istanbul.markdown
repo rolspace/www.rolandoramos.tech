@@ -4,6 +4,7 @@ title: Istanbul
 date: 2015-08-24 21:30:46
 tags:
 - hello world
+- photos
 ---
 <img class="img-responsive" src="/assets/150824/istanbul.jpg" alt="Galata Bridge">
 

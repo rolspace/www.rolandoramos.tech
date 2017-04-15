@@ -7,6 +7,10 @@
 		{{ content }}
 	</div>
 	{% include v1/footer.html %}
-	<script async type="text/javascript" src="/dist/js/rolspace.min.js"></script>
+	{% if site.env == 'production' %}
+	<script async type="text/javascript" src="{{ "/dist/js/rolspace.min.js" | prepend: site.baseurl }}"></script>
+	{% else %}
+	<script async type="text/javascript" src="{{ "/dist/js/rolspace.js" | prepend: site.baseurl }}"></script>
+	{% endif %}
 </body>
 </html>

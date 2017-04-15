@@ -9,7 +9,7 @@ layout: v1/page
 
 <p>I was born and raised in Panama City, Panama, where I lived for most of my life. In 2003 I obtained my degree in Computer Science from <a title="Computer Science Honor Grads" href="https://www.harding.edu/comp/awards_honorgrads" target="_blank">Harding University</a>, in Searcy, Arkansas. After living in Madrid, Spain for 8 years and obtaining my MBA, I decided to move to Zurich, Switzerland.</p>
 
-<p>I have been a software engineer for 8+ years. This is not just for work, as I like to spend some of my free time with more code!</p>
+<p>I have been a software engineer for 8+ years. That is not just something I do for work, as I like to spend some of my free time with more code!</p>
 
 <p>You can find me on <a href="http://ch.linkedin.com/in/rolandoramosrestrepo">LinkedIn</a>, <a href="http://instagram.com/rolspace">Instagram</a>, and <a href="https://plus.google.com/u/0/+RolandoRamosRestrepo/about">Google+</a>.</p>
 

@@ -7,7 +7,7 @@ tags:
 - pc
 - tools
 ---
-<img class="img-responsive" style="border-radius: 0px;" src="/assets/150601/windows10.jpg" alt="Windows 10" />
+<img class="img-responsive center-block" style="border-radius: 0px;" src="/assets/150601/windows10.jpg" alt="Windows 10" />
 
 I really liked Windows 8, so I am definitely hoping Windows 10 makes improvements to an already great OS.
 

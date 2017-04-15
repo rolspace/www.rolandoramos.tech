@@ -7,7 +7,7 @@ tags:
 - games
 - late reviews
 ---
-<img class="img-responsive" src="/assets/141020/bravelydefault.jpg" alt="Bravely Default">
+<img class="img-responsive center-block" src="/assets/141020/bravelydefault.jpg" alt="Bravely Default">
 
 Bravely Default was first released in Japan in October 2012. In the time leading up to the game's release, it received a lot of coverage from Western gaming media. Because to this, it was easy to find information about the game online. Some time after its release in Japan, it was announced that the game would be localized and released in western markets, to the joy of RPG fans everywhere.
 

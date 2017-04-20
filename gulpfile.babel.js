@@ -16,6 +16,9 @@ const plugins = loadPlugins();
 const spawn = cp.spawn;
 const argv = yargs.argv;
 
+let currentTask = '';
+let isWatching = false;
+
 const config = {
 	css: {
 		dist: './dist/css/',
@@ -36,15 +39,6 @@ const config = {
 	},	
 	newLine: '\r\n\r\n'
 };
-
-let currentTask = '';
-let isWatching = false;
-
-const images = gulp.task('images', () => {
-	return gulp.src('assets/**/*.jpg')
-		.pipe(plugins.imagemin([plugins.imagemin.jpegtran({ progressive: true })]))
-		.pipe(gulp.dest('assets/'));
-});
 
 const css = {
 	clean: () => {
@@ -143,6 +137,12 @@ gulp.task('js:lint', js.lint);
 gulp.task('js:minify', js.minify);
 gulp.task('js:debug', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', callback) });
 gulp.task('js', (callback) => { sequence('js:debug', 'js:minify', 'js:gzip', callback); });
+
+const images = gulp.task('images', () => {
+	return gulp.src('assets/**/*.jpg')
+		.pipe(plugins.imagemin([plugins.imagemin.jpegtran({ progressive: true })]))
+		.pipe(gulp.dest('assets/'));
+});
 
 const startServer = () => {
 	browserSync.init({

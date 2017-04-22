@@ -12,7 +12,7 @@ paginate_path: "/page:num/"
 
 include: [ 404.html, assets, dist ]
 exclude: [ .babelrc, .eslintrc.json, .gitignore, _docker, _temp, _less, _scripts, bower_components, node_modules,
-			bower.json, package.json, gulpfile.babel.js, rolspace.sublime-project, rolspace.sublime-workspace ]
+			Gemfile, Gemfile.lock, package.json, gulpfile.babel.js, rolspace.sublime-project, rolspace.sublime-workspace ]
 
 # Post settings
 markdown: kramdown

@@ -1,6 +1,6 @@
 ---
 layout: v1/post
-title: 5 tips that have helped me as a first time manager
+title: 5 actions that have helped me as a first time manager
 date: 2017-02-20
 tags:
 - team
@@ -9,7 +9,7 @@ tags:
 [LinkedIn]: https://www.linkedin.com "LinkedIn"
 [Medium]: https://medium.com "Medium"
 
-It has been almost a year and six months since I became a team manager for the first time in my career. I have to admit this is something I always wanted to do, but once it happened I realized that there were many things I did not know...far more than I had expected. I needed to approach this a lot differently from my previous position as Technical Lead.
+It has been almost 18 months since I became a team manager for the first time in my career. I have to admit this is something I always wanted to do, but once it happened I realized that there were many things I did not know...far more than I had expected. I needed to approach this a lot differently from my previous position as Technical Lead.
 
 <img class="img-responsive center-block" src="/assets/170220/5-tips-first-time-manager.jpg" alt="Management" />
 
@@ -25,7 +25,7 @@ Such a simple concept, yet it is very easy to underestimate the value of listeni
 
 By encouraging people to voice their opinions and listening to them, it will become a habit within the team as time passes. When new people join the team, seeing this behavior will allow them to feel at ease much quicker in a new environment. They will know they have come to a place where others will listen.
 
-<p class="subtitle-large">2. Reading and learning</p>
+<p class="subtitle-large">2. Continue reading and learning</p>
 
 There is a vast amount of information on the topics of management, organization, and leadership. It would be a waste not to take advantage and use it to be the best manager you can.
 

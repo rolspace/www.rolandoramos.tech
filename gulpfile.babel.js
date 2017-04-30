@@ -156,9 +156,9 @@ const startServer = () => {
 	isWatching = true;
 
 	//only use the watch if we are on debug mode
-	if (currentTask === 'debug') {
-		gulp.watch('./_less/v1/*.less', ['css:debug']);
-		gulp.watch('./_scripts/v1/*.js', ['js:debug']);
+	if (currentTask === 'debug' && isWatching) {
+		gulp.watch('./_less/v1/*.less', ['css:debug', 'jekyll']);
+		gulp.watch('./_scripts/v1/*.js', ['js:debug', 'jekyll']);
 		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
 			'./_posts/**/*', './assets/**/*', './about/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 	}

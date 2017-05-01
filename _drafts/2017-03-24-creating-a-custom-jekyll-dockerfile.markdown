@@ -1,6 +1,6 @@
 ---
 layout: v1/post
-title: Making a custom Jekyll dockerfile: Part I
+title: Creating a custom Jekyll dockerfile&#58; Part I
 date: 2017-03-28
 tags:
 - code
@@ -14,6 +14,8 @@ I started by following the instructions from the Docker website (https://docs.do
 {% highlight bash %}
 FROM jekyll/jekyll:latest
 {% endhighlight %}
+
+<!--more-->
 
 That's easy enough, this line would make sure I was using the latest version of the Jekyll docker container. Using the Jekyll Docker wiki (https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image with the "Dockerfile" name from the terminal:
 
@@ -37,7 +39,10 @@ It seems I needed to include the pygments highlighter into my jekyll environment
 
 <img class="center-block img-responsive" src="/assets/170328/jekyll-container-error-2.jpg" />
 
-I added pygments into the Gemfile and then, I realized I was missing more stuff that would be needed in a proper Jekyll container setup...Good thing I had decided to do this.
+I added pygments into the Gemfile and then...I realized I was missing more stuff that would be needed in a proper Jekyll container setup...Good thing I had decided to do this. I created the Gemfile with my dependencies:
+
+{% highlight ruby %}
+{% endhighlight %}
 
 This time docker ran successfully, and I was able to trigger the "jekyll serve" from the container's bash:
 

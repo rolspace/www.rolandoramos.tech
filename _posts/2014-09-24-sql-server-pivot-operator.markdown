@@ -13,12 +13,12 @@ tags:
  Suppose there was a table with the following schema:
 
 {% highlight sql %}
-CREATE TABLE [Employee](
-	[ID] [int] NOT NULL,
-	[JobTitle] [nvarchar](50) NOT NULL,
-	[Gender] [nchar](1) NOT NULL,
-	[BirthDate] [date] NOT NULL,
-	[HireDate] [date] NOT NULL)
+CREATE TABLE [Employee] (
+  [ID] [int] NOT NULL,
+  [JobTitle] [nvarchar](50) NOT NULL,
+  [Gender] [nchar](1) NOT NULL,
+  [BirthDate] [date] NOT NULL,
+  [HireDate] [date] NOT NULL)
 {% endhighlight %}
 
 <!--more-->
@@ -90,9 +90,9 @@ Now, let&acute;s say you wanted to obtain a result set that provides the average
 
 {% highlight sql %}
 SELECT DATEPART(YEAR, HireDate) as HireYear,
-       AVG(DATEDIFF(YEAR, BirthDate, GETDATE())) as AverageAge
+  AVG(DATEDIFF(YEAR, BirthDate, GETDATE())) as AverageAge
 FROM Employee
-   GROUP BY DATEPART(YEAR, HireDate)
+  GROUP BY DATEPART(YEAR, HireDate)
 {% endhighlight %}
 
 The results:
@@ -134,7 +134,7 @@ This is a standard relational result set, but what if we needed to display the d
 
 {% highlight sql %}
 SELECT DATEPART(YEAR, HireDate) as HireYear
-       DATEDIFF(YEAR, BirthDate, GETDATE()) as Age,
+  DATEDIFF(YEAR, BirthDate, GETDATE()) as Age,
 FROM Employee
 {% endhighlight %}
 
@@ -148,18 +148,17 @@ This is a simplified version of the query in the previous section since it is no
 
 {% highlight sql %}
 SELECT 'AverageAge' AS HireYear,
-       PVT.[2010], PVT.[2011],
-       PVT.[2012], PVT.[2013]
+  PVT.[2010], PVT.[2011],
+  PVT.[2012], PVT.[2013]
 FROM
- /* Source Query */
-(SELECT DATEPART(YEAR, HireDate) as HireYear
-        DATEDIFF(YEAR, BirthDate, GETDATE()) as Age,
-FROM Employee) AS SOURCE
- PIVOT
- /* Data rows and pivoted columns */
-(AVG(Age)
-   FOR HireYear IN ([2010],[2011],[2012],[2013])
-) as PVT
+  /* Source Query */
+  (SELECT DATEPART(YEAR, HireDate) as HireYear
+    DATEDIFF(YEAR, BirthDate, GETDATE()) as Age,
+  FROM Employee) AS SOURCE
+    PIVOT
+    /* Data rows and pivoted columns */
+    (AVG(Age)
+    FOR HireYear IN ([2010],[2011],[2012],[2013])) as PVT
 {% endhighlight %}
 
 The result of this query is shown in the following table.

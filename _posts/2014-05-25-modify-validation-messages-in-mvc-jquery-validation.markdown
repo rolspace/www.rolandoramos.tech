@@ -24,10 +24,13 @@ public class Employee
 {
     [Required]
     public int Id { get; set; }
+
     [Required]
     public string Name { get; set; }
+
     [Required]
     public int Age { get; set; }
+    
     [Phone]
     public string PhoneNumber { get; set; }
 }
@@ -35,7 +38,7 @@ public class Employee
 
 In order to edit items from this class, we will use a view with a form that contains <code>Html.ValidationMessageFor</code> helper methods to display the validation errors for the Employee class properties.
 
-{% highlight c# %}
+{% highlight html %}
 <div class="form-group">
   @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
   <div class="col-md-10">
@@ -72,15 +75,13 @@ In order to modify the way in which the unobstrusive validation messages are dis
 For this specific scenario we need to modify the Validator's <code>showErrors</code> property. In an MVC application the default <code>showErrors</code> property is a function which displays the validation errors associated with a form input. An easy way to test this is to add the following script to the View.
 
 {% highlight javascript %}
-<script>
-   $.validator.setDefaults({
-      showErrors: function (errorMap, errorList) {
-      }
-   })
-</script>
+$.validator.setDefaults({
+  showErrors: function (errorMap, errorList) {
+  }
+})
 {% endhighlight %}
 
-In this case, unobtrusive validation would still work: the form would not submit if there are errors, however, there would be no error messages displayed.The <code>showErrors</code> function is called everytime a validation event occurs (keyup, onblur, submit). The two parameters in the function signature provide information about the elements currently validated when the event is triggered.
+In this case, unobtrusive validation will still work: the form will not submit if there are errors. However, there will be no error messages displayed.The <code>showErrors</code> function is called everytime a validation event occurs (keyup, onblur, submit). The two parameters in the function signature provide information about the elements currently validated when the event is triggered.
 
 The <code>errorMap</code> variable is an object with key/value pairs, where the keys refer to the name of an input field, and the values for these keys refer to the validation message for that input.
 
@@ -89,19 +90,17 @@ The <code>errorList</code> variable is an array of objects, where the objects in
 Using this information, it is possible to create a new <code>showErrors</code> method that will allow us to display unobtrusive validation messages in a different manner:
 
 {% highlight javascript %}
-<script>
-   $.validator.setDefaults({
-      showErrors: function (errorMap, errorList) {
-         $(".valid").each(function (i, v) {
-            $(v).tooltip('destroy');
-         });
-         $.each(errorList, function (i, v) {
-            $(v.element).tooltip({ title: v.message, placement: 'right' });
-         });
-         this.defaultShowErrors();
-      }
-   })
-</script>
+$.validator.setDefaults({
+  showErrors: function (errorMap, errorList) {
+     $(".valid").each(function (i, v) {
+        $(v).tooltip('destroy');
+     });
+     $.each(errorList, function (i, v) {
+        $(v.element).tooltip({ title: v.message, placement: 'right' });
+     });
+     this.defaultShowErrors();
+  }
+})
 {% endhighlight %}
 
 In this case we are using the <code>errorList</code> parameter to determine the validation errors in a form. When an element is invalid, a tooltip (from Bootstrap) is added in order to display the validation message.

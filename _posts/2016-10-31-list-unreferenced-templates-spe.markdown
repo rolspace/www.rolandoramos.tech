@@ -27,7 +27,7 @@ foreach ($template in $templates) {
     $links = $template | Get-ItemReferrer -ErrorAction SilentlyContinue | `
         Where-Object { $_.Paths.Path -notlike '*' + $_.Template.FullName + '*' }
     
-    #If there are not Referrers, add the template to the result
+    #If there are no Referrers, add the template to the result
     if ($links.Count -eq 0) {
         [void]$myArray.Add($template)
     }

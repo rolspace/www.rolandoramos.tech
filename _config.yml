@@ -5,6 +5,7 @@ description: " | Rolando Ramos' personal blog"
 baseurl: ""
 url: "http://www.rolspace.com"
 destination: site
+permalink: pretty
 paginate: 5
 paginate_path: "/page:num/"
 

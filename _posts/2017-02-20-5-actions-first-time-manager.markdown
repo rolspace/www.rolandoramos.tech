@@ -1,6 +1,6 @@
 ---
 layout: v1/post
-title: 5 actions that have helped me as a first time manager
+title: 5 activities that helped me as a first time manager
 date: 2017-02-20
 tags:
 - team
@@ -9,15 +9,15 @@ tags:
 [LinkedIn]: https://www.linkedin.com "LinkedIn"
 [Medium]: https://medium.com "Medium"
 
-It has been almost 18 months since I became a team manager for the first time in my career. I have to admit this is something I always wanted to do, but once it happened I realized that there were many things I did not know...far more than I had expected. I needed to approach this a lot differently from my previous position as Technical Lead.
-
 <img class="img-responsive center-block" src="/assets/170220/5-tips-first-time-manager.jpg" alt="Management" />
 
-For me, this has been an extremely rewarding experience, and I am painfully aware that I have made a few mistakes since then. Nevertheless, it is true that the path to improvement lies in looking back and recognizing those areas where you can adjust.
+It has been almost 18 months since I became a team manager for the first time in my career. This is something I always wanted to do, but once it happened, I realized that there were many things I did not know about management...far more than I had expected. I needed to approach this new role a lot differently from my previous position as Technical Lead.
+
+For me, this has been an extremely rewarding experience, and I am quite aware that I have made a few mistakes since then. Nevertheless, it is true that the path to improvement lies in looking back and recognizing the areas where you can improve and be better.
 
 <!--more-->
 
-I know I do not have a lot of experience yet, but I think I can share a few of the things that have helped me ease the transition from software engineer to team manager. In no particular order:
+I know I do not have a lot of experience yet, but I believe I can share a few of the activities that helped me ease the transition from software engineer to team manager. In no particular order:
 
 <p class="subtitle-large">1. Listening</p>
 

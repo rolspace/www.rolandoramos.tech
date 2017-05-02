@@ -33,11 +33,11 @@ This command created a container with the name "rolspace". It would be accessibl
 
 I ran into my first problem rather quickly:
 
-<img class="center-block img-responsive" src="/assets/170328/jekyll-container-error-1.jpg" />
+<img class="center-block img-responsive" src="/assets/170328/jekyll-container-error-1.png" />
 
 It seems I needed to include the pygments highlighter into my jekyll environment using a Gemfile. I do not recall having to do this the first time I started using Jekyll. A quick search gave me the reason (https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed).
 
-<img class="center-block img-responsive" src="/assets/170328/jekyll-container-error-2.jpg" />
+<img class="center-block img-responsive" src="/assets/170328/jekyll-container-error-2.png" />
 
 I added pygments into the Gemfile and then...I realized I was missing more stuff that would be needed in a proper Jekyll container setup...Good thing I had decided to do this. I created the Gemfile with my dependencies:
 
@@ -46,7 +46,7 @@ I added pygments into the Gemfile and then...I realized I was missing more stuff
 
 This time docker ran successfully, and I was able to trigger the "jekyll serve" from the container's bash:
 
-<img class="center-block img-responsive" src="/assets/170328/jekyll-container-success-1.jpg" />
+<img class="center-block img-responsive" src="/assets/170328/jekyll-container-success-1.png" />
 
 My personal setup just needs an extra element to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I needed was to make sure the gulp-cli would be installed:
 
@@ -58,6 +58,6 @@ RUN npm install -g gulp-cli
 
 I rebuild my custom image and setup the container. On the bash prompt I entered the gulp command for the debug version of the site:
 
-<img class="center-block img-responsive" src="/assets/170328/jekyll-container-success-2.jpg" />
+<img class="center-block img-responsive" src="/assets/170328/jekyll-container-success-2.png" />
 
 That's enough to get my site running on a local container. The next test was to make sure I could use this container on my Windows machine. I pushed my code to the repository, and built the image at the Windows machine. This is the result when I executed it.

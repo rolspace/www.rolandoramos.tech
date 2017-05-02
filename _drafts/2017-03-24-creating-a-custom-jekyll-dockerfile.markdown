@@ -60,4 +60,8 @@ I rebuild my custom image and setup the container. On the bash prompt I entered 
 
 <img class="center-block img-responsive" src="/assets/170328/jekyll-container-success-2.png" />
 
-That's enough to get my site running on a local container. The next test was to make sure I could use this container on my Windows machine. I pushed my code to the repository, and built the image at the Windows machine. This is the result when I executed it.
+That's enough to get my site running on a local container. The next test is to make sure I could use the resulting container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
+
+<img class="center-block img-responsive" src="/assets/170328/jekyll-container-windows.png" />
+
+In the next part, we will take a look at running a Jekyll website from a container on various cloud platforms.

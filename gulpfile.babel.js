@@ -28,7 +28,8 @@ const config = {
 	js: {
 		dist: './dist/js/',
 		bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
-		jquery: './node_modules/jquery/dist/jquery.min.js'
+		jquery: './node_modules/jquery/dist/jquery.min.js',
+		jquerylazy: './node_modules/lazysizes/lazysizes.min.js'
 	},
 	gzip: {
 		append: false,
@@ -100,7 +101,7 @@ const js = {
 		return del(['dist/js/**']);
 	},
 	concat: () => {
-		return gulp.src([config.js.jquery, config.js.bootstrap, './_temp/js/temp.js'])
+		return gulp.src([config.js.jquery, config.js.jquerylazy, config.js.bootstrap, './_temp/js/temp.js'])
 			.pipe(plugins.sourcemaps.init())
 			.pipe(plugins.babel())
 			.pipe(plugins.concat('rolspace.js', { newLine: config.newLine }))

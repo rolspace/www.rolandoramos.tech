@@ -139,8 +139,11 @@ gulp.task('js:debug', (callback) => { sequence('js:clean', 'js:babelify', 'js:li
 gulp.task('js', (callback) => { sequence('js:debug', 'js:minify', 'js:gzip', callback); });
 
 const images = gulp.task('images', () => {
-	return gulp.src('assets/**/*.jpg')
-		.pipe(plugins.imagemin([plugins.imagemin.jpegtran({ progressive: true })]))
+	return gulp.src('assets/**/*')
+		.pipe(plugins.imagemin([
+				plugins.imagemin.jpegtran({ progressive: true }),
+				plugins.imagemin.optipng({ optimizationLevel: 5 })
+			]))
 		.pipe(gulp.dest('assets/'));
 });
 

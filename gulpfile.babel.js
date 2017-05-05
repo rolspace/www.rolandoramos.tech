@@ -59,10 +59,10 @@ const css = {
 		callback();
 	},
 	less: () => {
-		return gulp.src(['./_less/v1/*.less'])
+		return gulp.src(['./_less/v1/rolspace.less'])
 			.pipe(plugins.less({
 				filename: 'rolspace.css',
-				paths: [ './_less/v1/includes' ]
+				paths: [ './_less/v1/', './_less/v1/includes' ]
 			}))
 			.pipe(plugins.autoprefixer({
 				browsers: ['last 2 versions']

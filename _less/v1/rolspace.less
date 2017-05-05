@@ -326,11 +326,12 @@ article {
 		}
 
 		img {
-			&.lazyload {
+			&.lazyload,
+			&.lazyloading {
 				opacity: 0;
 			}
 
-			&.lazyloading {
+			&.lazyloaded {
 				opacity: 1;
 				transition: opacity 2s;
 			}

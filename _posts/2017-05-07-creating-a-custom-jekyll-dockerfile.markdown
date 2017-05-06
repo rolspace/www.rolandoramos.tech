@@ -14,7 +14,7 @@ I finally decided to use my own website to build a custom dockerfile, this way I
 Following the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile), the first thing I do is to create a new file, and give it the name <code>Dockerfile</code>. Then, I include this line in my Dockerfile:
 
 <pre>
-//Dockerfile
+#Dockerfile
 
 FROM jekyll/jekyll:latest
 </pre>
@@ -47,7 +47,7 @@ It seems I need to include the pygments highlighter as a dependency using a Gemf
 
 I added pygments into the Gemfile and, then...I realized I was missing more dependencies...Good thing I had decided to do this. I created the Gemfile with the missing dependencies:
 
-{% highlight ruby %}
+<pre>
 #Gemfile
 
 source 'https://rubygems.org'
@@ -55,7 +55,7 @@ gem 'jekyll'
 gem 'jekyll-paginate', group: :jekyll_plugins
 gem 'kramdown', group: :jekyll_plugins
 gem 'pygments.rb', group: :jekyll_plugins
-{% endhighlight %}
+</pre>
 
 This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> from the container's shell:
 
@@ -64,7 +64,7 @@ This time Docker ran successfully, and I was able to trigger the <code>jekyll se
 My personal setup just needs an extra detail to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I need is to make sure the gulp-cli is installed:
 
 <pre>
-//Dockerfile
+#Dockerfile
 
 FROM jekyll/jekyll:latest
 

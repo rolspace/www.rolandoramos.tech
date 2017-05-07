@@ -12,8 +12,8 @@ paginate_path: "/page:num/"
 # Build settings
 
 include: [ 404.html, assets, dist ]
-exclude: [ .babelrc, .eslintrc.json, .gitignore, _docker, _temp, _less, _scripts, bower_components, node_modules,
-			Gemfile, Gemfile.lock, package.json, gulpfile.babel.js, rolspace.sublime-project, rolspace.sublime-workspace ]
+exclude: [ .babelrc, .eslintrc.json, .gitignore, _docker, _temp, _less, _scripts, aws, node_modules,
+			Gemfile, Gemfile.lock, package.json, gulpfile.babel.js ]
 
 # Post settings
 markdown: kramdown

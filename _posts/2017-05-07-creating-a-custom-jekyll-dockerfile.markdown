@@ -39,11 +39,11 @@ Once the container is ready, it can be started with this command:
 
 Unfortunately, I ran into my first problem rather quickly:
 
-<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-error-1.png" width="770" />
+<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-error-1.png" width="770" alt= "First error when running the custom Jekyll container" />
 
 It seems I needed to include the pygments highlighter as a dependency using a Gemfile. I do not recall having to do this the first time I started using Jekyll. A quick search gave me the [reason](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed).
 
-<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-error-2.png" width="770" height="186" />
+<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-error-2.png" width="770" alt="Second error when running the custom Jekyll container" />
 
 I added pygments into the Gemfile and, then...I realized I was missing more dependencies...Good thing I had decided to do this. I created the Gemfile with the missing dependencies:
 
@@ -59,7 +59,7 @@ gem 'pygments.rb', group: :jekyll_plugins
 
 This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> command from the container's shell:
 
-<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-success-1.png" width="770" height="481" />
+<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-success-1.png" width="770" height="481" alt="Successfully run 'jekyll server' command from container" />
 
 My personal setup just needs an extra detail to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I need is to make sure the gulp-cli is installed:
 
@@ -85,10 +85,10 @@ $ docker image rm jekyll-rolspace
 
 I rebuild my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
 
-<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-success-2.png" width="770" height="413" />
+<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-success-2.png" width="770" height="413" alt="Successfully run a custom gulp task in the Jekyll container" />
 
 That's enough to get my site running on a local container. The next test is to make sure I could use the container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
 
-<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-windows.png" width="770" height="274" />
+<img class="center-block lazyload" data-src="/assets/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
 
 In the next post, we will take a look at running a Jekyll website from a container on various cloud platforms.

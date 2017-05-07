@@ -9,7 +9,7 @@ tags:
 [LinkedIn]: https://www.linkedin.com "LinkedIn"
 [Medium]: https://medium.com "Medium"
 
-<img class="img-responsive center-block" src="/assets/170220/5-tips-first-time-manager.jpg" alt="Management" />
+<img class="center-block img-responsive lazyload" src="/assets/170220/5-tips-first-time-manager.jpg" alt="Management" />
 
 It has been almost 18 months since I became a team manager for the first time in my career. This is something I always wanted to do, but once it happened, I realized that there were many things I did not know about management...far more than I had expected. I needed to approach this new role a lot differently from my previous position as Technical Lead.
 

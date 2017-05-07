@@ -15,7 +15,7 @@ tags:
 
 <p class="subtitle-large">Admin Command Prompt for Windows 8 in the context menu</p>
 
-<img class="img-responsive center-block" src="/assets/150117/cmdpromptfolder.jpg" alt="Admin Command Prompt" />
+<img class="center-block img-responsive lazyload" src="/assets/150117/cmdpromptfolder.jpg" alt="Admin Command Prompt" />
 
 I can't believe I have gone so long without using something like this in my Windows OS. This blog post from Michael Crump tells you everything you need to know.
 
@@ -29,7 +29,7 @@ Using this registry edit, you can open a Command Prompt with Admin privileges fr
 
 A colleague of mine told me about this Visual Studio extension some time ago. It provides some very useful features and tools to enhance your Visual Studio productivity.
 
-<img class="img-responsive center-block" src="/assets/150117/vscommandlocate.jpg" alt="VS Commands" />
+<img class="center-block img-responsive lazyload" src="/assets/150117/vscommandlocate.jpg" alt="VS Commands" />
 
 My three favorite commands from this extension are:
 
@@ -46,7 +46,7 @@ You can read more about this extension here: [http://vscommands.squaredinfinity.
 
 I have become quite interested in Node in the past few months. So, when I finally decided to really get into it, the first thing I did was to go to [http://nodeschool.io][NodeSchool] and check out which tutorials I could find to get started.
 
-<img class="img-responsive center-block" src="/assets/150117/learnyounode.jpg" alt="learnyounode" />
+<img class="center-block img-responsive lazyload" src="/assets/150117/learnyounode.jpg" alt="learnyounode" />
 
 A few days ago I completed the learnyounode tutorial, which I thoroughly enjoyed and gave me a pretty good start into the Node world. I strongly recommend it, you can find it here: [https://github.com/rvagg/learnyounode][LearnYouNode].
 

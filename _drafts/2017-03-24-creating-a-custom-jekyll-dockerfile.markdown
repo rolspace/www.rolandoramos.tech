@@ -51,7 +51,7 @@ gem 'kramdown', group: :jekyll_plugins
 gem 'pygments.rb', group: :jekyll_plugins
 {% endhighlight %}
 
-This time docker ran successfully, and I was able to trigger the <code>jekyll serve</code> from the container's shell:
+This time docker ran successfully, and I was able to trigger the <code>jekyll serve</code> command from the container's shell:
 
 <img class="center-block lazyload" data-src="/assets/170328/jekyll-container-success-1.png" width="770" height="481" />
 

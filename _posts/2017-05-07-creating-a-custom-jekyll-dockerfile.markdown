@@ -7,11 +7,11 @@ tags:
 - code
 - jekyll
 ---
-Docker has been on my ToDo list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to play with it on a specific project.
+Docker has been on my ToDo list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use with it on a specific project.
 
-I finally decided to use my own website to build a custom dockerfile, this way I could get up a running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
+I finally decided to use my own website to build a custom Dockerfile, this way I could get up and running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
 
-Following the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile), the first thing I do is to create a new file, and give it the name <code>Dockerfile</code>. Then, I include this line in my Dockerfile:
+Following the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile), the first thing I did was to create a new file named <code>Dockerfile</code>. Then, I included this line:
 
 <pre>
 #Dockerfile
@@ -21,7 +21,7 @@ FROM jekyll/jekyll:latest
 
 <!--more-->
 
-That's easy enough, the first line in the Dockerfile makes certain that the Docker image will use the latest version of the Jekyll Docker image. Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
+That's easy enough, the first line in the Dockerfile makes certain that the Docker image will use the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
 
 <pre id="build">$ docker build . -t jekyll-rolspace</pre>
 

@@ -31,7 +31,7 @@ This command creates a Docker image with the tag "jekyll-rolspace". Note you do 
 
 This command creates a container with the name "rolspace". Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website. Using the publish option: <code>--publish</code>, I will be able to access the pages with localhost and port 4000, once the site is running through the container.
 
-By adding <code>/bin/bash</code> at the end of the command, I will have access to the container's shell once it is running. This will allow me to run commands like <code>jekyll serve</code>.
+By adding <code>/bin/bash</code> at the end of the command, I will have access to the container's shell once it is running. This will allow me to run commands, like <code>jekyll serve</code>.
 
 Once the container is ready, it can be started with this command:
 
@@ -57,7 +57,7 @@ gem 'kramdown', group: :jekyll_plugins
 gem 'pygments.rb', group: :jekyll_plugins
 </pre>
 
-This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> from the container's shell:
+This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> command from the container's shell:
 
 <img class="center-block lazyload" data-src="/assets/170507/jekyll-container-success-1.png" width="770" height="481" />
 

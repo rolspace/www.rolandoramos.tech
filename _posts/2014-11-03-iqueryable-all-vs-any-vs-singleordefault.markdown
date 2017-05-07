@@ -9,17 +9,16 @@ tags:
 ---
 A few days ago, I came across some code that was throwing a Timeout Exception on an <code>if</code> statement with a condition being evaluated by the <code>IQueryable.All()</code> method.
 
-The condition being tested was pretty straightforward, the code just needed to determine if the value of a variable matched with an existing ID in the SQL Server database.
+The condition being tested was pretty straightforward, the code just needed to determine if the value of a variable matched with an existing Id in the SQL Server database.
 
 The code was similar to this:
 
 {% highlight c# %}
-//Assume we have a table in the database called Customer
-//with approx. 200.000 records.
+//Assume we have a table in the database called Customer with 200.000 records.
 
 //Determine if ALL the records in the table have a
-//CustomerID that is not equal to the value of the variable
-if (context.Customer.All(c => c.CustomerID != customerId))
+//CustomerId that is not equal to the customerId variable
+if (context.Customer.All(c => c.CustomerId != customerId))
 {
    //Execute code...
 }
@@ -34,8 +33,8 @@ Since this was the cause of the timeout, it seemed like a good option to change 
 The statement had to be rewritten in a way that the condition would match the logic of the previous statement in order to produce the same result:
 
 {% highlight c# %}
-//Determine if ANY of the records in the table have a
-//CustomerID that is equal to the value of the variable
+//Determine if ANY of the records in the Customer table
+//have a CustomerID that is equal to the customerId variable
 if (!context.Customer.Any(c => c.CustomerID == customerId))
 {
    //Execute code...
@@ -45,8 +44,8 @@ if (!context.Customer.Any(c => c.CustomerID == customerId))
 The <code>if</code> statement could be rewritten in such a way that the <code>IQueryable.SingleOrDefault()</code> method could be used instead:
 
 {% highlight c# %}
-//Determine if there is a record in the Customer table
-//that has a CustomerID that is equal to the customerId variable
+//Determine the first record in the Customer table that
+//has a CustomerID  that is equal to the customerId variable
 if (context.Customer.FirstOrDefault(c => c.CustomerID == customerId) == null)
 {
    //Execute code...
@@ -135,6 +134,7 @@ If you take a look at the SQL code generated from the <code>IQueryable.All()</co
 
 {% highlight sql %}
 SET @Id = 0;
+
 --IQueryable.All()
 SELECT
    CASE
@@ -151,6 +151,7 @@ SELECT
       ELSE cast(0 as bit)
    END AS [C1]
 FROM ( SELECT 1 AS X ) AS [SingleRowTable1]
+
 --IQueryable.Any()
 SELECT
    CASE

@@ -8,7 +8,7 @@ tags:
 - photos
 - zurich
 ---
-<img class="img-responsive center-block" src="/assets/141213/zurich-263.jpg" alt="Zürich: 263" />
+<img class="center-block img-responsive lazyload" src="/assets/141213/zurich-263.jpg" alt="Zürich: 263" />
 
 Our first winter in Zurich is almost here. Little by little the clouds have taken over and temperature has been dropping gradually in the past few weeks.
 

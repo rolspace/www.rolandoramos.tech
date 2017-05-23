@@ -29,7 +29,7 @@ If you are looking for a lightweight, easy to use tool to achieve Sitecore seria
 
 A few months ago I was testing the performance of an application using the RedGate Performance Profiler when I came across dotPeek and I am very, very glad I did.
 
-<img class="center-block img-responsive lazyload" src="/assets/150525/dotpeek.jpg" alt="dotPeek" />
+<img class="center-block img-responsive lazyload" src="/assets/150525/dotpeek.png" alt="dotPeek" />
 
 dotPeek is free tool for decompiling .NET code and it has program has saved me a lot of time on multiple occasions. I am a big fan of the ability to generate pdb files and exporting decompiled code to projects for debugging.
 
@@ -43,7 +43,7 @@ I remember using LinqPad sometime in 2009 when I was working on a project using 
 
 I am glad to see that it still provides the same core functionality as in years past, just as it has added a ton of other features.
 
-<img class="center-block img-responsive lazyload" src="/assets/150525/linqpad.jpg" alt="LinqPad" />
+<img class="center-block img-responsive lazyload" src="/assets/150525/linqpad.png" alt="LinqPad" />
 
 While there are some utility features, like Autocomplete, that are only for licensed users, the price breakdown seems just right for each of the available tiers, even if you are going for the Premium License.
 

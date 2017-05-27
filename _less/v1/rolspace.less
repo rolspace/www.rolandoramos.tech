@@ -456,6 +456,12 @@ article {
 	position: absolute;
 	width: 100%;
 
+	div.right-column {
+		@media (max-width: 320px) {
+			padding-left: 0px;
+		}
+	}
+
 	div[class^=col-md] {
 		@media (max-width: 767px)
 		{
@@ -466,6 +472,10 @@ article {
 	span.copyright {
 		@media (min-width: 768px) {
 			float: left;
+		}
+
+		@media (max-width: 767px) {
+			font-size: 0.925em;
 		}
 
 		a {
@@ -481,10 +491,18 @@ article {
 
 	span.social-links {
 		float: right;
-		font-size: @font-large;
+		font-size: @font-base-size-em;
 
 		a {
-			padding: 0px 1px;
+			
+			@media (min-width: 768px) {
+				padding: 0px 1px;
+			}
+
+			@media (max-width: 767px) {
+				padding: 0px;
+			}
+
 			text-decoration: none;
 
 			& .linkedin {

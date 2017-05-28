@@ -149,12 +149,25 @@ const images = gulp.task('images', () => {
 });
 
 const startServer = () => {
+	let server = {
+		baseDir: 'site',
+	}
+
+	if (currentTask === 'release') {
+		server.middleware = [{
+			route: '/dist',
+			handle: (req, res, next) => {
+				res.setHeader('Content-Encoding', 'gzip');
+
+				next();
+			}
+		}]
+	}
+
 	browserSync.init({
 		files: 'site/**',
 		port: 4000,
-		server: {
-			baseDir: 'site'
-		}
+		server: server
 	});
 
 	isWatching = true;

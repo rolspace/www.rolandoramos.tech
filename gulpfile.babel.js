@@ -210,13 +210,16 @@ gulp.task('server', (callback) => {
 	callback();
 });
 
+gulp.task('setproduction', () => {
+	return process.env.JEKYLL_ENV = 'production';
+});
+
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
 	sequence('css:debug', 'js:debug', 'jekyll', callback);
 });
 
-//export JEKYLL_ENV=production
 gulp.task('release', (callback) => {
 	currentTask = 'release';
-	sequence('css', 'js', 'jekyll', callback);
+	sequence('setproduction', 'css', 'js', 'jekyll', callback);
 });

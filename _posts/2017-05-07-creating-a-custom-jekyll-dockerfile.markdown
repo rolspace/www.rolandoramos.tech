@@ -5,6 +5,7 @@ title: Creating a custom Jekyll Dockerfile&#58; Part I
 date: 2017-05-06
 tags:
 - code
+- docker
 - jekyll
 ---
 Docker has been on my ToDo list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use with it on a specific project.

@@ -210,7 +210,7 @@ gulp.task('server', (callback) => {
 	callback();
 });
 
-gulp.task('setproduction', () => {
+gulp.task('envrelease', () => {
 	return process.env.JEKYLL_ENV = 'production';
 });
 
@@ -221,5 +221,5 @@ gulp.task('debug', (callback) => {
 
 gulp.task('release', (callback) => {
 	currentTask = 'release';
-	sequence('setproduction', 'css', 'js', 'jekyll', callback);
+	sequence('envrelease', 'css', 'js', 'jekyll', callback);
 });

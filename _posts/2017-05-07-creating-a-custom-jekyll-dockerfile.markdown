@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Creating a custom Jekyll Dockerfile&#58; Part I
 date: 2017-05-06

@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 title: The IEnumerable.GroupBy Overloads
 date: 2016-03-08
 tags:

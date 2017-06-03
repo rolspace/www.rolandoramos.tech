@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Override the IEnumerable Mapper in Glass.Mapper 4.0
 date: 2015-07-12

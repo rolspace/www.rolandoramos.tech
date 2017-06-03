@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 title: 5 activities that helped me as a first time manager
 date: 2017-02-20
 tags:

@@ -1,12 +1,12 @@
 <!DOCTYPE html>
 <html>
-{% include v1/head.html %}
+{% include head.html %}
 <body id="body">
-	{% include v1/header.html %}
+	{% include header.html %}
 	<div id="main" class="container">
 		{{ content }}
 	</div>
-	{% include v1/footer.html %}
+	{% include footer.html %}
 	{% if site.env == 'production' %}
 	<script async type="text/javascript" src="{{ "/dist/js/rolspace.min.js" | prepend: site.baseurl }}"></script>
 	{% else %}

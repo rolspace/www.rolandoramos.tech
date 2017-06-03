@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 title: It's Alive! II
 date: 2017-02-13
 tags:

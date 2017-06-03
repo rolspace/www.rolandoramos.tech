@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: false
 title: Sitecore and MSSQL Server Linux
 date: 2017-06-02

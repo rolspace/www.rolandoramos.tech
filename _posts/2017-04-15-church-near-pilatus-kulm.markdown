@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Church near Pilatus Kulm
 date: 2017-04-15

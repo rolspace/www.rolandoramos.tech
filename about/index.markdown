@@ -1,6 +1,6 @@
 ---
 title: About
-layout: v1/page
+layout: page
 ---
 <h2 class="page-title">Welcome!</h2>
 

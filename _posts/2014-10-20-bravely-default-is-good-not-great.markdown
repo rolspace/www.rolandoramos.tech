@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 title: Bravely Default is quite good, but not great
 date: 2014-10-20
 tags:

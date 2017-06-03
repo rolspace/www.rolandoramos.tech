@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Diablo, Diablo, Diablo
 date: 2015-03-22

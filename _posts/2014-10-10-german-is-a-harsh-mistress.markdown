@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: German is a harsh mistress
 date: 2014-10-10

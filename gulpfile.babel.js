@@ -46,7 +46,7 @@ const css = {
 		return del(['dist/css/**']);
 	},
 	concat: () => {
-		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/v1/rolspace.css'])
+		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/rolspace.css'])
 			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
 			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts/v1'))
 			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
@@ -59,15 +59,15 @@ const css = {
 		callback();
 	},
 	less: () => {
-		return gulp.src(['./_less/v1/rolspace.less'])
+		return gulp.src(['./_less/rolspace.less'])
 			.pipe(plugins.less({
 				filename: 'rolspace.css',
-				paths: [ './_less/v1/', './_less/v1/includes' ]
+				paths: [ './_less/', './_less/includes' ]
 			}))
 			.pipe(plugins.autoprefixer({
 				browsers: ['last 2 versions']
 			}))
-			.pipe(gulp.dest('./_less/v1/'));
+			.pipe(gulp.dest('./_less/'));
 	},
 	minify: () => {
 		return gulp.src(['./dist/css/rolspace.css'])
@@ -89,7 +89,7 @@ gulp.task('css', (callback) => { sequence('css:debug', 'css:minify', 'css:gzip',
 
 const js = {
 	babelify: () => {
-		gulp.src(['./_scripts/v1/setup.js', './_scripts/v1/main.js'])
+		gulp.src(['./_scripts/setup.js', './_scripts/main.js'])
 			.pipe(plugins.babel())
 			.pipe(gulp.dest('./_temp/js'));
 		return browserify('./_temp/js/main.js')
@@ -174,8 +174,8 @@ const startServer = () => {
 
 	//only use the watch if we are on debug mode
 	if (currentTask === 'debug' && isWatching) {
-		gulp.watch('./_less/v1/*.less', ['debug']);
-		gulp.watch('./_scripts/v1/*.js', ['debug']);
+		gulp.watch('./_less/*.less', ['debug']);
+		gulp.watch('./_scripts/*.js', ['debug']);
 		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
 			'./_posts/**/*', './assets/**/*', './about/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 	}
@@ -216,7 +216,7 @@ gulp.task('envrelease', () => {
 
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
-	sequence('css:debug', 'js:debug', 'jekyll', callback);
+	sequence('css:debug', /*'js:debug',*/ 'jekyll', callback);
 });
 
 gulp.task('release', (callback) => {

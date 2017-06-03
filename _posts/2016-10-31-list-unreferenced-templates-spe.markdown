@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: List unreferenced Sitecore Templates with SPE
 date: 2016-10-31

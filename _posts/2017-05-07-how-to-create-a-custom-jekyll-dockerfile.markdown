@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: Creating a custom Jekyll Dockerfile&#58; Part I
+title: How to create a custom Jekyll Dockerfile&#58; Part I
 date: 2017-05-06
 tags:
 - code

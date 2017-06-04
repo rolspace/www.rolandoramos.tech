@@ -1,6 +1,6 @@
 ---
 layout: v1/post
-title: 5 activities that helped me as a first time manager
+title: 5 actions that helped me as a first time manager
 date: 2017-02-20
 tags:
 - team
@@ -17,7 +17,7 @@ For me, this has been an extremely rewarding experience, and I am quite aware th
 
 <!--more-->
 
-I know I do not have a lot of experience yet, but I believe I can share a few of the activities that helped me ease the transition from software engineer to team manager. In no particular order:
+I know I do not have a lot of experience yet, but I believe I can share the 5 things that helped me to ease the transition from software engineer to team manager. In no particular order:
 
 <p class="subtitle-large">1. Listening</p>
 

@@ -55,4 +55,4 @@ Even your own. It is crucial to recognize that we all have skills and abilities 
 
 Aim to have an open conversation with each team member to determine if they feel the same way about these opportunities you have identified. It is likely that they have a different opinion about themselves.
 
-As you discuss these chances for improvement, you will come to an understanding, together, about what should be done to take advantage of these opportunities. Doing this will help everyone in the team tackle difficult issues with more confidence.
+As you discuss these chances for improvement, you will come to an understanding, together, about what should be done to take advantage of these opportunities. Doing this will help everyone in the team tackle difficult issues with confidence.

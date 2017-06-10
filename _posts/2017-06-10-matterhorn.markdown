@@ -9,4 +9,4 @@ tags:
 ---
 <img class="center-block img-responsive lazyload" src="/assets/170610/matterhorn.jpg" />
 
-This is from that one time I was coming back from 3.800 meters above sea level at Klein Matterhorn, and I had the chance to take this last shot.
+This is from that time I was returning from 3.800 meters above sea level after visiting the Klein Matterhor. Before leaving on the cable car, I had the chance to take this last shot.

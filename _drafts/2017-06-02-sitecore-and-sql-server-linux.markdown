@@ -1,7 +1,7 @@
 ---
 layout: v1/post
 published: false
-title: Sitecore and MSSQL Server Linux
+title: Sitecore 8.2 and MSSQL Server Linux
 date: 2017-06-02
 tags:
 - code

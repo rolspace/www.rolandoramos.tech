@@ -139,13 +139,35 @@ gulp.task('js:minify', js.minify);
 gulp.task('js:debug', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', callback) });
 gulp.task('js', (callback) => { sequence('js:debug', 'js:minify', 'js:gzip', callback); });
 
-const images = gulp.task('images', () => {
+
+gulp.task('images', () => {
 	return gulp.src('assets/**/*')
 		.pipe(plugins.imagemin([
 				plugins.imagemin.jpegtran({ progressive: true }),
 				plugins.imagemin.optipng({ optimizationLevel: 5 })
 			]))
 		.pipe(gulp.dest('assets/'));
+});
+
+gulp.task('jekyll', (callback) => {
+	if (!isWatching) {
+		del(['site/**']);
+	}
+	
+	const jekyll = spawn('jekyll', [ 'build' ]);
+
+	jekyll.on('exit', () => {
+		if (argv.serve && !isWatching) {
+			startServer();
+		}
+	});
+
+	callback();
+});
+
+gulp.task('server', (callback) => {
+	startServer();
+	callback();
 });
 
 const startServer = () => {
@@ -181,45 +203,46 @@ const startServer = () => {
 	}
 };
 
-gulp.task('jekyll', (callback) => {
-	if (!isWatching) {
-		del(['site/**']);
-	}
-	
-	const jekyll = spawn('jekyll', [ 'build' ]);
-
-	jekyll.on('exit', () => {
-		//if the serve flag is active and the watcher has started,
-		//then do not start the dev server
-		if (argv.serve && !isWatching) {
-			startServer();
-		}
-	});
-
-	var jekyllLogger = (buffer) => {
-		buffer.toString()
-		.split(/\n/)
-		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
-	};
-
-	callback();
-});
-
-gulp.task('server', (callback) => {
-	startServer();
-	callback();
-});
-
-gulp.task('envrelease', () => {
-	return process.env.JEKYLL_ENV = 'production';
-});
-
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
 	sequence('css:debug', 'js:debug', 'jekyll', callback);
 });
 
+gulp.task('setrelease', () => {
+	return process.env.JEKYLL_ENV = 'production';
+});
+
 gulp.task('release', (callback) => {
 	currentTask = 'release';
-	sequence('envrelease', 'css', 'js', 'jekyll', callback);
+	sequence('setrelease', 'css', 'js', 'jekyll', callback);
 });
+
+gulp.task('aws', () => {
+	const clean = spawn('aws', [ 's3', 'rm', 's3://bucketname', '--recursive' ]);
+
+	let error, log = '';
+	clean.stdout.on('data', data => {
+		log += data.toString('utf8');
+	});
+
+	clean.stderr.on('data', data => {
+		error += data.toString('utf8');
+	});
+
+	clean.on('exit', () => {
+		if (log) {
+			console.log(log);
+		}
+
+		if (error) {
+			console.log(error);
+		}
+	});
+
+	clean.on('close', code => {
+		if (code === 0)
+		{
+
+		}
+	});
+})

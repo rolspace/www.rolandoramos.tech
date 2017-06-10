@@ -1,8 +1,4 @@
 export class Setup {
-	constructor() {
-
-	}
-
 	init() {
 		this.activateMenu();
 	}

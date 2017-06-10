@@ -12,6 +12,7 @@ import del from 'del';
 import postcss from 'gulp-postcss';
 import safe from 'postcss-safe-parser';
 import atImport from 'postcss-import';
+import cssvariables from 'postcss-css-variables';
 import gulp from 'gulp';
 
 const browserSync = loadBrowserSync();
@@ -81,7 +82,7 @@ gulp.task('css:clean', () => {
 
 gulp.task('css:postcss', () => {
 	return gulp.src('./_postcss/rolspace.css')
-		.pipe(postcss([atImport()], { parser: safe }))
+		.pipe(postcss([atImport(), cssvariables()], { parser: safe }))
 		.pipe(gulp.dest('./dist/css/'));
 });
 

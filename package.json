@@ -30,6 +30,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
     "jquery": "^3.2.1",
+    "postcss-css-variables": "^0.7.0",
     "postcss-import": "^10.0.0",
     "postcss-safe-parser": "^3.0.0",
     "run-sequence": "^1.2.2",

@@ -127,7 +127,7 @@ gulp.task('server', () => {
 
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
-	sequence('jekyll', callback);
+	sequence('css', 'jekyll', callback);
 });
 
 gulp.task('release', (callback) => {

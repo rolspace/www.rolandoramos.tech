@@ -1,0 +1,11 @@
+// Small devices (landscape phones, 576px and up)
+@custom-media --small-viewport (min-width: 576px)
+
+// Medium devices (tablets, 768px and up)
+@custom-media --medium-viewport (min-width: 768px)
+
+// Large devices (desktops, 992px and up)
+@custom-media --large-viewport (min-width: 992px)
+
+// Extra large devices (large desktops, 1200px and up)
+@custom-media --xlarge-viewport (min-width: 1200px)

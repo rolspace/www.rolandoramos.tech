@@ -31,9 +31,10 @@
     "gulp-util": "^3.0.7",
     "jquery": "^3.2.1",
     "postcss-css-variables": "^0.7.0",
+    "postcss-custom-media": "^6.0.0",
     "postcss-import": "^10.0.0",
-    "postcss-safe-parser": "^3.0.0",
     "run-sequence": "^1.2.2",
+    "sugarss": "^1.0.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0",
     "yargs": "^8.0.1"

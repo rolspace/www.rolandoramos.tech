@@ -10,7 +10,6 @@ import yargs from 'yargs';
 import cp from 'child_process';
 import del from 'del';
 import postcss from 'gulp-postcss';
-import safe from 'postcss-safe-parser';
 import sugarss from 'sugarss';
 import atImport from 'postcss-import';
 import cssvariables from 'postcss-css-variables';

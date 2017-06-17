@@ -3,6 +3,7 @@ _temp/
 .sass-cache/
 .jekyll-metadata
 *.sublime-workspace
+.bundle
 
 node_modules/
 bower_components/

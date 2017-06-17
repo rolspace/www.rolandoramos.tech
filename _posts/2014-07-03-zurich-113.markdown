@@ -8,7 +8,7 @@ tags:
 - photos
 - zurich
 ---
-<img class="center-block img-responsive lazyload" src="/assets/140703/zurich-113.jpg" alt="Zürich" />
+<img class="center-block img-fluid lazyload" src="/assets/140703/zurich-113.jpg" alt="Zürich" />
 
 It has been 113 days since the move to Z&uuml;rich.
 

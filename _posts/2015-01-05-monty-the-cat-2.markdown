@@ -7,4 +7,4 @@ tags:
 - monty
 - photos
 ---
-<img class="center-block img-responsive lazyload" src="/assets/150105/montythecat.jpg" alt="Monty The Cat #2" />
+<img class="center-block img-fluid lazyload" src="/assets/150105/montythecat.jpg" alt="Monty The Cat #2" />

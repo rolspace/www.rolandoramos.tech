@@ -6,7 +6,7 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-responsive lazyload" src="/assets/150824/istanbul.jpg" alt="Galata Bridge">
+<img class="center-block img-fluid lazyload" src="/assets/150824/istanbul.jpg" alt="Galata Bridge">
 
 I am definitely returning to Istanbul, hopefully the wait will not be too long. If you haven't visited Istanbul yet, then you must go. It might be overrun with tourists, but there's a reason for it. I took this shot on my last night there as we were returning to our hotel. It really is a unique place.
 

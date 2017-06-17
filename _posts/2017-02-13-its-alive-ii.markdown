@@ -5,7 +5,7 @@ date: 2017-02-13
 tags:
 - this
 ---
-<img class="center-block img-responsive lazyload" src="/assets/170213/logo.jpg" alt="Rolspace" />
+<img class="center-block img-fluid lazyload" src="/assets/170213/logo.jpg" alt="Rolspace" />
 
 After quite a bit of time, this blog is finally rebuilt. You will not notice any changes, because it looks the same, but it's not.
 

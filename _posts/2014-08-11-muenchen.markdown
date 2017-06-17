@@ -7,7 +7,7 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-responsive lazyload" src="/assets/140811/muenchen-1400.jpg" alt="München" />
+<img class="center-block img-fluid lazyload" src="/assets/140811/muenchen-1400.jpg" alt="München" />
 
 My stay in Munich was a bit short, even so, the fact is that M&uuml;nich is a GREAT place to visit. The weather was right, the food was tasty, and the beer was cold.
 

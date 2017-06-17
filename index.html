@@ -4,31 +4,23 @@ layout: main
 <div class="row">
   <div class="col-md-12">
     {% for post in paginator.posts %}
-      <article>
-        <div class="row">
-          <div class="col-md-12">
-            <span class="article-date">
-              <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
-            </span>
-            <h2 class="article-title">
-              <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-            </h2>
-            <div class="article-content">
-              {{ post.excerpt }}
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-md-12">
-              <span class="read-more pull-right">
-                <a href="{{ post.url | prepend: site.baseurl }}">
-                  Read More
-                </a>
-                <i class="fa fa-angle-right"></i>
-              </span>
-          </div>
-        </div>
-      </article>
+    <article>
+      <span class="article-date">
+        <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
+      </span>
+      <h2 class="article-title">
+        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+      </h2>
+      <div class="article-content">
+        {{ post.excerpt }}
+      </div>
+      <span class="read-more pull-right">
+        <a href="{{ post.url | prepend: site.baseurl }}">
+          Read More
+        </a>
+        <i class="fa fa-angle-right"></i>
+      </span>
+    </article>
     {% endfor %}
   </div>
 </div>
@@ -36,16 +28,16 @@ layout: main
   <div class="row">
     <div class="col-md-5 col-md-offset-1">
       {% if paginator.next_page %}
-        <a href="{{ paginator.next_page_path }}" class="next-page pull-left" title="Older Posts">
-          <i class="fa fa-angle-left"></i>Older Posts
-        </a>
+      <a href="{{ paginator.next_page_path }}" class="next-page pull-left" title="Older Posts">
+        <i class="fa fa-angle-left"></i>Older Posts
+      </a>
       {% endif %}
     </div>
     <div class="col-md-5">
       {% if paginator.previous_page %}
-        <a href="{{ paginator.previous_page_path }}" class="previous-page pull-right" title="Newer Posts">
-          Newer Posts<i class="fa fa-angle-right"></i>
-        </a>
+      <a href="{{ paginator.previous_page_path }}" class="previous-page pull-right" title="Newer Posts">
+        Newer Posts<i class="fa fa-angle-right"></i>
+      </a>
       {% endif %}
     </div>
   </div>

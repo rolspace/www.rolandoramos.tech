@@ -2,17 +2,17 @@
 layout: main
 ---
 <div class="row">
-  <div class="col-md-10 col-md-offset-1">
+  <div class="col-md-12">
     {% for post in paginator.posts %}
       <article>
         <div class="row">
           <div class="col-md-12">
+            <span class="article-date">
+              <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
+            </span>
             <h2 class="article-title">
               <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
             </h2>
-            <span class="article-meta">
-              <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
-            </span>
             <div class="article-content">
               {{ post.excerpt }}
             </div>

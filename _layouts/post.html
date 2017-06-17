@@ -2,18 +2,14 @@
 layout: main
 ---
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		<article id="post">
-			<div class="row">
-				<div class="col-md-12">
-					<h2 class="article-title">{{ page.title }}</h2>
-					<span class="article-meta">
-						<i class="fa fa-calendar-check-o"></i>{{ page.date | date: '%B %d, %Y' }}
-					</span>
-					<div class="article-content">
-						{{ content }}
-					</div>
-				</div>
+			<span class="article-date">
+				<i class="fa fa-calendar-check-o"></i>{{ page.date | date: '%B %d, %Y' }}
+			</span>
+			<h2 class="article-title">{{ page.title }}</h2>
+			<div class="article-content">
+				{{ content }}
 			</div>
 		</article>
 	</div>
@@ -21,7 +17,7 @@ layout: main
 <div class="post-paginator">
 	<div class="row">
 		{% if page.previous %}
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-12">
 			<a href="{{ page.previous.url }}" class="previous-post" title="Previous">
 				<div>
 					<i class="fa fa-angle-left"></i>
@@ -31,7 +27,7 @@ layout: main
 		</div>
 		{% endif %}
 		{% if page.next %}
-		<div class="col-md-10 col-md-offset-1">
+		<div class="col-md-12">
 			<a href="{{ page.next.url }}" class="next-post" title="Next">
 				<div>
 					<i class="fa fa-angle-right"></i>

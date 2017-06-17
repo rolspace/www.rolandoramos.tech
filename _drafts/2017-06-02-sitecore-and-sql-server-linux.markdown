@@ -21,11 +21,12 @@ I started by getting the image:
 > docker pull microsoft/mssql-server-linux
 </pre>
 
-Once that was completed, then I run the container, following the instructions in the image's Docker Hub page:
+Once that was completed, I ran the container, following the instructions in the image's Docker Hub page:
 
 <pre>
-docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1' -p 1433:1433 -d microsoft/mssql-server-linux
+> docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1' -p 1433:1433 -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
 </pre>
 
-Using this configuration I can SQL Server Management Studio to connect to the container using the following details:
+The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: accept the End User Agreement and create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port. Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to the host's location in the F drive. I need this to persist the Sitecore databases from my machine in the container.
 
+Now that the container was running, I connected to it using the SQL Server Management Studio.

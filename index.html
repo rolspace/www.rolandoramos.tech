@@ -26,14 +26,14 @@ layout: main
 </div>
 <div class="page-paginator">
   <div class="row">
-    <div class="col-md-5 col-md-offset-1">
+    <div class="col-md-6">
       {% if paginator.next_page %}
       <a href="{{ paginator.next_page_path }}" class="next-page pull-left" title="Older Posts">
         <i class="fa fa-angle-left"></i>Older Posts
       </a>
       {% endif %}
     </div>
-    <div class="col-md-5">
+    <div class="col-md-6">
       {% if paginator.previous_page %}
       <a href="{{ paginator.previous_page_path }}" class="previous-page pull-right" title="Newer Posts">
         Newer Posts<i class="fa fa-angle-right"></i>

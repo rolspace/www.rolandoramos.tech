@@ -5,21 +5,21 @@ layout: main
   <div class="col-md-12">
     {% for post in paginator.posts %}
     <article>
-      <span class="article-date">
+      <div class="article-date">
         <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
-      </span>
+      </div>
       <h2 class="article-title">
         <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
       </h2>
       <div class="article-content">
         {{ post.excerpt }}
       </div>
-      <span class="read-more pull-right">
+      <div class="read-more pull-right">
         <a href="{{ post.url | prepend: site.baseurl }}">
           Read More
         </a>
         <i class="fa fa-angle-right"></i>
-      </span>
+      </div>
     </article>
     {% endfor %}
   </div>

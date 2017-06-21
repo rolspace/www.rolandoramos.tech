@@ -112,8 +112,6 @@ gulp.task('jekyll', () => {
 	const jekyll = spawn('jekyll', [ 'build' ]);
 
 	jekyll.on('exit', () => {
-		//if the serve flag is active and the watcher has started,
-		//then do not start the dev server
 		if (argv.serve && !isWatching) {
 			server();
 		}

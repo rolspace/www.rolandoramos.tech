@@ -27,6 +27,20 @@ Once that was completed, I ran the container, following the instructions in the 
 > docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1' -p 1433:1433 -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
 </pre>
 
-The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: accept the End User Agreement and create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port. Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to the host's location in the F drive. I need this to persist the Sitecore databases from my machine in the container.
+The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: accept the End User Agreement and create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port. Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to the host's location in the F drive. We need this to persist the Sitecore databases from my machine in the container.
 
-Now that the container was running, I connected to it using the SQL Server Management Studio.
+With the container running, I connected to it using the SQL Server Management Studio.
+
+[Add SSMS Image]
+
+The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170417). By downloading the ZIP archive of the root folder, we could obtain the separate .mdf and .ldf files needed: https://dev.sitecore.net/~/media/203A8170D4664A41A8900E7AFEFC803F.ashx.
+
+I extracted the contents of the ZIP archive and copied the databases to the location mapped to the container.
+
+[Add folder location image]
+
+After that, it was just necessary to attach each DB file to the server running in the container.
+
+[Add db attach video/gif?]
+
+Once this was completed, I needed to install the Sitecore XP website on the host machine. Even though I already had the root folder contents from the ZIP archive, I preferred to use the Executable installer. I 

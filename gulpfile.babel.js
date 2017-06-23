@@ -22,7 +22,6 @@ const spawn = cp.spawn;
 const argv = yargs.argv;
 
 let currentTask = '';
-let isWatching = false;
 
 const config = {
 	css: {
@@ -47,7 +46,7 @@ const config = {
 };
 
 const server = () => {
-	let server = {
+	let baseServer = {
 		baseDir: 'site',
 	};
 
@@ -65,19 +64,40 @@ const server = () => {
 	browserSync.init({
 		files: 'site/**',
 		port: 4000,
-		server: server
+		server: baseServer
 	});
 
-	//only use the watch if we are on debug mode
-	if (currentTask === 'debug' && !isWatching) {
-		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
-			'./_posts/**/*', './assets/**/*', './about/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
-
-		isWatching = true;
-	}
+	gulp.watch('site/*.*').on('change', browserSync.reload);
 };
 
-gulp.task('css:clean', () => {
+gulp.task('images', () => {
+	return gulp.src('assets/**/*')
+		.pipe(plugins.imagemin([
+				plugins.imagemin.jpegtran({ progressive: true }),
+				plugins.imagemin.optipng({ optimizationLevel: 5 })
+			]))
+		.pipe(gulp.dest('assets/'));
+});
+
+gulp.task('server', () => {
+	server();
+});
+
+gulp.task('jekyll:del', () => {
+	return del(['./site/*.*']);
+});
+
+gulp.task('jekyll', () => {	
+	const jekyll = spawn('jekyll', [ 'build' ]);
+
+	var jekyllLogger = (buffer) => {
+		buffer.toString()
+		.split(/\n/)
+		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
+	};
+});
+
+gulp.task('css:del', () => {
 	return del(['./dist/css/*.*'])
 });
 
@@ -92,45 +112,20 @@ gulp.task('css:postcss', () => {
 });
 
 gulp.task('css', (callback) => {
-	sequence('css:clean', 'css:postcss', callback);
-});
-
-gulp.task('images', () => {
-	return gulp.src('assets/**/*')
-		.pipe(plugins.imagemin([
-				plugins.imagemin.jpegtran({ progressive: true }),
-				plugins.imagemin.optipng({ optimizationLevel: 5 })
-			]))
-		.pipe(gulp.dest('assets/'));
-});
-
-gulp.task('jekyll', () => {
-	if (!isWatching) {
-		del(['site/**']);
-	}
-	
-	const jekyll = spawn('jekyll', [ 'build' ]);
-
-	jekyll.on('exit', () => {
-		if (argv.serve && !isWatching) {
-			server();
-		}
-	});
-
-	var jekyllLogger = (buffer) => {
-		buffer.toString()
-		.split(/\n/)
-		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
-	};
-});
-
-gulp.task('server', () => {
-	server();
+	sequence('css:del', 'css:postcss', callback);
 });
 
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
 	sequence('css', 'jekyll', callback);
+
+	if (argv.serve) {
+		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
+		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
+			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
+
+		server();
+	}
 });
 
 gulp.task('release', (callback) => {

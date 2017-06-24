@@ -1,0 +1,75 @@
+@import '../core/core-vars.css'
+@import '../core/core-media.css'
+@import '../core/core-mixins.css'
+
+@media (--medium-viewport)
+	.nav-link
+		color: var(--subtext-color)
+		font-family: 'Poppins'
+		font-size: 0.750rem
+		font-weight: 500
+
+	article
+		border-bottom: 1px solid var(--subtext-color)
+		margin-bottom: calc(var(--base-margin) * 2)
+
+		& .article-date
+			@mixin subtext
+			margin-bottom: var(--base-margin)
+
+		& .article-content
+			margin-bottom: var(--base-margin)
+
+			& p img
+				margin-bottom: var(--base-margin)
+
+			& .article-title
+				font-family: 'Poppins'
+				font-size: 1.625rem
+				font-weight: 500
+				margin-bottom: var(--base-margin)
+
+				& a
+					color: color(var(--title-color))
+
+				& a:hover
+					color: color(var(--title-color-hover))
+
+		& .read-more
+			margin-bottom: calc(var(--base-margin) * 2)
+
+		& .read-more a
+			@mixin subtext
+
+		& .read-more a:hover
+			color: var(--subtext-color-hover)
+
+	.page-paginator
+		margin-bottom: var(--base-margin)
+
+		& a
+			@mixin subtext
+
+	.footer
+		border-top: 1px solid var(--base-color)
+		bottom: 0
+		color: var(--subtext-color)
+		font-family: 'Poppins'
+		font-size: 0.875rem
+		font-weight: 500
+		height: 77px
+		line-height: 77px
+		padding: 0px 1rem
+		position: absolute
+		width: 100%
+
+		& a
+			color: var(--subtext-color)
+
+		& a:hover
+			color: color(var(--subtext-color-hover))
+
+		& .container
+			margin-top: 0px
+			padding: 0px
+			width: 100%

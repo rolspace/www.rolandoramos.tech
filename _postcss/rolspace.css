@@ -1,3 +1,4 @@
 @import 'bootstrap/dist/css/bootstrap.css'
-@import 'rolspace-web-overrides.css'
-@import 'rolspace-web-custom.css'
+@import './custom/custom-overrides.css'
+@import './custom/custom-main.css'
+@import './custom/custom-rouge.css'

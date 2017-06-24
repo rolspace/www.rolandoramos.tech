@@ -1,6 +1,0 @@
-@import 'rolspace-core-vars.css'
-@import 'rolspace-media-vars.css'
-
-@media (--medium-viewport)
-	.article-date
-		margin-bottom: var(--base-bottom-margin)

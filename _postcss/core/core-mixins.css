@@ -1,0 +1,6 @@
+@define-mixin subtext {
+	color: var(--subtext-color);
+	font-family: 'Poppins';
+	font-size: 0.813rem;
+	font-weight: 500;
+}

@@ -11,6 +11,10 @@ tags:
 
 <img class="center-block img-fluid lazyload" src="/assets/170220/5-tips-first-time-manager-1400.jpg" alt="Management" />
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 It has been almost 18 months since I became a team manager for the first time in my career. This is something I always wanted to do, but once it happened, I realized that there were many things I did not know about management...far more than I had expected. I needed to approach this new role a lot differently from my previous position as Technical Lead.
 
 For me, this has been an extremely rewarding experience, and I am quite aware that I have made a few mistakes since then. Nevertheless, it is true that the path to improvement lies in looking back and recognizing the areas where you can improve and be better.

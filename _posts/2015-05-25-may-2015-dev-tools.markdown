@@ -13,6 +13,10 @@ tags:
 
 <p class="subtitle-large">Unicorn</p>
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 In the past year I have done a fair amount of work using the Sitecore CMS. During this time, I researched various tools and software applications to help make the process of Sitecore development easier and more productive.
 
 <img class="center-block img-fluid lazyload" src="/assets/150525/unicorn.jpg" alt="Unicorn" />

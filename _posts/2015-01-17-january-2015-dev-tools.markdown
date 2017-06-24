@@ -13,9 +13,13 @@ tags:
 [LearnYouNode]: https://github.com/rvagg/learnyounode "LearnYouNode"
 [ArtOfNode]: https://github.com/maxogden/art-of-node "Art of Node"
 
-<p class="subtitle-large">Admin Command Prompt for Windows 8 in the context menu</p>
-
 <img class="center-block img-fluid lazyload" src="/assets/150117/cmdpromptfolder.jpg" alt="Admin Command Prompt" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
+<p class="subtitle-large">Admin Command Prompt for Windows 8 in the context menu</p>
 
 I can't believe I have gone so long without using something like this in my Windows OS. This blog post from Michael Crump tells you everything you need to know.
 

@@ -8,6 +8,10 @@ tags:
 ---
 <img class="center-block img-fluid lazyload" src="/assets/150824/istanbul.jpg" alt="Galata Bridge">
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 I am definitely returning to Istanbul, hopefully the wait will not be too long. If you haven't visited Istanbul yet, then you must go. It might be overrun with tourists, but there's a reason for it. I took this shot on my last night there as we were returning to our hotel. It really is a unique place.
 
 **Edit March 25, 2017**: Things have changed since the time I wrote this post. I sincerely hope that Istanbul and all of Turkey goes back to being a safe place for everyone.

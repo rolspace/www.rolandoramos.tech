@@ -8,9 +8,13 @@ tags:
 - late reviews
 - pc
 ---
-I purchased Diablo 3 almost two years after the original release date. I bought it right when Blizzard was running a 50% discount on the price, so at 20€ it was the perfect time to get back to point-and-clicking like it was the year 2000.
-
 <img class="center-block img-fluid lazyload" src="/assets/150322/oldtristramroad.jpg" alt="Diablo 3" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
+I purchased Diablo 3 almost two years after the original release date. I bought it right when Blizzard was running a 50% discount on the price, so at 20€ it was the perfect time to get back to point-and-clicking like it was the year 2000.
 
 I was really looking forward to playing the game, but my original enthusiasm died down when I realized that I needed to pay 60€ in order to play an online-only game. So I decided to wait until it got cheaper.
 

@@ -9,6 +9,10 @@ tags:
 ---
 <img class="center-block img-fluid lazyload" src="/assets/140811/muenchen-1400.jpg" alt="München" />
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 My stay in Munich was a bit short, even so, the fact is that M&uuml;nich is a GREAT place to visit. The weather was right, the food was tasty, and the beer was cold.
 
 The one place I liked the most after visiting Munich is definitely <em>Viktualienmarkt.</em> The market is a great place to sit down, have a beer, and spend some time just being there, especially on a sunny day.

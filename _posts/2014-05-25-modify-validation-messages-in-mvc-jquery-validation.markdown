@@ -7,6 +7,10 @@ tags:
 - c#
 - code
 ---
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 Some time ago I needed to change the way in which the unobtrusive validation messages were displayed in a form part of an ASP.NET MVC application.
 
 The reason was that the amount of space available in the window was limited and it was a requirement to display the proper validation messages, even though fitting them in the screen was impossible.

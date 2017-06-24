@@ -9,6 +9,10 @@ tags:
 ---
 <img class="center-block img-fluid lazyload" src="/assets/141020/bravelydefault-1400.jpg" alt="Bravely Default">
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 Bravely Default was first released in Japan in October 2012. In the time leading up to the game's release, it received a lot of coverage from Western gaming media. Because to this, it was easy to find information about the game online. Some time after its release in Japan, it was announced that the game would be localized and released in western markets, to the joy of RPG fans everywhere.
 
 It had been a while since I had the time to play a 40+ hour RPG, so Bravely Default caught my attention as the time drew near for its western release. I decided to go against my nature and buy it on release date, taking a chance on all the positive comments and reviews coming from Japan.

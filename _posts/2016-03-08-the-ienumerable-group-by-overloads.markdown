@@ -6,7 +6,11 @@ tags:
 - c#
 - code
 ---
-From time to time, I have had the need to create a few Linq queries using the GroupBy command. For some reason, I have always found it easier to use the query syntax, instead of Lambda expressions.
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
+Everyonce in a while, I have had the need to create a few Linq queries using the GroupBy command. For some reason, I have always found it easier to use the query syntax, instead of Lambda expressions.
 
 Today I decided to go through each of the GroupBy overloads in order to clarify things and make life easier on my end (and maybe for you as well!). One note though, I have decided not include the overloads using the <code>IEqualityComparer</code>, as they are the same version of another overload with just an additional parameter.
 

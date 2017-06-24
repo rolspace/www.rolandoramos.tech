@@ -10,6 +10,10 @@ tags:
 ---
 <img class="center-block img-fluid lazyload" src="/assets/140703/zurich-113.jpg" alt="Zürich" />
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 It has been 113 days since the move to Z&uuml;rich.
 
 Now that some time has passed and things have calmed down a bit I feel somewhat attached to this city, though I cannot give an exact explanation for this. In a way Zurich seems like the type of place that I would not like: small, and quiet. Maybe too quiet.

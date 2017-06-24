@@ -9,4 +9,8 @@ tags:
 ---
 <img class="center-block img-fluid lazyload" src="/assets/170415/church-pilatus-kulm.jpg" />
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 This is one of the last photos I shot while returning from the Pilatus summit, sometime in 2016. I didn't notice it at first, fortunately, my wife told me about the tiny church as we were making our way down.

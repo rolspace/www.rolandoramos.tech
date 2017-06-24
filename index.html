@@ -8,9 +8,6 @@ layout: main
       <div class="article-date">
         <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
       </div>
-      <h2 class="article-title">
-        <a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-      </h2>
       <div class="article-content">
         {{ post.excerpt }}
       </div>

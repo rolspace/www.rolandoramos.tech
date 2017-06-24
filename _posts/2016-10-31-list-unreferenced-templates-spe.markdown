@@ -10,6 +10,10 @@ tags:
 [SPE]: https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/ "Sitecore PowerShell Extensions"
 [SPE Reports]: https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/reports.html "SPE Reports"
 
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. __Standard Values will not be counted as a referrer.
 
 {% highlight powershell %}

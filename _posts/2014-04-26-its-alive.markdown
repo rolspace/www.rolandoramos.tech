@@ -6,6 +6,10 @@ date: 2014-04-26
 tags:
 - this
 ---
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 Finally! The first post in my blog is written. This project has gone through some rough times in the past year, to the point that it was almost left for dead a couple of times.
 
 <img class="center-block img-fluid lazyload" src="/assets/170213/logo.jpg" alt="Rolspace" />

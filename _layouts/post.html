@@ -14,27 +14,25 @@ layout: main
 		</article>
 	</div>
 </div>
-<div class="post-paginator">
-	<div class="row">
-		{% if page.previous %}
-		<div class="col-md-12">
-			<a href="{{ page.previous.url }}" class="previous-post" title="Previous">
-				<div>
-					<i class="fa fa-angle-left"></i>
-				</div>
-				<div>{{ page.previous.title }}</div>
-			</a>
-		</div>
-		{% endif %}
-		{% if page.next %}
-		<div class="col-md-12">
-			<a href="{{ page.next.url }}" class="next-post" title="Next">
-				<div>
-					<i class="fa fa-angle-right"></i>
-				</div>
-				<div>{{ page.next.title }}</div>
-			</a>
-		</div>
-		{% endif %}
+<div class="row post-paginator">
+	{% if page.previous %}
+	<div class="col-md-12">
+		<a href="{{ page.previous.url }}" class="previous-post" title="Previous">
+			<div>
+				<i class="fa fa-angle-left"></i>
+			</div>
+			<div>{{ page.previous.title }}</div>
+		</a>
 	</div>
+	{% endif %}
+	{% if page.next %}
+	<div class="col-md-12">
+		<a href="{{ page.next.url }}" class="next-post" title="Next">
+			<div>
+				<i class="fa fa-angle-right"></i>
+			</div>
+			<div>{{ page.next.title }}</div>
+		</a>
+	</div>
+	{% endif %}
 </div>

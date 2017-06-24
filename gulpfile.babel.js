@@ -14,6 +14,10 @@ import sugarss from 'sugarss';
 import atImport from 'postcss-import';
 import cssvariables from 'postcss-css-variables';
 import customMedia from 'postcss-custom-media';
+import calc from 'postcss-calc';
+import nested from 'postcss-nested';
+import color from 'postcss-color-function';
+import mixins from 'postcss-mixins';
 import gulp from 'gulp';
 
 const browserSync = loadBrowserSync();
@@ -66,8 +70,6 @@ const server = () => {
 		port: 4000,
 		server: baseServer
 	});
-
-	gulp.watch('site/*.*').on('change', browserSync.reload);
 };
 
 gulp.task('images', () => {
@@ -105,8 +107,12 @@ gulp.task('css:postcss', () => {
 	return gulp.src('./_postcss/rolspace.css')
 		.pipe(postcss([
 			atImport(),
+			mixins(),
 			cssvariables(),
-			customMedia()
+			customMedia(),
+			calc(),
+			nested(),
+			color()
 		], { parser: sugarss }))
 		.pipe(gulp.dest('./dist/css/'));
 });
@@ -117,14 +123,14 @@ gulp.task('css', (callback) => {
 
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
-	sequence('css', 'jekyll', callback);
+	sequence('css', 'jekyll', 'server', callback);
 
 	if (argv.serve) {
 		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
 		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
 			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
-		server();
+		gulp.watch('site/**/*').on('change', browserSync.reload);
 	}
 });
 

@@ -7,7 +7,7 @@ tags:
 - pc
 - tools
 ---
-<img class="center-block img-fluid lazyload" style="border-radius: 0px;" src="/assets/150601/windows10.jpg" alt="Windows 10" />
+<img class="center-block img-fluid lazyload" style="border-radius: 0px;" src="/assets/images/150601/windows10.jpg" alt="Windows 10" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

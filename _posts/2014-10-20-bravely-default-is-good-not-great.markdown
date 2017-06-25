@@ -7,7 +7,7 @@ tags:
 - games
 - late reviews
 ---
-<img class="center-block img-fluid lazyload" src="/assets/141020/bravelydefault-1400.jpg" alt="Bravely Default">
+<img class="center-block img-fluid lazyload" src="/assets/images/141020/bravelydefault-1400.jpg" alt="Bravely Default">
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

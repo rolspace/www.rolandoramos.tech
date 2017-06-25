@@ -8,7 +8,7 @@ tags:
 - photos
 - zurich
 ---
-<img class="center-block img-fluid lazyload" src="/assets/140703/zurich-113.jpg" alt="Zürich" />
+<img class="center-block img-fluid lazyload" src="/assets/images/140703/zurich-113.jpg" alt="Zürich" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

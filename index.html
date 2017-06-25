@@ -14,8 +14,8 @@ layout: main
       <div class="read-more pull-right">
         <a href="{{ post.url | prepend: site.baseurl }}">
           Read More
+          <svg class="icon icon-chevron-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
         </a>
-        <i class="fa fa-angle-right"></i>
       </div>
     </article>
     {% endfor %}
@@ -24,15 +24,17 @@ layout: main
 <div class="row page-paginator">
   <div class="col-md-6">
     {% if paginator.next_page %}
-    <a href="{{ paginator.next_page_path }}" class="next-page pull-left" title="Older Posts">
-      <i class="fa fa-angle-left"></i>Older Posts
+    <a href="{{ paginator.next_page_path }}" class="next-page float-left" title="Older Posts">
+      <svg class="icon icon-chevron-left"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use></svg>
+      Older Posts
     </a>
     {% endif %}
   </div>
   <div class="col-md-6">
     {% if paginator.previous_page %}
-    <a href="{{ paginator.previous_page_path }}" class="previous-page pull-right" title="Newer Posts">
-      Newer Posts<i class="fa fa-angle-right"></i>
+    <a href="{{ paginator.previous_page_path }}" class="previous-page float-right" title="Newer Posts">
+      Newer Posts
+      <svg class="icon icon-chevron-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
     </a>
     {% endif %}
   </div>

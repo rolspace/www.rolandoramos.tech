@@ -28,11 +28,6 @@ const argv = yargs.argv;
 let currentTask = '';
 
 const config = {
-	css: {
-		dist: './dist/css/',
-		bootstrap: './node_modules/bootstrap/dist/css/bootstrap.min.css',
-		fontAwesome: './node_modules/font-awesome/css/font-awesome.min.css'
-	},
 	js: {
 		dist: './dist/js/',
 		bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -81,8 +76,9 @@ gulp.task('images', () => {
 		.pipe(gulp.dest('assets/'));
 });
 
-gulp.task('server', () => {
+gulp.task('server', (callback) => {
 	server();
+	callback();
 });
 
 gulp.task('jekyll:del', () => {
@@ -97,6 +93,17 @@ gulp.task('jekyll', () => {
 		.split(/\n/)
 		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
 	};
+});
+
+gulp.task('watch', (callback) => {
+	if (argv.serve) {
+		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
+		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
+			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
+
+		gulp.watch('site/**/*').on('change', browserSync.reload);
+		callback();
+	}
 });
 
 gulp.task('css:del', () => {
@@ -123,15 +130,7 @@ gulp.task('css', (callback) => {
 
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
-	sequence('css', 'jekyll', 'server', callback);
-
-	if (argv.serve) {
-		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
-		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
-			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
-
-		gulp.watch('site/**/*').on('change', browserSync.reload);
-	}
+	sequence('css', 'jekyll', 'server', 'watch', callback);
 });
 
 gulp.task('release', (callback) => {

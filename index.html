@@ -5,9 +5,7 @@ layout: main
   <div class="col-md-12">
     {% for post in paginator.posts %}
     <article>
-      <div class="article-date">
-        <i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
-      </div>
+      <div class="article-date">{{ post.date | date: '%B %d, %Y' }}</div>
       <div class="article-content">
         {{ post.excerpt }}
       </div>

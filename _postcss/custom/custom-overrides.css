@@ -77,9 +77,16 @@ body {
 	font-size: var(--base-rem-size);
 }
 
+code {
+  font-size: 1rem;
+}
+
+.container {
+  margin-top: var(--base-margin);
+}
+
 @media (--small-viewport) {
 	.container {
-    margin-top: 30px;
 		width: 540px;
 		max-width: 100%;
 	}
@@ -89,7 +96,7 @@ body {
   .nav-link {
     color: var(--subtext-color);
     font-family: 'Poppins';
-    font-size: 0.750rem;
+    font-size: 0.875rem;
     font-weight: 500;
   }
 

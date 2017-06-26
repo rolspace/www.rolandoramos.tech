@@ -12,118 +12,152 @@ pre
 	border-radius: 4px
 	color: #333
 	display: block
-	font-size: 13px
+	font-size: 0.875rem
 	margin: 0 0 10px
 	padding: 9.5px
 
 article
 	border-bottom: 1px solid var(--subtext-color)
+	margin-bottom: var(--base-margin)
 
-	& .article-title
-		font-family: 'Poppins'
-		font-weight: 500
+	& .article-date
+		@mixin subtext
+		font-size: 0.813rem
 		margin-bottom: var(--base-margin)
 
-		& a
-			color: color(var(--title-color))
+	& .article-content
+		margin-bottom: var(--base-margin)
 
-		& a:hover
-			color: color(var(--title-color-hover))
+		& p img
+			margin-bottom: var(--base-margin)
+
+		& .article-title
+			font-family: 'Poppins'
+			font-size: 1.625rem
+			font-weight: 500
+			margin-bottom: var(--base-margin)
+
+			& a
+				color: color(var(--title-color))
+
+			& a:hover
+				color: color(var(--title-color-hover))
+
+	& .read-more
+		margin-bottom: calc(var(--base-margin) + 20px)
+
+	& .read-more a
+		@mixin subtext
+		font-size: 0.813rem
+
+	& .read-more a:hover
+		color: var(--subtext-color-hover)
+		text-decoration: none
+
+	& .read-more a:hover .icon
+		fill: var(--subtext-color-hover)
+
+	& .read-more a .icon
+		fill: var(--subtext-color)
+		margin-left: 10px
+
+.page-paginator
+	margin-bottom: var(--base-margin)
+
+	& a
+		@mixin subtext
+		font-size: 0.875rem
+
+	& a .icon
+		fill: var(--subtext-color)
+
+	& a:hover
+		color: var(--subtext-color-hover)
+
+	& a:hover .icon
+		fill: var(--subtext-color-hover)
+
+	& .next-page .icon
+		margin-right: 10px
+
+	& .previous-page .icon
+		margin-left: 10px
+
+.post-paginator
+	margin-bottom: var(--base-margin)
+
+	& a
+		@mixin subtext
+		font-size: 0.875rem
+
+	& a .icon
+		fill: var(--subtext-color)
+
+	& a:hover
+		color: var(--subtext-color-hover)
+
+	& a:hover .icon
+		fill: var(--subtext-color-hover)
+
+.footer
+	border-top: 1px solid var(--base-color)
+	bottom: -77px
+	color: var(--subtext-color)
+	font-family: 'Poppins'
+	font-size: 0.875rem
+	font-weight: 500
+	height: 40px
+	line-height: 40px
+	padding: 0px 1rem
+	position: absolute
+	width: 100%
+
+	& .container
+		margin-top: 0px
+		padding: 0px
+		width: 100%
+
+		& .row div
+			text-align: center
+
+	& a
+		color: var(--subtext-color)
+
+	& a:hover
+		color: color(var(--subtext-color-hover))
+
+	& a:hover .icon
+		fill: color(var(--subtext-color-hover))
+
+	& .social-profiles a:hover
+		text-decoration: none
+
+	& .icon
+		fill: var(--subtext-color)
+		height: 1.5rem
+		margin-left: 40px
+		vertical-align: middle
+		width: 1.5rem
+
+	& .icon-linkedin2
+		margin-left: 0px
 
 @media (--medium-viewport)
 	article
 		margin-bottom: calc(var(--base-margin) * 2)
 
-		& .article-date
-			@mixin subtext
-			margin-bottom: var(--base-margin)
-
-		& .article-content
-			margin-bottom: var(--base-margin)
-
-			& p img
-				margin-bottom: var(--base-margin)
-
-			& .article-title
-				font-size: 1.625rem
-
-				& a
-					color: color(var(--title-color))
-
-				& a:hover
-					color: color(var(--title-color-hover))
-
 		& .read-more
 			margin-bottom: calc(var(--base-margin) * 2)
 
-		& .read-more a
-			@mixin subtext
-
-		& .read-more a:hover
-			color: var(--subtext-color-hover)
-			text-decoration: none
-
-		& .read-more a:hover .icon
-			fill: var(--subtext-color-hover)
-
-		& .read-more a .icon
-			fill: var(--subtext-color)
-			margin-left: 10px
-
-	.page-paginator
-		margin-bottom: var(--base-margin)
-
-		& a
-			@mixin subtext
-
-		& a .icon
-			fill: var(--subtext-color)
-
-		& a:hover
-			color: var(--subtext-color-hover)
-
-		& a:hover .icon
-			fill: var(--subtext-color-hover)
-
-		& .next-page .icon
-			margin-right: 10px
-
-		& .previous-page .icon
-			margin-left: 10px
-
 	.footer
-		border-top: 1px solid var(--base-color)
-		bottom: -77px
-		color: var(--subtext-color)
-		font-family: 'Poppins'
-		font-size: 0.875rem
-		font-weight: 500
 		height: 77px
 		line-height: 77px
-		padding: 0px 1rem
-		position: absolute
-		width: 100%
 
-		& .container
-			margin-top: 0px
-			padding: 0px
-			width: 100%
+		& .copyright
+			float: left !important
 
-		& a
-			color: var(--subtext-color)
-
-		& a:hover
-			color: color(var(--subtext-color-hover))
-
-		& a:hover .icon
-			fill: color(var(--subtext-color-hover))
-
-		& .social-profiles a:hover
-			text-decoration: none
+		& .social-profiles
+			float: right !important
 
 		& .icon
-			fill: var(--subtext-color)
-			height: 1.5rem
-			margin-left: 10px
-			vertical-align: middle
-			width: 1.5rem
+			margin-left: 15px

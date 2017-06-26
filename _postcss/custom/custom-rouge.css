@@ -1,13 +1,12 @@
 .highlight pre {
 	background-color: #404040;
 	color: #fff;
-	line-height: 1;
+	line-height: 1.1;
 	padding: 10px;
 }
 
 .highlight pre code {
 	font-size: 0.813rem;
-	line-height: 1.2;
 	white-space: pre;
 }
 
@@ -70,8 +69,13 @@
 .highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
 .highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
 .highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
-
 .highlight .gh { } /* Generic Heading & Diff Header */
 .highlight .gu { color: #999999; } /* Generic.Subheading & Diff Unified/Comment? */
 .highlight .gd { color: #f92672; } /* Generic.Deleted & Diff Deleted */
 .highlight .gi { color: #a6e22e; } /* Generic.Inserted & Diff Inserted */
+
+@media (--medium-viewport) {
+	.highlight pre {
+		line-height: 1.2;
+	}
+}

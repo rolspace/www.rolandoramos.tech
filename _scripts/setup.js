@@ -1,9 +1,9 @@
-export class Setup {
+export default class Setup {
 	init() {
 		this.activateMenu();
 	}
 
 	activateMenu() {
-		$('a[href="' + window.location.pathname + '"]').parents('li').addClass('active');
+		$('.navbar a.nav-item[href="' + window.location.pathname + '"]').addClass('active');
 	}
 }

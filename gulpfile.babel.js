@@ -7,6 +7,8 @@ import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import yargs from 'yargs';
+import mkdirp from 'mkdirp';
+import fs from 'fs';
 import cp from 'child_process';
 import del from 'del';
 import postcss from 'gulp-postcss';
@@ -98,6 +100,7 @@ gulp.task('jekyll', () => {
 gulp.task('watch', (callback) => {
 	if (argv.serve) {
 		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
+		gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
 		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
 			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
@@ -128,9 +131,35 @@ gulp.task('css', (callback) => {
 	sequence('css:del', 'css:postcss', callback);
 });
 
+gulp.task('js:del', () => {
+	return del(['dist/js/*.*']);
+});
+
+gulp.task('js:build', () => {
+	const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
+
+	mkdirp.sync('./dist/js');
+
+	browserify(['./_scripts/main.js'])
+		.transform('babelify')
+		.bundle()
+		.pipe(writeStream);
+
+	writeStream.on('finish', () => {
+		return gulp.src('./dist/js/rolspace.js')
+			.pipe(plugins.uglify())
+			.pipe(plugins.rename('rolspace.min.js'))
+			.pipe(gulp.dest('./dist/js/'));
+	});
+});
+
+gulp.task('js', (callback) => {
+	sequence('js:del', 'js:build', callback);
+});
+
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
-	sequence('css', 'jekyll', 'server', 'watch', callback);
+	sequence('css', 'js', 'jekyll', 'server', 'watch', callback);
 });
 
 gulp.task('release', (callback) => {

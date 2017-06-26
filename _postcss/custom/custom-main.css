@@ -25,6 +25,17 @@ article
 		font-size: 0.813rem
 		margin-bottom: var(--base-margin)
 
+	& .article-title
+		font-family: 'Poppins'
+		font-size: 1.625rem
+		font-weight: 500
+
+		& a
+			color: color(var(--title-color))
+
+		& a:hover
+			color: color(var(--title-color-hover))
+
 	& .article-content
 		margin-bottom: var(--base-margin)
 

@@ -81,8 +81,29 @@ code {
   font-size: 1rem;
 }
 
+.navbar button {
+  outline: none;
+  top: 19px
+}
+
+.navbar-brand img {
+  margin-left: -10px;
+}
+
+.nav-link {
+  color: var(--subtext-color);
+  font-family: 'Poppins';
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
 .container {
   margin-top: var(--base-margin);
+}
+
+.table th,
+.table td {
+  padding: 0.5rem;
 }
 
 @media (--small-viewport) {
@@ -93,11 +114,10 @@ code {
 }
 
 @media (--medium-viewport) {
-  .nav-link {
-    color: var(--subtext-color);
-    font-family: 'Poppins';
-    font-size: 0.875rem;
-    font-weight: 500;
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+
   }
 
 	.container {

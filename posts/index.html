@@ -5,12 +5,10 @@ layout: main
 	<div class="col-md-12">
 		{% for post in site.posts %}
 		<article id="posts">
+			<span class="article-date">{{ post.date | date: '%B %d, %Y' }}</span>
 			<h2 class="article-title">
 				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
 			</h2>
-			<span class="article-date">
-				<i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
-			</span>
 		</article>
 		{% endfor %}
 	</div>

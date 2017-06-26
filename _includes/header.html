@@ -2,10 +2,13 @@
 	<a class="navbar-brand" href="/" alt="{{ site.title }}">
 		<img src="/assets/logos/rolspace-logo-150.png" width="150" />
 	</a>
-	<div class="collapse navbar-collapse">
-    <div class="navbar-nav ml-auto">
-      <a class="nav-item nav-link" href="/posts">Posts</a>
-      <a class="nav-item nav-link" href="/about">About</a>
-    </div>
-  </div>
+	<div id="menu" class="collapse navbar-collapse">
+		<div class="navbar-nav ml-auto">
+			<a class="nav-item nav-link" href="/posts/">Posts</a>
+			<a class="nav-item nav-link" href="/about/">About</a>
+		</div>
+	</div>
+	<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#menu" aria-expanded="false" aria-label="Toggle navigation">
+		<span class="navbar-toggler-icon"></span>
+	</button>
 </nav>

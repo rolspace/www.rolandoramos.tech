@@ -86,8 +86,16 @@ code {
   top: 19px
 }
 
+.navbar-brand {
+  width: 150px;
+}
+
 .navbar-brand img {
-  margin-left: -10px;
+    margin-left: -10px;
+}
+
+.navbar-toggler {
+  border: none;
 }
 
 .nav-link {

@@ -112,7 +112,7 @@ article
 
 .footer
 	border-top: 1px solid var(--base-color)
-	bottom: -77px
+	bottom: -80px
 	color: var(--subtext-color)
 	font-family: 'Poppins'
 	font-size: 0.875rem
@@ -154,13 +154,21 @@ article
 		margin-left: 0px
 
 @media (--medium-viewport)
+	img.about
+		float: right
+		margin-left: 20px
+		width: 30%
+
 	article
 		margin-bottom: calc(var(--base-margin) * 2)
 
 		& .read-more
 			margin-bottom: calc(var(--base-margin) * 2)
 
+
+
 	.footer
+		bottom: -77px
 		height: 77px
 		line-height: 77px
 

@@ -13,6 +13,7 @@ import cp from 'child_process';
 import del from 'del';
 import postcss from 'gulp-postcss';
 import sugarss from 'sugarss';
+import autoprefixer from 'autoprefixer';
 import atImport from 'postcss-import';
 import cssvariables from 'postcss-css-variables';
 import customMedia from 'postcss-custom-media';
@@ -122,7 +123,8 @@ gulp.task('css:postcss', () => {
 			customMedia(),
 			calc(),
 			nested(),
-			color()
+			color(),
+			autoprefixer()
 		], { parser: sugarss }))
 		.pipe(gulp.dest('./dist/css/'))
 		.pipe(plugins.rename('rolspace.min.css'))

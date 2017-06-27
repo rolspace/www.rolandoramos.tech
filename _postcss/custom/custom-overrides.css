@@ -81,6 +81,14 @@ code {
   font-size: 1rem;
 }
 
+.navbar {
+  box-shadow: 0px 2px 2px 0px color(#000 a(0.2));
+}
+
+.navbar.bg-faded {
+  background-color: color(#fff);
+}
+
 .navbar button {
   outline: none;
   top: 19px

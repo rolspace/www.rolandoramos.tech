@@ -124,7 +124,17 @@ gulp.task('css:postcss', () => {
 			nested(),
 			color()
 		], { parser: sugarss }))
-		.pipe(gulp.dest('./dist/css/'));
+		.pipe(gulp.dest('./dist/css/'))
+		.pipe(plugins.rename('rolspace.min.css'))
+		.pipe(plugins.cleanCss())
+		.pipe(plugins.gzip({
+			append: false,
+			skipGrowingFiles: true,
+			gzipOptions: {
+				level: 9
+			}
+		}))
+		.pipe(gulp.dest('./dist/css'));
 });
 
 gulp.task('css', (callback) => {
@@ -149,6 +159,13 @@ gulp.task('js:build', () => {
 		return gulp.src('./dist/js/rolspace.js')
 			.pipe(plugins.uglify())
 			.pipe(plugins.rename('rolspace.min.js'))
+			.pipe(plugins.gzip({
+				append: false,
+				skipGrowingFiles: true,
+				gzipOptions: {
+					level: 9
+				}
+			}))
 			.pipe(gulp.dest('./dist/js/'));
 	});
 });

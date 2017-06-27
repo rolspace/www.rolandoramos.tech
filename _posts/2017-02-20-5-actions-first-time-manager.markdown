@@ -23,13 +23,13 @@ For me, this has been an extremely rewarding experience, and I am quite aware th
 
 I know I do not have a lot of experience yet, but I believe I can share the 5 things that helped me to ease the transition from software engineer to team manager. In no particular order:
 
-<p class="subtitle-large">1. Listening</p>
+<p class="subtitle">1. Listening</p>
 
 Such a simple concept, yet it is very easy to underestimate the value of listening. No matter the years of experience or how eloquent someone is, it is important to truly listen to others' opinions and concerns. There is no easier way to get to know a person. There is no easier way for people to trust each other.
 
 By encouraging people to voice their opinions and listening to them, it will become a habit within the team as time passes. When new people join the team, seeing this behavior will allow them to feel at ease much quicker in a new environment. They will know they have come to a place where others will listen.
 
-<p class="subtitle-large">2. Continue reading and learning</p>
+<p class="subtitle">2. Continue reading and learning</p>
 
 There is a vast amount of information on the topics of management, organization, and leadership. It would be a waste not to take advantage and use it to be the best manager you can.
 
@@ -37,7 +37,7 @@ Of course, not everything you read will apply to your situation. Try to identify
 
 There are many sources to look for insight and opinions, some of my current favorites are: [The HBR][The Hardvard Business Review], [LinkedIn][LinkedIn], and [Medium][Medium].
 
-<p class="subtitle-large">3. Setting expectations and goals</p>
+<p class="subtitle">3. Setting expectations and goals</p>
 
 The team and every person in it should know from you what is expected of it and what its goals are.
 
@@ -47,13 +47,13 @@ In the same way, when you setup short-term and long-term goals, the rest of the 
 
 These goals need to be challenging, but they also need to be attainable. It is important that you can support the people in your team as a coach and mentor. Your team members will need help from you to find the time and motivation to achieve these goals.
 
-<p class="subtitle-large">4. Maximizing the strenghts of the team</p>
+<p class="subtitle">4. Maximizing the strenghts of the team</p>
 
 If you are able to recognize your teammates strenghts, then you will be better equipped to help them become more valuable to the team. By devising a plan to build upon their best qualities, you are recognizing that person´s skills and giving them the opportunity to contribute in the best way they can.
 
 Nevertheless, it is important to avoid letting team members stay too long in their comfort zone, there need to be challenges for them to hone their skills and test their limits.
 
-<p class="subtitle-large">5. Not being afraid of weaknesses</p>
+<p class="subtitle">5. Not being afraid of weaknesses</p>
 
 Even your own. It is crucial to recognize that we all have skills and abilities which we haven't fully developed, either through lack of training or adequate opportunities. These are great opportunities for personal improvement.
 

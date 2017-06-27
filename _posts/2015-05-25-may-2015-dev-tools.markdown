@@ -11,7 +11,7 @@ tags:
 [dotPeek]: https://www.jetbrains.com/decompiler/ "dotPeek"
 [LinqPad]: https://www.linqpad.net/ "LinqPad"
 
-<p class="subtitle-large">Unicorn</p>
+<p class="subtitle">Unicorn</p>
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
@@ -29,7 +29,7 @@ If you are looking for a lightweight, easy to use tool to achieve Sitecore seria
 
 [https://github.com/kamsar/Unicorn][Unicorn]
 
-<p class="subtitle-large">dotPeek</p>
+<p class="subtitle">dotPeek</p>
 
 A few months ago I was testing the performance of an application using the RedGate Performance Profiler when I came across dotPeek and I am very, very glad I did.
 
@@ -41,7 +41,7 @@ I will need to explore dotPeek a bit more to really get more out of it, but so f
 
 [https://www.jetbrains.com/decompiler/][dotPeek]
 
-<p class="subtitle-large">LinqPad</p>
+<p class="subtitle">LinqPad</p>
 
 I remember using LinqPad sometime in 2009 when I was working on a project using Linq-to-SQL in order to create mappings between classes and SQL tables. For one reason or another I completely forgot its existence, until I rediscovered it a few weeks ago.
 

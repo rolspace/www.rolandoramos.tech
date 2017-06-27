@@ -43,6 +43,12 @@ article
 		& p img
 			margin-bottom: var(--base-margin)
 
+		& .subtitle
+			color: var(--paragraph-color)
+			font-family: 'Poppins'
+			font-size: var(--base-rem-size)
+			font-weight: 500
+
 		& .article-title
 			font-family: 'Poppins'
 			font-size: 1.625rem

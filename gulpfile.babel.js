@@ -52,7 +52,7 @@ const server = () => {
 	};
 
 	if (currentTask === 'release') {
-		server.middleware = [{
+		baseServer.middleware = [{
 			route: '/dist',
 			handle: (req, res, next) => {
 				res.setHeader('Content-Encoding', 'gzip');

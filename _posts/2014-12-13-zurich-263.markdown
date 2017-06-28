@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: 'Zürich: 263'
 date: 2014-12-13
@@ -8,7 +8,11 @@ tags:
 - photos
 - zurich
 ---
-<img class="center-block img-responsive lazyload" src="/assets/141213/zurich-263.jpg" alt="Zürich: 263" />
+<img class="center-block img-fluid lazyload" src="/assets/images/141213/zurich-263.jpg" alt="Zürich: 263" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
 Our first winter in Zurich is almost here. Little by little the clouds have taken over and temperature has been dropping gradually in the past few weeks.
 

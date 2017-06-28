@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Override the IEnumerable Mapper in Glass.Mapper 4.0
 date: 2015-07-12
@@ -7,6 +7,10 @@ tags:
 - c#
 - code
 ---
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 A few weeks ago I needed to write a specific implementation of the type mapper used in Glass.Mapper to handle `IEnumerable<T>` Types. This was necessary because the Sitecore instance I was working with had a customized implementation for handling language fallbacks. This did not play well with the default Glass.Mapper implementation.
 
 I had to come up with a way to modify how Glass.Mapper handles fields that map to an `IEnumerable<T>` type, such as Multilists or Treelists. This is what I did.
@@ -25,7 +29,7 @@ public class Model
 
 This custom attribute will map to a field similar to the one shown in this image:
 
-<img class="center-block img-responsive lazyload" src="/assets/150712/sitecorefield.jpg" alt="Sample Sitecore Field">
+<img class="center-block img-fluid lazyload" src="/assets/images/150712/sitecorefield.jpg" alt="Sample Sitecore Field">
 
 In order to create this custom attribute, it is necessary to inherit from the `SitecoreFieldAttribute` class from the Glass.Mapper.Sc.Configuration.Attributes namespace. In this scenario, the Configure method from the `SitecoreFieldAttribute` class must be overridden to setup the Attribute's configuration:
 
@@ -195,7 +199,7 @@ public static IDependencyResolver CreateResolver()
 
 Once the code is deployed to a Sitecore instance, we can quickly show that the custom mapper implemented in the *CustomIEnumerableMapper* class is being executed:
 
-<img class="center-block img-responsive lazyload" src="/assets/150712/sitecorelog.jpg" alt="Sitecore Log">
+<img class="center-block img-fluid lazyload" src="/assets/images/150712/sitecorelog.jpg" alt="Sitecore Log">
 
 As a final note, it is important to point out that this approach will work if you are using Glass.Mapper 4.0 together with the Glass.Mapper.Sc.CastleWindsor 4.0 library in your solution.
 

@@ -1,11 +1,15 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: German is a harsh mistress
 date: 2014-10-10
 tags:
 - life
 ---
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 It's been about three months since my first class. I was not really sure what to expect, since the general opinion is that German is a really tough language to learn.
 
 At this point I can proudly say that I have learned a few things and I am probably able to say a phrase or two. I can pick up the meaning of a few advertisement posters in the street, and I can figure out the meaning of a few newspaper headlines.

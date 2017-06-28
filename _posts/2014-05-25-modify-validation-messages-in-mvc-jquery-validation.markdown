@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Modify Validation Messages in ASP.NET MVC with jQuery Validation
 date: 2014-05-25
@@ -7,6 +7,10 @@ tags:
 - c#
 - code
 ---
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 Some time ago I needed to change the way in which the unobtrusive validation messages were displayed in a form part of an ASP.NET MVC application.
 
 The reason was that the amount of space available in the window was limited and it was a requirement to display the proper validation messages, even though fitting them in the screen was impossible.
@@ -68,7 +72,7 @@ In order to edit items from this class, we will use a view with a form that cont
 {% endhighlight %}
 
 Such a view would provide the following result:
-<img class="center-block img-responsive" src="/assets/140525/standardunobstrusive.jpg" alt="Standard Unobstrusive Validation"/>
+<img class="center-block img-fluid" src="/assets/images/140525/standardunobstrusive.jpg" alt="Standard Unobstrusive Validation"/>
 
 In order to modify the way in which the unobstrusive validation messages are displayed, we need to access one of the methods provided by the jQuery Validator that is packaged with ASP.NET MVC. The <code>setDefaults</code> method allows us to modify the jQuery Validator's default settings.
 
@@ -109,4 +113,4 @@ In order to remove the tooltip if the element becomes valid, we are taking advan
 
 Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View, so only one set of validation messages is displayed for the input elements:
 
-<img class="center-block img-responsive" src="/assets/140525/tooltipunobstrusive.jpg" alt="Tooltip Unobstrusive Validation" />
+<img class="center-block img-fluid" src="/assets/images/140525/tooltipunobstrusive.jpg" alt="Tooltip Unobstrusive Validation" />

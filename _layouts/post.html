@@ -1,0 +1,31 @@
+---
+layout: main
+---
+<div class="row">
+	<div class="col-md-12">
+		<article id="post">
+			<div class="article-date">{{ page.date | date: '%B %d, %Y' }}</div>
+			<div class="article-content">
+				{{ content }}
+			</div>
+		</article>
+	</div>
+</div>
+<div class="row post-paginator">
+	{% if page.previous %}
+	<div class="col-md-12">
+		<a href="{{ page.previous.url }}" class="previous-post" title="Previous">
+			<svg class="icon icon-chevron-left"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-left"></use></svg>
+			{{ page.previous.title }}
+		</a>
+	</div>
+	{% endif %}
+	{% if page.next %}
+	<div class="col-md-12">
+		<a href="{{ page.next.url }}" class="next-post" title="Next">
+			<svg class="icon icon-chevron-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
+			{{ page.next.title }}
+		</a>
+	</div>
+	{% endif %}
+</div>

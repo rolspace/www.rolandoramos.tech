@@ -60,6 +60,7 @@ html {
 }
 
 body {
+  color: var(--paragraph-color);
 	font-family: 'Fanwood Text';
 	font-size: var(--base-rem-size);
 }

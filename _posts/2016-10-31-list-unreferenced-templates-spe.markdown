@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: List unreferenced Sitecore Templates with SPE
 date: 2016-10-31
@@ -9,6 +9,10 @@ tags:
 ---
 [SPE]: https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/ "Sitecore PowerShell Extensions"
 [SPE Reports]: https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/reports.html "SPE Reports"
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
 This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. __Standard Values will not be counted as a referrer.
 
@@ -37,4 +41,4 @@ $myArray | Format-Table Name, @{ Label = 'Path'; Expression={ $_.Paths.Path } }
 
 {% endhighlight %}
 
-This script can be used as a started for additional actions like archiving or deleting the unused templates, or even setting up [SPE Reports][SPE Reports] to filter the query with additional parameters.
+This script can be used as a starting point for additional actions like archiving or deleting the unused templates, or even setting up [SPE Reports][SPE Reports] to filter the query with additional parameters.

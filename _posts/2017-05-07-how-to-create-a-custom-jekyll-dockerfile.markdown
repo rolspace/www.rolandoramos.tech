@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: How to create a custom Jekyll Dockerfile&#58; Part I
 date: 2017-05-06
@@ -8,11 +8,15 @@ tags:
 - docker
 - jekyll
 ---
-Docker has been on my ToDo list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use with it on a specific project.
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
-I finally decided to use my own website to build a custom Dockerfile, this way I could get up and running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
+Docker has been on my TODO list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use it on something specific.
 
-Following the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile), the first thing I did was to create a new file named <code>Dockerfile</code>. Then, I included this line:
+I chose to use my own website to build a custom Dockerfile, this way I could get up and running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
+
+I followed the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile) to write the Dockerfile, so the first thing I did was to create a new file named <code>Dockerfile</code>. After doing that, I included this line:
 
 <pre>
 #Dockerfile
@@ -22,7 +26,7 @@ FROM jekyll/jekyll:latest
 
 <!--more-->
 
-That's easy enough, the first line in the Dockerfile makes certain that the Docker image will use the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
+That was easy enough, the first line in the Dockerfile makes certain that the Docker image will use the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
 
 <pre id="build">> docker build . -t jekyll-rolspace</pre>
 
@@ -40,11 +44,11 @@ Once the container is ready, it can be started with this command:
 
 Unfortunately, I ran into my first problem rather quickly:
 
-<img class="center-block img-responsive lazyload" data-src="/assets/170507/jekyll-container-error-1.png" alt= "First error when running the custom Jekyll container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-error-1.png" alt= "First error when running the custom Jekyll container" />
 
 It seems I needed to include the pygments highlighter as a dependency using a Gemfile. I do not recall having to do this the first time I started using Jekyll. A quick search gave me the [reason](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed).
 
-<img class="center-block img-responsive lazyload" data-src="/assets/170507/jekyll-container-error-2.png" alt="Second error when running the custom Jekyll container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-error-2.png" alt="Second error when running the custom Jekyll container" />
 
 I added pygments into the Gemfile and, then...I realized I was missing more dependencies...Good thing I had decided to do this. I created the Gemfile with the missing dependencies:
 
@@ -60,7 +64,7 @@ gem 'pygments.rb', group: :jekyll_plugins
 
 This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> command from the container's shell:
 
-<img class="center-block img-responsive lazyload" data-src="/assets/170507/jekyll-container-success-1.png" alt="Successfully run 'jekyll server' command from container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-1.png" alt="Successfully run 'jekyll server' command from container" />
 
 My personal setup just needs an extra detail to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I need is to make sure the gulp-cli is installed:
 
@@ -86,10 +90,10 @@ Then, deleting the container and the image:
 
 I rebuild my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
 
-<img class="center-block img-responsive lazyload" data-src="/assets/170507/jekyll-container-success-2.png" alt="Successfully run a custom gulp task in the Jekyll container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-2.png" alt="Successfully run a custom gulp task in the Jekyll container" />
 
 That's enough to get my site running on a local container. The next test is to make sure I could use the container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
 
-<img class="center-block img-responsive lazyload" data-src="/assets/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
 
 In the next post, we will take a look at running a Jekyll website from a container on various cloud platforms.

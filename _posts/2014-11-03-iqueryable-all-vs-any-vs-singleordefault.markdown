@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: IQueryable&#58; All() vs. Any() vs. SingleOrDefault()
 date: 2014-11-03
@@ -7,6 +7,10 @@ tags:
 - c#
 - code
 ---
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
 A few days ago, I came across some code that was throwing a Timeout Exception on an <code>if</code> statement with a condition being evaluated by the <code>IQueryable.All()</code> method.
 
 The condition being tested was pretty straightforward, the code just needed to determine if the value of a variable matched with an existing Id in the SQL Server database.

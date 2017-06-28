@@ -1,20 +1,14 @@
 ---
-layout: v1/main
+layout: main
 ---
 <div class="row">
-	<div class="col-md-10 col-md-offset-1">
+	<div class="col-md-12">
 		{% for post in site.posts %}
-		<article id="read">
-			<div class="row">
-				<div class="col-md-12">
-					<h2 class="article-title">
-						<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
-					</h2>
-					<span class="article-meta">
-						<i class="fa fa-calendar-check-o"></i>{{ post.date | date: '%B %d, %Y' }}
-					</span>
-				</div>
-			</div>
+		<article>
+			<span class="article-date">{{ post.date | date: '%B %d, %Y' }}</span>
+			<h2 class="article-title">
+				<a href="{{ post.url | prepend: site.baseurl }}">{{ post.title }}</a>
+			</h2>
 		</article>
 		{% endfor %}
 	</div>

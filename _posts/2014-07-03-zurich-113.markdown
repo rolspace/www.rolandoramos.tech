@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: 'Z&uuml;rich: 113'
 date: 2014-07-03
@@ -8,7 +8,11 @@ tags:
 - photos
 - zurich
 ---
-<img class="center-block img-responsive lazyload" src="/assets/140703/zurich-113.jpg" alt="Zürich" />
+<img class="center-block img-fluid lazyload" src="/assets/images/140703/zurich-113.jpg" alt="Zürich" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
 It has been 113 days since the move to Z&uuml;rich.
 

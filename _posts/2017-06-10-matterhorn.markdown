@@ -7,6 +7,10 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-responsive lazyload" src="/assets/170610/matterhorn.jpg" />
+<img class="center-block img-fluid lazyload" src="/assets/170610/matterhorn.jpg" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
 This is from that time I was returning from 3.800 meters above sea level after visiting the Klein Matterhor. Before leaving on the cable car, I had the chance to take this last shot.

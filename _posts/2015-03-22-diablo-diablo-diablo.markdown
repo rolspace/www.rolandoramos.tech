@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Diablo, Diablo, Diablo
 date: 2015-03-22
@@ -8,9 +8,13 @@ tags:
 - late reviews
 - pc
 ---
-I purchased Diablo 3 almost two years after the original release date. I bought it right when Blizzard was running a 50% discount on the price, so at 20€ it was the perfect time to get back to point-and-clicking like it was the year 2000.
+<img class="center-block img-fluid lazyload" src="/assets/images/150322/oldtristramroad.jpg" alt="Diablo 3" />
 
-<img class="center-block img-responsive lazyload" src="/assets/150322/oldtristramroad.jpg" alt="Diablo 3" />
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
+
+I purchased Diablo 3 almost two years after the original release date. I bought it right when Blizzard was running a 50% discount on the price, so at 20€ it was the perfect time to get back to point-and-clicking like it was the year 2000.
 
 I was really looking forward to playing the game, but my original enthusiasm died down when I realized that I needed to pay 60€ in order to play an online-only game. So I decided to wait until it got cheaper.
 
@@ -30,7 +34,7 @@ I can only imagine the rage that could come from losing a character in hardcore 
 
 The good thing about these flaws is that the can be largely ignored and they do not detract from the gameplay. I have never suffered from lag issues while connected to Battle.net and after some time it is easy to ignore the dialogue between characters.
 
-<img class="center-block img-responsive lazyload" src="/assets/150322/westmarchcommons.jpg" alt="Diablo 3" />
+<img class="center-block img-fluid lazyload" src="/assets/images/150322/westmarchcommons.jpg" alt="Diablo 3" />
 
 On the good side, I really enjoyed the rest of Diablo 3, especially its combat mechanics. I completed the campaign plus the expansion with two different classes (Monk / Wizard) and the skills available for both were quite varied. This diversity goes a long way to encourage the player to test different combinations to find which are the best for their playing style.
 

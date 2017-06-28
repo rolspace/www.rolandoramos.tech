@@ -1,5 +1,5 @@
 ---
-layout: v1/post
+layout: post
 published: true
 title: Windows 10 is coming
 date: 2015-06-01
@@ -7,7 +7,11 @@ tags:
 - pc
 - tools
 ---
-<img class="center-block img-responsive lazyload" style="border-radius: 0px;" src="/assets/150601/windows10.jpg" alt="Windows 10" />
+<img class="center-block img-fluid lazyload" style="border-radius: 0px;" src="/assets/images/150601/windows10.jpg" alt="Windows 10" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
 I really liked Windows 8, so I am definitely hoping Windows 10 makes improvements to an already great OS.
 

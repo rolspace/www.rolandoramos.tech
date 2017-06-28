@@ -7,8 +7,20 @@ import browserify from 'browserify';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import yargs from 'yargs';
+import mkdirp from 'mkdirp';
+import fs from 'fs';
 import cp from 'child_process';
 import del from 'del';
+import postcss from 'gulp-postcss';
+import sugarss from 'sugarss';
+import autoprefixer from 'autoprefixer';
+import atImport from 'postcss-import';
+import cssvariables from 'postcss-css-variables';
+import customMedia from 'postcss-custom-media';
+import calc from 'postcss-calc';
+import nested from 'postcss-nested';
+import color from 'postcss-color-function';
+import mixins from 'postcss-mixins';
 import gulp from 'gulp';
 
 const browserSync = loadBrowserSync();
@@ -17,14 +29,8 @@ const spawn = cp.spawn;
 const argv = yargs.argv;
 
 let currentTask = '';
-let isWatching = false;
 
 const config = {
-	css: {
-		dist: './dist/css/',
-		bootstrap: './node_modules/bootstrap/dist/css/bootstrap.min.css',
-		fontAwesome: './node_modules/font-awesome/css/font-awesome.min.css'
-	},
 	js: {
 		dist: './dist/js/',
 		bootstrap: './node_modules/bootstrap/dist/js/bootstrap.min.js',
@@ -41,142 +47,13 @@ const config = {
 	newLine: '\r\n\r\n'
 };
 
-const css = {
-	clean: () => {
-		return del(['dist/css/**']);
-	},
-	concat: () => {
-		return gulp.src([config.css.bootstrap, config.css.fontAwesome, './_less/v1/rolspace.css'])
-			.pipe(plugins.replace(/\/*# sourceMappingURL[^\n]*/g, ''))
-			.pipe(plugins.replace(/\.\.\/fonts/g, '/assets/fonts/v1'))
-			.pipe(plugins.concat('rolspace.css', { newLine: config.newLine }))
-			.pipe(gulp.dest('./dist/css/'));
-	},
-	gzip: (callback) => {
-		gulp.src('./dist/css/rolspace.min.css')
-			.pipe(plugins.gzip(config.gzip))
-			.pipe(gulp.dest('./dist/css/'));
-		callback();
-	},
-	less: () => {
-		return gulp.src(['./_less/v1/rolspace.less'])
-			.pipe(plugins.less({
-				filename: 'rolspace.css',
-				paths: [ './_less/v1/', './_less/v1/includes' ]
-			}))
-			.pipe(plugins.autoprefixer({
-				browsers: ['last 2 versions']
-			}))
-			.pipe(gulp.dest('./_less/v1/'));
-	},
-	minify: () => {
-		return gulp.src(['./dist/css/rolspace.css'])
-			.pipe(plugins.sourcemaps.init({ loadMaps: false }))
-			.pipe(plugins.cleanCss())
-			.pipe(plugins.rename('rolspace.min.css'))
-			.pipe(plugins.sourcemaps.write('./'))
-			.pipe(gulp.dest('./dist/css/'));
-	},
-};
-
-gulp.task('css:clean', css.clean);
-gulp.task('css:gzip', css.gzip);
-gulp.task('css:less', css.less);
-gulp.task('css:concat', css.concat);
-gulp.task('css:minify', css.minify);
-gulp.task('css:debug', (callback) => { sequence('css:clean', 'css:less', 'css:concat', callback); });
-gulp.task('css', (callback) => { sequence('css:debug', 'css:minify', 'css:gzip', callback); });
-
-const js = {
-	babelify: () => {
-		gulp.src(['./_scripts/v1/setup.js', './_scripts/v1/main.js'])
-			.pipe(plugins.babel())
-			.pipe(gulp.dest('./_temp/js'));
-		return browserify('./_temp/js/main.js')
-			.bundle()
-			.pipe(source('temp.js'))
-			.pipe(gulp.dest('./_temp/js'));
-	},
-	clean: () => {
-		return del(['dist/js/**']);
-	},
-	concat: () => {
-		return gulp.src([config.js.jquery, config.js.jquerylazy, config.js.bootstrap, './_temp/js/temp.js'])
-			.pipe(plugins.sourcemaps.init())
-			.pipe(plugins.babel())
-			.pipe(plugins.concat('rolspace.js', { newLine: config.newLine }))
-			.pipe(plugins.sourcemaps.write('./'))
-			.pipe(gulp.dest('./dist/js/'));
-	},
-	gzip: (callback) => {
-		gulp.src('./dist/js/rolspace.min.js')
-			.pipe(plugins.gzip(config.gzip))
-			.pipe(gulp.dest('./dist/js'));
-		callback();
-	},
-	lint: () => {
-		return gulp.src(['./temp/js/temp.js', './gulpfile.js'])
-			.pipe(plugins.eslint())
-			.pipe(plugins.eslint.format())
-			.pipe(plugins.eslint.failAfterError());
-	},
-	minify: () => {
-		return gulp.src(['./dist/js/rolspace.js'])
-			.pipe(plugins.sourcemaps.init())
-			.pipe(plugins.uglify())
-			.pipe(plugins.rename('rolspace.min.js'))
-			.pipe(plugins.sourcemaps.write('./'))
-			.pipe(gulp.dest('./dist/js/'));
-	}
-};
-
-gulp.task('js:babelify', js.babelify);
-gulp.task('js:clean', js.clean);
-gulp.task('js:concat', js.concat);
-gulp.task('js:gzip', js.gzip);
-gulp.task('js:lint', js.lint);
-gulp.task('js:minify', js.minify);
-gulp.task('js:debug', (callback) => { sequence('js:clean', 'js:babelify', 'js:lint', 'js:concat', callback) });
-gulp.task('js', (callback) => { sequence('js:debug', 'js:minify', 'js:gzip', callback); });
-
-
-gulp.task('images', () => {
-	return gulp.src('assets/**/*')
-		.pipe(plugins.imagemin([
-				plugins.imagemin.jpegtran({ progressive: true }),
-				plugins.imagemin.optipng({ optimizationLevel: 5 })
-			]))
-		.pipe(gulp.dest('assets/'));
-});
-
-gulp.task('jekyll', (callback) => {
-	if (!isWatching) {
-		del(['site/**']);
-	}
-	
-	const jekyll = spawn('jekyll', [ 'build' ]);
-
-	jekyll.on('exit', () => {
-		if (argv.serve && !isWatching) {
-			startServer();
-		}
-	});
-
-	callback();
-});
-
-gulp.task('server', (callback) => {
-	startServer();
-	callback();
-});
-
-const startServer = () => {
-	let server = {
+const server = () => {
+	let baseServer = {
 		baseDir: 'site',
-	}
+	};
 
 	if (currentTask === 'release') {
-		server.middleware = [{
+		baseServer.middleware = [{
 			route: '/dist',
 			handle: (req, res, next) => {
 				res.setHeader('Content-Encoding', 'gzip');
@@ -189,23 +66,125 @@ const startServer = () => {
 	browserSync.init({
 		files: 'site/**',
 		port: 4000,
-		server: server
+		server: baseServer
 	});
-
-	isWatching = true;
-
-	//only use the watch if we are on debug mode
-	if (currentTask === 'debug' && isWatching) {
-		gulp.watch('./_less/v1/*.less', ['debug']);
-		gulp.watch('./_scripts/v1/*.js', ['debug']);
-		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
-			'./_posts/**/*', './assets/**/*', './about/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
-	}
 };
+
+gulp.task('images', () => {
+	return gulp.src('assets/**/*')
+		.pipe(plugins.imagemin([
+				plugins.imagemin.jpegtran({ progressive: true }),
+				plugins.imagemin.optipng({ optimizationLevel: 5 })
+			]))
+		.pipe(gulp.dest('assets/'));
+});
+
+gulp.task('server', (callback) => {
+	server();
+	callback();
+});
+
+gulp.task('jekyll:del', () => {
+	return del(['./site/*.*']);
+});
+
+gulp.task('jekyll', () => {	
+	const jekyll = spawn('jekyll', [ 'build' ]);
+
+	var jekyllLogger = (buffer) => {
+		buffer.toString()
+		.split(/\n/)
+		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
+	};
+});
+
+gulp.task('watch', (callback) => {
+	if (argv.serve) {
+		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
+		gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
+		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
+			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
+
+		gulp.watch('site/**/*').on('change', browserSync.reload);
+		callback();
+	}
+});
+
+gulp.task('css:del', () => {
+	return del(['./dist/css/*.*'])
+});
+
+gulp.task('css:postcss', () => {
+	return gulp.src('./_postcss/rolspace.css')
+		.pipe(postcss([
+			atImport(),
+			mixins(),
+			cssvariables(),
+			customMedia(),
+			calc(),
+			nested(),
+			color(),
+			autoprefixer()
+		], { parser: sugarss }))
+		.pipe(gulp.dest('./dist/css/'))
+		.pipe(plugins.rename('rolspace.min.css'))
+		.pipe(plugins.cleanCss())
+		.pipe(plugins.gzip({
+			append: false,
+			skipGrowingFiles: true,
+			gzipOptions: {
+				level: 9
+			}
+		}))
+		.pipe(gulp.dest('./dist/css'));
+});
+
+gulp.task('css', (callback) => {
+	sequence('css:del', 'css:postcss', callback);
+});
+
+gulp.task('js:del', () => {
+	return del(['dist/js/*.*']);
+});
+
+gulp.task('js:build', () => {
+	const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
+
+	mkdirp.sync('./dist/js');
+
+	browserify(['./_scripts/main.js'])
+		.transform('babelify')
+		.bundle()
+		.pipe(writeStream);
+
+	writeStream.on('finish', () => {
+		return gulp.src('./dist/js/rolspace.js')
+			.pipe(plugins.uglify())
+			.pipe(plugins.rename('rolspace.min.js'))
+			.pipe(plugins.gzip({
+				append: false,
+				skipGrowingFiles: true,
+				gzipOptions: {
+					level: 9
+				}
+			}))
+			.pipe(gulp.dest('./dist/js/'));
+	});
+});
+
+gulp.task('js', (callback) => {
+	sequence('js:del', 'js:build', callback);
+});
 
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
-	sequence('css:debug', 'js:debug', 'jekyll', callback);
+
+	if (argv.serve) {
+		sequence('css', 'js', 'jekyll', 'server', 'watch', callback);
+	}
+	else {
+		sequence('css', 'js', 'jekyll', callback);	
+	}
 });
 
 gulp.task('setrelease', () => {
@@ -214,35 +193,12 @@ gulp.task('setrelease', () => {
 
 gulp.task('release', (callback) => {
 	currentTask = 'release';
-	sequence('setrelease', 'css', 'js', 'jekyll', callback);
+	process.env.JEKYLL_ENV = 'production'
+
+	if (argv.serve) {
+		sequence('setrelease', 'css', 'js', 'jekyll', 'server', 'watch', callback);
+	}
+	else {
+		sequence('setrelease', 'css', 'js', 'jekyll', callback);	
+	}
 });
-
-gulp.task('aws', () => {
-	const clean = spawn('aws', [ 's3', 'rm', 's3://bucketname', '--recursive' ]);
-
-	let error, log = '';
-	clean.stdout.on('data', data => {
-		log += data.toString('utf8');
-	});
-
-	clean.stderr.on('data', data => {
-		error += data.toString('utf8');
-	});
-
-	clean.on('exit', () => {
-		if (log) {
-			console.log(log);
-		}
-
-		if (error) {
-			console.log(error);
-		}
-	});
-
-	clean.on('close', code => {
-		if (code === 0)
-		{
-
-		}
-	});
-})

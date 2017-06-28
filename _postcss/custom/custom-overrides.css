@@ -1,0 +1,145 @@
+@import '../core/core-media.css';
+@import '../core/core-vars.css';
+
+@font-face {
+	font-family: 'Fanwood Text';
+	font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fanwood-text-v6-latin-regular.eot');
+  src: local('Fanwood Text'), local('FanwoodText-Regular'),
+       url('/assets/fonts/fanwood-text-v6-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/fanwood-text-v6-latin-regular.woff2') format('woff2'), 
+       url('/assets/fonts/fanwood-text-v6-latin-regular.woff') format('woff'),
+       url('/assets/fonts/fanwood-text-v6-latin-regular.ttf') format('truetype'),
+       url('/assets/fonts/fanwood-text-v6-latin-regular.svg#FanwoodText') format('svg');
+}
+
+@font-face {
+  font-family: 'Fanwood Text';
+  font-style: italic;
+  font-weight: 400;
+  src: url('/assets/fonts/fanwood-text-v6-latin-italic.eot');
+  src: local('Fanwood Text Italic'), local('FanwoodText-Italic'),
+       url('/assets/fonts/fanwood-text-v6-latin-italic.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/fanwood-text-v6-latin-italic.woff2') format('woff2'),
+       url('/assets/fonts/fanwood-text-v6-latin-italic.woff') format('woff'),
+       url('/assets/fonts/fanwood-text-v6-latin-italic.ttf') format('truetype'),
+       url('/assets/fonts/fanwood-text-v6-latin-italic.svg#FanwoodText') format('svg');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 400;
+  src: url('/assets/fonts/poppins-v2-latin-regular.eot');
+  src: local('Poppins Regular'), local('Poppins-Regular'),
+       url('/assets/fonts/poppins-v2-latin-regular.eot?#iefix') format('embedded-opentype'),
+       url('/assets/fonts/poppins-v2-latin-regular.woff2') format('woff2'),
+       url('/assets/fonts/poppins-v2-latin-regular.woff') format('woff'),
+       url('/assets/fonts/poppins-v2-latin-regular.ttf') format('truetype'),
+       url('/assets/fonts/poppins-v2-latin-regular.svg#Poppins') format('svg');
+}
+
+@font-face {
+  font-family: 'Poppins';
+  font-style: normal;
+  font-weight: 500;
+  src: url('/assets/fonts/poppins-v2-latin-500.eot');
+  src: local('Poppins SemiBold'), local('Poppins-SemiBold'),
+       url('/assets/fonts/poppins-v2-latin-500.eot?#iefix') format('embedded-opentype'), 
+       url('/assets/fonts/poppins-v2-latin-500.woff2') format('woff2'),
+       url('/assets/fonts/poppins-v2-latin-500.woff') format('woff'),
+       url('/assets/fonts/poppins-v2-latin-500.ttf') format('truetype'),
+       url('/assets/fonts/poppins-v2-latin-500.svg#Poppins') format('svg');
+}
+
+html {
+	font-size: var(--base-font-size);
+  min-height: 100%;
+  position: relative;
+}
+
+body {
+  color: var(--paragraph-color);
+	font-family: 'Fanwood Text';
+	font-size: var(--base-rem-size);
+}
+
+code {
+  font-size: 1rem;
+}
+
+.navbar {
+  box-shadow: 0px 2px 2px 0px color(#000 a(0.2));
+}
+
+.navbar.bg-faded {
+  background-color: color(#fff);
+}
+
+.navbar button {
+  outline: none;
+  top: 19px
+}
+
+.navbar-brand {
+  width: 150px;
+}
+
+.navbar-brand img {
+    margin-left: -10px;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.nav-link {
+  color: var(--subtext-color);
+  font-family: 'Poppins';
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+
+.container {
+  margin-top: var(--base-margin);
+}
+
+.table th,
+.table td {
+  padding: 0.5rem;
+}
+
+@media (--small-viewport) {
+	.container {
+		width: 540px;
+		max-width: 100%;
+	}
+}
+
+@media (--medium-viewport) {
+  .navbar {
+    padding-left: 20px;
+    padding-right: 20px;
+
+  }
+
+	.container {
+		width: var(--base-width);
+		max-width: 100%;
+	}
+}
+
+@media (--large-viewport) {
+	.container {
+		width: var(--base-width);
+		max-width: 100%;
+	}
+}
+
+@media (--xlarge-viewport) {
+	.container {
+		width: var(--base-width);
+		max-width: 100%;
+	}
+}

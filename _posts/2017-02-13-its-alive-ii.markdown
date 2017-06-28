@@ -1,11 +1,15 @@
 ---
-layout: v1/post
-title: It's Alive! II
+layout: post
+title: It's Alive!&#58; Part II
 date: 2017-02-13
 tags:
 - this
 ---
-<img class="center-block img-responsive lazyload" src="/assets/170213/logo.jpg" alt="Rolspace" />
+<img class="center-block img-fluid lazyload" src="/assets/images/170213/logo.jpg" alt="Rolspace" />
+
+<h2 class="article-title">
+  <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
+</h2>
 
 After quite a bit of time, this blog is finally rebuilt. You will not notice any changes, because it looks the same, but it's not.
 

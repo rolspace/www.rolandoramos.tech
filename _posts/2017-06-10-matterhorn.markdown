@@ -13,4 +13,4 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-This is from that time I was returning from 3.800 meters above sea level after visiting the Klein Matterhor. Before leaving on the cable car, I had the chance to take this last shot.
+This shot was taken as I was returning from 3.800 meters above sea level after visiting the Klein Matterhorn. Before leaving on the cable car, I had the chance to take this last shot.

@@ -12,7 +12,7 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-Docker has been on my TODO list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use with it on a specific project.
+Docker has been on my TODO list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use it on something specific.
 
 I chose to use my own website to build a custom Dockerfile, this way I could get up and running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
 

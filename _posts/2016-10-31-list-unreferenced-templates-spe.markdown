@@ -41,4 +41,4 @@ $myArray | Format-Table Name, @{ Label = 'Path'; Expression={ $_.Paths.Path } }
 
 {% endhighlight %}
 
-This script can be used as a started for additional actions like archiving or deleting the unused templates, or even setting up [SPE Reports][SPE Reports] to filter the query with additional parameters.
+This script can be used as a starting point for additional actions like archiving or deleting the unused templates, or even setting up [SPE Reports][SPE Reports] to filter the query with additional parameters.

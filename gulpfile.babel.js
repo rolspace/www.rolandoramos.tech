@@ -105,7 +105,7 @@ gulp.task('watch', (callback) => {
 		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
 			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
-		gulp.watch('site/**/*').on('change', browserSync.reload);
+		gulp.watch('./site/**/*').on('change', browserSync.reload);
 		callback();
 	}
 });

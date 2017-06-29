@@ -40,7 +40,7 @@ By adding <code>/bin/bash</code> at the end of the command, I will have access t
 
 Once the container is ready, it can be started with this command:
 
-<pre>$ docker start rolspace -i</pre>
+<pre>> docker start rolspace -i</pre>
 
 Unfortunately, I ran into my first problem rather quickly:
 
@@ -78,14 +78,14 @@ RUN npm install -g gulp-cli
 
 With this new step, I need to rebuild the Docker image and the container. I will get rid of the previous image by first stopping the container:
 
-<pre>$ docker stop rolspace</pre>
+<pre>> docker stop rolspace</pre>
 
 Then, I deleted the container and the local image:
 
 <pre>
-$ docker container rm rolspace
+> docker container rm rolspace
 
-$ docker image rm jekyll-rolspace
+> docker image rm jekyll-rolspace
 </pre>
 
 I rebuilt my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:

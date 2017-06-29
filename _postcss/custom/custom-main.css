@@ -40,8 +40,9 @@ article
 	& .article-content
 		margin-bottom: var(--base-margin)
 
+
 		& p img
-			margin-bottom: var(--base-margin)
+			margin-bottom: var(--base-margin - 20px)
 
 		& .subtitle
 			color: var(--paragraph-color)

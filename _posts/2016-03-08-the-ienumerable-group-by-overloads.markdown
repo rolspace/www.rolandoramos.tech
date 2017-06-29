@@ -10,7 +10,7 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-In the past, I have had the need to create a few Linq queries using the GroupBy command. I have always found it easier to use the Linq query syntax, instead of using Lambda expressions.
+In the past, I have had to implement some functionality using the GroupBy capabilities of Linq. I have always found it easier to use the Linq query syntax, instead of using Lambda expressions.
 
 Today, I have decided to go through each of the GroupBy overloads using Lambda expressions, in order to clarify things and make life easier on my end (and maybe for you as well!). One thing to note, I have decided to exclude the overloads using the <code>IEqualityComparer</code> parameter, as they are the same version of another overload with just an additional parameter.
 

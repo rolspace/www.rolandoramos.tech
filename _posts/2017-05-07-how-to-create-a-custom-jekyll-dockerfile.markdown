@@ -16,7 +16,7 @@ Docker has been on my TODO list for a long time. I took it for a spin briefly a 
 
 I chose to use my own website to build a custom Dockerfile, this way I could get up and running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
 
-I followed the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile) to write the Dockerfile, so the first thing I did was to create a new file named <code>Dockerfile</code>. After doing that, I included this line:
+I followed the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile) to write the custom Dockerfile, so the first thing I had to do was to create a new file with the name <code>Dockerfile</code>. To begin, I included this line:
 
 <pre>
 #Dockerfile
@@ -26,7 +26,7 @@ FROM jekyll/jekyll:latest
 
 <!--more-->
 
-That was easy enough, the first line in the Dockerfile makes certain that the Docker image will use the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
+That was easy enough, the first line in the Dockerfile guarantees that the Docker image will be created with the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
 
 <pre id="build">> docker build . -t jekyll-rolspace</pre>
 
@@ -66,7 +66,7 @@ This time Docker ran successfully, and I was able to trigger the <code>jekyll se
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-1.png" alt="Successfully run 'jekyll server' command from container" />
 
-My personal setup just needs an extra detail to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I need is to make sure the gulp-cli is installed:
+My personal setup just needed an extra detail to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I need is to make sure the gulp-cli is installed:
 
 <pre>
 #Dockerfile
@@ -78,17 +78,17 @@ RUN npm install -g gulp-cli
 
 With this new step, I need to rebuild the Docker image and the container. I will get rid of the previous image by first stopping the container:
 
-<pre>> docker stop rolspace</pre>
+<pre>$ docker stop rolspace</pre>
 
-Then, deleting the container and the image:
+Then, I deleted the container and the local image:
 
 <pre>
-> docker container rm rolspace
+$ docker container rm rolspace
 
-> docker image rm jekyll-rolspace
+$ docker image rm jekyll-rolspace
 </pre>
 
-I rebuild my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
+I rebuilt my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-2.png" alt="Successfully run a custom gulp task in the Jekyll container" />
 

@@ -20,6 +20,8 @@ aws s3 cp ./site/feed.xml s3://bucketname --cache-control "no-cache"
 
 aws s3 cp ./site/index.html s3://bucketname --cache-control "no-cache"
 
+aws s3 cp ./site/posts/index.html s3://bucketname/posts/ --cache-control "no-cache"
+
 aws s3 cp ./site/page2/index.html s3://bucketname/page2/ --cache-control "no-cache"
 
 aws s3 cp ./site/page3/index.html s3://bucketname/page3/ --cache-control "no-cache"

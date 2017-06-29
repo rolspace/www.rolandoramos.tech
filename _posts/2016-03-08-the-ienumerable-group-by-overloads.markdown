@@ -10,9 +10,9 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-Everyonce in a while, I have had the need to create a few Linq queries using the GroupBy command. For some reason, I have always found it easier to use the query syntax, instead of Lambda expressions.
+In the past, I have had to implement some functionality using the GroupBy capabilities of Linq. I have always found it easier to use the Linq query syntax, instead of using Lambda expressions.
 
-Today I decided to go through each of the GroupBy overloads in order to clarify things and make life easier on my end (and maybe for you as well!). One note though, I have decided not include the overloads using the <code>IEqualityComparer</code>, as they are the same version of another overload with just an additional parameter.
+Today, I have decided to go through each of the GroupBy overloads using Lambda expressions, in order to clarify things and make life easier on my end (and maybe for you as well!). One thing to note, I have decided to exclude the overloads using the <code>IEqualityComparer</code> parameter, as they are the same version of another overload with just an additional parameter.
 
 <!--more-->
 
@@ -160,7 +160,7 @@ In these examples I will use data from this table:
 </table>
 </div>
 
-This table is a scaled down version of the Person.Person table found in the AdventureWorks database freely provided by Microsoft. I am using a table with only 20 records to better illustrate how the overloads work. The table has been mapped to the following C# class using EF Code First:
+This table is a scaled down version of the Person.Person table found in the AdventureWorks database provided for free by Microsoft. I am using a table with only 20 records to better illustrate how the overloads work. The table has been mapped to the following C# class using Entity Framework Code First:
 
 {% highlight c# %}
 public class AWContext : DbContext
@@ -182,8 +182,7 @@ public class Person
 }
 {% endhighlight %}
 
-
-Now it is time to start calling the GroupBy methods. This post will discuss the Lamdba implementation of each overload, however, the Linq syntax implementation is included as well. Here we go:
+Now I am ready to write some code. This post will include the Linq syntax for each of the Lambda overloads, for comparison purposes. Here we go:
 
 <p class="subtitle">1. Enumerable.GroupBy&lt;TSource, TKey&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</p>
 

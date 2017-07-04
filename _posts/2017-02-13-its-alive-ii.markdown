@@ -1,6 +1,6 @@
 ---
 layout: post
-title: It's Alive!&#58; Part II
+title: It's Alive! Part II
 date: 2017-02-13
 tags:
 - this

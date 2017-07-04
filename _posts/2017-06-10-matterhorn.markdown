@@ -13,4 +13,4 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-This shot was taken as I was returning from 3.800 meters above sea level after visiting the Klein Matterhorn. Before leaving on the cable car, I had the chance to take this last shot.
+This shot was taken as I was returning from 3.800 meters above sea level, after paying a visit to the Klein Matterhorn. I made a quick pit stop half way on the journey back to Zermatt. There, I had the chance to take this last photo.

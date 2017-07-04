@@ -38,7 +38,7 @@ This command creates a container with the name "rolspace". Using the volume mapp
 
 By adding <code>/bin/bash</code> at the end of the command, I will have access to the container's shell once it is running. This will allow me to run commands, like <code>jekyll serve</code>.
 
-Once the container is ready, it can be started with this command:
+Once the container was ready, it could be started with this command:
 
 <pre>> docker start rolspace -i</pre>
 
@@ -66,7 +66,7 @@ This time Docker ran successfully, and I was able to trigger the <code>jekyll se
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-1.png" alt="Successfully run 'jekyll server' command from container" />
 
-My personal setup just needed an extra detail to run. Since the default Jekyll image already has nodejs v6.9.2 installed, all I need is to make sure the gulp-cli is installed:
+My personal setup just needed an extra detail to run. Since the default Jekyll image already had nodejs v6.9.2 installed, all I needed was to make sure the gulp-cli was installed:
 
 <pre>
 #Dockerfile
@@ -76,7 +76,7 @@ FROM jekyll/jekyll:latest
 RUN npm install -g gulp-cli
 </pre>
 
-With this new step, I need to rebuild the Docker image and the container. I will get rid of the previous image by first stopping the container:
+With this new step, I needed to rebuild the Docker image and the container. I got rid of the previous image by first stopping the container:
 
 <pre>> docker stop rolspace</pre>
 
@@ -92,7 +92,7 @@ I rebuilt my custom image using the initial <a href="#build">build command</a> a
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-2.png" alt="Successfully run a custom gulp task in the Jekyll container" />
 
-That's enough to get my site running on a local container. The next test is to make sure I could use the container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
+That was enough to get my site running on a local container. The next test would make sure I could use the container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
 

@@ -124,13 +124,12 @@ article
 .footer
 	border-top: 1px solid var(--base-color)
 	bottom: -80px
-	color: var(--subtext-color)
+	color: color(var(--footer-color))
 	font-family: 'Poppins'
 	font-size: 0.875rem
-	font-weight: 500
 	height: 40px
 	line-height: 40px
-	padding: 0px 1rem
+	padding: 0px 1.25rem
 	position: absolute
 	width: 100%
 
@@ -143,7 +142,7 @@ article
 			text-align: center
 
 	& a
-		color: var(--subtext-color)
+		color: color(var(--footer-color))
 
 	& a:hover
 		color: color(var(--subtext-color-hover))
@@ -154,10 +153,30 @@ article
 	& .social-profiles a:hover
 		text-decoration: none
 
+	& .copyright a
+		text-decoration: underline
+
+	& .footnote
+		font-size: 0.813rem
+		font-weight: normal
+		line-height: 20px
+		margin-bottom: 5px
+		margin-top: 5px
+		text-align: left
+
+		& div
+			text-align: left !important
+
+		& a
+			text-decoration: underline
+
+		& .license
+			margin-bottom: 15px
+
 	& .icon
-		fill: var(--subtext-color)
+		fill: color(var(--footer-color))
 		height: 1.5rem
-		margin-left: 40px
+		margin-left: 60px
 		vertical-align: middle
 		width: 1.5rem
 
@@ -176,18 +195,26 @@ article
 		& .read-more
 			margin-bottom: calc(var(--base-margin) * 2)
 
-
-
 	.footer
-		bottom: -77px
-		height: 77px
-		line-height: 77px
+		bottom: -40px
+		height: 40px
+		line-height: 40px
 
 		& .copyright
 			float: left !important
 
 		& .social-profiles
 			float: right !important
+
+		& .footnote
+			margin-top: 0px
+			margin-bottom: 20px
+
+			& .license
+				margin-bottom: 5px
+
+			& div
+				text-align: left !important
 
 		& .icon
 			margin-left: 15px

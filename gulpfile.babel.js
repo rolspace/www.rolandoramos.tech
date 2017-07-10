@@ -88,7 +88,7 @@ gulp.task('jekyll:del', () => {
 	return del(['./site/*.*']);
 });
 
-gulp.task('jekyll', () => {	
+gulp.task('jekyll', (callback) => {	
 	const jekyll = spawn('jekyll', [ 'build' ]);
 
 	var jekyllLogger = (buffer) => {
@@ -96,6 +96,8 @@ gulp.task('jekyll', () => {
 		.split(/\n/)
 		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
 	};
+
+	callback();
 });
 
 gulp.task('watch', (callback) => {
@@ -147,10 +149,10 @@ gulp.task('js:del', () => {
 	return del(['dist/js/*.*']);
 });
 
-gulp.task('js:build', () => {
-	const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
-
+gulp.task('js:build', (callback) => {
 	mkdirp.sync('./dist/js');
+
+	const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
 
 	browserify(['./_scripts/main.js'])
 		.transform('babelify')
@@ -170,6 +172,8 @@ gulp.task('js:build', () => {
 			}))
 			.pipe(gulp.dest('./dist/js/'));
 	});
+
+	callback();
 });
 
 gulp.task('js', (callback) => {

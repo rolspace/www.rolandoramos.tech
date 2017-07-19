@@ -107,9 +107,9 @@ gulp.task('js', (callback) => {
 gulp.task('images', () => {
 	return gulp.src('assets/**/*')
 		.pipe(plugins.imagemin([
-				plugins.imagemin.jpegtran({ progressive: true }),
-				plugins.imagemin.optipng({ optimizationLevel: 5 })
-			]))
+			plugins.imagemin.jpegtran({ progressive: true }),
+			plugins.imagemin.optipng({ optimizationLevel: 5 })
+		]))
 		.pipe(gulp.dest('assets/'));
 });
 

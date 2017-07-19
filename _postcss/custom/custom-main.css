@@ -41,8 +41,8 @@ article
 		margin-bottom: var(--base-margin)
 
 
-		& p img
-			margin-bottom: var(--base-margin - 20px)
+		& p:first-of-type img
+			margin-bottom: calc(var(--base-margin) - 20px)
 
 		& .subtitle
 			color: var(--paragraph-color)

@@ -183,6 +183,10 @@ gulp.task('js', (callback) => {
 	sequence('js:del', 'js:build', callback);
 });
 
+gulp.task('setenv', () => {
+	return process.env.JEKYLL_ENV = 'production';
+});
+
 gulp.task('debug', (callback) => {
 	currentTask = 'debug';
 
@@ -194,18 +198,14 @@ gulp.task('debug', (callback) => {
 	}
 });
 
-gulp.task('setrelease', () => {
-	return process.env.JEKYLL_ENV = 'production';
-});
-
 gulp.task('release', (callback) => {
 	currentTask = 'release';
 	process.env.JEKYLL_ENV = 'production'
 
 	if (argv.serve) {
-		sequence('setrelease', 'css', 'js', 'jekyll', 'server', 'watch', callback);
+		sequence('setenv', 'css', 'js', 'jekyll', 'server', 'watch', callback);
 	}
 	else {
-		sequence('setrelease', 'css', 'js', 'jekyll', callback);	
+		sequence('setenv', 'css', 'js', 'jekyll', callback);	
 	}
 });

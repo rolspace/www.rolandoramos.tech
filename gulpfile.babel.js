@@ -112,10 +112,6 @@ gulp.task('watch', (callback) => {
 	}
 });
 
-// gulp.task('css:del', () => {
-// 	return 
-// });
-
 gulp.task('css', () => {
 	del(['./dist/css/*.*'])
 
@@ -143,9 +139,6 @@ gulp.task('css', () => {
 		.pipe(gulp.dest('./dist/css'));
 });
 
-// gulp.task('css', (callback) => {
-// 	sequence('css:del', 'css:postcss', callback);
-// });
 
 gulp.task('js:del', () => {
 	return del(['dist/js/*.*']);

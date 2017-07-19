@@ -160,7 +160,7 @@ gulp.task('js:build', (callback) => {
 		.pipe(writeStream);
 
 	writeStream.on('finish', () => {
-		return gulp.src('./dist/js/rolspace.js')
+		gulp.src('./dist/js/rolspace.js')
 			.pipe(plugins.uglify())
 			.pipe(plugins.rename('rolspace.min.js'))
 			.pipe(plugins.gzip({
@@ -170,10 +170,11 @@ gulp.task('js:build', (callback) => {
 					level: 9
 				}
 			}))
-			.pipe(gulp.dest('./dist/js/'));
+			.pipe(gulp.dest('./dist/js/'))
+			.on('end', () => {
+				callback();
+			});
 	});
-
-	callback();
 });
 
 gulp.task('js', (callback) => {

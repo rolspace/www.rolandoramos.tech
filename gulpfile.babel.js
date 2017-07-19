@@ -75,19 +75,18 @@ gulp.task('css', () => {
 });
 
 gulp.task('js', (callback) => {
-	del(['dist/js/*.*']);
+	del(['./dist/js/*.*']).then(() => {
+		mkdirp.sync('dist/js');
 
-	mkdirp.sync('./dist/js');
+		const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
 
-	const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
-
-	browserify(['./_scripts/main.js'])
+		browserify(['./_scripts/main.js'])
 		.transform('babelify')
 		.bundle()
 		.pipe(writeStream);
 
-	writeStream.on('finish', () => {
-		gulp.src('./dist/js/rolspace.js')
+		writeStream.on('finish', () => {
+			gulp.src('./dist/js/rolspace.js')
 			.pipe(plugins.uglify())
 			.pipe(plugins.rename('rolspace.min.js'))
 			.pipe(plugins.gzip({
@@ -101,6 +100,7 @@ gulp.task('js', (callback) => {
 			.on('end', () => {
 				callback();
 			});
+		});
 	});
 });
 

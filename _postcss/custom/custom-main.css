@@ -22,7 +22,7 @@ article
 
 	& .article-date
 		@mixin subtext
-		font-size: 0.813rem
+		font-size: 0.875rem
 		margin-bottom: var(--base-margin)
 
 	& .article-title
@@ -68,7 +68,7 @@ article
 
 	& .read-more a
 		@mixin subtext
-		font-size: 0.813rem
+		font-size: 0.875rem
 
 	& .read-more a:hover
 		color: var(--subtext-color-hover)

@@ -47,71 +47,6 @@ const config = {
 	newLine: '\r\n\r\n'
 };
 
-const server = () => {
-	let baseServer = {
-		baseDir: 'site',
-	};
-
-	if (currentTask === 'release') {
-		baseServer.middleware = [{
-			route: '/dist',
-			handle: (req, res, next) => {
-				res.setHeader('Content-Encoding', 'gzip');
-
-				next();
-			}
-		}]
-	}
-
-	browserSync.init({
-		files: 'site/**',
-		port: 4000,
-		server: baseServer
-	});
-};
-
-gulp.task('images', () => {
-	return gulp.src('assets/**/*')
-		.pipe(plugins.imagemin([
-				plugins.imagemin.jpegtran({ progressive: true }),
-				plugins.imagemin.optipng({ optimizationLevel: 5 })
-			]))
-		.pipe(gulp.dest('assets/'));
-});
-
-gulp.task('server', (callback) => {
-	server();
-	callback();
-});
-
-gulp.task('jekyll:del', () => {
-	return del(['./site/*.*']);
-});
-
-gulp.task('jekyll', (callback) => {	
-	const jekyll = spawn('jekyll', [ 'build' ]);
-
-	var jekyllLogger = (buffer) => {
-		buffer.toString()
-		.split(/\n/)
-		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
-	};
-
-	callback();
-});
-
-gulp.task('watch', (callback) => {
-	if (argv.serve) {
-		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
-		gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
-		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
-			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
-
-		gulp.watch('./site/**/*').on('change', browserSync.reload);
-		callback();
-	}
-});
-
 gulp.task('css', () => {
 	del(['./dist/css/*.*'])
 
@@ -167,6 +102,71 @@ gulp.task('js', (callback) => {
 				callback();
 			});
 	});
+});
+
+gulp.task('images', () => {
+	return gulp.src('assets/**/*')
+		.pipe(plugins.imagemin([
+				plugins.imagemin.jpegtran({ progressive: true }),
+				plugins.imagemin.optipng({ optimizationLevel: 5 })
+			]))
+		.pipe(gulp.dest('assets/'));
+});
+
+gulp.task('jekyll:del', () => {
+	return del(['./site/*.*']);
+});
+
+gulp.task('jekyll', (callback) => {	
+	const jekyll = spawn('jekyll', [ 'build' ]);
+
+	var jekyllLogger = (buffer) => {
+		buffer.toString()
+		.split(/\n/)
+		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
+	};
+
+	callback();
+});
+
+const server = () => {
+	let baseServer = {
+		baseDir: 'site',
+	};
+
+	if (currentTask === 'release') {
+		baseServer.middleware = [{
+			route: '/dist',
+			handle: (req, res, next) => {
+				res.setHeader('Content-Encoding', 'gzip');
+
+				next();
+			}
+		}]
+	}
+
+	browserSync.init({
+		files: 'site/**',
+		port: 4000,
+		server: baseServer
+	});
+};
+
+gulp.task('server', (callback) => {
+	server();
+	callback();
+});
+
+gulp.task('watch', (callback) => {
+	if (argv.serve) {
+		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
+		gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
+		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
+			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
+
+		gulp.watch('./site/**/*').on('change', browserSync.reload);
+		callback();
+	}
 });
 
 gulp.task('setenv', () => {

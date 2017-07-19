@@ -118,6 +118,10 @@ code {
 }
 
 @media (--medium-viewport) {
+  body {
+    font-size: 1.313rem;
+  }
+
   .navbar {
     padding-left: 20px;
     padding-right: 20px;

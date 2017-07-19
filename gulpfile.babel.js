@@ -139,12 +139,9 @@ gulp.task('css', () => {
 		.pipe(gulp.dest('./dist/css'));
 });
 
+gulp.task('js', (callback) => {
+	del(['dist/js/*.*']);
 
-gulp.task('js:del', () => {
-	return del(['dist/js/*.*']);
-});
-
-gulp.task('js:build', (callback) => {
 	mkdirp.sync('./dist/js');
 
 	const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
@@ -170,10 +167,6 @@ gulp.task('js:build', (callback) => {
 				callback();
 			});
 	});
-});
-
-gulp.task('js', (callback) => {
-	sequence('js:del', 'js:build', callback);
 });
 
 gulp.task('setenv', () => {

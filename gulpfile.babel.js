@@ -112,11 +112,13 @@ gulp.task('watch', (callback) => {
 	}
 });
 
-gulp.task('css:del', () => {
-	return del(['./dist/css/*.*'])
-});
+// gulp.task('css:del', () => {
+// 	return 
+// });
 
-gulp.task('css:postcss', () => {
+gulp.task('css', () => {
+	del(['./dist/css/*.*'])
+
 	return gulp.src('./_postcss/rolspace.css')
 		.pipe(postcss([
 			atImport(),
@@ -141,9 +143,9 @@ gulp.task('css:postcss', () => {
 		.pipe(gulp.dest('./dist/css'));
 });
 
-gulp.task('css', (callback) => {
-	sequence('css:del', 'css:postcss', callback);
-});
+// gulp.task('css', (callback) => {
+// 	sequence('css:del', 'css:postcss', callback);
+// });
 
 gulp.task('js:del', () => {
 	return del(['dist/js/*.*']);

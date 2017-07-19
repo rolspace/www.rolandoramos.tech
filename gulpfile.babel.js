@@ -113,11 +113,9 @@ gulp.task('images', () => {
 		.pipe(gulp.dest('assets/'));
 });
 
-gulp.task('jekyll:del', () => {
-	return del(['./site/*.*']);
-});
-
 gulp.task('jekyll', (callback) => {	
+	del(['./site/*.*']);
+
 	const jekyll = spawn('jekyll', [ 'build' ]);
 
 	var jekyllLogger = (buffer) => {
@@ -126,7 +124,9 @@ gulp.task('jekyll', (callback) => {
 		.forEach((message) => { return plugins.util.log('Jekyll: ' + message); });
 	};
 
-	callback();
+	jekyll.on('exit', () => {
+		callback();
+	});
 });
 
 const server = () => {

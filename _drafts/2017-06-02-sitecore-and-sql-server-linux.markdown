@@ -33,7 +33,7 @@ With the container running, I connected to it using the SQL Server Management St
 
 [Add SSMS Image]
 
-The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170417). By downloading the ZIP archive of the root folder, we could obtain the separate .mdf and .ldf files needed: https://dev.sitecore.net/~/media/203A8170D4664A41A8900E7AFEFC803F.ashx.
+The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170614). By downloading the ZIP archive of the root folder, I obtained the separate .mdf and .ldf files needed: https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx.
 
 I extracted the contents of the ZIP archive and copied the databases to the location mapped to the container.
 
@@ -43,4 +43,12 @@ After that, it was just necessary to attach each DB file to the server running i
 
 [Add db attach video/gif?]
 
-Once this was completed, I needed to install the Sitecore XP website on the host machine. Even though I already had the root folder contents from the ZIP archive, I preferred to use the Executable installer. I 
+Once this step was completed, I needed to install the Sitecore XP website on the host machine. Even though I already had the root folder contents from the ZIP archive, I preferred to use the Web Application Installer (https://dev.sitecore.net/~/media/C7FF1EFE55EF42428CA178E3B74FA75D.ashx). There is no need to do a full Sitecore installation, so I selected Client Only.
+
+[installer image]
+
+During the installation a screen will request information about the SQL Server connection details. I decided to fill in this information manually in the config file. However, in order to prevent the installer from attempting the connection, you will need to open the Advanced options and uncheck the "Verify that the wizard can connect to the database server".
+
+[installer image]
+
+Once the installation of the Sitecore Client was completed

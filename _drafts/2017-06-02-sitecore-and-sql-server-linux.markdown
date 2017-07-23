@@ -29,17 +29,17 @@ Once that was completed, I ran the container, following the instructions in the 
 
 The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: accept the End User Agreement and create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port. Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to the host's location in the F drive. We need this to persist the Sitecore databases from my machine in the container.
 
-With the container running, I connected to it using the SQL Server Management Studio.
+With the container running, I connected to the database using SQL Server Management Studio.
 
 [Add SSMS Image]
 
-The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170614). By downloading the ZIP archive of the root folder, I obtained the separate .mdf and .ldf files needed: https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx.
+The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170614). I downloaded the ZIP archive of the root folder and obtained the separate .mdf and .ldf files needed: https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx.
 
-I extracted the contents of the ZIP archive and copied the databases to the location mapped to the container.
+I extracted the contents of the ZIP archive and copied the databases to the folder location mapped to the container.
 
 [Add folder location image]
 
-After that, it was just necessary to attach each DB file to the server running in the container.
+After that, it was just a few clicks to attach each DB file to the server running in the container.
 
 [Add db attach video/gif?]
 
@@ -51,4 +51,18 @@ During the installation a screen will request information about the SQL Server c
 
 [installer image]
 
-Once the installation of the Sitecore Client was completed
+Once the installation of the Sitecore Client was complete, it was time to modify the connection strings from the installation to point to our databases server from the SQL Server Linux container. The server name is used for the installation was sc82v170614
+
+I opened the ConnectionStrings.config file inside the App_Config folder of the Sitecore client installation and made the following changes to the core, master, and web connection details:
+
+{% highlight xml %}
+<add name="core" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Core"/>
+<add name="master" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Master"/>
+<add name="web" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Web"/>
+{% endhighlight %}
+
+I used the connection details for the SQL Server Linux container running in my machine, then I loaded the browser and accessed the page of my local installation, http://sc82v170614/
+
+[browser image]
+
+Look like that worked.

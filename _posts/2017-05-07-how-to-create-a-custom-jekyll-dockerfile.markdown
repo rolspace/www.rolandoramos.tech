@@ -28,11 +28,15 @@ FROM jekyll/jekyll:latest
 
 That was easy enough, the first line in the Dockerfile guarantees that the Docker image will be created with the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from a terminal window at the path where the Dockerfile is located:
 
-<pre id="build">> docker build . -t jekyll-rolspace</pre>
+<pre id="build">
+> docker build . -t jekyll-rolspace
+</pre>
 
 This command creates a Docker image with the tag "jekyll-rolspace". Note you do not have to specify the name of the file as long as your file is named "Dockerfile". I can use the tag to refer to the custom image in order to create a container later:
 
-<pre id="run">> docker run --name=rolspace --label=jekyll --volume=/path/to/code:/srv/jekyll -it --publish 127.0.0.1:4000:4000 jekyll-rolspace /bin/bash</pre>
+<pre id="run">
+> docker run --name=rolspace --label=jekyll --volume=/path/to/code:/srv/jekyll -it --publish 127.0.0.1:4000:4000 jekyll-rolspace /bin/bash
+</pre>
 
 This command creates a container with the name "rolspace". Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website. Using the publish option: <code>--publish</code>, I will be able to access the pages with localhost and port 4000, once the site is running through the container.
 
@@ -40,7 +44,9 @@ By adding <code>/bin/bash</code> at the end of the command, I will have access t
 
 Once the container was ready, it could be started with this command:
 
-<pre>> docker start rolspace -i</pre>
+<pre>
+> docker start rolspace -i
+</pre>
 
 Unfortunately, I ran into my first problem rather quickly:
 
@@ -78,7 +84,9 @@ RUN npm install -g gulp-cli
 
 With this new step, I needed to rebuild the Docker image and the container. I got rid of the previous image by first stopping the container:
 
-<pre>> docker stop rolspace</pre>
+<pre>
+> docker stop rolspace
+</pre>
 
 Then, I deleted the container and the local image:
 

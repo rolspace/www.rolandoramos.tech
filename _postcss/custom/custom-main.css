@@ -199,7 +199,7 @@ article
 	img.about
 		float: right
 		margin-left: 20px
-		width: 30%
+		width: 40%
 
 	article
 		margin-bottom: calc(var(--base-margin) * 2)

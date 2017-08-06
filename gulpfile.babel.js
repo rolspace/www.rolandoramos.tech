@@ -156,14 +156,12 @@ gulp.task('server', (callback) => {
 });
 
 gulp.task('watch', (callback) => {
-	if (argv.serve) {
-		gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
-		gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
-		gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
-			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
+	gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
+	gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
+	gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
+		'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
-		gulp.watch('./site/**/*').on('change', browserSync.reload);
-	}
+	gulp.watch('./site/**/*').on('change', browserSync.reload);
 
 	callback();
 });

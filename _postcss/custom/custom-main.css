@@ -211,25 +211,27 @@ article
 		bottom: -40px
 		height: 40px
 		line-height: 40px
+		padding: 0px 30px
+
+		& .container .row div
+			text-align: unset
 
 		& .copyright
 			float: left !important
+			line-height: 55px
 
 		& .social-profiles
 			float: right !important
 
 		& .footnote
-			margin-top: 0px
-			margin-bottom: 20px
+			float: right !important
+			text-align: right !important
 
 			& .license
 				margin-bottom: 5px
 
 			& .disclaimer
 				width: 100%
-
-			& div
-				text-align: left !important
 
 		& .icon
 			margin-left: 15px

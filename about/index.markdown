@@ -4,14 +4,14 @@ layout: page
 ---
 <h2 class="article-title">Welcome!</h2>
 
-<p>I am Rolando Ramos and this is my website. I write occasionally about software development, team management, and video games. Every once in a while I get lucky and take a nice photo, I will post some of those here.</p>
+<p>My name is Rolando Ramos and this is my personal website. Occasionally, I will write about software development, team management, and video games. From time to time I will get lucky and take a nice photo, which I will also post in here.</p>
 
 <p><img class="img-fluid about lazyloaded" src="/assets/images/about/me.jpg" alt="Rolando"></p>
 
-<p>I was born and raised in Panama City, Panama, where I lived for most of my life. In 2003 I obtained my degree in Computer Science from <a title="Computer Science Honor Grads" href="https://www.harding.edu/comp/awards_honorgrads" target="_blank">Harding University</a>, in Searcy, Arkansas. After living in Madrid, Spain for 8 years and obtaining my MBA, I decided to move to Zurich, Switzerland.</p>
+<p>I was born and raised in Panama City, Panama, where I lived for most of my life. In 2003 I obtained a degree in Computer Science from <a title="Computer Science Honor Grads" href="https://www.harding.edu/comp/awards_honorgrads" target="_blank">Harding University</a>, located in Searcy, Arkansas. In 2006, I obtained an MBA from Universidad Antonio de Nebrija, located in Madrid, Spain. After living there for 8 years, I made a move to Zurich, Switzerland, where I currently reside.</p>
 
-<p>I have been a software engineer for 8+ years. That is not just something I do for work, as I like to spend some of my free time with more code!</p>
+<p>I have been a software engineer for more than 9 years. This is not just something I do for work, as I also like to spend some of my free time with code and software!</p>
 
-<p>You can find me on <a href="http://ch.linkedin.com/in/rolandoramosrestrepo">LinkedIn</a>, <a href="https://stackoverflow.com/users/6909765/rolspace">Stack Overflow</a>, and <a href="http://instagram.com/rolspace">Instagram</a>.</p>
+<p>You can find me on <a href="http://ch.linkedin.com/in/rolandoramosrestrepo">LinkedIn</a>, <a href="https://github.com/rolspace">Github</a>, <a href="https://stackoverflow.com/users/6909765/rolspace">Stack Overflow</a>, and <a href="http://instagram.com/rolspace">Instagram</a>.</p>
 
 <p>Enjoy!</p>

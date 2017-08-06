@@ -165,8 +165,9 @@ gulp.task('watch', (callback) => {
 			'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
 		gulp.watch('./site/**/*').on('change', browserSync.reload);
-		callback();
 	}
+
+	callback();
 });
 
 gulp.task('setenv', () => {

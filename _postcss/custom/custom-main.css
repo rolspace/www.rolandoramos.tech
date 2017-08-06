@@ -35,6 +35,7 @@ article
 		margin-bottom: var(--base-margin)
 
 	& .article-title
+		color: color(var(--title-color))
 		font-family: 'Poppins'
 		font-size: 1.625rem
 		font-weight: 500

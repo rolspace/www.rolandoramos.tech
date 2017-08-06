@@ -174,12 +174,18 @@ gulp.task('build', callback => {
 	sequence('css', 'js', 'jekyll', callback);
 });
 
-gulp.task('debug', (callback) => {
-	currentTask = 'debug';
-	sequence('build', 'server', 'watch', callback);
+gulp.task('rundev', (callback) => {
+	del(['./site/*.*'])
+	.then(() => {
+		currentTask = 'debug';
+		sequence('build', 'server', 'watch', callback);
+	});
 });
 
-gulp.task('release', (callback) => {
-	currentTask = 'release';
-	sequence('setenv', 'build', 'server', 'watch', callback);
+gulp.task('runprod', (callback) => {
+	del(['./site/*.*'])
+	.then(() => {
+		currentTask = 'release';
+		sequence('setenv', 'build', 'server', 'watch', callback);
+	});
 });

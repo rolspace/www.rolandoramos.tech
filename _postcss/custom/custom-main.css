@@ -16,6 +16,15 @@ pre
 	margin: 0 0 10px
 	padding: 9.5px
 
+img
+	&.lazyload,
+	&.lazyloading
+		opacity: 0
+
+	&.lazyloaded
+		opacity: 1
+		transition: opacity 2s
+
 article
 	border-bottom: 1px solid var(--subtext-color)
 	margin-bottom: var(--base-margin)

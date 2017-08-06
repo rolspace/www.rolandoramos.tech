@@ -113,10 +113,8 @@ gulp.task('images', () => {
 		.pipe(gulp.dest('assets/'));
 });
 
-gulp.task('jekyll', (callback) => {	
-	del(['./site/*.*']);
-
-	const jekyll = spawn('jekyll', [ 'build' ]);
+gulp.task('jekyll', (callback) => {
+	const jekyll = spawn('jekyll', [ 'build', '--incremental' ]);
 
 	var jekyllLogger = (buffer) => {
 		buffer.toString()

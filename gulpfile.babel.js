@@ -43,8 +43,31 @@ const config = {
 		gzipOptions: {
 			level: 9
 		}
-	},	
+	},
 	newLine: '\r\n\r\n'
+};
+
+const server = () => {
+	let baseServer = {
+		baseDir: 'site',
+	};
+
+	if (currentTask === 'release') {
+		baseServer.middleware = [{
+			route: '/dist',
+			handle: (req, res, next) => {
+				res.setHeader('Content-Encoding', 'gzip');
+
+				next();
+			}
+		}]
+	}
+
+	browserSync.init({
+		files: 'site/**',
+		port: 4000,
+		server: baseServer
+	});
 };
 
 gulp.task('css', () => {
@@ -127,29 +150,6 @@ gulp.task('jekyll', (callback) => {
 	});
 });
 
-const server = () => {
-	let baseServer = {
-		baseDir: 'site',
-	};
-
-	if (currentTask === 'release') {
-		baseServer.middleware = [{
-			route: '/dist',
-			handle: (req, res, next) => {
-				res.setHeader('Content-Encoding', 'gzip');
-
-				next();
-			}
-		}]
-	}
-
-	browserSync.init({
-		files: 'site/**',
-		port: 4000,
-		server: baseServer
-	});
-};
-
 gulp.task('server', (callback) => {
 	server();
 	callback();
@@ -162,12 +162,7 @@ gulp.task('watch', (callback) => {
 		'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
 	gulp.watch('./site/**/*').on('change', browserSync.reload);
-
 	callback();
-});
-
-gulp.task('setenv', () => {
-	return process.env.JEKYLL_ENV = 'production';
 });
 
 gulp.task('build', callback => {
@@ -182,10 +177,14 @@ gulp.task('rundev', (callback) => {
 	});
 });
 
+gulp.task('setprod', () => {
+	return process.env.JEKYLL_ENV = 'production';
+});
+
 gulp.task('runprod', (callback) => {
 	del(['./site/*.*'])
 	.then(() => {
 		currentTask = 'release';
-		sequence('setenv', 'build', 'server', 'watch', callback);
+		sequence('setprod', 'build', 'server', 'watch', callback);
 	});
 });

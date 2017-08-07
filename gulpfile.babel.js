@@ -43,8 +43,31 @@ const config = {
 		gzipOptions: {
 			level: 9
 		}
-	},	
+	},
 	newLine: '\r\n\r\n'
+};
+
+const server = () => {
+	let baseServer = {
+		baseDir: 'site',
+	};
+
+	if (currentTask === 'release') {
+		baseServer.middleware = [{
+			route: '/dist',
+			handle: (req, res, next) => {
+				res.setHeader('Content-Encoding', 'gzip');
+
+				next();
+			}
+		}]
+	}
+
+	browserSync.init({
+		files: 'site/**',
+		port: 4000,
+		server: baseServer
+	});
 };
 
 gulp.task('css', () => {
@@ -113,7 +136,7 @@ gulp.task('images', () => {
 		.pipe(gulp.dest('assets/'));
 });
 
-gulp.task('jekyll', (callback) => {	
+gulp.task('jekyll', (callback) => {
 	del(['./site/*.*']);
 
 	const jekyll = spawn('jekyll', [ 'build' ]);
@@ -128,29 +151,6 @@ gulp.task('jekyll', (callback) => {
 		callback();
 	});
 });
-
-const server = () => {
-	let baseServer = {
-		baseDir: 'site',
-	};
-
-	if (currentTask === 'release') {
-		baseServer.middleware = [{
-			route: '/dist',
-			handle: (req, res, next) => {
-				res.setHeader('Content-Encoding', 'gzip');
-
-				next();
-			}
-		}]
-	}
-
-	browserSync.init({
-		files: 'site/**',
-		port: 4000,
-		server: baseServer
-	});
-};
 
 gulp.task('server', (callback) => {
 	server();

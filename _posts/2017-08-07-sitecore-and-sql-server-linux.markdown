@@ -1,8 +1,8 @@
 ---
 layout: post
-published: false
+published: true
 title: Sitecore 8.2 and MSSQL Server Linux
-date: 2017-08-07
+date: 2017-08-06
 tags:
 - code
 - docker

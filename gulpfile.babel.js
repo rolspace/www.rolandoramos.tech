@@ -72,29 +72,30 @@ const server = () => {
 
 gulp.task('css', () => {
 	del(['./dist/css/*.*'])
-
-	return gulp.src('./_postcss/rolspace.css')
-		.pipe(postcss([
-			atImport(),
-			mixins(),
-			cssvariables(),
-			customMedia(),
-			calc(),
-			nested(),
-			color(),
-			autoprefixer()
-		], { parser: sugarss }))
-		.pipe(gulp.dest('./dist/css/'))
-		.pipe(plugins.rename('rolspace.min.css'))
-		.pipe(plugins.cleanCss())
-		.pipe(plugins.gzip({
-			append: false,
-			skipGrowingFiles: true,
-			gzipOptions: {
-				level: 9
-			}
-		}))
-		.pipe(gulp.dest('./dist/css'));
+	.then(() => {
+		return gulp.src('./_postcss/rolspace.css')
+			.pipe(postcss([
+				atImport(),
+				mixins(),
+				cssvariables(),
+				customMedia(),
+				calc(),
+				nested(),
+				color(),
+				autoprefixer()
+			], { parser: sugarss }))
+			.pipe(gulp.dest('./dist/css/'))
+			.pipe(plugins.rename('rolspace.min.css'))
+			.pipe(plugins.cleanCss())
+			.pipe(plugins.gzip({
+				append: false,
+				skipGrowingFiles: true,
+				gzipOptions: {
+					level: 9
+				}
+			}))
+			.pipe(gulp.dest('./dist/css'));
+	});
 });
 
 gulp.task('js', (callback) => {

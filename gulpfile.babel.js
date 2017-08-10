@@ -138,7 +138,7 @@ gulp.task('images', () => {
 });
 
 gulp.task('jekyll', (callback) => {
-	const jekyll = spawn('jekyll', [ 'build', '--incremental' ]);
+	const jekyll = spawn('jekyll', [ 'build' ]);
 
 	var jekyllLogger = (buffer) => {
 		buffer.toString()

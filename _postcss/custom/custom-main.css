@@ -207,6 +207,7 @@ article
 		& .read-more
 			margin-bottom: calc(var(--base-margin) * 2)
 
+@media (--large-viewport)
 	.footer
 		bottom: -40px
 		height: 40px

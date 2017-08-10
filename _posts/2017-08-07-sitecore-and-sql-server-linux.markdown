@@ -33,7 +33,9 @@ Once that was completed, I ran the container, following the instructions from th
 > docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1' -p 1433:1433 -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
 </pre>
 
-The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: accept the End User Agreement and create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port. Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to a folder in the host machine. We need this to persist the Sitecore databases from my machine in the container.
+The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: one to accept the End User Agreement and the other to create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port.
+
+Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to a folder in the host machine, in this case, a folder in the F drive. We need this to persist the Sitecore databases from my machine in the container.
 
 With the container running, I connected to the database using SQL Server Management Studio.
 

@@ -159,7 +159,7 @@ gulp.task('server', (callback) => {
 gulp.task('watch', (callback) => {
 	gulp.watch(['./_postcss/**/*'], ['css', 'jekyll']);
 	gulp.watch(['./_scripts/**/*'], ['js', 'jekyll']);
-	gulp.watch(['./_includes/**/*.*', './_layouts/**/*.*',
+	gulp.watch(['./index.html', './_includes/**/*.*', './_layouts/**/*.*',
 		'./_posts/**/*', './about/**/*', './assets/**/*', './dist/**/*', './posts/**/*'], ['jekyll']);
 
 	gulp.watch('./site/**/*').on('change', browserSync.reload);

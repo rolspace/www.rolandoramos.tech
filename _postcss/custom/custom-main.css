@@ -195,12 +195,13 @@ article
 	& .icon-linkedin2
 		margin-left: 0px
 
-@media (--medium-viewport)
+@media (--small-viewport)
 	img.about
 		float: right
 		margin-left: 20px
 		width: 40%
 
+@media (--medium-viewport)
 	article
 		margin-bottom: calc(var(--base-margin) * 2)
 

@@ -8,8 +8,8 @@ layout: page
 
 <p>
 	<picture>
-		<source media="(min-width: 576px)" data-srcset="/assets/images/about/me-1000.jpg" />
-		<img class="img-fluid about lazyload" data-src="/assets/images/about/me.jpg" alt="Rolando Ramos">
+		<source media="(min-width: 576px)" data-srcset="/assets/images/about/rolando-1000.jpg" />
+		<img class="img-fluid about lazyload" data-src="/assets/images/about/rolando.jpg" alt="Rolando Ramos">
 	</picture>
 </p>
 

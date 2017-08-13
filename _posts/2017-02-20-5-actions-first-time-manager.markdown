@@ -9,7 +9,7 @@ tags:
 [LinkedIn]: https://www.linkedin.com "LinkedIn"
 [Medium]: https://medium.com "Medium"
 
-<img class="center-block img-fluid lazyload" src="/assets/images/170220/5-tips-first-time-manager-1400.jpg" alt="Management" />
+<img class="center-block img-fluid lazyload" src="/assets/images/170220/5-tips-first-time-manager-700.jpg" alt="Management" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

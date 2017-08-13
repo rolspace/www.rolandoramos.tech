@@ -42,7 +42,7 @@ This command creates a container with the name "website". Using the volume mappi
 
 By adding <code>/bin/bash</code> at the end of the command, I will have access to the container's shell once it is running. This will allow me to run commands, like <code>jekyll serve</code>.
 
-Once the container was ready, it could be started with this command:
+Once the container is ready, it can be started with this command:
 
 <pre>
 > docker start website -i
@@ -50,13 +50,13 @@ Once the container was ready, it could be started with this command:
 
 Unfortunately, I ran into my first problem quite quickly:
 
-<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-error-1.png" alt= "First error when running the custom Jekyll container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/pygments-missing-error-700.png" alt= "Docker start failed after launching the custom Jekyll container because Pygments is missing as a dependency" />
 
-It seems I needed to include the pygments highlighter as a dependency using a Gemfile. I do not recall having to do this the first time I started using Jekyll. A quick search gave me the [reason](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed).
+I needed to include the pygments highlighter as a dependency using a Gemfile. I do not recall having to do this the first time I started using Jekyll. A quick search gave me the [reason](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed).
 
-<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-error-2.png" alt="Second error when running the custom Jekyll container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/dependencies-missing-error-700.png" alt="Docker start failed again because there were more dependencies missing" />
 
-I added pygments into the Gemfile and, then...I realized I was missing more dependencies...Good thing I had decided to do this. I created the Gemfile with the missing dependencies:
+I added pygments into the Gemfile and then, I realized I was missing more dependencies. Good thing I had decided to do this. I created the Gemfile with the missing dependencies:
 
 <pre>
 #Gemfile
@@ -70,7 +70,7 @@ gem 'pygments.rb', group: :jekyll_plugins
 
 This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> command from the container's shell:
 
-<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-1.png" alt="Successfully run 'jekyll server' command from container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-serve-success-700.png" alt="Successfully ran 'jekyll server' command from container" />
 
 My personal setup just needed two additional steps to run. I had to install the gulp-cli as a global package in the container and also, I had to install the dependencies to run the various gulp tasks in my personal setup. The default Jeyll container already included node v6.9.2, so it was only a matter of including two new commands:
 
@@ -100,7 +100,7 @@ Then, I deleted the container and the local image:
 
 I rebuilt my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
 
-<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-success-2.png" alt="Successfully run a custom gulp task in the Jekyll container" />
+<img class="center-block img-fluid lazyload" data-src="/assets/images/170507/gulp-task-success-700.png" alt="Successfully ran a custom gulp task in the Jekyll container" />
 
 That was enough to get my site running on a local container. The next test would make sure I could use the container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
 

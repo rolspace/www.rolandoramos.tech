@@ -7,7 +7,7 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/140811/muenchen-1400.jpg" alt="München" />
+<img class="center-block img-fluid lazyload" src="/assets/images/140811/muenchen-700.jpg" alt="München" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

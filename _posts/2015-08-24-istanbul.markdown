@@ -6,7 +6,7 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/150824/istanbul.jpg" alt="Galata Bridge">
+<img class="center-block img-fluid lazyload" src="/assets/images/150824/istanbul-700.jpg" alt="Galata Bridge">
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

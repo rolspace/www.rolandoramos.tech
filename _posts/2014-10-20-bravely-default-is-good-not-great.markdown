@@ -7,7 +7,7 @@ tags:
 - games
 - late reviews
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/141020/bravelydefault-1400.jpg" alt="Bravely Default">
+<img class="center-block img-fluid lazyload" src="/assets/images/141020/bravelydefault-700.jpg" alt="Bravely Default">
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
@@ -35,7 +35,7 @@ In addition to using <i>Braves</i> or <i>Defaults</i> during battle, the charact
 
 Each of the characters can be assigned a Job, which provide the character with a variety of stat modifications and skills in line with the job's purpose. For example, the White Mage Job applies a 30% increase to the MP and MND stats, and a 20% increase to the INT stat. At the same time it decreases the DEX stat by 20%, the STR stat by 30%, and the VIT stat by 40%. Also, each Job applies a letter-based stat modifier to different types of equipment (Sword, Shield, etc). The equipment stat modifiers are: S, A, B, C, D, E; S is the highest modified available (100% stat boots), while E is the lowest (No stat boost).
 
-There are a total of 24 unique Jobs in the game. You can obtain a new Job by defeating specific bosses in the game. It must be noted that not all the Jobs are available just by following the story, some of them need to be obtained by completing sidequests. Just as characters level up with Experience Points, each Job can gain higher levels with Job Points, up to level 14. As the Job level increases, there will be new abilities available. 
+There are a total of 24 unique Jobs in the game. You can obtain a new Job by defeating specific bosses in the game. It must be noted that not all the Jobs are available just by following the story, some of them need to be obtained by completing sidequests. Just as characters level up with Experience Points, each Job can gain higher levels with Job Points, up to level 14. As the Job level increases, there will be new abilities available.
 
 Jobs can be combined in interesting ways thanks to the Ability setup in the menu. Once a character is given a Job, additional abilities can be assigned through the Job Command and the Support Abilities options. Using the Job Command option in the menu, you can set an additional group of abilities from a different Job than the one the character is assigned. The Support Abilities option allows you to pick an choose specific skills from various Jobs for your character. There are many combinations available, which really open up options available to you during battle.
 
@@ -45,9 +45,9 @@ In regards to the game's art direction, I feel that the style choice was the rig
 
 Last, but not least, what I believe are the two best features in the game: 1) the ability to increase/decrease the game's difficulty and 2) the ability to turn enemy encounters on/off. This is extremely useful, especially for older gamers like myself. Now that I have used this, it will be very hard to play any other RPG without something similar, for me, it changes the whole experience. Random encounters are the devil!
 
-Unfortunately, Bravely Default is not perfect. It has a pacing problem...a major pacing problem. Everything seems fine until you reach a specific point in the story, and then, like Tiz, you got your own Norende sized hole to deal with. 
+Unfortunately, Bravely Default is not perfect. It has a pacing problem...a major pacing problem. Everything seems fine until you reach a specific point in the story, and then, like Tiz, you got your own Norende sized hole to deal with.
 
-If want to get the game's True Ending (and you do, because the Bad Ending is unsatisfying), you have to deal with the fact that you will need to repeat the quest...5 times, yes, 5 more times. Of course, this doesn't mean that you have play the entire game 5 more times, but you will need to awaken each Crystal 5 additional times, boss battles included. In order to achieve the True Ending, you must awaken all 4 Crystals in 5 alternate worlds, essentially having to fight the same battles each time. 
+If want to get the game's True Ending (and you do, because the Bad Ending is unsatisfying), you have to deal with the fact that you will need to repeat the quest...5 times, yes, 5 more times. Of course, this doesn't mean that you have play the entire game 5 more times, but you will need to awaken each Crystal 5 additional times, boss battles included. In order to achieve the True Ending, you must awaken all 4 Crystals in 5 alternate worlds, essentially having to fight the same battles each time.
 
 To me, this is the biggest flaw in Bravely Default. After beating the game I could not help but wonder why this decision was made. For me, it almost killed the game, I was very close to just forgetting about it a few times, but I was already too invested in the characters to simply let it. By Chapter 6 I was saying to myself: <em>"This has got to be the last time, right?"</em> And then there were <em>two</em> more. The game had been fantastic up the point where repetition made it a complete drag.
 

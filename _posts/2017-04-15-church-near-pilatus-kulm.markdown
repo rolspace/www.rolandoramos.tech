@@ -7,7 +7,7 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/170415/church-pilatus-kulm.jpg" />
+<img class="center-block img-fluid lazyload" src="/assets/images/170415/church-pilatus-kulm-700.jpg" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

@@ -52,7 +52,7 @@ const server = () => {
 		baseDir: 'site',
 	};
 
-	if (currentTask === 'release') {
+	if (currentTask === 'runprod') {
 		baseServer.middleware = [{
 			route: '/dist',
 			handle: (req, res, next) => {

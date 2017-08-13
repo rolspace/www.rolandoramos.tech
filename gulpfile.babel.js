@@ -70,10 +70,10 @@ const server = () => {
 	});
 };
 
-gulp.task('css', () => {
+gulp.task('css', (callback) => {
 	del(['./dist/css/*.*'])
 	.then(() => {
-		return gulp.src('./_postcss/rolspace.css')
+		gulp.src('./_postcss/rolspace.css')
 			.pipe(postcss([
 				atImport(),
 				mixins(),
@@ -94,7 +94,10 @@ gulp.task('css', () => {
 					level: 9
 				}
 			}))
-			.pipe(gulp.dest('./dist/css'));
+			.pipe(gulp.dest('./dist/css/'))
+			.on('end', () => {
+				callback();
+			});
 	});
 });
 

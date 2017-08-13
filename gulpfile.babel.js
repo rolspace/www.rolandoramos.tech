@@ -54,7 +54,15 @@ const server = () => {
 
 	if (currentTask === 'runprod') {
 		baseServer.middleware = [{
-			route: '/dist',
+			route: '/dist' ,
+			handle: (req, res, next) => {
+				res.setHeader('Content-Encoding', 'gzip');
+
+				next();
+			}
+		},
+		{
+			route: '/' ,
 			handle: (req, res, next) => {
 				res.setHeader('Content-Encoding', 'gzip');
 

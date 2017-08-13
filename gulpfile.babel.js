@@ -139,6 +139,18 @@ gulp.task('js', (callback) => {
 	});
 });
 
+gulp.task('html', () => {
+	return gulp.src('./site/index.html')
+		.pipe(plugins.gzip({
+			append: false,
+			skipGrowingFiles: true,
+			gzipOptions: {
+				level: 9
+			}
+		}))
+		.pipe(gulp.dest('./site/'))
+})
+
 gulp.task('images', () => {
 	return gulp.src('assets/**/*')
 		.pipe(plugins.imagemin([
@@ -196,7 +208,7 @@ gulp.task('setprod', () => {
 gulp.task('runprod', (callback) => {
 	del(['./site/*.*'])
 	.then(() => {
-		currentTask = 'release';
-		sequence('setprod', 'build', 'server', 'watch', callback);
+		currentTask = 'runprod';
+		sequence('setprod', 'build', 'html', 'server', 'watch', callback);
 	});
 });

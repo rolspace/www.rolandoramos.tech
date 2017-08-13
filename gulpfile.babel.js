@@ -111,19 +111,19 @@ gulp.task('js', (callback) => {
 
 		writeStream.on('finish', () => {
 			gulp.src('./dist/js/rolspace.js')
-			.pipe(plugins.uglify())
-			.pipe(plugins.rename('rolspace.min.js'))
-			.pipe(plugins.gzip({
-				append: false,
-				skipGrowingFiles: true,
-				gzipOptions: {
-					level: 9
-				}
-			}))
-			.pipe(gulp.dest('./dist/js/'))
-			.on('end', () => {
-				callback();
-			});
+				.pipe(plugins.uglify())
+				.pipe(plugins.rename('rolspace.min.js'))
+				.pipe(plugins.gzip({
+					append: false,
+					skipGrowingFiles: true,
+					gzipOptions: {
+						level: 9
+					}
+				}))
+				.pipe(gulp.dest('./dist/js/'))
+				.on('end', () => {
+					callback();
+				});
 		});
 	});
 });

@@ -8,6 +8,7 @@ import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
 import yargs from 'yargs';
 import mkdirp from 'mkdirp';
+import { stream } from 'critical';
 import fs from 'fs';
 import cp from 'child_process';
 import del from 'del';
@@ -139,6 +140,22 @@ gulp.task('js', (callback) => {
 	});
 });
 
+gulp.task('critical', () => {
+	return gulp.src('./site/index.html')
+		.pipe(stream({
+			base: 'site/',
+			inline: true,
+			minify: true,
+			css: [ 'dist/css/rolspace.css' ],
+			ignore: [ '@font-face' ],
+			penthouse: {
+				strict: true
+			}
+		}))
+		.on('error', function(err) { plugins.util.log(plugins.util.colors.red(err.message)); })
+		.pipe(gulp.dest('./site/'))
+})
+
 gulp.task('html', () => {
 	return gulp.src('./site/index.html')
 		.pipe(plugins.gzip({
@@ -190,7 +207,7 @@ gulp.task('watch', (callback) => {
 });
 
 gulp.task('build', callback => {
-	sequence('css', 'js', 'jekyll', callback);
+	sequence('css', 'js', 'jekyll', 'critical', callback);
 });
 
 gulp.task('rundev', (callback) => {

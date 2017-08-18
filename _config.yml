@@ -1,9 +1,9 @@
 # Site settings
-title: rolspace
+title: Rolando Ramos
 email: rolandorramos@gmail.com
-description: " | Rolando Ramos' personal blog"
+description: " | coder, architect, problem solver, gamer, and recent dad!"
 baseurl: ""
-url: "http://www.rolspace.com"
+url: "https://www.rolandoramos.tech"
 destination: site
 permalink: pretty
 paginate: 5

@@ -5,8 +5,6 @@ date: 2017-02-13
 tags:
 - this
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/170213/logo.jpg" alt="Rolspace" />
-
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>

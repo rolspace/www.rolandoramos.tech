@@ -86,10 +86,10 @@ gulp.task('css', (callback) => {
 			.pipe(postcss([
 				atImport(),
 				mixins(),
-				cssvariables(),
-				customMedia(),
-				calc(),
 				nested(),
+				customMedia(),
+				cssvariables(),
+				calc(),
 				color(),
 				autoprefixer()
 			], { parser: sugarss }))

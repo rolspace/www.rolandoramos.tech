@@ -92,7 +92,7 @@ gulp.task('css', (callback) => {
 				calc(),
 				color(),
 				autoprefixer()
-			], { parser: sugarss }))
+			], { parser: sugarss, from: '_postcss/rolspace.css' }))
 			.pipe(gulp.dest('./dist/css/'))
 			.pipe(plugins.rename('rolspace.min.css'))
 			.pipe(plugins.cleanCss())

@@ -1,17 +1,16 @@
-:root {
-	--base-color: #e84145;
-	--base-font-size: 16px;
-	--base-margin: 30px;
-	--base-rem-size: 1.250rem;
-	--base-width: 700px;
+:root
+	--base-color: #e84145
+	--base-font-size: 16px
+	--base-margin: 30px
+	--base-rem-size: 1.250rem
+	--base-width: 700px
 
-	--title-color: #5a5a5a;
-	--title-color-hover: #e84145;
+	--title-color: #5a5a5a
+	--title-color-hover: #e84145
 
-	--subtext-color: #adadad;
-	--subtext-color-hover: #5a5a5a;
+	--subtext-color: #adadad
+	--subtext-color-hover: #5a5a5a
 
-	--footer-color: #979797;
+	--footer-color: #979797
 
-	--paragraph-color: #3c3c3c;
-}
+	--paragraph-color: #3c3c3c

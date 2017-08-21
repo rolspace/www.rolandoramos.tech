@@ -51,7 +51,7 @@
 }
 
 html {
-	font-size: var(--base-font-size);
+	font-size: var(--base-font-size)px;
   min-height: 100%;
   position: relative;
 }
@@ -59,7 +59,6 @@ html {
 body {
   color: var(--paragraph-color);
 	font-family: 'Amiri';
-	font-size: var(--base-rem-size);
 }
 
 code {
@@ -98,7 +97,7 @@ code {
 .nav-link {
   color: var(--subtext-color);
   font-family: 'Poppins';
-  font-size: 0.875rem;
+  font-size: calc(14/var(--base-font-size))rem;
   font-weight: 500;
 }
 
@@ -120,7 +119,7 @@ code {
 
 @media (--medium-viewport) {
   body {
-    font-size: 1.313rem;
+    font-size: calc(21/var(--base-font-size))rem;
   }
 
   .navbar {
@@ -129,21 +128,21 @@ code {
   }
 
 	.container {
-		width: var(--base-width);
+		width: 700px;
 		max-width: 100%;
 	}
 }
 
 @media (--large-viewport) {
 	.container {
-		width: var(--base-width);
+		width: 700px;
 		max-width: 100%;
 	}
 }
 
 @media (--xlarge-viewport) {
 	.container {
-		width: var(--base-width);
+		width: 700px;
 		max-width: 100%;
 	}
 }

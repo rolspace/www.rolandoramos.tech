@@ -1,6 +1,6 @@
 .icon {
-	height: 0.5rem;
-	width: 0.5rem;
+	height: calc(8/var(--base-font-size))rem;
+	width: calc(8/var(--base-font-size))rem;
 }
 
 pre {
@@ -9,7 +9,7 @@ pre {
 	border-radius: 4px;
 	color: #333;
 	display: block;
-	font-size: 0.875rem;
+	font-size: calc(14/var(--base-font-size))rem;
 	margin: 0 0 10px;
 	padding: 9.5px;
 }
@@ -32,14 +32,14 @@ article {
 
 	& .article-date {
 		@mixin subtext;
-		font-size: 0.875rem;
+		font-size: calc(14/var(--base-font-size))rem;
 		margin-bottom: var(--base-margin);
 	}
 
 	& .article-title {
 		color: color(var(--title-color));
 		font-family: 'Poppins';
-		font-size: 1.625rem;
+		font-size: calc(26/var(--base-font-size))rem;
 		font-weight: 500;
 
 		& a {
@@ -61,7 +61,7 @@ article {
 
 		& .article-title {
 			font-family: 'Poppins';
-			font-size: 1.625rem;
+			font-size: calc(26/var(--base-font-size))rem;
 			font-weight: 500;
 			margin-bottom: var(--base-margin);
 
@@ -78,7 +78,7 @@ article {
 		& .subtitle {
 			color: var(--paragraph-color);
 			font-family: 'Poppins';
-			font-size: var(--base-rem-size);
+			font-size: calc(25/var(--base-font-size))rem;
 			font-weight: 500;
 		}
 	}
@@ -89,7 +89,7 @@ article {
 
 	& .read-more a {
 		@mixin subtext;
-		font-size: 0.875rem;
+		font-size: calc(14/var(--base-font-size))rem;
 	}
 
 	& .read-more a:hover {
@@ -112,7 +112,7 @@ article {
 
 	& a {
 		@mixin subtext;
-		font-size: 0.875rem;
+		font-size: calc(14/var(--base-font-size))rem;
 	}
 
 	& a .icon {
@@ -142,7 +142,7 @@ article {
 
 	& a {
 		@mixin subtext;
-		font-size: 0.875rem;
+		font-size: calc(14/var(--base-font-size))rem;
 	}
 
 	& a .icon {
@@ -164,7 +164,7 @@ article {
 	bottom: -80px;
 	color: color(var(--footer-color));
 	font-family: 'Poppins';
-	font-size: 0.875rem;
+	font-size: calc(14/var(--base-font-size))rem;
 	height: 40px;
 	line-height: 40px;
 	padding: 0px 1.25rem;
@@ -202,7 +202,7 @@ article {
 	}
 
 	& .footnote {
-		font-size: 0.813rem;
+		font-size: calc(13/var(--base-font-size))rem;
 		font-weight: normal;
 		line-height: 20px;
 		margin-bottom: 5px;
@@ -248,10 +248,10 @@ article {
 @media (--medium-viewport) {
 	article {
 		margin-bottom: calc(var(--base-margin) * 2)
+	}
 
-		& .read-more {
-			margin-bottom: calc(var(--base-margin) * 2)
-		}
+	article .read-more {
+		margin-bottom: calc(var(--base-margin) * 2)
 	}
 }
 

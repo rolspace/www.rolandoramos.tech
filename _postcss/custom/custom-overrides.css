@@ -62,7 +62,7 @@ body {
 }
 
 code {
-  font-size: 1rem;
+  font-size: calc(16/var(--base-font-size))rem;
 }
 
 .navbar {

@@ -6,7 +6,7 @@
 }
 
 .highlight pre code {
-	font-size: 0.813rem;
+	font-size: calc(15/var(--base-font-size))rem;
 	white-space: pre;
 }
 

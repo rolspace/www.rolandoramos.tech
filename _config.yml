@@ -1,7 +1,7 @@
 # Site settings
 title: Rolando Ramos
 email: rolandorramos@gmail.com
-description: " | coder, problem solver, gamer, and recently a dad!"
+description: " | software engineer, problem solver, gamer, and recently a dad!"
 baseurl: ""
 url: "https://www.rolandoramos.tech"
 destination: site

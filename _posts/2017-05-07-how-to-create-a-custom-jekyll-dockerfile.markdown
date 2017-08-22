@@ -26,7 +26,7 @@ FROM jekyll/jekyll:latest
 
 <!--more-->
 
-That was an easy start! The first line in the Dockerfile guarantees that the Docker image will be created with the latest version of the Jekyll Docker image available [here](https://hub.docker.com/r/jekyll/jekyll/). Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from the path where the Dockerfile is located:
+That was an easy start! The first line in the Dockerfile guarantees that the Docker image will be created with the latest version of the Jekyll Docker image. Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from the path where the Dockerfile is located:
 
 <pre id="build">
 > docker build . -t jekyll-website
@@ -38,17 +38,13 @@ This command creates a Docker image with the tag "jekyll-website". Note you do n
 > docker run --name=website --label=jekyll --volume=/path/to/code:/srv/jekyll -it --publish 127.0.0.1:4000:4000 jekyll-website /bin/bash
 </pre>
 
-This command creates a container with the name "website". Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website. Using the publish option: <code>--publish</code>, I will be able to access the pages with localhost and port 4000, once the site is running through the container.
+This command creates and runs a container with the name "website". Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website.
 
-By adding <code>/bin/bash</code> at the end of the command, I will have access to the container's shell once it is running. This will allow me to run commands, like <code>jekyll serve</code>.
+Using the publish option: <code>--publish</code>, I will be able to access the pages by visiting http://localhost:4000/, because it maps my system's port 4000 to the container's published port 4000.
 
-Once the container is ready, it can be started with this command:
+By adding <code>/bin/bash</code> at the end of the command, I will have access to the container's shell once it is running. This will allow me to run commands, like <code>npm install</code> or <code>jekyll serve</code>.
 
-<pre>
-> docker start website -i
-</pre>
-
-Unfortunately, I ran into my first problem quite quickly:
+Unfortunately, after creating and starting the container, I ran into my first problem quite quickly:
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/pygments-missing-error-700.png" alt= "Docker start failed after launching the custom Jekyll container because Pygments is missing as a dependency" />
 
@@ -72,7 +68,7 @@ This time Docker ran successfully, and I was able to trigger the <code>jekyll se
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-serve-success-700.png" alt="Successfully ran 'jekyll server' command from container" />
 
-My personal setup just needed two additional steps to run. I had to install the gulp-cli as a global package in the container and also, I had to install the dependencies to run the various gulp tasks in my personal setup. The default Jeyll container already included node v6.9.2, so it was only a matter of including two new commands:
+My personal setup just needs one additional step to run. I have to install the gulp-cli npm package as a global package in the container. The default Jeyll container already includes node v6.9.2, so it was only a matter of including a new command:
 
 <pre>
 #Dockerfile
@@ -80,11 +76,9 @@ My personal setup just needed two additional steps to run. I had to install the 
 FROM jekyll/jekyll:latest
 
 RUN npm install -g gulp-cli
-
-RUN npm install
 </pre>
 
-With this new step, I needed to rebuild the Docker image and the container. I got rid of the previous image by first stopping the container:
+After adding this new step, I needed to rebuild the Docker image and the container. I got rid of the previous image by first stopping the container:
 
 <pre>
 > docker stop website
@@ -102,8 +96,8 @@ I rebuilt my custom image using the initial <a href="#build">build command</a> a
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/gulp-task-success-700.png" alt="Successfully ran a custom gulp task in the Jekyll container" />
 
-That was enough to get my site running on a local container. The next test would make sure I could use the container on my Windows machine. I pushed my code to the repository, and built the image on the Windows machine:
+That was enough to get my site running on a local container. The next test would make sure I could start the container on my Windows machine and host the Jekyll site. I pushed my changes to the Dockerfile to the repository, built the image on the Windows machine, and ran the container using the same steps described earlier:
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
 
-In the next post, we will take a look at running a Jekyll website from a container on various cloud platforms.
+Now, this is a very simple setup that you can run in a few minutes. In the next post, we will take a look at running a Jekyll website from a container on various cloud platforms.

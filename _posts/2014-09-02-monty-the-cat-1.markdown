@@ -7,7 +7,7 @@ tags:
 - monty
 - photos
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/140902/montythecat-700.jpg" alt="Monty the Cat #1" alt="Monty" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140902/montythecat-700.jpg" alt="Monty the Cat #1" alt="Monty the Cat" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

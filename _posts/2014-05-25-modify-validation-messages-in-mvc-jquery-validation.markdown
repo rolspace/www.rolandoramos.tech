@@ -11,17 +11,17 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-Some time ago I needed to change the way in which the unobtrusive validation messages were displayed in a form part of an ASP.NET MVC application.
+A few weeks ago I needed to change the way in which the unobtrusive validation messages were displayed in a form in an ASP.NET MVC application.
 
-The reason was that the amount of space available in the window was limited and it was a requirement to display the proper validation messages, even though fitting them in the screen was impossible.
+The reason was that the amount of space available in the window was limited and it was a requirement to display the correct validation messages, even though fitting them in the screen was kind of difficult.
 
-I decided that the best option to solve this issue was to modify the way the validation messages were shown in the form...instead of displaying them as text next to the form input, the application would display the messages associated to each form input as tooltips.
+I decided that the best option to solve this problem was to modify the way the validation messages were displayed in the form...instead of text messages next to the form input, the form would display the messages for each input as tooltips.
 
-Here is an example to demonstrate how to achieve this functionality.
+In this article I will show you how to achieve this.
 
 <!--more-->
 
-Let's create an Employee class with the following class definition. A few data annotations have been added to the properties of the class in order to trigger specific validation messages.
+Let's create an Employee class with the class definition shown in the snippet below. A few data annotations have been added to the properties of the class in order to trigger specific validation messages.
 
 {% highlight c# %}
 public class Employee
@@ -34,13 +34,13 @@ public class Employee
 
     [Required]
     public int Age { get; set; }
-    
+
     [Phone]
     public string PhoneNumber { get; set; }
 }
 {% endhighlight %}
 
-In order to edit items from this class, we will use a view with a form that contains <code>Html.ValidationMessageFor</code> helper methods to display the validation errors for the Employee class properties.
+In order to edit items from this model, we will use a Razor view with a form that contains <code>Html.ValidationMessageFor</code> helper methods to display the validation errors for the Employee class properties.
 
 {% highlight html %}
 <div class="form-group">
@@ -72,11 +72,11 @@ In order to edit items from this class, we will use a view with a form that cont
 {% endhighlight %}
 
 Such a view would provide the following result:
-<img class="center-block img-fluid" src="/assets/images/140525/standardunobstrusive.jpg" alt="Standard Unobstrusive Validation"/>
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/standardunobstrusive.jpg" alt=Unobstrusive validation using default behavior"/>
 
-In order to modify the way in which the unobstrusive validation messages are displayed, we need to access one of the methods provided by the jQuery Validator that is packaged with ASP.NET MVC. The <code>setDefaults</code> method allows us to modify the jQuery Validator's default settings.
+In order to modify how the unobstrusive validation messages are displayed, we need to access one of the methods provided by the jQuery Validator that is packaged with ASP.NET MVC v4. The <code>setDefaults</code> method allows us to modify the jQuery Validator's default settings.
 
-For this specific scenario we need to modify the Validator's <code>showErrors</code> property. In an MVC application the default <code>showErrors</code> property is a function which displays the validation errors associated with a form input. An easy way to test this is to add the following script to the View.
+For this specific scenario we need to modify the Validator's <code>showErrors</code> function. In an MVC application, the default <code>showErrors</code> function displaya the validation errors associated with a form input. An easy way to test this is to add the following script to the Razor view.
 
 {% highlight javascript %}
 $.validator.setDefaults({
@@ -85,13 +85,13 @@ $.validator.setDefaults({
 })
 {% endhighlight %}
 
-In this case, unobtrusive validation will still work: the form will not submit if there are errors. However, there will be no error messages displayed.The <code>showErrors</code> function is called everytime a validation event occurs (keyup, onblur, submit). The two parameters in the function signature provide information about the elements currently validated when the event is triggered.
+In this case, unobtrusive validation will still work: the form will not submit if there are errors. However, there will be no error messages displayed. The <code>showErrors</code> function is called every time a validation event occurs (keyup, onblur, submit, etc). The two parameters in the function signature provide information about the elements being validated when the event is triggered.
 
 The <code>errorMap</code> variable is an object with key/value pairs, where the keys refer to the name of an input field, and the values for these keys refer to the validation message for that input.
 
 The <code>errorList</code> variable is an array of objects, where the objects in the array contain two properties: an element property (whose value is a DOM element) and a message property (whose value is the message specific to that DOM element).
 
-Using this information, it is possible to create a new <code>showErrors</code> method that will allow us to display unobtrusive validation messages in a different manner:
+Using this information, it is possible to create a new <code>showErrors</code> method that will allow us to display validation messages in a different manner:
 
 {% highlight javascript %}
 $.validator.setDefaults({
@@ -107,10 +107,10 @@ $.validator.setDefaults({
 })
 {% endhighlight %}
 
-In this case we are using the <code>errorList</code> parameter to determine the validation errors in a form. When an element is invalid, a tooltip (from Bootstrap) is added in order to display the validation message.
+In this case we are using the <code>errorList</code> parameter to obtaina list of the validation errors in a form. When an element is invalid, a tooltip (provided by Bootstrap) is added in order to display the validation message.
 
-In order to remove the tooltip if the element becomes valid, we are taking advantage of the <code>defaultShowErrors</code> method, which adds the valid CSS class to form elements and helps identify those elements which are no longer invalid.
+If you want to remove the tooltip if the element becomes valid, we would take advantage of the <code>defaultShowErrors</code> function, which adds the valid CSS class to the form elements and helps to identify the inputs which are no longer invalid.
 
-Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View, so only one set of validation messages is displayed for the input elements:
+Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View. In this way only one set of validation messages are displayed for the input elements:
 
-<img class="center-block img-fluid" src="/assets/images/140525/tooltipunobstrusive.jpg" alt="Tooltip Unobstrusive Validation" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/tooltipunobstrusive.jpg" alt="Unobstrusive validation using tooltips" />

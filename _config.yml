@@ -13,7 +13,7 @@ paginate_path: "/page:num/"
 
 include: [ 404.html, assets, dist ]
 exclude: [ _aws, _docker, _scripts, node_modules, .babelrc, .eslintrc.json, .gitignore,
-			Gemfile, Gemfile.lock, gulpfile.babel.js, package.json ]
+			Gemfile, Gemfile.lock, gulpfile.babel.js, npm-debug.log, package.json ]
 
 # Post settings
 markdown: kramdown

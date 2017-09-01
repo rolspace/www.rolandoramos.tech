@@ -4,6 +4,9 @@
   "author": "Rolando Ramos",
   "license": "ISC",
   "description": "Source code that powers www.rolspace.com",
+	"dependencies": {
+		"lazysizes": "^3.0.0"
+	},
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
@@ -57,7 +60,4 @@
     "type": "git",
     "url": "https://github.com/rolspace/rolspace-website"
   },
-  "dependencies": {
-    "lazysizes": "^3.0.0"
-  }
 }

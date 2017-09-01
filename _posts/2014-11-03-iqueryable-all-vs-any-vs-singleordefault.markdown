@@ -11,9 +11,9 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-A few days ago, I came across some code that was throwing a Timeout Exception on an <code>if</code> statement with a condition being evaluated by the <code>IQueryable.All()</code> method.
+Recently, I came across some code that was throwing a Timeout Exception on an <em>if</em> statement being evaluated using the <code>IQueryable.All()</code> method.
 
-The condition being tested was pretty straightforward, the code just needed to determine if the value of a variable matched with an existing Id in the SQL Server database.
+The condition being tested was straightforward, the code just needed to determine if the value of a variable matched with an existing Id in the SQL Server database.
 
 The code was similar to this:
 
@@ -30,7 +30,7 @@ if (context.Customer.All(c => c.CustomerId != customerId))
 
 <!--more-->
 
-The Exception was being when executing the *worst case scenario* for this condition, that is, there were no values in the database that matched the variable being tested. Thus, the query had to evaluate all the records in the table.
+The Exception was thrown when executing the <em>worst case scenario</em> for this condition, that is, there were no values in the database that matched the variable being tested. Thus, the query had to evaluate all the records in the table first, in order to return the result of the method.
 
 Since this was the cause of the timeout, it seemed like a good option to change the condition in order to use the <code>IQueryable.Any()</code> method.
 
@@ -45,24 +45,24 @@ if (!context.Customer.Any(c => c.CustomerID == customerId))
 }
 {% endhighlight %}
 
-The <code>if</code> statement could be rewritten in such a way that the <code>IQueryable.SingleOrDefault()</code> method could be used instead:
+The <em>if</em> statement could also be rewritten in order to use the <code>IQueryable.SingleOrDefault()</code> instead:
 
 {% highlight c# %}
-//Determine the first record in the Customer table that
-//has a CustomerID  that is equal to the customerId variable
+//Find the first record in the Customer table that
+//has a CustomerID that is equal to the customerId variable
 if (context.Customer.FirstOrDefault(c => c.CustomerID == customerId) == null)
 {
    //Execute code...
 }
 {% endhighlight %}
 
-**So which is the right method to use?** Using <code>IQueryable.Any()</code> or <code>IQueryable.SingleOrDefault()</code> made the Exceptions go away. However, the best way to find out is the best approach is to measure the execution time for the SQL queries generated through these <code>IQueryable</code> methods.
+**So which is the right method to use?** Using <code>IQueryable.Any()</code> or <code>IQueryable.SingleOrDefault()</code> made the Exceptions go away. However, the best way to find out the best approach is to measure the execution time for the SQL queries generated through these methods.
 
-To do this, I wrote a small program that would execute each method a total of 1.000 times and log the results using a custom class inheriting from the <a href="http://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.interception.databaselogformatter(v=vs.113).aspx" target="_blank">DatabaseLogFormatter</a> class. This way I could obtain information about the average execution time of these methods.
+I wrote a small program that would execute each method a total of 1.000 times and log the results using a custom class inheriting from the <a href="http://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.interception.databaselogformatter(v=vs.113).aspx" target="_blank">DatabaseLogFormatter</a> class. This way I could obtain information about the average execution time of these methods.
 
-The test table in the database contains approximately 200.000 records. Both the database and the executable are in the same machine.
+The table in the database contains approximately 200.000 records. Both the database and the executable are in the same machine.
 
-In the first run, I executed the program assuming that there is no match in the table:
+On the first run, I executed the program assuming that there is no match in the table:
 
 <div class="table-responsive">
 <table class="table table-bordered">
@@ -97,7 +97,7 @@ In the first run, I executed the program assuming that there is no match in the 
 </table>
 </div>
 
-In the second run, I executed the program assuming that there is a match in the table:
+On the second run, I executed the program assuming that there is a match in the table:
 
 <div class="table-responsive">
 <table class="table table-bordered">
@@ -132,9 +132,9 @@ In the second run, I executed the program assuming that there is a match in the 
 </table>
 </div>
 
-The results show that the <code>IQueryable.All()</code> method is not the best option for any of the scenarios tested. Using <code>Any()</code> or <code>SingleOrDefault()</code> will provide much faster results. Clearly the time difference is accentuated when comparing the worst scenario results.
+The results show that the <code>IQueryable.All()</code> method is not the best option for any of the scenarios tested. Using <code>Any()</code> or <code>SingleOrDefault()</code> will provide much faster results. Clearly the time difference is accentuated when comparing the <em>worst scenario</em> results.
 
-If you take a look at the SQL code generated from the <code>IQueryable.All()</code> and <code>IQueryable.Any()</code> methods you can immediately notice the difference between them. For my specific scenario, using <code>All()</code> was the incorrect choice from the beginning...the logic should have been written with <code>Any()</code>.
+If you take a look at the SQL code generated from the <code>IQueryable.All()</code> and <code>IQueryable.Any()</code> methods you can immediately notice the difference between them. For the specific scenario I described at the beginning of the article, using the <code>All()</code> method was the incorrect choice from the beginning...the logic should have been written using the <code>Any()</code> method.
 
 {% highlight sql %}
 SET @Id = 0;
@@ -167,4 +167,4 @@ SELECT
 FROM ( SELECT 1 AS X ) AS [SingleRowTable1]
 {% endhighlight %}
 
-There will be some specific cases in which <code>IQueryable.All()</code> must be used in order to verify a condition on all the elements of a sequence. It important to recognize these situations and plan accordingly, in order to minimize the impact of this call on the performance of an application.
+There will be some specific cases in which <code>IQueryable.All()</code> must be used in order to verify a condition on all the elements of a sequence. It is important to recognize these situations and plan accordingly, in order to minimize the impact of this call on the performance of an application.

@@ -12,9 +12,9 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
- The SQL Server Pivot feature is quite useful in scenarios that require a slight manipulation of a table's structure in order to display unique column values as column headers.
+ The SQL Server Pivot command is quite useful in scenarios that require some manipulation of a table's structure in order to display unique column values as column headers.
 
- Suppose there was a table with the following schema:
+ Suppose we have a table with the following schema:
 
 {% highlight sql %}
 CREATE TABLE [Employee] (
@@ -132,9 +132,9 @@ The results:
 </table>
 </div>
 
-This is a standard relational result set, but what if we needed to display the data a little differently? What if we needed to display the result set using the <code>HireYear</code> as the columns of the result set? This is where the Pivot command comes in.
+This is a standard relational result set, but what if we needed to display the data a little differently? What if we needed to display the result set using the <em>HireYear</em> as the columns of the result set? This is where the <code>PIVOT</code> command comes in.
 
- This feature provides a way to modify a result set from a query in a way that allows the unique values from a column to be displayed as the column headers in the pivoted data. In order to start writing a Pivot query, you need a source query expression. For our example, we can use the following query:
+ This command provides a way to modify a result set from a query in a way that allows the unique values from a column to be displayed as the column headers in the pivoted data. In order to start writing a <code>PIVOT</code> query, you need a source query expression. For our example, we can use the following query:
 
 {% highlight sql %}
 SELECT DATEPART(YEAR, HireDate) as HireYear
@@ -142,13 +142,13 @@ SELECT DATEPART(YEAR, HireDate) as HireYear
 FROM Employee
 {% endhighlight %}
 
-This is a simplified version of the query in the previous section since it is not calculating the average of the age. It will display the <code>HireYear</code> and <code>Age</code> for every Employee, so there would be no average calculation at first; that comes in later. This would be the source expression.
+This is a simplified version of the query shown previously, since it is not calculating the average value for the age. It will display the <em>HireYear</em> and <em>Age</em> for every Employee, so there would be no average calculation at first. This will be the source query we need to create the result query.
 
- Using the source expression, we need to tell the Pivot query the data that we want to use for our rows, as well as the values from the source that we want to use for our columns.
+ Using the source query, we need to tell the <code>PIVOT</code> query the data that we want to use for our rows, as well as the values from the source that we want to use for our columns.
 
- In the example this is easy to spot, for the data rows we want to use the average Employee age based on the year they were hired, so we apply the AVG aggregate function to the <code>Age</code> values from the source query.
+ In the example this is easy to spot, for the data rows we want to use the average Employee age based on the year they were hired, and then, we apply the AVG aggregate function to the <em>Age</em> values from the source query.
 
- For the column headers, we want to use the unique values from the <code>HireYear</code> column in the source query. Once this is ready, all that remains is to perform a SELECT on the pivoted data in order to display it.
+ For the column headers, we want to use the unique values from the <em>HireYear</em> column in the source query. Once this is ready, all that remains is to perform a SELECT on the pivoted data in order to display it.
 
 {% highlight sql %}
 SELECT 'AverageAge' AS HireYear,
@@ -190,4 +190,4 @@ The result of this query is shown in the following table.
 </table>
 </div>
 
-As you can see, the Pivot command can be quite handy in order to manipulate the structure of a table for various purposes, this might be useful some day.
+As you can see, the <code>Pivot</code> command can be quite handy in order to manipulate the structure of a table for various purposes, this might be useful some day.

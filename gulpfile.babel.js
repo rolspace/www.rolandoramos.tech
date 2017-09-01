@@ -206,26 +206,30 @@ gulp.task('watch', (callback) => {
 	callback();
 });
 
-gulp.task('build', callback => {
+gulp.task('setpro', () => {
+	return process.env.JEKYLL_ENV = 'production';
+});
+
+gulp.task('builddev', callback => {
 	sequence('css', 'js', 'jekyll', 'critical', callback);
+});
+
+gulp.task('buildpro', callback => {
+	sequence('setpro', 'css', 'js', 'jekyll', 'critical', 'html', callback);
 });
 
 gulp.task('rundev', (callback) => {
 	del(['./site/*.*'])
 	.then(() => {
 		currentTask = 'debug';
-		sequence('build', 'server', 'watch', callback);
+		sequence('builddev', 'server', 'watch', callback);
 	});
 });
 
-gulp.task('setprod', () => {
-	return process.env.JEKYLL_ENV = 'production';
-});
-
-gulp.task('runprod', (callback) => {
+gulp.task('runpro', (callback) => {
 	del(['./site/*.*'])
 	.then(() => {
 		currentTask = 'runprod';
-		sequence('setprod', 'build', 'html', 'server', 'watch', callback);
+		sequence('buildpro', 'server', 'watch', callback);
 	});
 });

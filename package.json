@@ -52,12 +52,14 @@
     "node": ">=6.9.0"
   },
   "scripts": {
-    "dev": "gulp rundev",
+		"builddev": "gulp builddev",
+		"buildpro": "gulp buildpro",
 		"images": "gulp images",
-		"prod": "gulp runprod"
+		"rundev": "gulp rundev",
+		"runpro": "gulp runprod"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/rolspace/rolspace-website"
-  },
+  }
 }

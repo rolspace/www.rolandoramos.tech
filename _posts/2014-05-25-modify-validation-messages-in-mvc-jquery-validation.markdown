@@ -72,7 +72,7 @@ In order to edit items from this model, we will use a Razor view with a form tha
 {% endhighlight %}
 
 Such a view would provide the following result:
-<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/standardunobstrusive.jpg" alt=Unobstrusive validation using default behavior"/>
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/standardunobstrusive.jpg" alt="Unobstrusive validation using default behavior"/>
 
 In order to modify how the unobstrusive validation messages are displayed, we need to access one of the methods provided by the jQuery Validator that is packaged with ASP.NET MVC v4. The <code>setDefaults</code> method allows us to modify the jQuery Validator's default settings.
 
@@ -111,6 +111,6 @@ In this case we are using the <code>errorList</code> parameter to obtaina list o
 
 If you want to remove the tooltip if the element becomes valid, we would take advantage of the <code>defaultShowErrors</code> function, which adds the valid CSS class to the form elements and helps to identify the inputs which are no longer invalid.
 
-Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View. In this way only one set of validation messages are displayed for the input elements:
+Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View. This way only one set of validation messages will be displayed for the input elements:
 
 <img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/tooltipunobstrusive.jpg" alt="Unobstrusive validation using tooltips" />

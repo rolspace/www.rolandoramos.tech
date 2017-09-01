@@ -8,7 +8,7 @@ tags:
 - late reviews
 - pc
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/150322/oldtristramroad-700.jpg" alt="Diablo 3" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150322/oldtristramroad-700.jpg" alt="Diablo 3" />
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
@@ -34,7 +34,7 @@ I can only imagine the rage that could come from losing a character in hardcore 
 
 The good thing about these flaws is that the can be largely ignored and they do not detract from the gameplay. I have never suffered from lag issues while connected to Battle.net and after some time it is easy to ignore the dialogue between characters.
 
-<img class="center-block img-fluid lazyload" src="/assets/images/150322/westmarchcommons-700.jpg" alt="Diablo 3" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150322/westmarchcommons-700.jpg" alt="Diablo 3" />
 
 On the good side, I really enjoyed the rest of Diablo 3, especially its combat mechanics. I completed the campaign plus the expansion with two different classes (Monk / Wizard) and the skills available for both were quite varied. This diversity goes a long way to encourage the player to test different combinations to find which are the best for their playing style.
 

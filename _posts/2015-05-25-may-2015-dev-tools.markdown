@@ -19,7 +19,7 @@ tags:
 
 In the past year I have done a fair amount of work using the Sitecore CMS. During this time, I researched various tools and software applications to help make the process of Sitecore development easier and more productive.
 
-<img class="center-block img-fluid lazyload" src="/assets/images/150525/unicorn.jpg" alt="Unicorn" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150525/unicorn.jpg" alt="Unicorn" />
 
 Thanks to one of my teammates I heard about the Unicorn project, so I decided to take it for a spin. Unicorn is a very handy tool that will allow you to serialize Sitecore items (templates, layouts, etc) to disk. Setting up and using Unicorn is pretty straightforward process.
 
@@ -33,7 +33,7 @@ If you are looking for a lightweight, easy to use tool to achieve Sitecore seria
 
 A few months ago I was testing the performance of an application using the RedGate Performance Profiler when I came across dotPeek and I am very, very glad I did.
 
-<img class="center-block img-fluid lazyload" src="/assets/images/150525/dotpeek.png" alt="dotPeek" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150525/dotpeek.png" alt="dotPeek" />
 
 dotPeek is free tool for decompiling .NET code and it has program has saved me a lot of time on multiple occasions. I am a big fan of the ability to generate pdb files and exporting decompiled code to projects for debugging.
 
@@ -47,7 +47,7 @@ I remember using LinqPad sometime in 2009 when I was working on a project using 
 
 I am glad to see that it still provides the same core functionality as in years past, just as it has added a ton of other features.
 
-<img class="center-block img-fluid lazyload" src="/assets/images/150525/linqpad.png" alt="LinqPad" />
+<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150525/linqpad.png" alt="LinqPad" />
 
 While there are some utility features, like Autocomplete, that are only for licensed users, the price breakdown seems just right for each of the available tiers, even if you are going for the Premium License.
 

@@ -17,6 +17,7 @@
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-clean-css": "^3.4.1",
+    "gulp-cli": "^1.4.0",
     "gulp-eslint": "^3.0.1",
     "gulp-gzip": "^1.4.0",
     "gulp-imagemin": "^3.3.0",
@@ -48,7 +49,9 @@
     "node": ">=6.9.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "gulp rundev",
+		"images": "gulp images",
+		"prod": "gulp runprod"
   },
   "repository": {
     "type": "git",

@@ -55,8 +55,8 @@
 		"builddev": "gulp builddev",
 		"buildpro": "gulp buildpro",
 		"images": "gulp images",
-		"rundev": "gulp rundev",
-		"runpro": "gulp runprod"
+		"servedev": "gulp rundev",
+		"servepro": "gulp runprod"
   },
   "repository": {
     "type": "git",

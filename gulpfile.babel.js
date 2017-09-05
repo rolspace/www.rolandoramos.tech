@@ -1,5 +1,3 @@
-'use strict';
-
 import { create as loadBrowserSync } from 'browser-sync';
 import loadPlugins from 'gulp-load-plugins';
 import sequence from 'run-sequence';
@@ -211,11 +209,11 @@ gulp.task('setpro', () => {
 });
 
 gulp.task('builddev', callback => {
-	sequence('css', 'js', 'jekyll', 'critical', callback);
+	sequence('css', 'js', 'jekyll', callback);
 });
 
 gulp.task('buildpro', callback => {
-	sequence('setpro', 'css', 'js', 'jekyll', 'critical', 'html', callback);
+	sequence('setpro', 'css', 'js', 'jekyll', 'html', callback);
 });
 
 gulp.task('rundev', (callback) => {

@@ -80,7 +80,7 @@ const server = () => {
 gulp.task('css', (callback) => {
 	del(['./dist/css/*.*'])
 	.then(() => {
-		gulp.src('./_postcss/rolspace.css')
+		gulp.src('./_postcss/site.css')
 			.pipe(postcss([
 				atImport(),
 				mixins(),
@@ -90,9 +90,9 @@ gulp.task('css', (callback) => {
 				calc(),
 				color(),
 				autoprefixer()
-			], { parser: sugarss, from: '_postcss/rolspace.css' }))
+			], { parser: sugarss, from: '_postcss/site.css' }))
 			.pipe(gulp.dest('./dist/css/'))
-			.pipe(plugins.rename('rolspace.min.css'))
+			.pipe(plugins.rename('site.min.css'))
 			.pipe(plugins.cleanCss())
 			.pipe(plugins.gzip({
 				append: false,
@@ -112,7 +112,7 @@ gulp.task('js', (callback) => {
 	del(['./dist/js/*.*']).then(() => {
 		mkdirp.sync('dist/js');
 
-		const writeStream = fs.createWriteStream('./dist/js/rolspace.js');
+		const writeStream = fs.createWriteStream('./dist/js/site.js');
 
 		browserify(['./_scripts/main.js'])
 		.transform('babelify')
@@ -120,9 +120,9 @@ gulp.task('js', (callback) => {
 		.pipe(writeStream);
 
 		writeStream.on('finish', () => {
-			gulp.src('./dist/js/rolspace.js')
+			gulp.src('./dist/js/site.js')
 				.pipe(plugins.uglify())
-				.pipe(plugins.rename('rolspace.min.js'))
+				.pipe(plugins.rename('site.min.js'))
 				.pipe(plugins.gzip({
 					append: false,
 					skipGrowingFiles: true,
@@ -144,7 +144,7 @@ gulp.task('critical', () => {
 			base: 'site/',
 			inline: true,
 			minify: true,
-			css: [ 'dist/css/rolspace.css' ],
+			css: [ 'dist/css/site.css' ],
 			ignore: [ '@font-face' ],
 			penthouse: {
 				strict: true

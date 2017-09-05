@@ -11,11 +11,11 @@ tags:
 [dotPeek]: https://www.jetbrains.com/decompiler/ "dotPeek"
 [LinqPad]: https://www.linqpad.net/ "LinqPad"
 
-<p class="subtitle">Unicorn</p>
-
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
+
+<p class="subtitle">Unicorn</p>
 
 In the past year I have done a fair amount of work using the Sitecore CMS. During this time, I researched various tools and software applications to help make the process of Sitecore development easier and more productive.
 

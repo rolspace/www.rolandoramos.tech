@@ -36,9 +36,9 @@
 	</div>
 	{% include footer.html %}
 	{% if site.env == 'production' %}
-	<script async type="text/javascript" src="{{ "/dist/js/rolspace.min.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript" src="{{ "/dist/js/rolspace.min.js" | prepend: site.baseurl }}" async></script>
 	{% else %}
-	<script async type="text/javascript" src="{{ "/dist/js/rolspace.js" | prepend: site.baseurl }}"></script>
+	<script type="text/javascript" src="{{ "/dist/js/rolspace.js" | prepend: site.baseurl }}" async></script>
 	{% endif %}
 </body>
 </html>

@@ -17,6 +17,8 @@ tags:
 
 <p class="subtitle">Unicorn</p>
 
+[https://github.com/kamsar/Unicorn][Unicorn]
+
 In the past year I have done a fair amount of work using the Sitecore CMS. During this time, I researched various tools and software applications to help make the process of Sitecore development easier and more productive.
 
 <img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150525/unicorn.jpg" alt="Unicorn" />
@@ -27,9 +29,9 @@ Thanks to one of my teammates I heard about the Unicorn project, so I decided to
 
 If you are looking for a lightweight, easy to use tool to achieve Sitecore serialization, Unicorn is a great choice. I still have not had a chance to bring it together with a CI platform like TeamCity, but I am looking forward to that opportunity.
 
-[https://github.com/kamsar/Unicorn][Unicorn]
-
 <p class="subtitle">dotPeek</p>
+
+[https://www.jetbrains.com/decompiler/][dotPeek]
 
 A few months ago I was testing the performance of an application using the RedGate Performance Profiler when I came across dotPeek and I am very, very glad I did.
 
@@ -39,9 +41,9 @@ dotPeek is free tool for decompiling .NET code and it has program has saved me a
 
 I will need to explore dotPeek a bit more to really get more out of it, but so far, it has been very good. Get it, now.
 
-[https://www.jetbrains.com/decompiler/][dotPeek]
-
 <p class="subtitle">LinqPad</p>
+
+[https://www.linqpad.net/][LinqPad]
 
 I remember using LinqPad sometime in 2009 when I was working on a project using Linq-to-SQL in order to create mappings between classes and SQL tables. For one reason or another I completely forgot its existence, until I rediscovered it a few weeks ago.
 
@@ -52,5 +54,3 @@ I am glad to see that it still provides the same core functionality as in years 
 While there are some utility features, like Autocomplete, that are only for licensed users, the price breakdown seems just right for each of the available tiers, even if you are going for the Premium License.
 
 LinqPad is definitely worth a look if you would like to have a quick and lightweight tool to test code snippets or running Linq queries without loading Visual Studio.
-
-[https://www.linqpad.net/][LinqPad]

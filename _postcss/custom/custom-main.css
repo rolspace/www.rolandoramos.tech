@@ -76,9 +76,11 @@ article {
 		}
 
 		& .subtitle {
+			border-bottom: 1px solid;
 			color: var(--paragraph-color);
+			display: inline-block;
 			font-family: 'Poppins';
-			font-size: calc(25/var(--base-font-size))rem;
+			font-size: calc(18/var(--base-font-size))rem;
 			font-weight: 500;
 		}
 	}

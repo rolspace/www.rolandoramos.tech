@@ -9,8 +9,9 @@ pre {
 	border-radius: 4px;
 	color: #333;
 	display: block;
-	font-size: calc(13/var(--base-font-size))rem;
-	margin: 0 0 10px;
+	font-size: calc(15/var(--base-font-size))rem;
+	line-height: 21px;
+	margin: 0 0 1rem;
 	padding: 9.5px;
 }
 
@@ -28,12 +29,12 @@ img {
 
 article {
 	border-bottom: 1px solid var(--subtext-color);
-	margin-bottom: var(--base-margin);
+	margin-bottom: var(--base-bottom-margin);
 
 	& .article-date {
 		@mixin subtext;
 		font-size: calc(14/var(--base-font-size))rem;
-		margin-bottom: var(--base-margin);
+		margin-bottom: var(--base-bottom-margin);
 	}
 
 	& .article-title {
@@ -53,17 +54,17 @@ article {
 	}
 
 	& .article-content {
-		margin-bottom: var(--base-margin);
+		margin-bottom: var(--base-bottom-margin);
 
 		& p:first-of-type img {
-			margin-bottom: calc(var(--base-margin) - 20px);
+			margin-bottom: calc(var(--base-bottom-margin) - 20px);
 		}
 
 		& .article-title {
 			font-family: 'Poppins';
 			font-size: calc(26/var(--base-font-size))rem;
 			font-weight: 500;
-			margin-bottom: var(--base-margin);
+			margin-bottom: var(--base-bottom-margin);
 
 			& a {
 				color: color(var(--title-color));
@@ -86,7 +87,7 @@ article {
 	}
 
 	& .read-more {
-		margin-bottom: calc(var(--base-margin) + 20px);
+		margin-bottom: calc(var(--base-bottom-margin) + 20px);
 	}
 
 	& .read-more a {
@@ -110,7 +111,7 @@ article {
 }
 
 .page-paginator {
-	margin-bottom: var(--base-margin);
+	margin-bottom: var(--base-bottom-margin);
 
 	& a {
 		@mixin subtext;
@@ -140,7 +141,7 @@ article {
 }
 
 .post-paginator {
-	margin-bottom: var(--base-margin);
+	margin-bottom: var(--base-bottom-margin);
 
 	& a {
 		@mixin subtext;
@@ -249,11 +250,11 @@ article {
 
 @media (--medium-viewport) {
 	article {
-		margin-bottom: calc(var(--base-margin) * 2)
+		margin-bottom: calc(var(--base-bottom-margin) * 2)
 	}
 
 	article .read-more {
-		margin-bottom: calc(var(--base-margin) * 2)
+		margin-bottom: calc(var(--base-bottom-margin) * 2)
 	}
 }
 

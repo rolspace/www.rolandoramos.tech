@@ -13,7 +13,7 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-A few weeks ago I ran into a problem with my work computer. For some reason I could not install SQL Server Express, or any other version. I kept getting an error about some internal service not being installed correctly. I spent some time trying to find a solution, but I could not come up with any answers.
+A few weeks ago, I ran into a problem with my work computer. For some reason, I could not install SQL Server Express, or any other version available from Microsoft. I kept receiving an error about some internal service not being set up correctly during the installation. I spent some time trying to find a solution, but I could not come up with any answers.
 
 I decided to attempt something else, so I tried to run the MSSQL Server Docker image on my computer as a Windows container. That did not work either. I followed the setup instructions provided, checked the Docker logs, and I did as much Google research as I could to get it working.
 
@@ -21,17 +21,17 @@ I wanted to setup a SQL Server instance in order to install Sitecore 8.2 on my m
 
 <!--more-->
 
-I started by getting the Docker image:
+I started by pulling the latest version of the Docker image:
 
-<pre>
+{% highlight shell %}
 > docker pull microsoft/mssql-server-linux
-</pre>
+{% endhighlight %}
 
 Once that was completed, I ran the container, following the instructions from the Docker Hub page:
 
-<pre>
+{% highlight shell %}
 > docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1' -p 1433:1433 -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
-</pre>
+{% endhighlight %}
 
 The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: one to accept the End User Agreement and the other to create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port.
 

@@ -28,15 +28,19 @@ FROM jekyll/jekyll:latest
 
 That was an easy start! The first line in the Dockerfile guarantees that the Docker image will be created with the latest version of the Jekyll Docker image. Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from the path where the Dockerfile is located:
 
-<pre id="build">
+<div id="build">
+{% highlight shell %}
 > docker build . -t jekyll-website
-</pre>
+{% endhighlight %}
+</div>
 
 This command creates a Docker image with the tag "jekyll-website". Note you do not have to specify the name of the file as long as it is named "Dockerfile". I can use the tag to refer to the custom image in order to create a container later:
 
-<pre id="run">
+<div id="run">
+{% highlight shell %}
 > docker run --name=website --label=jekyll --volume=/path/to/code:/srv/jekyll -it --publish 127.0.0.1:4000:4000 jekyll-website /bin/bash
-</pre>
+{% endhighlight %}
+</div>
 
 This command creates and runs a container with the name "website". Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website.
 
@@ -80,17 +84,17 @@ RUN npm install -g gulp-cli
 
 After adding this new step, I needed to rebuild the Docker image and the container. I got rid of the previous image by first stopping the container:
 
-<pre>
+{% highlight shell %}
 > docker stop website
-</pre>
+{% endhighlight %}
 
 Then, I deleted the container and the local image:
 
-<pre>
+{% highlight shell %}
 > docker container rm website
 
 > docker image rm jekyll-website
-</pre>
+{% endhighlight %}
 
 I rebuilt my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
 
@@ -100,4 +104,4 @@ That was enough to get my site running on a local container. The next test would
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
 
-Now, this is a very simple setup that you can run in a few minutes. In the next post, we will take a look at running a Jekyll website from a container on various cloud platforms.
+Now, this is a very simple setup that you can get up and running in a few minutes. In the next post, we will take a look at running a Jekyll website from a container on different cloud platforms.

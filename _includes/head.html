@@ -30,12 +30,6 @@
 	<meta name="theme-color" content="#ffffff">
 	{% if site.env == 'production' %}
 	<link rel="stylesheet" href="{{ "/dist/css/site.min.css" | prepend: site.baseurl }}">
-	<script>
-		window.ga=window.ga||function(){(ga.q=ga.q||[]).push(arguments)};ga.l=+new Date;
-		ga('create', 'UA-57414812-1', 'auto');
-		ga('send', 'pageview');
-	</script>
-	<script async src='https://www.google-analytics.com/analytics.js'></script>
 	{% else %}
 	<link rel="stylesheet" href="{{ "/dist/css/site.css" | prepend: site.baseurl }}">
 	{% endif %}

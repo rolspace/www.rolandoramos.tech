@@ -52,11 +52,9 @@
     "node": ">=6.9.0"
   },
   "scripts": {
-		"builddev": "gulp builddev",
-		"buildpro": "gulp buildpro",
+		"build": "gulp build",
 		"images": "gulp images",
-		"servedev": "gulp rundev",
-		"servepro": "gulp runprod"
+		"serve": "gulp serve"
   },
   "repository": {
     "type": "git",

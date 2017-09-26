@@ -51,7 +51,7 @@ const server = () => {
 		baseDir: 'site',
 	};
 
-	if (currentTask === 'runprod') {
+	if (argv.production) {
 		baseServer.middleware = [{
 			route: '/dist' ,
 			handle: (req, res, next) => {
@@ -204,30 +204,22 @@ gulp.task('watch', (callback) => {
 	callback();
 });
 
-gulp.task('setpro', () => {
+gulp.task('setenv', () => {
 	return process.env.JEKYLL_ENV = 'production';
 });
 
-gulp.task('builddev', callback => {
-	sequence('css', 'js', 'jekyll', callback);
-});
+gulp.task('build', callback => {
+	if (!argv.production) {
+		sequence('css', 'js', 'jekyll', callback);
+	}
+	else {
+		sequence('setenv', 'css', 'js', 'jekyll', 'html', callback);
+	}
+})
 
-gulp.task('buildpro', callback => {
-	sequence('setpro', 'css', 'js', 'jekyll', 'html', callback);
-});
-
-gulp.task('rundev', (callback) => {
+gulp.task('serve', (callback) => {
 	del(['./site/*.*'])
 	.then(() => {
-		currentTask = 'debug';
-		sequence('builddev', 'server', 'watch', callback);
-	});
-});
-
-gulp.task('runpro', (callback) => {
-	del(['./site/*.*'])
-	.then(() => {
-		currentTask = 'runprod';
-		sequence('buildpro', 'server', 'watch', callback);
+		sequence('build', 'server', 'watch', callback);
 	});
 });

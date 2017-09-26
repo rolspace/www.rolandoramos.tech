@@ -1,9 +1,9 @@
 {
-  "name": "rolspace-website",
-  "version": "1.0.5",
+  "name": "www.rolandoramos.tech",
+  "version": "2.5.0",
   "author": "Rolando Ramos",
   "license": "ISC",
-  "description": "Source code that powers www.rolspace.com",
+  "description": "Source code for my personal website, www.rolandoramos.tech",
 	"dependencies": {
 		"lazysizes": "^3.0.0"
 	},

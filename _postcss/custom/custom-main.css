@@ -105,7 +105,7 @@ article {
 	}
 }
 
-svg.svg {
+.svgs {
 	height: 0;
 	overflow: hidden;
 	position: absolute;
@@ -169,6 +169,10 @@ svg.svg {
 	}
 }
 
+.social-desktop {
+	display: none;
+}
+
 .footer {
 	border-top: 1px solid var(--base-color);
 	bottom: -80px;
@@ -201,10 +205,6 @@ svg.svg {
 
 	& a:hover .icon {
 		fill: color(var(--subtext-color-hover));
-	}
-
-	& .social-profiles a:hover {
-		text-decoration: none;
 	}
 
 	& .copyright a {
@@ -241,10 +241,6 @@ svg.svg {
 		vertical-align: middle;
 		width: 1.5rem;
 	}
-
-	& .icon-linkedin2 {
-		margin-left: 0px;
-	}
 }
 
 @media (--small-viewport) {
@@ -266,6 +262,34 @@ svg.svg {
 }
 
 @media (--large-viewport) {
+	.social-desktop {
+		display: block;
+	  height: 220px;
+		list-style-type: none;
+		margin-top: 30px;
+		padding: 0px 0px 0px 30px;
+		perspective: 1000px;
+		position: fixed;
+
+		& li {
+			padding: 15px 15px 15px 0px;
+		}
+
+		& li a {
+			color: #fff;
+			display: block;
+			line-height: 0px;
+		  text-decoration: none;
+		  text-align: center;
+		  transition: background .5s ease .300ms;
+		}
+
+		& li a .icon {
+			height: calc(21/var(--base-font-size))rem;
+			width: calc(21/var(--base-font-size))rem;
+		}
+	}
+
 	.footer {
 		bottom: -40px;
 		height: 40px;
@@ -279,10 +303,6 @@ svg.svg {
 		& .copyright {
 			float: left !important;
 			line-height: 55px;
-		}
-
-		& .social-profiles {
-			float: right !important;
 		}
 
 		& .footnote {

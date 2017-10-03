@@ -83,7 +83,7 @@ code {
 .navbar button {
   outline: none;
 	padding-right: 0px;
-  top: 19px
+  top: 15px
 }
 
 .navbar-brand {
@@ -98,11 +98,21 @@ code {
   border: none;
 }
 
-.nav-link {
+.navbar-light .navbar-nav .nav-link {
   color: var(--subtext-color);
   font-family: 'Poppins';
   font-size: calc(14/var(--base-font-size))rem;
   font-weight: 500;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+}
+
+.nav-link {
+	padding: 1em 1em;
+
+	&:first-child {
+		padding-top: 0.4em;
+	}
 }
 
 .container {
@@ -138,6 +148,14 @@ code {
 }
 
 @media (--large-viewport) {
+	.nav-link {
+		padding: 0.5em 1em;
+
+		&:first-child {
+			padding-top: 0.5em;
+		}
+	}
+
 	.container {
 		width: 700px;
 		max-width: 100%;

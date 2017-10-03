@@ -169,8 +169,36 @@ article {
 	}
 }
 
+.social {
+	& a .icon {
+		fill: var(--subtext-color);
+	}
+
+	& a:hover .icon {
+		fill: var(--subtext-color-hover);
+	}
+}
+
 .social-desktop {
 	display: none;
+}
+
+.social-mobile {
+	border-top: 1px solid var(--subtext-color);
+	line-height: 0px;
+	padding-top: 20px;
+	padding-bottom: 10px;
+
+	& a {
+		display: inline-block;
+		text-align: center;
+		width: 24%;
+	}
+
+	& a .icon {
+		height: calc(19/var(--base-font-size))rem;
+		width: calc(19/var(--base-font-size))rem;
+	}
 }
 
 .footer {
@@ -284,10 +312,18 @@ article {
 		  transition: background .5s ease .300ms;
 		}
 
+		& li:first-child {
+			padding-top: 0px;
+		}
+
 		& li a .icon {
 			height: calc(21/var(--base-font-size))rem;
 			width: calc(21/var(--base-font-size))rem;
 		}
+	}
+
+	.social-mobile {
+		display: none;
 	}
 
 	.footer {

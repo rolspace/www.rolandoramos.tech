@@ -17,6 +17,6 @@ layout: page
 
 <p>I have been a software engineer for more than 9 years. This is not just something I do for work, as I also like to spend some of my free time with code and software!</p>
 
-<p>You can find me on <a href="http://ch.linkedin.com/in/rolandoramosrestrepo">LinkedIn</a>, <a href="https://github.com/rolspace">Github</a>, <a href="https://stackoverflow.com/users/6909765/rolspace">Stack Overflow</a>, and <a href="http://instagram.com/rolspace">Instagram</a>.</p>
+<p>You can find me on <a href="https://ch.linkedin.com/in/rolandoramosrestrepo">LinkedIn</a>, <a href="https://github.com/rolspace">Github</a>, <a href="https://stackoverflow.com/users/6909765/rolspace">Stack Overflow</a>, and <a href="https://instagram.com/rolspace">Instagram</a>.</p>
 
 <p>Enjoy!</p>

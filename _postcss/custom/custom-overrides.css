@@ -51,14 +51,14 @@
 }
 
 html {
-	font-size: var(--base-font-size)px;
+  font-size: var(--base-font-size)px;
   min-height: 100%;
   position: relative;
 }
 
 body {
   color: var(--paragraph-color);
-	font-family: 'Amiri';
+  font-family: 'Amiri';
 }
 
 code {
@@ -67,13 +67,13 @@ code {
 
 .navbar {
   box-shadow: 0px 2px 2px 0px color(#000 a(0.2));
-	padding-left: 15px;
-	padding-right: 15px;
+  padding-left: 15px;
+  padding-right: 15px;
 }
 
 .navbar h1 {
-	font-size: inherit;
-	margin-bottom: 0px;
+  font-size: inherit;
+  margin-bottom: 0px;
 }
 
 .navbar.bg-faded {
@@ -82,7 +82,7 @@ code {
 
 .navbar button {
   outline: none;
-	padding-right: 0px;
+  padding-right: 0px;
   top: 15px
 }
 
@@ -103,16 +103,16 @@ code {
   font-family: 'Poppins';
   font-size: calc(14/var(--base-font-size))rem;
   font-weight: 500;
-	letter-spacing: 0.03em;
-	text-transform: uppercase;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
 }
 
 .nav-link {
-	padding: 1em 1em;
+  padding: 1em 1em;
 
-	&:first-child {
-		padding-top: 0.4em;
-	}
+  &:first-child {
+    padding-top: 0.4em;
+  }
 }
 
 .container {
@@ -125,10 +125,10 @@ code {
 }
 
 @media (--small-viewport) {
-	.container {
-		width: 540px;
-		max-width: 100%;
-	}
+  .container {
+    width: 540px;
+    max-width: 100%;
+  }
 }
 
 @media (--medium-viewport) {
@@ -141,30 +141,30 @@ code {
     padding-right: 30px;
   }
 
-	.container {
-		width: 700px;
-		max-width: 100%;
-	}
+  .container {
+    width: 700px;
+    max-width: 100%;
+  }
 }
 
 @media (--large-viewport) {
-	.nav-link {
-		padding: 0.5em 1em;
+  .nav-link {
+    padding: 0.5em 1em;
 
-		&:first-child {
-			padding-top: 0.5em;
-		}
-	}
+    &:first-child {
+      padding-top: 0.5em;
+    }
+  }
 
-	.container {
-		width: 700px;
-		max-width: 100%;
-	}
+  .container {
+    width: 700px;
+    max-width: 100%;
+  }
 }
 
 @media (--xlarge-viewport) {
-	.container {
-		width: 700px;
-		max-width: 100%;
-	}
+  .container {
+    width: 700px;
+    max-width: 100%;
+  }
 }

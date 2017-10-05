@@ -6,8 +6,8 @@ require('lazysizes');
 const Setup = require('./setup.js').default;
 
 $(function(){
-	'use strict';
+  'use strict';
 
-	const setup = new Setup();
-	setup.init();
+  const setup = new Setup();
+  setup.init();
 });

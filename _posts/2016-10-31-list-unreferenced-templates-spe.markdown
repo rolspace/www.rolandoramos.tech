@@ -20,7 +20,7 @@ This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE
 #Get the Templates in the path, excluding default Sitecore Templates and __Standard Values
 $templates = Get-ChildItem -Path 'master:\sitecore\templates\path\to\templates' -Recurse |`
     Where-Object { $_.TemplateName -ne 'Template Folder' `
-    	-and $_.TemplateName -ne 'Template field' `
+      -and $_.TemplateName -ne 'Template field' `
         -and $_.TemplateName -ne 'Template section' `
         -and $_.Name -ne '__Standard Values' }
 
@@ -30,13 +30,13 @@ foreach ($template in $templates) {
     #Get Referrers, excluding __Standard Values
     $links = $template | Get-ItemReferrer -ErrorAction SilentlyContinue | `
         Where-Object { $_.Paths.Path -notlike '*' + $_.Template.FullName + '*' }
-    
+
     #If there are no Referrers, add the template to the result
     if ($links.Count -eq 0) {
         [void]$myArray.Add($template)
     }
 }
-    
+
 $myArray | Format-Table Name, @{ Label = 'Path'; Expression={ $_.Paths.Path } }
 
 {% endhighlight %}

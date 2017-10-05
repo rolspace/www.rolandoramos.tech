@@ -4,9 +4,9 @@
   "author": "Rolando Ramos",
   "license": "ISC",
   "description": "Source code for my personal website, www.rolandoramos.tech",
-	"dependencies": {
-		"lazysizes": "^3.0.0"
-	},
+  "dependencies": {
+    "lazysizes": "^3.0.0"
+  },
   "devDependencies": {
     "autoprefixer": "^7.1.1",
     "babel-core": "^6.24.1",
@@ -52,9 +52,9 @@
     "node": ">=6.9.0"
   },
   "scripts": {
-		"build": "gulp build",
-		"images": "gulp images",
-		"serve": "gulp serve"
+    "build": "gulp build",
+    "images": "gulp images",
+    "serve": "gulp serve"
   },
   "repository": {
     "type": "git",

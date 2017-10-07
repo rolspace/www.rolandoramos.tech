@@ -42,7 +42,7 @@ This command creates a Docker image with the tag "jekyll-website". Note you do n
 {% endhighlight %}
 </div>
 
-This command creates and runs a container with the name "website". Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website.
+This command creates and runs a container with the name <em>website</em>. Using the volume mapping option: <code>--volume</code>, I can make the contents of the path at <code>/path/to/code</code> available to the container locally. In this way, the container will have access to the files needed to build the website.
 
 Using the publish option: <code>--publish</code>, I will be able to access the pages by visiting http://localhost:4000/, because it maps my system's port 4000 to the container's published port 4000.
 
@@ -96,7 +96,7 @@ Then, I deleted the container and the local image:
 > docker image rm jekyll-website
 {% endhighlight %}
 
-I rebuilt my custom image using the initial <a href="#build">build command</a> and <a href="#run">created the container</a>. On the bash prompt I entered the gulp command to build and host the debug version of the site:
+I rebuilt my new custom image as a container using the initial <a href="#build">build command</a> and then, <a href="#run">ran the container</a>. On the terminal prompt I entered the gulp command to build and serve the development version of the site:
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/gulp-task-success-700.png" alt="Successfully ran a custom gulp task in the Jekyll container" />
 

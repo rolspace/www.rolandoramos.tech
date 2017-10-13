@@ -57,7 +57,11 @@
       </a>
     </li>
   </ul>
+  {% if page.cssid %}
+  <div id="{{ page.cssid }}" class="container">
+  {% else %}
   <div class="container">
+  {% endif %}
     {{ content }}
   </div>
   {% include footer.html %}

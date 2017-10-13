@@ -1,3 +1,5 @@
+#!/bin/bash
+
 aws s3 cp ../site/dist/css/site.min.css s3://bucketname/dist/css/ --cache-control "public, max-age=2800000" --content-encoding gzip
 
 aws s3 cp ../site/dist/js/site.min.js s3://bucketname/dist/js/ --cache-control "public, max-age=2800000" --content-encoding gzip

@@ -22,9 +22,31 @@ img {
   }
 }
 
+#posts {
+  padding-bottom: 30px;
+  & article {
+    padding-top: 30px;
+    padding-bottom: 0px;
+
+    &:first-child {
+      padding-top: 0px;
+    }
+  }
+}
+
+#about article {
+  border-bottom: none;
+  padding-bottom: var(--base-bottom-margin);
+}
+
 article {
   border-bottom: 1px solid var(--subtext-color);
-  margin-bottom: var(--base-bottom-margin);
+  padding-top: calc(var(--base-bottom-margin) + 20px);
+  padding-bottom: calc(var(--base-bottom-margin) + 20px);
+
+  &:first-child {
+    padding-top: 0px;
+  }
 
   & .article-date {
     @mixin subtext;
@@ -81,10 +103,6 @@ article {
     }
   }
 
-  & .read-more {
-    margin-bottom: calc(var(--base-bottom-margin) + 20px);
-  }
-
   & .read-more a {
     @mixin subtext;
     font-size: calc(14/var(--base-font-size))rem;
@@ -118,7 +136,8 @@ article {
 }
 
 .page-paginator {
-  margin-bottom: var(--base-bottom-margin);
+  padding-top: calc(var(--base-bottom-margin) * 2);
+  padding-bottom: var(--base-bottom-margin);
 
   & a {
     @mixin subtext;
@@ -280,12 +299,23 @@ article {
 }
 
 @media (--medium-viewport) {
-  article {
-    margin-bottom: calc(var(--base-bottom-margin) * 2)
+  #about article {
+    border-bottom: none;
+    padding-bottom: calc(var(--base-bottom-margin) * 2);
   }
 
-  article .read-more {
-    margin-bottom: calc(var(--base-bottom-margin) * 2)
+  #posts {
+    padding-bottom: calc(var(--base-bottom-margin) * 2);
+
+    & article {
+      padding-top: calc(var(--base-bottom-margin) * 2);
+      padding-bottom: 0px;
+    }
+  }
+
+  article {
+    padding-top: calc(var(--base-bottom-margin) * 2);
+    padding-bottom: calc(var(--base-bottom-margin) * 2);
   }
 }
 

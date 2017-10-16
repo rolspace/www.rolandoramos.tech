@@ -40,4 +40,6 @@ In order to hire Software Engineers, it becomes necessary to determine their tec
 - Take home assignments
 - Technical Interviews
 
-It is likely that there are more options than the ones I have listed
+It is likely that there are a few more options aside from the ones I have listed.
+
+And that's precisely the point.

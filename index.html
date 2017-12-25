@@ -10,12 +10,14 @@ layout: main
       <div class="article-content">
         {{ post.excerpt }}
       </div>
-      <div class="read-more pull-right">
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          Read More
-          <svg class="icon icon-chevron-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
-        </a>
-      </div>
+      {% if post.more != false %}
+        <div class="read-more pull-right">
+          <a href="{{ post.url | prepend: site.baseurl }}">
+            Read More
+            <svg class="icon icon-chevron-right"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#icon-chevron-right"></use></svg>
+          </a>
+        </div>
+      {% endif %}
     </article>
     {% endfor %}
   </div>

@@ -3,6 +3,7 @@ layout: post
 published: true
 title: 'Monty the Cat #3'
 date: 2017-09-26
+more: false
 tags:
 - monty
 - photos

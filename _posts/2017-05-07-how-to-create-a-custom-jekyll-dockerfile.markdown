@@ -1,7 +1,7 @@
 ---
 layout: post
 published: true
-title: How to create a custom Jekyll Dockerfile&#58; Part I
+title: How to create a custom Jekyll Dockerfile
 date: 2017-05-06
 tags:
 - code
@@ -104,4 +104,4 @@ That was enough to get my site running on a local container. The next test would
 
 <img class="center-block img-fluid lazyload" data-src="/assets/images/170507/jekyll-container-windows.png" width="770" height="274" alt="Successfully run the container in a Windows environment" />
 
-Now, this is a very simple setup that you can get up and running in a few minutes. In the next post, we will take a look at running a Jekyll website from a container on different cloud platforms.
+Now, this is a very simple setup that you can use to get your local jekyll environment up and running in a few minutes using Docker.

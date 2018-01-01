@@ -9,7 +9,12 @@ tags:
 [LinkedIn]: https://www.linkedin.com "LinkedIn"
 [Medium]: https://medium.com "Medium"
 
-<img class="center-block img-fluid lazyload" src="/assets/images/170220/5-tips-first-time-manager-700.jpg" alt="Management" />
+<p>
+  <figure class="figure">
+    <img class="center-block figure-img img-fluid lazyload" src="/assets/images/170220/5-tips-first-time-manager-700.jpg" alt="Management" />
+    <figcaption class="figure-caption text-right">Photo source: <a href="https://freerangestock.com/photos/51293/business-meeting-and-teamwork-concept.html" target="_blank">Free Range Stock</a></figcaption>
+  </figure>
+</p>
 
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>

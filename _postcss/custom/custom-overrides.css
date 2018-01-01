@@ -124,6 +124,15 @@ code {
   padding: 0.5rem;
 }
 
+.figure-caption {
+  font-family: 'Poppins';
+  font-size: 60%;
+}
+
+.figure-img {
+  margin-bottom: 5px;
+}
+
 @media (--small-viewport) {
   .container {
     width: 540px;

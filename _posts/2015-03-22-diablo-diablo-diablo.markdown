@@ -8,8 +8,9 @@ tags:
 - late reviews
 - pc
 ---
-<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150322/oldtristramroad-700.jpg" alt="Diablo 3" />
-
+<div>
+  <img class="mx-auto d-block img-fluid lazyload" src="/assets/images/150322/oldtristramroad-700.jpg" alt="Diablo 3" />
+</div>
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>

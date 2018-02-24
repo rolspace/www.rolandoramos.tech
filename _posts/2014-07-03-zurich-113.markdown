@@ -8,8 +8,9 @@ tags:
 - photos
 - zurich
 ---
-<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140703/zurich113-700.jpg" alt="Zürich" />
-
+<div>
+  <img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140703/zurich113-700.jpg" alt="Zürich" />
+</div>
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>

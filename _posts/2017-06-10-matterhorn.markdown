@@ -7,8 +7,9 @@ tags:
 - hello world
 - photos
 ---
-<img class="center-block img-fluid lazyload" src="/assets/images/170610/matterhorn-700.jpg" />
-
+<div>
+  <img class="center-block img-fluid lazyload" src="/assets/images/170610/matterhorn-700.jpg" />
+</div>
 <h2 class="article-title">
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>

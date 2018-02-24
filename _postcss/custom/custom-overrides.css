@@ -116,7 +116,7 @@ code {
 }
 
 .container {
-  margin-top: var(--base-bottom-margin);
+  margin-top: var(--base-margin);
 }
 
 .table th,

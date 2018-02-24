@@ -54,24 +54,14 @@ article {
     margin-bottom: var(--base-bottom-margin);
   }
 
-  & .article-title {
-    color: color(var(--title-color));
-    font-family: 'Poppins';
-    font-size: calc(26/var(--base-font-size))rem;
-    font-weight: 500;
-
-    & a {
-      color: color(var(--title-color));
-    }
-
-    & a:hover {
-      color: color(var(--title-color-hover));
-      text-decoration: none;
-    }
-  }
-
   & .article-content {
-    margin-bottom: var(--base-bottom-margin);
+    & div img {
+      margin-bottom: var(--base-bottom-margin);
+    }
+
+    & p:first-of-type {
+      margin-top: var(--base-bottom-margin);
+    }
 
     & p:first-of-type img {
       margin-bottom: calc(var(--base-bottom-margin) - 20px);
@@ -81,7 +71,6 @@ article {
       font-family: 'Poppins';
       font-size: calc(26/var(--base-font-size))rem;
       font-weight: 500;
-      margin-bottom: var(--base-bottom-margin);
 
       & a {
         color: color(var(--title-color));
@@ -101,6 +90,10 @@ article {
       font-size: calc(18/var(--base-font-size))rem;
       font-weight: 500;
     }
+  }
+
+  & .read-more {
+    margin-top: var(--base-bottom-margin);
   }
 
   & .read-more a {

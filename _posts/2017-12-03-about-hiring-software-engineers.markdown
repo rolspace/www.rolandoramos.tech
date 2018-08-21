@@ -35,7 +35,7 @@ Of course, these are not the only reasons that make this process a challenge. Ho
 
 <p class="subtitle">Describing a Software Engineering vacancy is difficult</p>
 
-If you have had to write a job description at any point in your life, you know that these things are not easy to write. In an ideal scenario, a good job description should contain a listing of the core skills needed to perform some kind of job at an adequate level.
+If you have had to write a job description at any point in your life, you know that these things are not easy. In an ideal scenario, a good job description should contain a listing of the core skills needed to perform some job function.
 Normally, if you excel at your job, it is because you are performing beyond the expectations that were outlined in your job description.
 
 A good job description is expected to provide a summary of the skills and the day-to-day responsibilities needed for a job, in as few words as possible. In the case of Software Engineers, the daily activities of a role could vary considerably. Any attempt at generalizing these responsibilities can easily make the job sound boring.
@@ -64,9 +64,9 @@ A coding or technical exercise does not need to take multiple days in order to a
 
 A technical evaluation needs to happen within the context of an in-person interview, not as a take home assignment or project. It doesn't matter if the interview is onsite or remote, technology has advanced enough that this should not be a concern anymore. For me, the best way to verify someone's skill as a Software Engineer is to use an onsite assessment. If there is a whiteboard available, even better.
 
-Something that I believe is quite important, is to make sure that the right kind of technical challenge is selected to evaluate candidates. I have a preference for selecting challenges that illustrate real issues or tasks that the candidate would encounter if they were selected for the position.
+Something that I believe is quite important, is to make sure that the right kind of technical challenge is selected to evaluate candidates. I have a preference for selecting challenges that illustrate real issues or tasks that the candidate would encounter if they were selected for the role advertised.
 
-Good coding assessments are ones that allow for the candidate to discuss their solution with a "colleague", with the interviewer acting out this role. True software development is a collaborative process and the interviewer will gain valuable insight about the candidate's approach to solving problems with code. For the candidates, the technical interview does not become a stressful experience with someone simply looking over their shoulder as they work or just waiting for them to provide a solution that will be graded by someone else.  
+Good coding assessments are ones that allow for the candidate to discuss their solution with a "colleague"...meaning the interviewer. Software development is at its core, a collaborative process. If the candidate can discuss the details of their solution, the interviewer will gain valuable insight about the candidate's approach to solving problems with code. For the candidates, the technical interview does not become a stressful experience with someone simply looking over their shoulder as they work or just waiting for them to provide a solution.  
 
 Should the candidates write code? YES! Just remember that a technical interview is already a tense environment, where the candidate needs to prove their expertise and skills to people whom they have never worked with. As someone in charge of hiring, it is your responsibility to make the technical interview a place where candidates feel comfortable.
 

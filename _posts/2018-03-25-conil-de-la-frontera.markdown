@@ -14,4 +14,4 @@ tags:
   <a href="{{ page.url | prepend: site.baseurl }}">{{ page.title }}</a>
 </h2>
 
-Because it's summer.
+Because it's summer, and this is a great place to visit in summer.

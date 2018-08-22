@@ -48,6 +48,21 @@ article {
     padding-top: 0px;
   }
 
+  & h2 {
+    font-family: 'Poppins';
+    font-size: calc(26/var(--base-font-size))rem;
+    font-weight: 500;
+
+    & a {
+      color: color(var(--title-color));
+    }
+
+    & a:hover {
+      color: color(var(--title-color-hover));
+      text-decoration: none;
+    }
+  }
+
   & .article-date {
     @mixin subtext;
     font-size: calc(14/var(--base-font-size))rem;
@@ -55,19 +70,9 @@ article {
   }
 
   & .article-content {
-    & .article-title {
-      font-family: 'Poppins';
-      font-size: calc(26/var(--base-font-size))rem;
-      font-weight: 500;
 
-      & a {
-        color: color(var(--title-color));
-      }
-
-      & a:hover {
-        color: color(var(--title-color-hover));
-        text-decoration: none;
-      }
+    & p a:hover {
+      text-decoration: none;
     }
 
     & div img {

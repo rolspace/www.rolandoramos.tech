@@ -1,6 +1,6 @@
 {
   "name": "www.rolandoramos.tech",
-  "version": "2.5.2",
+  "version": "2.7.1",
   "author": "Rolando Ramos",
   "description": "Source code for my personal website, www.rolandoramos.tech",
   "engines": {
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/rolspace/rolspace-website"
+    "url": "https://github.com/rolspace/www.rolandoramos.tech"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.1",

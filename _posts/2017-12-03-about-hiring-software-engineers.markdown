@@ -16,17 +16,19 @@ tags:
 
 One of the most difficult things I have had to do during my time as a team manager is to hire people.
 
-There is a lot of information out there about the topic of hiring software engineers and the reasons why it is a difficult, time consuming process. In the past couple of years, I have come to realize that quite a few people who move into management, like me, are totally unprepared for the process of selecting and hiring the best available candidates for their teams.
+Now, after two years of screening, interviewing, and selecting candidates, I am fully aware of how I was totally unprepared for the process of finding and hiring the best available candidates.
 
-I thought that hiring Software Engineers was easy, mainly because I incorrectly assumed that you could always measure someone's technical ability through an assessment or a coding test and that this was enough to make a decision. After having the opportunity to interview a fair amount of candidates in the past couple of years, my opinion has changed.
+I thought that hiring Software Engineers would be easy. I incorrectly assumed that I could always base my hiring decisions on a technical assessment. The math was simple, create a coding test and those candidates with the ability to complete it successfully would be the ones worthy of consideration.
 
 <!--more-->
 
-Before I became a manager, I always felt that finding great software engineers would be a cakewalk. I soon discovered that this is not the case...FINDING great candidates is quite difficult...and HIRING them, even more so.
+Of course, I soon discovered that this is not the case…FINDING great candidates is already difficult…and HIRING them, even more so.
 
-I realized that I didn't really know how to hire people, much less Software Engineers, so I made the decision to learn how to identify the best candidates participating in a hiring process. I wanted to make sure that there was a guideline I could use if I needed to find a new person to join the team.
+The obvious truth is that I didn’t really know how to hire Software Engineers. I needed to improve the methods I was using if I wanted to find the best available people to join the team.
 
-Doing this helped me achieve two things. One, I got much better at finding people who were interested in the roles available in the team and two, I realized that hiring Software Engineers is something that needs to be done very carefully (like hiring anyone, really!). I have come to the conclusion that there are two very distinct reasons why hiring Software Engineers can be a challenging task:
+Doing this helped me achieve two things: one, I got much better at finding people who were not only qualified, but also, interested in the roles available in the team and two, I realized that hiring Software Engineers is something that needs to be done with care (like hiring anyone, really!).
+
+I believe that there are two very distinct reasons why hiring Software Engineers can be a challenging task:
 
 - Describing a Software Engineering vacancy is difficult.
 - Choosing the right kind of technical test is a complex decision.
@@ -35,43 +37,32 @@ Of course, these are not the only reasons that make this process a challenge. Ho
 
 <p class="subtitle">Describing a Software Engineering vacancy is difficult</p>
 
-If you have had to write a job description at any point in your life, you know that these things are not easy. In an ideal scenario, a good job description should contain a listing of the core skills needed to perform some job function.
-Normally, if you excel at your job, it is because you are performing beyond the expectations that were outlined in your job description.
+If you have had to write a job description at any point in your life, you know that these things are not easy. In an ideal scenario, a good job description should contain a listing of the core skills needed to perform some job function. Normally, if you excel at your job, it is because you are performing beyond the expectations that were outlined in your job description.
 
 A good job description is expected to provide a summary of the skills and the day-to-day responsibilities needed for a job, in as few words as possible. In the case of Software Engineers, the daily activities of a role could vary considerably. Any attempt at generalizing these responsibilities can easily make the job sound boring.
 
-At the same time, it is important to provide details about the technologies that the position requires. It is easy to get lost in the realm of possibility and start to list languages, frameworks, and whatnot left and right. The reality is that the set of tools that will be used on a regular basis is not that extensive. Also, let's not forget that hiring Software Engineers is not only about what you already know, but what you can learn and how quickly you can learn it.
+At the same time, it is important to provide details about the technologies that the position requires. It is easy to get carried away and list different languages, frameworks, and libraries left and right. The bottom line is that the set of tools that will be used on a regular basis is not that extensive.
 
-My personal recommendation is that hiring managers should be as clear as possible about the technical skills needed and the daily responsibilities for a new role. This information should remain consistent throughout the hiring process. If hiring managers can provide candidates with the right expectations for the role they have applied to, it makes the process much more transparent. People who are search for a new opportunity will, at the very least, appreciate this.
+My personal recommendation is that hiring managers should be as clear as possible about the technical skills and the day-to-day responsibilities associated to a job opening. This information should remain consistent throughout the hiring process. If hiring managers can provide candidates with the right expectations for the role they have applied to, it makes the process much more transparent. People who are looking for a new opportunity will, at the very least, appreciate this.
 
-Using the right job description will help you set the base for candidates to know what the role is about and the opportunities for growth available. At the same time, it should help to attract the right kind of candidates, those who have the qualifications and skills needed for the role.
+Using the right job description will help you set the base for candidates to know what the role is about and the opportunities for growth available. At the same time, it should help to attract the right kind of candidates: those who have the qualifications and skills needed.
 
 <p class="subtitle">Choosing the right kind of technical test is a complex decision</p>
 
-In order to hire Software Engineers, it is necessary to determine, as much as possible, their technical ability. This normally happens using technical interviews or challenges that the candidates need to complete in a given time frame. These technical evaluations come in different formats, such as:
+In order to hire Software Engineers, it is necessary to determine, as much as possible, their technical ability. This normally happens using technical tests or challenges that the candidates need to complete.
 
-- Whiteboard tests
-- Onsite assessments
-- Take home projects
-- Technical questionnaires
-- A mix of some of the above
+Different companies will use different kinds of ways to evaluate candidates. There are those that will use trivia questions, or those that will give you a short take-home project to complete on your free time. There is also the whiteboard test, where you write out your solution on the board, with one or more people participating as you work out the problem. Others will check for specific knowledge about some computer science concepts, such as data structures or algorithms.
 
-In my experience, using these methods to test a candidate do not simplify the task of making an informed choice on whether to hire a candidate or not.
+I wholeheartedly agree with Joel Spolsky’s statement: “make candidates write some code”. From my perspective, the best way to evaluate a candidate's technical knowledge is to devise a coding assignment that can be completed within the context of an in-person interview. Even if the candidate cannot be present for the assessment, technology has advanced enough that this should not be a concern anymore. It should be easy to setup an online conversation with a shared screen.
 
-I wholeheartedly agree with <a href="https://www.joelonsoftware.com/2000/08/09/the-joel-test-12-steps-to-better-code/" target="_blank">Joel Spolsky's statement</a>: <em>"make candidates write some code"</em>. However, I think that in our quest to find the best talent available we might be overdoing things a bit.
+Something that I believe is quite important, is to make sure that the right kind of technical challenge is selected to evaluate candidates. I have a preference for selecting challenges that illustrate real issues or tasks that the candidate would need to solve if they were selected for the role.
 
-A coding or technical exercise does not need to take multiple days in order to allow you to evaluate a candidate's skills. In the same vein, answering multiple choice trivia questions or knowing obscure language behaviors aren't necessarily going to tell you if someone is good at understanding and solving the kind of challenges he/she will face on a daily basis.
-
-A technical evaluation needs to happen within the context of an in-person interview, not as a take home assignment or project. It doesn't matter if the interview is onsite or remote, technology has advanced enough that this should not be a concern anymore. For me, the best way to verify someone's skill as a Software Engineer is to use an onsite assessment. If there is a whiteboard available, even better.
-
-Something that I believe is quite important, is to make sure that the right kind of technical challenge is selected to evaluate candidates. I have a preference for selecting challenges that illustrate real issues or tasks that the candidate would encounter if they were selected for the role advertised.
-
-Good coding assessments are ones that allow for the candidate to discuss their solution with a "colleague"...meaning the interviewer. Software development is at its core, a collaborative process. If the candidate can discuss the details of their solution, the interviewer will gain valuable insight about the candidate's approach to solving problems with code. For the candidates, the technical interview does not become a stressful experience with someone simply looking over their shoulder as they work or just waiting for them to provide a solution.  
+Good coding assessments are ones that allow for the candidate to discuss their solution with the interviewer. Software development is, at its core, a collaborative process. If the candidate can discuss the details of their solution, the interviewer will gain valuable insight about the candidate’s approach to solving problems with code. For the candidates, the technical interview does not become a stressful experience with someone simply looking over their shoulder as they work or just waiting for them to provide a solution.
 
 Should the candidates write code? YES! Just remember that a technical interview is already a tense environment, where the candidate needs to prove their expertise and skills to people whom they have never worked with. As someone in charge of hiring, it is your responsibility to make the technical interview a place where candidates feel comfortable.
 
 <p class="subtitle">Closing thoughts</p>
 
-In my opinion, job descriptions for Software Engineering roles should provide clear and detailed information about the responsibilities and skills needed for an open position. Being ambiguous or being too generic is simply a way to end up with many applications from candidates who don't have the right qualifications.
+In my opinion, job descriptions for Software Engineering roles should provide clear and detailed information about the responsibilities and skills needed for an open position. Being ambiguous or being too generic is simply a way to end up with many applications from candidates who don’t have the right qualifications.
 
-Once it is time to verify a candidate's skill, we should not try to come up with clever tests. Invite the candidates to the office and do an in-person evaluation. Verifying technical skill is necessary, but it is important to know if you can work with this person as part of the team. The only way to do this is to use the assessment as an opportunity to see this in action. Your team will thank you for making the extra effort.
+Once it is time to verify a candidate’s skill, we should not try to come up with clever tests. Invite the candidates to the office and do an in-person evaluation. Verifying technical skill is necessary, but it is important to know if you can work with this person as part of the team. The only way to do this is to use the assessment as an opportunity to see this in action. Your team will thank you for making the extra effort.

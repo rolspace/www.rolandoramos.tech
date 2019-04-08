@@ -1,5 +1,6 @@
 import React from "react"
 import { Link } from "gatsby"
+import { Flex, Box } from '@rebass/grid'
 
 class Layout extends React.Component {
   render() {
@@ -48,20 +49,21 @@ class Layout extends React.Component {
       )
     }
     return (
-      <div
-        style={{
-          marginLeft: `auto`,
-          marginRight: `auto`,
-        }}
-      >
-        <header>{header}</header>
-        <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.org">Gatsby</a>
-        </footer>
-      </div>
+      <Flex flexWrap='wrap' alignItems='center'>
+        <Box width={1}>
+          <header>{header}</header>
+        </Box>
+        <Box width={[1, 1/2]}>
+          <main>{children}</main>
+        </Box>
+        <Box width={1}>
+          <footer>
+            © {new Date().getFullYear()}, Built with
+            {` `}
+            <a href="https://www.gatsbyjs.org">Gatsby</a>
+          </footer>
+        </Box>
+      </Flex>
     )
   }
 }

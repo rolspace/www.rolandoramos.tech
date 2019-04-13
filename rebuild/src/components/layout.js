@@ -53,7 +53,7 @@ class Layout extends React.Component {
         <Box width={1}>
           <header>{header}</header>
         </Box>
-        <Box width={[1, 1/2]}>
+        <Box width={[1, 1/2]} mx='auto'>
           <main>{children}</main>
         </Box>
         <Box width={1}>

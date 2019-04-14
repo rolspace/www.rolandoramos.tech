@@ -1,25 +1,19 @@
 import React, { Fragment } from "react"
-import { Link } from "gatsby"
 import { Flex, Box } from "@rebass/grid"
 
-import GlobalStyle from "../styles/global-styles";
+import GlobalStyle from "../styles/global-styles"
+import Header from "./header"
 
 class Layout extends React.Component {
   render() {
-    const { title, children } = this.props
-
-    const header = (
-      <h1 style={{ marginTop: 0, }}>
-        <Link to={`/`}>{title}</Link>
-      </h1>
-    )
+    const { children } = this.props
     
     return (
       <Fragment>
         <GlobalStyle />
         <Flex flexWrap='wrap' alignItems='center'>
           <Box width={1}>
-            <header>{header}</header>
+            <Header />
           </Box>
           <Box width={[1, 1/2]} mx='auto'>
             <main>{children}</main>

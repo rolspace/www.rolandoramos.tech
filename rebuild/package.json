@@ -33,7 +33,8 @@
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.19",
     "styled-components": "^4.2.0",
-    "typeface-amiri": "0.0.61"
+    "typeface-amiri": "0.0.61",
+    "typeface-poppins": "0.0.72"
   },
   "devDependencies": {
     "prettier": "^1.16.4"

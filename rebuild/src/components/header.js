@@ -10,9 +10,11 @@ const Logo = styled.h1`
   margin: 0;
 `
 
-const Menu = styled.div`
-  display: flex;
-  margin-left: auto !important;
+const MenuFlex = styled(Flex)`
+  @media (min-width: 40em) {
+    display: flex;
+    margin-left: auto !important;
+  }
 `
 
 const MenuLink = styled(Link)`
@@ -21,14 +23,18 @@ const MenuLink = styled(Link)`
   font-size: .65em;
   font-weight: 500;
   letter-spacing: .03em;
-  padding: 0.3rem 0.5rem;
+  padding: 0.3rem 0;
   text-transform: uppercase;
   text-decoration: none;
+
+  @media (min-width: 40em) {
+    padding: 0.3rem 0.5rem;
+  }
 `
 
 const Header = (props) => {
   return (
-    <Flex as="header" flexDirection="row" flexWrap="nowrap" alignItems="center">
+    <Flex as="header" flexDirection={["column", "row"]} flexWrap="nowrap" alignItems="center">
       <Box width={[1, 1/2, 2/3]}>
         <Logo>
           <Link style={{ display: `inline-block` }} to={`/`}>
@@ -37,10 +43,14 @@ const Header = (props) => {
         </Logo>
       </Box>
       <Box style={{ display: `flex` }} width={[1, 1/2, 1/3]}>
-        <Menu>
-          <MenuLink to={`/posts/`}>Posts</MenuLink>
-          <MenuLink to={`/about/`}>About</MenuLink>
-        </Menu>
+        <MenuFlex flexDirection={["column", "row"]}>
+            <Box width={1}>
+              <MenuLink to={`/posts/`}>Posts</MenuLink>
+            </Box>
+            <Box width={1}>
+              <MenuLink to={`/about/`}>About</MenuLink>
+            </Box>
+        </MenuFlex>
       </Box>
     </Flex>
   )

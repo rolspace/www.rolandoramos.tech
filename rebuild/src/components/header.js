@@ -1,21 +1,23 @@
 import React from "react"
 import { Link } from "gatsby"
 import { Flex, Box } from "@rebass/grid"
+import { IconContext } from "react-icons"
+import { IoIosMenu } from "react-icons/io"
 import styled from "styled-components"
 
 import logo from "../../content/assets/logo.png"
 
 const Logo = styled.h1`
   line-height: 1;
-  margin: 0;
-`
+  margin: 0;`
 
 const MenuFlex = styled(Flex)`
+  display: none;
+
   @media (min-width: 40em) {
     display: flex;
     margin-left: auto !important;
-  }
-`
+  }`
 
 const MenuLink = styled(Link)`
   color: #adadad;
@@ -29,8 +31,22 @@ const MenuLink = styled(Link)`
 
   @media (min-width: 40em) {
     padding: 0.3rem 0.5rem;
-  }
-`
+  }`
+
+const MenuButton = styled.button`
+  background: 0 0;
+  border: none;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  position: absolute;
+  right: 6px;
+  top: 6px;
+  touch-action: manipulation;
+  
+  @media (min-width: 52em) {
+    display: none;
+  }`
 
 const Header = (props) => {
   return (
@@ -52,6 +68,11 @@ const Header = (props) => {
             </Box>
         </MenuFlex>
       </Box>
+        <MenuButton>
+            <IconContext.Provider value={{ color: "#00000080", size: "3.5em" }}>
+              <IoIosMenu />
+            </IconContext.Provider>
+        </MenuButton>
     </Flex>
   )
 }

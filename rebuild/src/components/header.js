@@ -12,7 +12,7 @@ const Logo = styled.h1`
   margin: 0;`
 
 const MenuFlex = styled(Flex)`
-  display: none;
+  display: ${props => props.hidden ? 'none' : 'flex'};
 
   @media (min-width: 40em) {
     display: flex;
@@ -48,33 +48,46 @@ const MenuButton = styled.button`
     display: none;
   }`
 
-const Header = (props) => {
-  return (
-    <Flex as="header" flexDirection={["column", "row"]} flexWrap="nowrap" alignItems="center">
-      <Box width={[1, 1/2, 2/3]}>
-        <Logo>
-          <Link style={{ display: `inline-block` }} to={`/`}>
-            <img style={{ marginLeft: `-0.5rem`, verticalAlign: `middle` }} src={logo} width={225} alt="www.rolandoramos.tech" />
-          </Link>
-        </Logo>
-      </Box>
-      <Box style={{ display: `flex` }} width={[1, 1/2, 1/3]}>
-        <MenuFlex flexDirection={["column", "row"]}>
-            <Box width={1}>
-              <MenuLink to={`/posts/`}>Posts</MenuLink>
-            </Box>
-            <Box width={1}>
-              <MenuLink to={`/about/`}>About</MenuLink>
-            </Box>
-        </MenuFlex>
-      </Box>
-        <MenuButton>
-            <IconContext.Provider value={{ color: "#00000080", size: "3.5em" }}>
-              <IoIosMenu />
-            </IconContext.Provider>
-        </MenuButton>
-    </Flex>
-  )
+class Header extends React.Component {
+  constructor(props) {
+    super(props)
+
+    this.state = { menuHidden: true }
+    this.onMenuButtonClick = this.onMenuButtonClick.bind(this)
+  }
+  
+  onMenuButtonClick() {
+    this.setState({ menuHidden: !this.state.menuHidden })
+  }
+
+  render() {
+    return (
+      <Flex as="header" flexDirection={["column", "row"]} flexWrap="nowrap" alignItems="center">
+        <Box width={[1, 1/2, 2/3]}>
+          <Logo>
+            <Link style={{ display: `inline-block` }} to={`/`}>
+              <img style={{ marginLeft: `-0.5rem`, verticalAlign: `middle` }} src={logo} width={225} alt="www.rolandoramos.tech" />
+            </Link>
+          </Logo>
+        </Box>
+        <Box style={{ display: `flex` }} width={[1, 1/2, 1/3]}>
+          <MenuFlex flexDirection={["column", "row"]} hidden={this.state.menuHidden}>
+              <Box width={1}>
+                <MenuLink to={`/posts/`}>Posts</MenuLink>
+              </Box>
+              <Box width={1}>
+                <MenuLink to={`/about/`}>About</MenuLink>
+              </Box>
+          </MenuFlex>
+        </Box>
+          <MenuButton onClick={this.onMenuButtonClick}>
+              <IconContext.Provider value={{ color: "#00000080", size: "3.5em" }}>
+                <IoIosMenu />
+              </IconContext.Provider>
+          </MenuButton>
+      </Flex>
+    )
+  }
 }
 
 export default Header

@@ -11,6 +11,14 @@ const Logo = styled.h1`
   line-height: 1;
   margin: 0;`
 
+const LogoLink = styled.a`
+  display: inline-block;
+
+  @media (min-width: 40em) {
+    padding-bottom: 0.25rem;
+    padding-top: 0.25rem;
+  }`
+
 const MenuFlex = styled(Flex)`
   display: ${props => props.hidden ? 'none' : 'flex'};
 
@@ -25,12 +33,11 @@ const MenuLink = styled(Link)`
   font-size: .65em;
   font-weight: 500;
   letter-spacing: .03em;
-  padding: 0.3rem 0;
   text-transform: uppercase;
   text-decoration: none;
 
   @media (min-width: 40em) {
-    padding: 0.3rem 0.5rem;
+    padding: 0rem 0.5rem;
   }`
 
 const MenuButton = styled.button`
@@ -65,17 +72,17 @@ class Header extends React.Component {
       <Flex as="header" flexDirection={["column", "row"]} flexWrap="nowrap" alignItems="center">
         <Box width={[1, 1/2, 2/3]}>
           <Logo>
-            <Link style={{ display: `inline-block` }} to={`/`}>
+            <LogoLink to={`/`}>
               <img style={{ marginLeft: `-0.5rem`, verticalAlign: `middle` }} src={logo} width={225} alt="www.rolandoramos.tech" />
-            </Link>
+            </LogoLink>
           </Logo>
         </Box>
         <Box style={{ display: `flex` }} width={[1, 1/2, 1/3]}>
           <MenuFlex flexDirection={["column", "row"]} hidden={this.state.menuHidden}>
-              <Box width={1}>
+              <Box pt="0.2rem" pb="0.2rem" width={1}>
                 <MenuLink to={`/posts/`}>Posts</MenuLink>
               </Box>
-              <Box width={1}>
+              <Box pt="0.2rem" pb="0.4rem" width={1}>
                 <MenuLink to={`/about/`}>About</MenuLink>
               </Box>
           </MenuFlex>

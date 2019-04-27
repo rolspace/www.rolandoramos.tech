@@ -9,11 +9,16 @@ const HeaderBox = styled(Box)`
   background-color: #fff;
   box-shadow: 0px 2px 2px 0px rgba(0, 0, 0, 0.2);
   line-height: 1.5;
-  padding-left: 1.5rem;
-  padding-right: 1.5rem;
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
   position: sticky;
   top: 0;
-  z-index: 1000;`
+  z-index: 1000;
+  
+  @media (min-width: 40em) {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }`
 
 class Layout extends React.Component {
   render() {

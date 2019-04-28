@@ -31,7 +31,7 @@ class Layout extends React.Component {
           <HeaderBox width={1}>
             <Header />
           </HeaderBox>
-          <Box width={[1, 1/2]} mx='auto'>
+          <Box width={[1, 1/2]} mx='auto' mt="1.5rem" pl="0.75rem" pr="0.75rem">
             <main>{children}</main>
           </Box>
           <Box width={1}>

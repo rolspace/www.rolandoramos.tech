@@ -1,8 +1,19 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
+import styled from 'styled-components'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+
+const PostDate = styled.div`
+  color: #adadad;
+  margin-bottom: 30px;
+`
+
+const PostTitle = styled.h2`
+  color: #5a5a5a;
+  font-weight: 500;
+`
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -16,14 +27,8 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description || post.excerpt}
         />
-        <h1>{post.frontmatter.title}</h1>
-        <p
-          style={{
-            display: `block`,
-          }}
-        >
-          {post.frontmatter.date}
-        </p>
+        <PostDate>{post.frontmatter.date}</PostDate>
+        <PostTitle>{post.frontmatter.title}</PostTitle>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>
 

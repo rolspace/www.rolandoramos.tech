@@ -31,7 +31,7 @@ const PostPreview = (props) => {
     <Post>
       <PostDate>{node.frontmatter.date}</PostDate>
       <h2 style={{ lineHeight: `1`, margin: `0 0 1rem 0` }}>
-        <PostTitleLink>{title}</PostTitleLink>
+        <PostTitleLink to={node.fields.slug}>{title}</PostTitleLink>
       </h2>
       <p
         dangerouslySetInnerHTML={{

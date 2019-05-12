@@ -1,7 +1,11 @@
 ---
 title: About hiring Software Engineers
 date: '2017-12-03T00:00:00.000Z'
+image: ./whiteboard.jpg
+imageCaption: 'Photo source: Startup Stock Photos'
 ---
+
+![Whiteboard](./whiteboard.jpg)
 
 One of the most difficult things I have had to do during my time as a team manager is to hire people.
 

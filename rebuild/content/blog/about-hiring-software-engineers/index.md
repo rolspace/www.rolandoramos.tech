@@ -7,13 +7,13 @@ captionLink: Startup Stock Photos
 captionHref: http://startupstockphotos.com/post/123128198211
 ---
 
-![Whiteboard](./whiteboard.jpg)
-
 One of the most difficult things I have had to do during my time as a team manager is to hire people.
 
 Now, after two years of screening, interviewing, and selecting candidates, I am fully aware of how I was totally unprepared for the process of finding and hiring the best available candidates.
 
 I thought that hiring Software Engineers would be easy. I incorrectly assumed that I could always base my hiring decisions on a technical assessment. The math was simple, create a coding test and those candidates with the ability to complete it successfully would be the ones worthy of consideration.
+
+<!--more-->
 
 Of course, I soon discovered that this is not the case…FINDING great candidates is already difficult…and HIRING them, even more so.
 

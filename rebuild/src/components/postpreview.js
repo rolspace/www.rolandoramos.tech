@@ -9,9 +9,15 @@ const Post = styled.article`
 const PostDate = styled.div`
   color: #adadad;  
   font-family: Poppins;
-  font-size: 0.7rem;
+  font-size: 0.7em;
   font-weight: 500;
   margin-bottom: 1.5rem;`
+
+const ImageCaption = styled.div`
+  color: #636c72;
+  font-family: Poppins;
+  font-size: 0.650em;
+  text-align: right;`
 
 const PostTitleLink = styled(Link)`
   color: #5a5a5a;
@@ -27,8 +33,7 @@ const PostTitleLink = styled(Link)`
 const PostPreview = (props) => {
   const { node } = props
   const title = node.frontmatter.title || node.fields.slug
-  const { image } = node.frontmatter
-  const { imageCaption } = node.frontmatter
+  const { image, caption, captionLink, captionHref } = node.frontmatter
 
   let fluidImage = null;
   if (image && image.childImageSharp && image.childImageSharp.fluid)
@@ -41,8 +46,11 @@ const PostPreview = (props) => {
       <PostDate>{node.frontmatter.date}</PostDate>
       { fluidImage ? 
         <div style={{ marginBottom: `1.5rem` }}>
-          <Img fluid={fluidImage}></Img>
-          <div>{imageCaption}</div>
+          <Img style={{ marginBottom: `0.250rem` }} fluid={fluidImage}></Img>
+          <ImageCaption>
+            {caption}&nbsp;
+            <Link css={{ color: `#0275d8` }} to={captionHref}>{captionLink}</Link>
+          </ImageCaption>
         </div>
         :
         ''

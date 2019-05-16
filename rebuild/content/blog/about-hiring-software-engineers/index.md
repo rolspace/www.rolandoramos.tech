@@ -2,7 +2,9 @@
 title: About hiring Software Engineers
 date: '2017-12-03T00:00:00.000Z'
 image: ./whiteboard.jpg
-imageCaption: 'Photo source: Startup Stock Photos'
+caption: 'Photo source:'
+captionLink: Startup Stock Photos
+captionHref: http://startupstockphotos.com/post/123128198211
 ---
 
 ![Whiteboard](./whiteboard.jpg)

@@ -4,7 +4,7 @@
         "es6": true,
         "node": true
     },
-    "extends": "standard",
+    "extends": ["standard", "plugin:react/recommended"],
     "globals": {
         "Atomics": "readonly",
         "SharedArrayBuffer": "readonly"
@@ -16,9 +16,16 @@
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
+    "settings": {
+        "react": {
+            "version": "detect"
+        }
+    },
     "plugins": [
         "react"
     ],
     "rules": {
+        "comma-dangle": ["error", "always-multiline"],
+        "operator-linebreak": ["error", "after"]
     }
 }

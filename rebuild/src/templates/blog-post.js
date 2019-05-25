@@ -1,9 +1,9 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
+import { graphql, Link } from 'gatsby'
+import React from 'react'
 import styled from 'styled-components'
-
-import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Layout from '../components/layout'
+import SEO from '../components/seo'
+import PropTypes from 'prop-types'
 
 const PostDate = styled.div`
   color: #adadad;
@@ -16,7 +16,7 @@ const PostTitle = styled.h2`
 `
 
 class BlogPostTemplate extends React.Component {
-  render() {
+  render () {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
@@ -25,7 +25,6 @@ class BlogPostTemplate extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
         />
         <PostDate>{post.frontmatter.date}</PostDate>
         <PostTitle>{post.frontmatter.title}</PostTitle>
@@ -61,6 +60,12 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
+BlogPostTemplate.propTypes = {
+  data: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired,
+  pageContext: PropTypes.object.isRequired,
+}
+
 export default BlogPostTemplate
 
 export const pageQuery = graphql`
@@ -78,7 +83,11 @@ export const pageQuery = graphql`
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")
-        description
+        image {
+          childImageSharp {
+            fluid { src }
+          }
+        }
       }
     }
   }

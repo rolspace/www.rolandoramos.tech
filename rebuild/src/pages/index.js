@@ -1,12 +1,12 @@
-import React from "react"
-import { Link, graphql } from "gatsby"
-
-import Layout from "../components/layout"
-import PostPreview from "../components/postpreview"
-import SEO from "../components/seo"
+import { graphql } from 'gatsby'
+import PropTypes from 'prop-types'
+import React from 'react'
+import Layout from '../components/layout'
+import PostPreview from '../components/postpreview'
+import SEO from '../components/seo'
 
 class BlogIndex extends React.Component {
-  render() {
+  render () {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
@@ -14,17 +14,22 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          title="All posts"
+          title='All posts'
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
-        {posts.map(({ node }) => {
+        {posts.map(({ node }, index) => {
           return (
-            <PostPreview node={node}></PostPreview>
+            <PostPreview key={index} node={node}></PostPreview>
           )
         })}
       </Layout>
     )
   }
+}
+
+BlogIndex.propTypes = {
+  data: PropTypes.object.isRequired,
+  location: PropTypes.string.isRequired,
 }
 
 export default BlogIndex

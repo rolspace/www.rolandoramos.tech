@@ -1,9 +1,10 @@
-import React, { Fragment } from "react"
-import styled from "styled-components"
-import { Flex, Box } from "@rebass/grid"
-
-import GlobalStyle from "../styles/global-styles"
-import Header from "./header"
+/* eslint-disable space-infix-ops */
+import { Box, Flex } from '@rebass/grid'
+import PropTypes from 'prop-types'
+import React, { Fragment } from 'react'
+import styled from 'styled-components'
+import GlobalStyle from '../styles/global-styles'
+import Header from './header'
 
 const HeaderBox = styled(Box)`
   background-color: #fff;
@@ -14,37 +15,41 @@ const HeaderBox = styled(Box)`
   position: sticky;
   top: 0;
   z-index: 1000;
-  
+
   @media (min-width: 40em) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
   }`
 
 class Layout extends React.Component {
-  render() {
+  render () {
     const { children } = this.props
-    
+
     return (
       <Fragment>
         <GlobalStyle />
-        <Flex flexDirection="column" flexWrap='nowrap' alignItems='center'>
+        <Flex flexDirection='column' flexWrap='nowrap' alignItems='center'>
           <HeaderBox width={1}>
             <Header />
           </HeaderBox>
-          <Box width={[1, 1/2]} mx='auto' mt="1.5rem" pl="0.75rem" pr="0.75rem">
+          <Box width={[1, 1/2]} mx='auto' mt='1.5rem' pl='0.75rem' pr='0.75rem'>
             <main>{children}</main>
           </Box>
           <Box width={1}>
             <footer>
               © {new Date().getFullYear()}, Built with
               {` `}
-              <a href="https://www.gatsbyjs.org">Gatsby</a>
+              <a href='https://www.gatsbyjs.org'>Gatsby</a>
             </footer>
           </Box>
         </Flex>
       </Fragment>
     )
   }
+}
+
+Layout.propTypes = {
+  children: PropTypes.node.isRequired,
 }
 
 export default Layout

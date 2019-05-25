@@ -1,2 +1,2 @@
-import "typeface-amiri"
-import "typeface-poppins"
+import 'typeface-amiri'
+import 'typeface-poppins'

@@ -4,10 +4,12 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-const Post = styled.article`
-  padding-bottom: 2rem;`
+const ExcerptPost = styled.article`
+  border-bottom: 1px solid #adadad;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1.5rem;`
 
-const PostDate = styled.div`
+const ExcerptDate = styled.div`
   color: #adadad;
   font-family: Poppins;
   font-size: 0.7em;
@@ -20,7 +22,7 @@ const ImageCaption = styled.div`
   font-size: 0.650em;
   text-align: right;`
 
-const PostTitleLink = styled(Link)`
+const ExcerptTitleLink = styled(Link)`
   color: #5a5a5a;
   font-family: Poppins;
   font-size: 1.3rem;
@@ -31,7 +33,7 @@ const PostTitleLink = styled(Link)`
     color: #e84145;
   }`
 
-const PostPreview = (props) => {
+const Excerpt = (props) => {
   const { node } = props
   const title = node.frontmatter.title || node.fields.slug
   const { image, caption, captionLink, captionHref } = node.frontmatter
@@ -42,8 +44,8 @@ const PostPreview = (props) => {
   }
 
   return (
-    <Post>
-      <PostDate>{node.frontmatter.date}</PostDate>
+    <ExcerptPost>
+      <ExcerptDate>{node.frontmatter.date}</ExcerptDate>
       { fluidImage ?
         <div style={{ marginBottom: `1.5rem` }}>
           <Img style={{ marginBottom: `0.250rem` }} fluid={fluidImage}></Img>
@@ -55,19 +57,19 @@ const PostPreview = (props) => {
         ''
       }
       <h2 style={{ lineHeight: `1`, margin: `0 0 1.5rem 0` }}>
-        <PostTitleLink to={node.fields.slug}>{title}</PostTitleLink>
+        <ExcerptTitleLink to={node.fields.slug}>{title}</ExcerptTitleLink>
       </h2>
       <p
         dangerouslySetInnerHTML={{
           __html: node.excerpt,
         }}
       />
-    </Post>
+    </ExcerptPost>
   )
 }
 
-PostPreview.propTypes = {
+Excerpt.propTypes = {
   node: PropTypes.node.isRequired,
 }
 
-export default PostPreview
+export default Excerpt

@@ -2,7 +2,7 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import Layout from '../components/layout'
-import PostPreview from '../components/postpreview'
+import Excerpt from '../components/excerpt'
 import SEO from '../components/seo'
 
 class BlogIndex extends React.Component {
@@ -19,7 +19,7 @@ class BlogIndex extends React.Component {
         />
         {posts.map(({ node }, index) => {
           return (
-            <PostPreview key={index} node={node}></PostPreview>
+            <Excerpt key={index} node={node}></Excerpt>
           )
         })}
       </Layout>

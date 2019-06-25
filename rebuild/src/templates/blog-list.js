@@ -1,12 +1,20 @@
-import { graphql } from 'gatsby'
+/* eslint-disable space-infix-ops */
+import { Box, Flex } from '@rebass/grid'
+import { graphql, Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Layout from '../components/layout'
 import Excerpt from '../components/excerpt'
+import Layout from '../components/layout'
 import SEO from '../components/seo'
 
 class BlogList extends React.Component {
   render () {
+    const { currentPage, pageCount } = this.props.pageContext
+    const isFirst = currentPage === 1
+    const isLast = currentPage === pageCount
+    const previous = currentPage - 1 === 1 ? '/' : `page/${currentPage - 1}`
+    const next = `page/${currentPage + 1}`
+
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMarkdownRemark.edges
@@ -22,6 +30,18 @@ class BlogList extends React.Component {
             <Excerpt key={index} node={node}></Excerpt>
           )
         })}
+        <Flex flexDirection={['column', 'row']}>
+          <Box width={[1, 1/2]}>
+            {!isFirst && (
+              <Link to={previous} rel='previous'>Previous</Link>
+            )}
+          </Box>
+          <Box width={[1, 1/2]} style={{ textAlign: 'right' }}>
+            {!isLast && (
+              <Link to={next} rel='next'>Next</Link>
+            )}
+          </Box>
+        </Flex>
       </Layout>
     )
   }
@@ -29,7 +49,8 @@ class BlogList extends React.Component {
 
 BlogList.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
 }
 
 export default BlogList

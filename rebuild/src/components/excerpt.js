@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
 
-const ExcerptPost = styled.article`
+const ExcerptArticle = styled.article`
   border-bottom: 1px solid #adadad;
   margin-bottom: 1.5rem;
   padding-bottom: 1.5rem;`
@@ -44,7 +44,7 @@ const Excerpt = (props) => {
   }
 
   return (
-    <ExcerptPost>
+    <ExcerptArticle>
       <ExcerptDate>{node.frontmatter.date}</ExcerptDate>
       { fluidImage ?
         <div style={{ marginBottom: `1.5rem` }}>
@@ -64,12 +64,12 @@ const Excerpt = (props) => {
           __html: node.excerpt,
         }}
       />
-    </ExcerptPost>
+    </ExcerptArticle>
   )
 }
 
 Excerpt.propTypes = {
-  node: PropTypes.node.isRequired,
+  node: PropTypes.object.isRequired,
 }
 
 export default Excerpt

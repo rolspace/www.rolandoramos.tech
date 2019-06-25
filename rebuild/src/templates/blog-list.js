@@ -12,8 +12,8 @@ class BlogList extends React.Component {
     const { currentPage, pageCount } = this.props.pageContext
     const isFirst = currentPage === 1
     const isLast = currentPage === pageCount
-    const previous = currentPage - 1 === 1 ? '/' : `page/${currentPage - 1}`
-    const next = `page/${currentPage + 1}`
+    const previous = currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`
+    const next = `/page/${currentPage + 1}`
 
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title

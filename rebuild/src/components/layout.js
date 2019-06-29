@@ -4,6 +4,7 @@ import PropTypes from 'prop-types'
 import React, { Fragment } from 'react'
 import styled from 'styled-components'
 import GlobalStyle from '../styles/global-styles'
+import Footer from './footer'
 import Header from './header'
 
 const HeaderBox = styled(Box)`
@@ -36,11 +37,7 @@ class Layout extends React.Component {
             <main>{children}</main>
           </Box>
           <Box width={1}>
-            <footer>
-              © {new Date().getFullYear()}, Built with
-              {` `}
-              <a href='https://www.gatsbyjs.org'>Gatsby</a>
-            </footer>
+            <Footer></Footer>
           </Box>
         </Flex>
       </Fragment>

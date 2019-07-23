@@ -1,60 +1,52 @@
-import { graphql, Link } from 'gatsby'
-import React from 'react'
-import styled from 'styled-components'
-import Layout from '../components/layout'
-import SEO from '../components/seo'
+/* eslint-disable space-infix-ops */
+import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
-
-const PostDate = styled.div`
-  color: #adadad;
-  margin-bottom: 30px;
-`
-
-const PostTitle = styled.h2`
-  color: #5a5a5a;
-  font-weight: 500;
-`
+import React from 'react'
+import Layout from '../components/layout'
+import Pager from '../components/pager'
+import SEO from '../components/seo'
+import PostDate from '../components/styled/post-date'
+import PostImageCaption from '../components/styled/post-image-caption'
+import PostTitle from '../components/styled/post-title'
 
 class BlogPostTemplate extends React.Component {
   render () {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
-    const { previous, next } = this.props.pageContext
+    const { previous, next, slug } = this.props.pageContext
+    const { image, caption, captionLink, captionHref } = post.frontmatter
+
+    let fluidImage = null
+    if (image && image.childImageSharp && image.childImageSharp.fluid) {
+      fluidImage = image.childImageSharp.fluid
+    }
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
         />
-        <PostDate>{post.frontmatter.date}</PostDate>
-        <PostTitle>{post.frontmatter.title}</PostTitle>
+        <PostDate date={post.frontmatter.date} />
+        { fluidImage ?
+          <PostImageCaption
+            caption={caption}
+            captionLink={captionLink}
+            captionHref={captionHref}
+            fluidImage={fluidImage}
+          /> :
+          ''
+        }
+        <PostTitle title={post.frontmatter.title} to={slug} />
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
         <hr/>
-
-        <ul
-          style={{
-            display: `flex`,
-            flexWrap: `wrap`,
-            justifyContent: `space-between`,
-            listStyle: `none`,
-            padding: 0,
-          }}
-        >
-          <li>
-            {previous && (
-              <Link to={previous.fields.slug} rel="prev">
-                ← {previous.frontmatter.title}
-              </Link>
-            )}
-          </li>
-          <li>
-            {next && (
-              <Link to={next.fields.slug} rel="next">
-                {next.frontmatter.title} →
-              </Link>
-            )}
-          </li>
-        </ul>
+        <Pager
+          nextExists={Boolean(next)}
+          nextTitle={next.frontmatter.title}
+          nextTo={next.fields.slug}
+          previousExists={Boolean(previous)}
+          previousTitle={previous.frontmatter.title}
+          previousTo={previous.fields.slug}
+        />
       </Layout>
     )
   }
@@ -85,9 +77,12 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         image {
           childImageSharp {
-            fluid { src }
+            fluid { ...GatsbyImageSharpFluid }
           }
         }
+        caption
+        captionLink
+        captionHref
       }
     }
   }

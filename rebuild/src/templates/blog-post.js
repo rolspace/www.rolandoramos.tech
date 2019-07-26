@@ -5,6 +5,7 @@ import React from 'react'
 import Layout from '../components/layout'
 import Pager from '../components/pager'
 import SEO from '../components/seo'
+import PostArticle from '../components/styled/post-article'
 import PostDate from '../components/styled/post-date'
 import PostImageCaption from '../components/styled/post-image-caption'
 import PostTitle from '../components/styled/post-title'
@@ -23,22 +24,21 @@ class BlogPostTemplate extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title={post.frontmatter.title}
-        />
-        <PostDate date={post.frontmatter.date} />
-        { fluidImage ?
-          <PostImageCaption
-            caption={caption}
-            captionLink={captionLink}
-            captionHref={captionHref}
-            fluidImage={fluidImage}
-          /> :
-          ''
-        }
-        <PostTitle title={post.frontmatter.title} to={slug} />
-        <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        <hr/>
+        <SEO title={post.frontmatter.title} />
+        <PostArticle>
+          <PostDate date={post.frontmatter.date} />
+          { fluidImage ?
+            <PostImageCaption
+              caption={caption}
+              captionLink={captionLink}
+              captionHref={captionHref}
+              fluidImage={fluidImage}
+            /> :
+            ''
+          }
+          <PostTitle title={post.frontmatter.title} to={slug} />
+          <div dangerouslySetInnerHTML={{ __html: post.html }} />
+        </PostArticle>
         <Pager
           nextExists={Boolean(next)}
           nextTitle={next.frontmatter.title}

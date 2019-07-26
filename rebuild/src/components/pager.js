@@ -12,14 +12,14 @@ const PagerFlex = styled(Flex)`
 const Pager = (props) => {
   return (
     <PagerFlex>
-      <Box width={[1/2]}>
+      <Box width={[1/2]} style={{ lineHeight: 1 }}>
         {props.previousExists && (
           <PageLink to={props.previousTo} rel='previous'>
             <FaChevronLeft />&nbsp;{props.previousTitle || 'Previous'}
           </PageLink>
         )}
       </Box>
-      <Box width={[1/2]} style={{ textAlign: 'right' }}>
+      <Box width={[1/2]} style={{ lineHeight: 1, textAlign: 'right' }}>
         {props.nextExists && (
           <PageLink to={props.nextTo} rel='next'>
             {props.nextTitle || 'Next'}&nbsp;<FaChevronRight />

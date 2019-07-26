@@ -28,7 +28,7 @@ const Excerpt = (props) => {
         ''
       }
       <PostTitle to={node.fields.slug} title={title} />
-      <p
+      <div
         dangerouslySetInnerHTML={{
           __html: node.excerpt,
         }}

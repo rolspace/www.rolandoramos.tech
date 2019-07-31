@@ -5,10 +5,10 @@ import React from 'react'
 import Layout from '../components/layout'
 import Pager from '../components/pager'
 import SEO from '../components/seo'
-import PostArticle from '../components/styled/post-article'
-import PostDate from '../components/styled/post-date'
-import PostImageCaption from '../components/styled/post-image-caption'
-import PostTitle from '../components/styled/post-title'
+import PostArticle from '../components/common/post-article'
+import PostDate from '../components/common/post-date'
+import PostImageCaption from '../components/common/post-image-caption'
+import PostTitle from '../components/common/post-title'
 
 class BlogPostTemplate extends React.Component {
   render () {
@@ -41,11 +41,11 @@ class BlogPostTemplate extends React.Component {
         </PostArticle>
         <Pager
           nextExists={Boolean(next)}
-          nextTitle={next.frontmatter.title}
-          nextTo={next.fields.slug}
+          nextTitle={next ? next.frontmatter.title : ''}
+          nextTo={next ? next.fields.slug : ''}
           previousExists={Boolean(previous)}
-          previousTitle={previous.frontmatter.title}
-          previousTo={previous.fields.slug}
+          previousTitle={previous ? previous.frontmatter.title : ''}
+          previousTo={previous ? previous.fields.slug : ''}
         />
       </Layout>
     )

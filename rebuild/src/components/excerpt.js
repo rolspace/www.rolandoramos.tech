@@ -1,9 +1,9 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import PostArticle from './styled/post-article'
-import PostDate from './styled/post-date'
-import PostImageCaption from './styled/post-image-caption'
-import PostTitle from './styled/post-title'
+import PostArticle from './common/post-article'
+import PostDate from './common/post-date'
+import PostImageCaption from './common/post-image-caption'
+import PostTitle from './common/post-title'
 
 const Excerpt = (props) => {
   const { node } = props

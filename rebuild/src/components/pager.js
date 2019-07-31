@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import styled from 'styled-components'
-import PageLink from './styled/page-link'
+import PageLink from './common/page-link'
 
 const PagerFlex = styled(Flex)`
   margin-bottom: 1.5rem;`

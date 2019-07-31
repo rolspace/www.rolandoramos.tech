@@ -5,7 +5,7 @@ import React from 'react'
 import { IconContext } from 'react-icons'
 import { IoIosMenu } from 'react-icons/io'
 import styled from 'styled-components'
-import Logo from './common/logo'
+import Logo from './lib/logo'
 
 const MenuFlex = styled(Flex)`
   display: ${props => props.hidden ? 'none' : 'flex'};

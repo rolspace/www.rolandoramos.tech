@@ -1,12 +1,12 @@
 /* eslint-disable space-infix-ops */
 import React from 'react'
 import { Box, Flex } from '@rebass/grid'
-import Footnote from './common/footnote'
-import PageFooter from './common/page-footer'
+import Footnote from './lib/footnote'
+import StyledFooter from './lib/styled-footer'
 
 const Footer = (props) => {
   return (
-    <PageFooter>
+    <StyledFooter>
       <Flex flexDirection={['column', 'column', 'row']}>
         <Box width={[1, 1, 1/4]}>
           <span>© 2014-{new Date().getFullYear()} Rolando Ramos</span>
@@ -20,7 +20,7 @@ const Footer = (props) => {
           </div>
         </Footnote>
       </Flex>
-    </PageFooter>
+    </StyledFooter>
   )
 }
 

@@ -1,7 +1,7 @@
 import { Link } from 'gatsby'
 import React from 'react'
 import styled from 'styled-components'
-import logo from '../../../content/assets/logo.png'
+import logo from '../../../../content/assets/logo.png'
 
 const LogoHeader = styled.h1`
   line-height: 1;

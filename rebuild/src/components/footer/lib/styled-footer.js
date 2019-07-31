@@ -5,8 +5,8 @@ const PageFooter = styled.footer`
   color: #979797;
   font-family: Poppins;
   font-size: 0.7em;
-  height: 2.5rem;
-  line-height: 2.5rem;
+  height: 2rem;
+  line-height: 2rem;
   padding: 0 0.5rem;
   text-align: center;
 

@@ -9,6 +9,8 @@ const Footnote = styled(Box)`
   margin-top: 0.25rem;
 
   @media (min-width: 52em) {
+    margin-bottom: 0;
+    margin-top: 0;
     text-align: right;
   }`
 

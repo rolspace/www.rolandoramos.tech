@@ -1,6 +1,6 @@
 import styled from 'styled-components'
 
-const PageFooter = styled.footer`
+const FooterContainer = styled.footer`
   border-top: 1px solid #e84145;
   color: #979797;
   font-family: Poppins;
@@ -15,4 +15,4 @@ const PageFooter = styled.footer`
     text-align: left;
   }`
 
-export default PageFooter
+export default FooterContainer

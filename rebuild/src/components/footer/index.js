@@ -2,11 +2,11 @@
 import React from 'react'
 import { Box, Flex } from '@rebass/grid'
 import Footnote from './lib/footnote'
-import StyledFooter from './lib/styled-footer'
+import FooterContainer from './lib/footer-container'
 
 const Footer = (props) => {
   return (
-    <StyledFooter>
+    <FooterContainer>
       <Flex flexDirection={['column', 'column', 'row']}>
         <Box width={[1, 1, 1/4]}>
           <span>© 2014-{new Date().getFullYear()} Rolando Ramos</span>
@@ -20,7 +20,7 @@ const Footer = (props) => {
           </div>
         </Footnote>
       </Flex>
-    </StyledFooter>
+    </FooterContainer>
   )
 }
 

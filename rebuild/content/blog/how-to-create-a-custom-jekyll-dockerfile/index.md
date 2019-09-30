@@ -39,7 +39,11 @@ By adding <code>/bin/bash</code> at the end of the command, I will have access t
 
 Unfortunately, after creating and starting the container, I ran into my first problem quite quickly:
 
+![Missing pygments](./pygments-missing-error.png)
+
 I needed to include the pygments highlighter as a dependency using a Gemfile. I do not recall having to do this the first time I started using Jekyll. A quick search gave me the [reason](https://jekyllrb.com/docs/upgrading/2-to-3/#syntax-highlighter-changed).
+
+![Missing dependencies](./dependencies-missing-error.png)
 
 I added pygments into the Gemfile and then, I realized I was missing more dependencies. Good thing I had decided to do this. I created the Gemfile with the missing dependencies:
 
@@ -54,6 +58,8 @@ gem 'pygments.rb', group: :jekyll_plugins
 </pre>
 
 This time Docker ran successfully, and I was able to trigger the <code>jekyll serve</code> command from the container's shell:
+
+![running Jekyll serve](./jekyll-serve-success.png)
 
 My personal setup just needs one additional step to run. I have to install the gulp-cli npm package as a global package in the container. The default Jeyll container already includes node v6.9.2, so it was only a matter of including a new command:
 
@@ -81,6 +87,10 @@ Then, I deleted the container and the local image:
 
 I rebuilt my new custom image as a container using the initial <a href="#build">build command</a> and then, <a href="#run">ran the container</a>. On the terminal prompt I entered the gulp command to build and serve the development version of the site:
 
+![running Jekyll serve through gulp.js](./gulp-task-success.png)
+
 That was enough to get my site running on a local container. The next test would make sure I could start the container on my Windows machine and host the Jekyll site. I pushed my changes to the Dockerfile to the repository, built the image on the Windows machine, and ran the container using the same steps described earlier:
+
+![running Jekyll in a container in Windows](./jekyll-container-windows.png)
 
 Now, this is a very simple setup that you can use to get your local jekyll environment up and running in a few minutes using Docker.

@@ -1,6 +1,7 @@
 ---
 title: 'München'
-date: '2017-02-13T00:00:00.000Z'
+date: '2014-08-11T00:00:00.000Z'
+image: './muenchen.jpg'
 ---
 
 My stay in Munich was a bit short, even so, the fact is that M&uuml;nich is a GREAT place to visit. The weather was right, the food was fantastic, and the beers were cold.

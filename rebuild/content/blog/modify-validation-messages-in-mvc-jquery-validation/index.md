@@ -1,6 +1,6 @@
 ---
 title: Modify Validation Messages in ASP.NET MVC with jQuery Validation
-date: '2017-02-13T00:00:00.000Z'
+date: '2014-05-25T00:00:00.000Z'
 ---
 
 A few weeks ago I needed to change the way in which the unobtrusive validation messages were displayed in a form in an ASP.NET MVC application.
@@ -64,7 +64,8 @@ In order to edit items from this model, we will use a Razor view with a form tha
 {% endhighlight %}
 
 Such a view would provide the following result:
-<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/standardunobstrusive.jpg" alt="Unobstrusive validation using default behavior"/>
+
+![Standard unobstrusive validation](./standard-unobstrusive.jpg)
 
 In order to modify how the unobstrusive validation messages are displayed, we need to access one of the methods provided by the jQuery Validator that is packaged with ASP.NET MVC v4. The <code>setDefaults</code> method allows us to modify the jQuery Validator's default settings.
 
@@ -105,4 +106,4 @@ If you want to remove the tooltip if the element becomes valid, we would take ad
 
 Since the <code>defaultShowErrors</code> method is being used, it is important to remove all the <code>Html.ValidationFor</code> helpers from the Razor View. This way only one set of validation messages will be displayed for the input elements:
 
-<img class="mx-auto d-block img-fluid lazyload" src="/assets/images/140525/tooltipunobstrusive.jpg" alt="Unobstrusive validation using tooltips" />
+![Unobstrusive validation with tooltips](./tooltip-unobstrusive.jpg)

@@ -19,6 +19,8 @@ public class Model
 
 This custom attribute will map to a field similar to the one shown in this image:
 
+![Sitecore Collection field](./sitecore-field.jpg)
+
 In order to create this custom attribute, it is necessary to inherit from the `SitecoreFieldAttribute` class from the Glass.Mapper.Sc.Configuration.Attributes namespace. In this scenario, the Configure method from the `SitecoreFieldAttribute` class must be overridden to setup the Attribute's configuration:
 
 {% highlight c# %}
@@ -113,12 +115,12 @@ public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper
       SitecoreFieldConfiguration config, SitecoreDataMappingContext context)
    {
       IEnumerable enumerable = value as IEnumerable;
-      
+
       if (enumerable == null)
          return (string) null;
 
       List<string> list = new List<string>();
-      
+
       foreach (object obj in enumerable)
       {
          string str = this.Mapper.SetFieldValue(obj, config, context);
@@ -186,6 +188,8 @@ public static IDependencyResolver CreateResolver()
 {% endhighlight %}
 
 Once the code is deployed to a Sitecore instance, we can quickly show that the custom mapper implemented in the *CustomIEnumerableMapper* class is being executed:
+
+![Sitecore Log](./sitecore-log.jpg)
 
 As a final note, it is important to point out that this approach will work if you are using Glass.Mapper 4.0 together with the Glass.Mapper.Sc.CastleWindsor 4.0 library in your solution.
 

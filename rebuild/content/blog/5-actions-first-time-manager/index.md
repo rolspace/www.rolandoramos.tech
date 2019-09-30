@@ -1,6 +1,7 @@
 ---
 title: 5 actions that helped me as a first time manager
 date: '2017-02-20T00:00:00.000Z'
+image: ./5-tips-first-time-manager.jpg
 ---
 
 It has been almost 18 months since I became a team manager for the first time in my career. This is something I always wanted to do, but once it happened, I realized that there were many things I did not know about management...far more than I had expected. I needed to approach this new role a lot differently from my previous position as Technical Lead.

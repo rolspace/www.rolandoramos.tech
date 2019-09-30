@@ -1,6 +1,7 @@
 ---
 title: 'Zürich: 263'
 date: '2014-12-13T00:00:00.000Z'
+image: './zurich263.jpg'
 ---
 
 Our first winter in Zurich is almost here. Little by little the clouds have taken over and temperature has been dropping gradually in the past few weeks.

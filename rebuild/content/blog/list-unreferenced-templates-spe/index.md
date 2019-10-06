@@ -5,7 +5,7 @@ date: '2016-10-31T00:00:00.000Z'
 
 This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. __Standard Values will not be counted as a referrer.
 
-{% highlight powershell %}
+```powershell
 #Get the Templates in the path, excluding default Sitecore Templates and __Standard Values
 $templates = Get-ChildItem -Path 'master:\sitecore\templates\path\to\templates' -Recurse |`
     Where-Object { $_.TemplateName -ne 'Template Folder' `
@@ -27,7 +27,6 @@ foreach ($template in $templates) {
 }
 
 $myArray | Format-Table Name, @{ Label = 'Path'; Expression={ $_.Paths.Path } }
-
-{% endhighlight %}
+```
 
 This script can be used as a starting point for additional actions like archiving or deleting the unused templates, or setting up a [SPE Report][SPE Reports] to filter a query adding more parameters.

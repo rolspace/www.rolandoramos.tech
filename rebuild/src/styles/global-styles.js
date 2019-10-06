@@ -14,6 +14,10 @@ const GlobalStyle = createGlobalStyle`
   a {
     touch-action: manipulation;
   }
+
+  .gatsby-highlight {
+    font-size: 0.8rem;
+  }
 `
 
 export default GlobalStyle

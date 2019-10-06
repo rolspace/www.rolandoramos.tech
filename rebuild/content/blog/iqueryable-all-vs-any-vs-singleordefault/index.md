@@ -9,7 +9,7 @@ The condition being tested was straightforward, the code just needed to determin
 
 The code was similar to this:
 
-{% highlight c# %}
+```csharp
 //Assume we have a table in the database called Customer with 200.000 records.
 
 //Determine if ALL the records in the table have a
@@ -18,7 +18,7 @@ if (context.Customer.All(c => c.CustomerId != customerId))
 {
    //Execute code...
 }
-{% endhighlight %}
+```
 
 <!--more-->
 
@@ -28,25 +28,25 @@ Since this was the cause of the timeout, it seemed like a good option to change 
 
 The statement had to be rewritten in a way that the condition would match the logic of the previous statement in order to produce the same result:
 
-{% highlight c# %}
+```csharp
 //Determine if ANY of the records in the Customer table
 //have a CustomerID that is equal to the customerId variable
 if (!context.Customer.Any(c => c.CustomerID == customerId))
 {
    //Execute code...
 }
-{% endhighlight %}
+```
 
 The <em>if</em> statement could also be rewritten in order to use the <code>IQueryable.SingleOrDefault()</code> instead:
 
-{% highlight c# %}
+```csharp
 //Find the first record in the Customer table that
 //has a CustomerID that is equal to the customerId variable
 if (context.Customer.FirstOrDefault(c => c.CustomerID == customerId) == null)
 {
    //Execute code...
 }
-{% endhighlight %}
+```
 
 **So which is the right method to use?** Using <code>IQueryable.Any()</code> or <code>IQueryable.SingleOrDefault()</code> made the Exceptions go away. However, the best way to find out the best approach is to measure the execution time for the SQL queries generated through these methods.
 
@@ -128,7 +128,7 @@ The results show that the <code>IQueryable.All()</code> method is not the best o
 
 If you take a look at the SQL code generated from the <code>IQueryable.All()</code> and <code>IQueryable.Any()</code> methods you can immediately notice the difference between them. For the specific scenario I described at the beginning of the article, using the <code>All()</code> method was the incorrect choice from the beginning...the logic should have been written using the <code>Any()</code> method.
 
-{% highlight sql %}
+```sql
 SET @Id = 0;
 
 --IQueryable.All()
@@ -157,6 +157,6 @@ SELECT
       ELSE cast(0 as bit)
    END AS [C1]
 FROM ( SELECT 1 AS X ) AS [SingleRowTable1]
-{% endhighlight %}
+```
 
 There will be some specific cases in which <code>IQueryable.All()</code> must be used in order to verify a condition on all the elements of a sequence. It is important to recognize these situations and plan accordingly, in order to minimize the impact of this call on the performance of an application.

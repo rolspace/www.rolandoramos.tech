@@ -15,7 +15,7 @@ In this article I will show you how to achieve this.
 
 Let's create an Employee class with the class definition shown in the snippet below. A few data annotations have been added to the properties of the class in order to trigger specific validation messages.
 
-{% highlight c# %}
+```csharp
 public class Employee
 {
     [Required]
@@ -30,11 +30,11 @@ public class Employee
     [Phone]
     public string PhoneNumber { get; set; }
 }
-{% endhighlight %}
+```
 
 In order to edit items from this model, we will use a Razor view with a form that contains <code>Html.ValidationMessageFor</code> helper methods to display the validation errors for the Employee class properties.
 
-{% highlight html %}
+```aspnet
 <div class="form-group">
   @Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })
   <div class="col-md-10">
@@ -61,7 +61,7 @@ In order to edit items from this model, we will use a Razor view with a form tha
     <input type="submit" value="Save" class="btn btn-default" />
   </div>
 </div>
-{% endhighlight %}
+```
 
 Such a view would provide the following result:
 
@@ -71,12 +71,12 @@ In order to modify how the unobstrusive validation messages are displayed, we ne
 
 For this specific scenario we need to modify the Validator's <code>showErrors</code> function. In an MVC application, the default <code>showErrors</code> function displaya the validation errors associated with a form input. An easy way to test this is to add the following script to the Razor view.
 
-{% highlight javascript %}
+```javascript
 $.validator.setDefaults({
   showErrors: function (errorMap, errorList) {
   }
 })
-{% endhighlight %}
+```
 
 In this case, unobtrusive validation will still work: the form will not submit if there are errors. However, there will be no error messages displayed. The <code>showErrors</code> function is called every time a validation event occurs (keyup, onblur, submit, etc). The two parameters in the function signature provide information about the elements being validated when the event is triggered.
 
@@ -86,7 +86,7 @@ The <code>errorList</code> variable is an array of objects, where the objects in
 
 Using this information, it is possible to create a new <code>showErrors</code> method that will allow us to display validation messages in a different manner:
 
-{% highlight javascript %}
+```javascript
 $.validator.setDefaults({
   showErrors: function (errorMap, errorList) {
      $(".valid").each(function (i, v) {
@@ -98,7 +98,7 @@ $.validator.setDefaults({
      this.defaultShowErrors();
   }
 })
-{% endhighlight %}
+```
 
 In this case we are using the <code>errorList</code> parameter to obtaina list of the validation errors in a form. When an element is invalid, a tooltip (provided by Bootstrap) is added in order to display the validation message.
 

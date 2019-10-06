@@ -7,14 +7,14 @@ The SQL Server Pivot command is quite useful in scenarios that require some mani
 
  Suppose we have a table with the following schema:
 
-{% highlight sql %}
+```sql
 CREATE TABLE [Employee] (
   [ID] [int] NOT NULL,
   [JobTitle] [nvarchar](50) NOT NULL,
   [Gender] [nchar](1) NOT NULL,
   [BirthDate] [date] NOT NULL,
   [HireDate] [date] NOT NULL)
-{% endhighlight %}
+```
 
 <!--more-->
 
@@ -83,12 +83,12 @@ Here is some sample data for the Employee table:
 
 Now, let&acute;s say you wanted to obtain a result set that provides the average age of the employees broken down by hire year, using a query like this:
 
-{% highlight sql %}
+```sql
 SELECT DATEPART(YEAR, HireDate) as HireYear,
   AVG(DATEDIFF(YEAR, BirthDate, GETDATE())) as AverageAge
 FROM Employee
   GROUP BY DATEPART(YEAR, HireDate)
-{% endhighlight %}
+```
 
 The results:
 <div class="table-responsive">
@@ -127,11 +127,11 @@ This is a standard relational result set, but what if we needed to display the d
 
  This command provides a way to modify a result set from a query in a way that allows the unique values from a column to be displayed as the column headers in the pivoted data. In order to start writing a <code>PIVOT</code> query, you need a source query expression. For our example, we can use the following query:
 
-{% highlight sql %}
+```sql
 SELECT DATEPART(YEAR, HireDate) as HireYear
   DATEDIFF(YEAR, BirthDate, GETDATE()) as Age,
 FROM Employee
-{% endhighlight %}
+```
 
 This is a simplified version of the query shown previously, since it is not calculating the average value for the age. It will display the <em>HireYear</em> and <em>Age</em> for every Employee, so there would be no average calculation at first. This will be the source query we need to create the result query.
 
@@ -141,7 +141,7 @@ This is a simplified version of the query shown previously, since it is not calc
 
  For the column headers, we want to use the unique values from the <em>HireYear</em> column in the source query. Once this is ready, all that remains is to perform a SELECT on the pivoted data in order to display it.
 
-{% highlight sql %}
+```sql
 SELECT 'AverageAge' AS HireYear,
   PVT.[2010], PVT.[2011],
   PVT.[2012], PVT.[2013]
@@ -154,7 +154,7 @@ FROM
     /* Data rows and pivoted columns */
     (AVG(Age)
     FOR HireYear IN ([2010],[2011],[2012],[2013])) as PVT
-{% endhighlight %}
+```
 
 The result of this query is shown in the following table.
 

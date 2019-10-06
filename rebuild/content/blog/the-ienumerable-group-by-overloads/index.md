@@ -5,7 +5,7 @@ date: '2016-03-08T00:00:00.000Z'
 
 In the past, I have had to implement some functionality using the GroupBy capabilities of Linq. I have always found it easier to use the Linq query syntax, instead of using Lambda expressions.
 
-Today, I have decided to go through each of the GroupBy overloads using Lambda expressions, in order to clarify things and make life easier on my end (and maybe for you as well!). One thing to note, I have decided to exclude the overloads using the <code>IEqualityComparer</code> parameter, as they are the same version of another overload with just an additional parameter.
+Today, I have decided to go through each of the GroupBy overloads using Lambda expressions, in order to clarify things and make life easier on my end (and maybe for you as well!). One thing to note, I have decided to exclude the overloads using the `IEqualityComparer` parameter, as they are the same version of another overload with just an additional parameter.
 
 In these examples I will use data from this table:
 
@@ -153,25 +153,25 @@ In these examples I will use data from this table:
 
 This table is a scaled down version of the Person.Person table found in the AdventureWorks database provided for free by Microsoft. I am using a table with only 20 records to better illustrate how the overloads work. The table has been mapped to the following C# class using Entity Framework Code First:
 
-{% highlight c# %}
+```csharp
 public class AWContext : DbContext
 {
     public AWContext() { }
- 
+
     public DbSet<Person> People { get; set; }
 }
- 
+
 public class Person
 {
     public int Id { get; set; }
- 
+
     public string Type { get; set; }
- 
+
     public string FirstName { get; set; }
- 
+
     public string LastName { get; set; }
 }
-{% endhighlight %}
+```
 
 Now I am ready to write some code. This post will include the Linq syntax for each of the Lambda overloads, for comparison purposes. Here we go:
 
@@ -179,14 +179,14 @@ Now I am ready to write some code. This post will include the Linq syntax for ea
 
 The first GroupBy overload is the simplest to use. The method takes two parameters, the first parameter is the <code>IEnumerable</code> collection to be grouped, while the second parameter defines the key that will be used to group the collection.
 
-{% highlight c# %}
+```csharp
 //Lambda
 Enumerable.GroupBy(context.People, p => p.Type);
- 
+
 //Linq
 from person in context.People
    group person by person.Type;
-{% endhighlight %}
+```
 
 The parameter that creates the key is: <code>Func&lt;TSource, TKey&gt;</code>. It takes an element of the type defined by the source collection and returns an element of the type defined in the selector delegate. In the example, the parameter is declared with the type: <code>Func&lt;Person, string&gt;</code>.
 
@@ -230,21 +230,21 @@ The second overload takes three parameters, two of which we have already seen in
 
 In the code sample, the elements in the source collection, of type  <code>Person</code>, are being grouped by the Type property into a new anonymous object. This object has two properties, the person’s full name and the age. The new parameter is declared with the type:  <code>Func&lt;Person, “Anonymous Type”&gt;</code>:
 
-{% highlight c# %}
+```csharp
 //Lambda
 Enumerable.GroupBy(context.People, p => p.Type,
    p => new {
       FullName = string.Format("{0} {1}", p.FirstName, p.LastName),
       Age = p.Age
    });
- 
+
 //Linq
 from person in context.People
 group new {
    FullName = string.Format("{0} {1}", person.FirstName, person.LastName),
    Age = person.Age
 } by person.Type;
-{% endhighlight %}
+```
 
 The code sample produces the following grouped result:
 
@@ -286,7 +286,7 @@ The next overload also takes 3 parameters, two of which we have seen in overload
 
 Basically, the method will project the key of a specific grouping, and the elements associated to that key. This overload allows the caller to project the grouped collection into a collection of a different type:
 
-{% highlight c# %}
+```csharp
 //Lambda
 Enumerable.GroupBy(context.People, p => p.Type,
    (key, temp) =>
@@ -296,7 +296,7 @@ Enumerable.GroupBy(context.People, p => p.Type,
       MaxAge = temp.Max(a => a.Age),
       MinAge = temp.Min(a => a.Age)
    });
- 
+
 //Linq
 from person in context.People
    group person by person.Type into temp
@@ -306,7 +306,7 @@ from person in context.People
       MaxAge = temp.Max(a => a.Age),
       MinAge = temp.Min(a => a.Age)
    };
-{% endhighlight %}
+```
 
 One important difference between this overload and the previous two overloads, is that the return value of the method is no longer a collection of type  <code>IEnumerable&lt;IGrouping&lt;TKey, TSource&gt;&gt;</code>, where TKey is the type of the key and TSource is the type of the grouped items.
 
@@ -345,7 +345,7 @@ The sample generates a new collection where the items contain the key used to cr
 
 The final overload combines all the parameters added in the previous overloads. Using this, the overload allows the caller to create the key to group the source collection, to project the source collection into a collection of a different type, and to project the grouped result into a collection of a different type:
 
-{% highlight c# %}
+```csharp
 //Lambda
 Enumerable.GroupBy(context.People, p => p.Type,
    p => new {
@@ -359,7 +359,7 @@ Enumerable.GroupBy(context.People, p => p.Type,
       MaxAge = temp.Max(a => a.Age),
       MinAge = temp.Min(a => a.Age)
    });
- 
+
 //Linq
 from person in context.People
    group new {
@@ -374,7 +374,7 @@ from person in context.People
       MaxAge = temp.Max(a => a.Age),
       MinAge = temp.Min(a => a.Age)
    };
-{% endhighlight %}
+```
 
 The result from the code sample is the following:
 

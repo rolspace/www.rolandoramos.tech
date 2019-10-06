@@ -13,15 +13,17 @@ I wanted to setup a SQL Server instance in order to install Sitecore 8.2 on my m
 
 I started by pulling the latest version of the Docker image:
 
-{% highlight shell %}
+```shell
 > docker pull microsoft/mssql-server-linux
-{% endhighlight %}
+```
 
 Once that was completed, I ran the container, following the instructions from the Docker Hub page:
 
-{% highlight shell %}
-> docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' -e 'SA_PASSWORD=Password$1' -p 1433:1433 -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
-{% endhighlight %}
+```shell
+> docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' \
+    -e 'SA_PASSWORD=Password$1' -p 1433:1433 \
+    -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
+```
 
 The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: one to accept the End User Agreement and the other to create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port.
 
@@ -53,11 +55,11 @@ Once the installation of the Sitecore Client was complete, it was time to modify
 
 I opened the ConnectionStrings.config file inside the App_Config folder of the Sitecore client installation and made the following changes to the core, master, and web connection details:
 
-{% highlight xml %}
+```xml
 <add name="core" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Core"/>
 <add name="master" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Master"/>
 <add name="web" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Web"/>
-{% endhighlight %}
+```
 
 I used the connection details for the SQL Server Linux container running in my machine, then I loaded the browser and accessed the index of my local install, http://sc82v170614/
 

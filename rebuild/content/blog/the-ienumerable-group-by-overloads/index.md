@@ -177,7 +177,7 @@ Now I am ready to write some code. This post will include the Linq syntax for ea
 
 <p class="subtitle">1. Enumerable.GroupBy&lt;TSource, TKey&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;)</p>
 
-The first GroupBy overload is the simplest to use. The method takes two parameters, the first parameter is the <code>IEnumerable</code> collection to be grouped, while the second parameter defines the key that will be used to group the collection.
+The first GroupBy overload is the simplest to use. The method takes two parameters, the first parameter is the `IEnumerable` collection to be grouped, while the second parameter defines the key that will be used to group the collection.
 
 ```csharp
 //Lambda
@@ -188,9 +188,9 @@ from person in context.People
    group person by person.Type;
 ```
 
-The parameter that creates the key is: <code>Func&lt;TSource, TKey&gt;</code>. It takes an element of the type defined by the source collection and returns an element of the type defined in the selector delegate. In the example, the parameter is declared with the type: <code>Func&lt;Person, string&gt;</code>.
+The parameter that creates the key is: `Func<TSource, TKey>`. It takes an element of the type defined by the source collection and returns an element of the type defined in the selector delegate. In the example, the parameter is declared with the type: `Func<Person, string>`.
 
-The items in the collection are being grouped by the Type property into a collection that keeps the original type intact, that is to say, the grouping contains elements of type <code>Person.</code> If we iterate over the grouped collection, these are the results:
+The items in the collection are being grouped by the Type property into a collection that keeps the original type intact, that is to say, the grouping contains elements of type `Person`. If we iterate over the grouped collection, these are the results:
 
 <div class="table-responsive">
 <table class="table table-bordered">
@@ -226,9 +226,9 @@ The items in the collection are being grouped by the Type property into a collec
 
 <p class="subtitle">2. Enumerable.GroupBy&lt;TSource, TKey, TElement&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</p>
 
-The second overload takes three parameters, two of which we have already seen in overload #1. The third parameter is:  <code>Func&lt;TSource, TElement&gt;</code>. This parameter defines a delegate that will project the elements in the source collection into a new collection.
+The second overload takes three parameters, two of which we have already seen in overload #1. The third parameter is:  `Func<TSource, TElement>`. This parameter defines a delegate that will project the elements in the source collection into a new collection.
 
-In the code sample, the elements in the source collection, of type  <code>Person</code>, are being grouped by the Type property into a new anonymous object. This object has two properties, the person’s full name and the age. The new parameter is declared with the type:  <code>Func&lt;Person, “Anonymous Type”&gt;</code>:
+In the code sample, the elements in the source collection, of type  `Person`, are being grouped by the Type property into a new anonymous object. This object has two properties, the person’s full name and the age. The new parameter is declared with the type: `Func<Person, “Anonymous Type”>`:
 
 ```csharp
 //Lambda
@@ -282,7 +282,7 @@ The code sample produces the following grouped result:
 
 <p class="subtitle">3. Enumerable.GroupBy&lt;TSource, TKey, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</p>
 
-The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is:  <code>Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;</code>. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.
+The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is:  `Func<TKey, IEnumerable<TSource>, TResult>`. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.
 
 Basically, the method will project the key of a specific grouping, and the elements associated to that key. This overload allows the caller to project the grouped collection into a collection of a different type:
 
@@ -308,9 +308,9 @@ from person in context.People
    };
 ```
 
-One important difference between this overload and the previous two overloads, is that the return value of the method is no longer a collection of type  <code>IEnumerable&lt;IGrouping&lt;TKey, TSource&gt;&gt;</code>, where TKey is the type of the key and TSource is the type of the grouped items.
+One important difference between this overload and the previous two overloads, is that the return value of the method is no longer a collection of type `IEnumerable<IGrouping<TKey, TSource>>`, where TKey is the type of the key and TSource is the type of the grouped items.
 
-In this case, the type of the grouped collection depends on the third parameter discussed earlier. In the example, the return value of the method is a collection of type  <code>IEnumerable&lt;“AnonymousType”&gt;</code>, where the Anonymous Type has four properties: Key, Count, MaxAge, and MinAge.
+In this case, the type of the grouped collection depends on the third parameter discussed earlier. In the example, the return value of the method is a collection of type `IEnumerable<“AnonymousType”>`, where the Anonymous Type has four properties: Key, Count, MaxAge, and MinAge.
 
 The sample generates a new collection where the items contain the key used to create the grouping, the number of elements in the group, and the maximum/minimum age within that group:
 

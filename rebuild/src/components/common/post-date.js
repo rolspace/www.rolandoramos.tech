@@ -5,7 +5,7 @@ import styled from 'styled-components'
 const DateDiv = styled.div`
   color: #adadad;
   font-family: Poppins;
-  font-size: 0.7em;
+  font-size: 0.70rem;
   font-weight: 500;
   margin-bottom: 1.5rem;`
 

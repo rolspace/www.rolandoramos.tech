@@ -7,7 +7,7 @@ import styled from 'styled-components'
 const CaptionDiv = styled.div`
   color: #636c72;
   font-family: Poppins;
-  font-size: 0.650em;
+  font-size: 0.65rem;
   text-align: right;`
 
 const PostImageCaption = (props) => {

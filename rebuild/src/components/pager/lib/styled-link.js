@@ -6,7 +6,7 @@ const PageLink = styled(Link)`
   font-family: Poppins;
   font-size: 0.70rem;
   font-weight: 400;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05rem;
   text-decoration: none;
 
   &:hover {

@@ -4,7 +4,7 @@ const FooterContainer = styled.footer`
   border-top: 1px solid #e84145;
   color: #979797;
   font-family: Poppins;
-  font-size: 0.7em;
+  font-size: 0.70rem;
   height: 2rem;
   line-height: 2rem;
   padding: 0 0.5rem;

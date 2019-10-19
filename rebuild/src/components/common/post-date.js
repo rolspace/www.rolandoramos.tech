@@ -7,7 +7,7 @@ const DateDiv = styled.div`
   font-family: Poppins;
   font-size: 0.70rem;
   font-weight: 500;
-  margin-bottom: 1.5rem;`
+  margin-bottom: 1.0rem;`
 
 const PostDate = (props) => {
   return (

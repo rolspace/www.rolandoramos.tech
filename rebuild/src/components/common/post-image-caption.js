@@ -12,7 +12,7 @@ const CaptionDiv = styled.div`
 
 const PostImageCaption = (props) => {
   return (
-    <div style={{ marginBottom: `1.5rem` }}>
+    <div style={{ marginBottom: `1.0rem` }}>
       <Img style={{ marginBottom: `0.250rem` }} fluid={props.fluidImage}></Img>
       <CaptionDiv>
         {props.caption}&nbsp;

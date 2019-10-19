@@ -18,7 +18,7 @@ const PostTitle = (props) => {
   const { title, to } = props
 
   return (
-    <h2 style={{ lineHeight: `1`, margin: `0 0 1.5rem 0` }}>
+    <h2 style={{ lineHeight: `1`, margin: `0 0 1.0rem 0` }}>
       <TitleLink to={to}>{title}</TitleLink>
     </h2>
   )

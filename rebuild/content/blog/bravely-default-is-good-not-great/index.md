@@ -10,6 +10,8 @@ It had been a while since I had the time to play a 40+ hour RPG, so Bravely Defa
 
 Not long ago, I finally finished the game, and I feel...relieved. Bravely Default was definitely a good game, but I think that its one major flaw is very hard to overlook. It is a game that is easy to enjoy, however, there is a moment when it will test your patience and willingness to go all the way to the end...but more on this later.
 
+<p class="subtitle">[SPOILERS AHEAD]</p>
+
 The game starts as one of its protagonists, Tiz Arrior, wakes up in the city of Caldisla, a week after a giant chasm suddenly appeared and destroyed his home village, Norende. Tiz is the only survivor from the disaster and he decides to return to the chasm hoping to find his brother. There, he finds Agnès Oblige, the Vestal of Wind, who is accompanied by a fairy, named Airy. Agnès wishes to free the Wind Crystal from the darkness that has surrounded it, and in doing so, undo the damage caused to the land.
 
 This is where the main quest begins, as you begin your journey with Tiz and Agnès in order to find a way to heal the land of Luxendarc. For the most part, the story does a good job of advancing the game from one location to another, while uncovering the story and all the hidden plots surrounding the 4 Crystals (Water, Fire, Wind, and Earth).

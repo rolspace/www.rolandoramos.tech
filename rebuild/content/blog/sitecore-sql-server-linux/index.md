@@ -13,13 +13,13 @@ I wanted to setup a SQL Server instance in order to install Sitecore 8.2 on my m
 
 I started by pulling the latest version of the Docker image:
 
-```shell
+```bash
 > docker pull microsoft/mssql-server-linux
 ```
 
 Once that was completed, I ran the container, following the instructions from the Docker Hub page:
 
-```shell
+```bash
 > docker run --name ms-sql-linux -e 'ACCEPT_EULA=Y' \
     -e 'SA_PASSWORD=Password$1' -p 1433:1433 \
     -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
@@ -56,9 +56,12 @@ Once the installation of the Sitecore Client was complete, it was time to modify
 I opened the ConnectionStrings.config file inside the App_Config folder of the Sitecore client installation and made the following changes to the core, master, and web connection details:
 
 ```xml
-<add name="core" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Core"/>
-<add name="master" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Master"/>
-<add name="web" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Web"/>
+<appSettings>
+    <add name="core" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Core"/>
+    <add name="master" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Master"/>
+    <add name="web" connectionString="user id=sa;password=Password$1;Data Source=127.0.0.1;Database=Sitecore_Web"/>
+    ...
+</appSettings>
 ```
 
 I used the connection details for the SQL Server Linux container running in my machine, then I loaded the browser and accessed the index of my local install, http://sc82v170614/

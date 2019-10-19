@@ -17,13 +17,13 @@ FROM jekyll/jekyll:latest
 
 That was an easy start! The first line in the Dockerfile guarantees that the Docker image will be created with the latest version of the Jekyll Docker image. Using the [Jekyll Docker wiki](https://github.com/jekyll/docker/wiki/Usage:-Running), I built my local image from the terminal, running the command from the path where the Dockerfile is located:
 
-```shell
+```bash
 > docker build . -t jekyll-website
 ```
 
 This command creates a Docker image with the tag "jekyll-website". Note you do not have to specify the name of the file as long as it is named "Dockerfile". I can use the tag to refer to the custom image in order to create a container later:
 
-```shell
+```bash
 > docker run --name=website --label=jekyll \
     --volume=/path/to/code:/srv/jekyll \
     --publish 127.0.0.1:4000:4000 \
@@ -72,13 +72,13 @@ RUN npm install -g gulp-cli
 
 After adding this new step, I needed to rebuild the Docker image and the container. I got rid of the previous image by first stopping the container:
 
-```shell
+```bash
 > docker stop website
 ```
 
 Then, I deleted the container and the local image:
 
-```shell
+```bash
 > docker container rm website
 
 > docker image rm jekyll-website

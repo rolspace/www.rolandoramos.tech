@@ -10,7 +10,7 @@ I was really looking forward to playing the game, but my original enthusiasm die
 
 Let's start with the things I did not like. There were two specific aspects of the game where I was very disappointed with the decisions made by Blizzard.
 
-**[SPOILERS AHEAD]**
+<p class="subtitle">[SPOILERS AHEAD]</p>
 
 Like the story...it is bad, very bad. The way the story was presented throughout the game felt rushed and everything related to it seemed out of place. Especially in regards to Leah...she never really developed as a character in the story, which would have been helpful, considering how central she is to everything.
 

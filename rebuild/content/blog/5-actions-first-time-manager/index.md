@@ -16,7 +16,7 @@ Such a simple concept, yet it is very easy to underestimate the value of listeni
 
 By encouraging people to voice their opinions and listening to them, it will become a habit within the team as time passes. When new people join the team, seeing this behavior will allow them to feel at ease much quicker in a new environment. They will know they have come to a place where others will listen.
 
-<p class="subtitle">2. Continue reading and learning</p>
+<p class="subtitle">2. Never stop reading and learning</p>
 
 There is a vast amount of information on the topics of management, organization, and leadership. It would be a waste not to take advantage and use it to be the best manager you can.
 

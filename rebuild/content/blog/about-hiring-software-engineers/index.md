@@ -28,7 +28,7 @@ I believe that there are two very distinct reasons why hiring Software Engineers
 
 Of course, these are not the only reasons that make this process a challenge. However, I do believe that these are possibly the most important reasons why this happens. Let me explain.
 
-Describing a Software Engineering vacancy is difficult
+<p class="subtitle">Describing a Software Engineering vacancy is difficult</p>
 
 If you have had to write a job description at any point in your life, you know that these things are not easy. In an ideal scenario, a good job description should contain a listing of the core skills needed to perform some job function. Normally, if you excel at your job, it is because you are performing beyond the expectations that were outlined in your job description.
 
@@ -40,7 +40,7 @@ My personal recommendation is that hiring managers should be as clear as possibl
 
 Using the right job description will help you set the base for candidates to know what the role is about and the opportunities for growth available. At the same time, it should help to attract the right kind of candidates: those who have the qualifications and skills needed.
 
-Choosing the right kind of technical test is a complex decision
+<p class="subtitle">Choosing the right kind of technical test is a complex decision</p>
 
 In order to hire Software Engineers, it is necessary to determine, as much as possible, their technical ability. This normally happens using technical tests or challenges that the candidates need to complete.
 
@@ -54,8 +54,8 @@ Good coding assessments are ones that allow for the candidate to discuss their s
 
 Should the candidates write code? YES! Just remember that a technical interview is already a tense environment, where the candidate needs to prove their expertise and skills to people whom they have never worked with. As someone in charge of hiring, it is your responsibility to make the technical interview a place where candidates feel comfortable.
 
-------------
+<p class="subtitle">Final thoughts</p>
 
-Vacancies for Software Engineering roles should provide clear and detailed information about the responsibilities and skills needed for an open position. Being ambiguous or generic is simply a way to end up with many applications from candidates who don’t have the right qualifications.
+Job ads for Software Engineering roles should provide clear and detailed information about the responsibilities and skills needed for an open position. Being ambiguous or generic is simply a way to end up with many applications from candidates who don’t have the right qualifications.
 
 Once it is time to verify a candidate’s skill, we should not try to come up with clever tests. Invite the candidates to the office and do an in-person evaluation. Verifying technical skill is necessary, but it is important to know if you can work with this person as part of the team. The only way to do this is to use the assessment as an opportunity to see this in action. Your team will thank you for making the extra effort.

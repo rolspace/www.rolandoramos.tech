@@ -15,12 +15,18 @@ const GlobalStyle = createGlobalStyle`
     touch-action: manipulation;
   }
 
-  code {
-    background-color: #f7f7f9;
-    border-radius: .25rem;
-    color: #bd4147;
-    font-size: 90%;
-    padding: .2rem .4rem;
+  p,ul {
+    code {
+      background-color: #f7f7f9;
+      border-radius: .25rem;
+      color: #bd4147;
+      font-size: 0.90rem;
+      padding: .2rem .4rem;
+    }
+  }
+
+  code[class*="language-"] {
+    font-size: 0.75rem;
   }
 
   article {
@@ -28,7 +34,7 @@ const GlobalStyle = createGlobalStyle`
       color: #3c3c3c;
       display: block;
       font-family: Poppins;
-      font-size: 0.90em;
+      font-size: 0.90rem;
       font-weight: 500;
     }
 
@@ -40,7 +46,7 @@ const GlobalStyle = createGlobalStyle`
   table {
     border-collapse: collapse;
     font-family: Poppins;
-    font-size: 0.85em;
+    font-size: 0.85rem;
     width: 100%;
 
     th, tr, td {
@@ -55,7 +61,7 @@ const GlobalStyle = createGlobalStyle`
   }
 
   .gatsby-highlight {
-    font-size: 0.80em;
+    font-size: 0.80rem;
   }
 `
 

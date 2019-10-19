@@ -9,6 +9,6 @@ At this point I can proudly say that I have learned a few things and I am probab
 
 The big trouble comes when trying to listen to German out in the street (especially in Zurich), that's tough, so it definitely looks like I need a lot more practice, I guess.
 
-Learning is always an fun activity, though learning a new language isn't easy. The main problem is finding time to practice and learn new words. Where did all the time I used to have go? :S
+Learning is always an fun activity, though learning a new language isn't easy. The main problem is finding time to practice and learn new words. Where did all the time I used to have go?
 
 Sooner or later I will need to find a conversation group or something similar. My class is pretty good and I am learning a lot, but without practice it will be difficult to make any significant strides. The good thing is that I feel that I am learning something, so for me, so far so gut.

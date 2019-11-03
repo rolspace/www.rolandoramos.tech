@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Pager from '../components/pager'
 import SEO from '../components/seo'
 
-class BlogList extends React.Component {
+class BlogPage extends React.Component {
   render () {
     const { currentPage, pageCount } = this.props.pageContext
     const { data } = this.props
@@ -36,13 +36,13 @@ class BlogList extends React.Component {
   }
 }
 
-BlogList.propTypes = {
+BlogPage.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 }
 
-export default BlogList
+export default BlogPage
 
 export const pageQuery = graphql`
   query BlogPagesPaginated($skip: Int!, $limit: Int!) {

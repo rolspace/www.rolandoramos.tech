@@ -29,16 +29,17 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-    // Create blog list pages.
     const posts = result.data.allMarkdownRemark.edges
+
+    // Create blog pages
     const postsPerPage = 5
     const pageCount = Math.ceil(posts.length / postsPerPage)
-    const blogList = path.resolve('./src/templates/blog-list.js')
+    const blogPageTemplate = path.resolve('./src/templates/blog-page.js')
 
     Array.from({ length: pageCount }).forEach((_, i) => {
       createPage({
-        path: i === 0 ? `/` : `/page/${i + 1}`,
-        component: blogList,
+        path: i === 0 ? '/' : `/page/${i + 1}`,
+        component: blogPageTemplate,
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
@@ -48,8 +49,16 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
+    // Create blog titles list page
+    const blogTitlesListTemplate = path.resolve('./src/templates/blog-titles-list.js')
+
+    createPage({
+      path: '/posts',
+      component: blogTitlesListTemplate,
+    })
+
     // Create blog posts pages.
-    const blogPost = path.resolve(`./src/templates/blog-post.js`)
+    const blogPostTemplate = path.resolve('./src/templates/blog-post.js')
 
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
@@ -57,7 +66,7 @@ exports.createPages = ({ graphql, actions }) => {
 
       createPage({
         path: post.node.fields.slug,
-        component: blogPost,
+        component: blogPostTemplate,
         context: {
           slug: post.node.fields.slug,
           previous,
@@ -73,7 +82,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
-  if (node.internal.type === `MarkdownRemark`) {
+  if (node.internal.type === 'MarkdownRemark') {
     const value = createFilePath({ node, getNode })
     createNodeField({
       name: `slug`,

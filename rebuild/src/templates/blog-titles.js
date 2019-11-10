@@ -8,7 +8,7 @@ import PostTitle from '../components/common/post-title'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-class BlogTitlesList extends React.Component {
+class BlogTitles extends React.Component {
   render () {
     const { data } = this.props
     const siteTitle = data.site.siteMetadata.title
@@ -33,22 +33,23 @@ class BlogTitlesList extends React.Component {
   }
 }
 
-BlogTitlesList.propTypes = {
+BlogTitles.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 }
 
-export default BlogTitlesList
+export default BlogTitles
 
 export const pageQuery = graphql`
-  query BlogTitlesListPage {
+  query BlogTitles {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
+        filter: { fileAbsolutePath: { regex: "/blog/" }}
         sort: { fields: [frontmatter___date], order: DESC }
       ) {
       edges {

@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 import Pager from '../components/pager'
 import SEO from '../components/seo'
 
-class BlogPage extends React.Component {
+class BlogIndex extends React.Component {
   render () {
     const { currentPage, pageCount } = this.props.pageContext
     const { data } = this.props
@@ -36,26 +36,27 @@ class BlogPage extends React.Component {
   }
 }
 
-BlogPage.propTypes = {
+BlogIndex.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 }
 
-export default BlogPage
+export default BlogIndex
 
 export const pageQuery = graphql`
-  query BlogPagesPaginated($skip: Int!, $limit: Int!) {
+  query BlogIndexes($skip: Int!, $limit: Int!) {
     site {
       siteMetadata {
         title
       }
     }
     allMarkdownRemark(
-        sort: { fields: [frontmatter___date], order: DESC }
-        limit: $limit
-        skip: $skip
-      ) {
+      filter: { fileAbsolutePath: { regex: "/blog/" }}
+      sort: { fields: [frontmatter___date], order: DESC }
+      limit: $limit
+      skip: $skip
+    ) {
       edges {
         node {
           excerpt(format: HTML)

@@ -1,18 +1,20 @@
 const path = require('path')
 const { createFilePath } = require('gatsby-source-filesystem')
 
-exports.createPages = ({ graphql, actions }) => {
+exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
-  return graphql(
+  const firstPromise = graphql(
     `
       {
         allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/blog/" }}
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
           edges {
             node {
+              fileAbsolutePath
               fields {
                 slug
               }
@@ -31,15 +33,15 @@ exports.createPages = ({ graphql, actions }) => {
 
     const posts = result.data.allMarkdownRemark.edges
 
-    // Create blog pages
+    // Create blog index pages
     const postsPerPage = 5
     const pageCount = Math.ceil(posts.length / postsPerPage)
-    const blogPageTemplate = path.resolve('./src/templates/blog-page.js')
+    const blogIndexTemplate = path.resolve('./src/templates/blog-index.js')
 
     Array.from({ length: pageCount }).forEach((_, i) => {
       createPage({
         path: i === 0 ? '/' : `/page/${i + 1}`,
-        component: blogPageTemplate,
+        component: blogIndexTemplate,
         context: {
           limit: postsPerPage,
           skip: i * postsPerPage,
@@ -49,12 +51,12 @@ exports.createPages = ({ graphql, actions }) => {
       })
     })
 
-    // Create blog titles list page
-    const blogTitlesListTemplate = path.resolve('./src/templates/blog-titles-list.js')
+    // Create blog titles page
+    const blogTitlesTemplate = path.resolve('./src/templates/blog-titles.js')
 
     createPage({
       path: '/posts',
-      component: blogTitlesListTemplate,
+      component: blogTitlesTemplate,
     })
 
     // Create blog posts pages.
@@ -77,6 +79,45 @@ exports.createPages = ({ graphql, actions }) => {
 
     return null
   })
+
+  const secondPromise = graphql(
+    `
+      {
+        allMarkdownRemark(
+          filter: { fileAbsolutePath: { regex: "/about/" }}
+          sort: { fields: [frontmatter___date], order: DESC }
+          limit: 1000
+        ) {
+          edges {
+            node {
+              fileAbsolutePath
+              fields {
+                slug
+              }
+              frontmatter {
+                title
+              }
+            }
+          }
+        }
+      }
+    `
+  ).then(result => {
+    if (result.errors) {
+      throw result.errors
+    }
+
+    const blogAboutTemplate = path.resolve('./src/templates/blog-about.js')
+
+    createPage({
+      path: '/about',
+      component: blogAboutTemplate,
+    })
+
+    return null
+  })
+
+  await Promise.all([firstPromise, secondPromise])
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {

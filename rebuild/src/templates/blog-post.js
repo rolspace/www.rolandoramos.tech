@@ -10,7 +10,7 @@ import PostDate from '../components/common/post-date'
 import PostImageCaption from '../components/common/post-image-caption'
 import PostTitle from '../components/common/post-title'
 
-class BlogPostTemplate extends React.Component {
+class BlogPost extends React.Component {
   render () {
     const post = this.props.data.markdownRemark
     const siteTitle = this.props.data.site.siteMetadata.title
@@ -52,13 +52,13 @@ class BlogPostTemplate extends React.Component {
   }
 }
 
-BlogPostTemplate.propTypes = {
+BlogPost.propTypes = {
   data: PropTypes.object.isRequired,
   location: PropTypes.string.isRequired,
   pageContext: PropTypes.object.isRequired,
 }
 
-export default BlogPostTemplate
+export default BlogPost
 
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {

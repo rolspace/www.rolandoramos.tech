@@ -1,6 +1,7 @@
 ---
 title: May 2015 Dev Tools
 date: '2015-05-25T00:00:00.000Z'
+excerpt: true
 ---
 
 <p class="subtitle">Unicorn</p>

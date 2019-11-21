@@ -1,6 +1,7 @@
 ---
 title: 'SQL Server: the PIVOT operator'
 date: '2014-09-24T00:00:00.000Z'
+excerpt: true
 ---
 
 The SQL Server Pivot command is quite useful in scenarios that require some manipulation of a table's structure in order to display unique column values as column headers.

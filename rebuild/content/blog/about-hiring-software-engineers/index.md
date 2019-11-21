@@ -5,6 +5,7 @@ image: ./whiteboard.jpg
 caption: 'Photo source:'
 captionLink: Startup Stock Photos
 captionHref: http://startupstockphotos.com/post/123128198211
+excerpt: true
 ---
 
 One of the most difficult things I have had to do during my time as a team manager is to hire people.

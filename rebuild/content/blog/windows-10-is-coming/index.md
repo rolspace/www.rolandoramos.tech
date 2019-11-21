@@ -2,6 +2,7 @@
 title: Windows 10 is coming
 date: '2015-06-01T00:00:00.000Z'
 image: ./windows10.jpg
+excerpt: false
 ---
 
 I really liked Windows 8, so I am definitely hoping Windows 10 makes improvements to an already great OS.

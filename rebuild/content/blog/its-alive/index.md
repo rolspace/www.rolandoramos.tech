@@ -1,6 +1,7 @@
 ---
 title: It's Alive!
 date: '2014-04-26T00:00:00.000Z'
+excerpt: false
 ---
 
 Finally! The first post in my blog is written. This project has gone through some rough times in the past year, up to the point that it was almost left for dead a couple of times.

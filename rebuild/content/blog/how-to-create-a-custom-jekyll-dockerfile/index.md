@@ -1,11 +1,14 @@
 ---
 title: How to create a custom Jekyll Dockerfile
 date: '2017-05-07T00:00:00.000Z'
+excerpt: true
 ---
 
 Docker has been on my TODO list for a long time. I took it for a spin briefly a few months ago, but I had not had the opportunity to use it on something specific.
 
 I chose to use my own website to build a custom Dockerfile for local development, this way I could get up and running quickly on any of my 3 machines (Windows 10, Mac, Linux) without worrying about keeping Jekyll up to date, especially on Windows.
+
+<!--more-->
 
 I followed the instructions from the [Docker website](https://docs.docker.com/engine/getstarted/step_four/#step-1-write-a-dockerfile) in order to write a custom Dockerfile. The first thing I had to do was to create a new file with the name <code>Dockerfile</code>. To begin, I included this line:
 

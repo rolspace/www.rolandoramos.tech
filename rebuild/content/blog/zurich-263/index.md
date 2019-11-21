@@ -2,11 +2,14 @@
 title: 'Zürich: 263'
 date: '2014-12-13T00:00:00.000Z'
 image: './zurich263.jpg'
+excerpt: true
 ---
 
 Our first winter in Zurich is almost here. Little by little the clouds have taken over and temperature has been dropping gradually in the past few weeks.
 
 September and October were quite good in terms of temperature and sunshine. Unlike August, which was the anti-Summer: lots of cloudy days and lots of rain.
+
+<!--more-->
 
 Things have clearly changed in December, where we've had a few days with near 0 degree temperatures, or less. There has been no snow yet, but hopefully some will fall when winter gets going for good.
 

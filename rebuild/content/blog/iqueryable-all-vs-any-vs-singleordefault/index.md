@@ -1,6 +1,7 @@
 ---
 title: 'IQueryable: All() vs. Any() vs. SingleOrDefault()'
 date: '2014-11-03T00:00:00.000Z'
+excerpt: true
 ---
 
 Recently, I came across some code that was throwing a Timeout Exception on an <em>if</em> statement being evaluated using the `IQueryable.All()` method.

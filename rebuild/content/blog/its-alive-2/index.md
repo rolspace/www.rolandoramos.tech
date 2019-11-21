@@ -1,6 +1,7 @@
 ---
 title: It's Alive! Part II
 date: '2017-02-13T00:00:00.000Z'
+excerpt: false
 ---
 
 After quite a bit of time, this blog is finally rebuilt. You will not notice any changes, because it looks the same, but it's not.

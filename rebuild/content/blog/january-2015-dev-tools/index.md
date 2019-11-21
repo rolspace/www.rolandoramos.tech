@@ -1,6 +1,7 @@
 ---
 title: January 2015 Dev Tools
 date: '2015-01-17T00:00:00.000Z'
+excerpt: true
 ---
 
 <p class="subtitle">Admin Command Prompt for Windows 8 in the context menu</p>

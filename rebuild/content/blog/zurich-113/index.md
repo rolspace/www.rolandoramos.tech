@@ -2,6 +2,7 @@
 title: 'Zürich: 113'
 date: '2014-07-03T00:00:00.000Z'
 image: './zurich113.jpg'
+excerpt: true
 ---
 
 It has been 113 days since I moved to Z&uuml;rich.

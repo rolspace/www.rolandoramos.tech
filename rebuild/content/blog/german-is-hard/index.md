@@ -1,11 +1,14 @@
 ---
 title: German is Hard
 date: '2014-10-10T00:00:00.000Z'
+excerpt: true
 ---
 
 It's been about three months since my first class. I was not really sure what to expect, since the general opinion is that German is a really tough language to learn.
 
 At this point I can proudly say that I have learned a few things and I am probably able to say a phrase or two. I can pick up the meaning of a few advertisement posters in the street, and I can figure out the meaning of a few newspaper headlines.
+
+<!--more-->
 
 The big trouble comes when trying to listen to German out in the street (especially in Zurich), that's tough, so it definitely looks like I need a lot more practice, I guess.
 

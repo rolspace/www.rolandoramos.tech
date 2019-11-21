@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types'
+import { Link } from 'gatsby'
 import React from 'react'
 import PostArticle from './common/post-article'
 import PostDate from './common/post-date'
@@ -33,6 +34,7 @@ const Excerpt = (props) => {
           __html: node.excerpt,
         }}
       />
+      { node.frontmatter.excerpt ? <Link to={node.fields.slug}>Read More</Link> : '' }
     </PostArticle>
   )
 }

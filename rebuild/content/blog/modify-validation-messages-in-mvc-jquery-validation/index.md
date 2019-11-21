@@ -1,6 +1,7 @@
 ---
 title: Modify Validation Messages in ASP.NET MVC with jQuery Validation
 date: '2014-05-25T00:00:00.000Z'
+excerpt: true
 ---
 
 A few weeks ago I needed to change the way in which the unobtrusive validation messages were displayed in a form in an ASP.NET MVC application.

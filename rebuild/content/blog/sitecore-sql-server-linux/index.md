@@ -1,6 +1,7 @@
 ---
 title: Sitecore 8.2 and SQL Server Linux
 date: '2017-08-06T00:00:00.000Z'
+excerpt: true
 ---
 
 A few weeks ago, I ran into a problem with my work computer. For some reason, I could not install SQL Server Express, or any other version available from Microsoft. I kept receiving an error about some internal service not being set up correctly during the installation. I spent some time trying to find a solution, but I could not come up with any answers.

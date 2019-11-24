@@ -12,12 +12,22 @@ class Header extends React.Component {
   constructor (props) {
     super(props)
 
-    this.state = { menuHidden: true }
+    this.state = {
+      menuHidden: true,
+      isPostsMenuLinkActive: false,
+      isAboutMenuLinkActive: false,
+    }
+
     this.onMenuButtonClick = this.onMenuButtonClick.bind(this)
+    this.onMenuLinkClick = this.onMenuLinkClick.bind(this)
   }
 
   onMenuButtonClick () {
     this.setState({ menuHidden: !this.state.menuHidden })
+  }
+
+  onMenuLinkClick (e) {
+    console.log(e)
   }
 
   render () {
@@ -29,10 +39,10 @@ class Header extends React.Component {
         <Box style={{ display: `flex` }} width={[1, 1/2, 1/3]}>
           <Menu flexDirection={['column', 'row']} hidden={this.state.menuHidden}>
             <Box pt="0.2rem" pb="0.2rem" width={1}>
-              <MenuLink to='/posts/'>Posts</MenuLink>
+              <MenuLink active={this.state.isPostsMenuLinkActive} to='/posts/'>Posts</MenuLink>
             </Box>
             <Box pt="0.2rem" pb="0.4rem" width={1}>
-              <MenuLink to='/about/'>About</MenuLink>
+              <MenuLink active={this.state.isAboutMenuLinkActive} to='/about/'>About</MenuLink>
             </Box>
           </Menu>
         </Box>

@@ -14,7 +14,7 @@ const PostArticle = (props) => {
 }
 
 PostArticle.propTypes = {
-  children: PropTypes.children,
+  children: PropTypes.array.isRequired,
 }
 
 export default PostArticle

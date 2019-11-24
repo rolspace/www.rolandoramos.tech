@@ -14,19 +14,22 @@ const PostImageCaption = (props) => {
   return (
     <div style={{ marginBottom: `1.0rem` }}>
       <Img style={{ marginBottom: `0.250rem` }} fluid={props.fluidImage}></Img>
-      <CaptionDiv>
-        {props.caption}&nbsp;
-        <Link css={{ color: `#0275d8` }} to={props.captionHref}>{props.captionLink}</Link>
-      </CaptionDiv>
+      { props.caption ?
+        <CaptionDiv>
+          {props.caption}&nbsp;
+          <Link css={{ color: `#0275d8` }} to={props.captionHref}>{props.captionLink}</Link>
+        </CaptionDiv> :
+        ''
+      }
     </div>
   )
 }
 
 PostImageCaption.propTypes = {
-  caption: PropTypes.string.isRequired,
-  captionHref: PropTypes.string.isRequired,
-  captionLink: PropTypes.string.isRequired,
-  fluidImage: PropTypes.object.isRequired,
+  caption: PropTypes.string,
+  captionHref: PropTypes.string,
+  captionLink: PropTypes.string,
+  fluidImage: PropTypes.object,
 }
 
 export default PostImageCaption

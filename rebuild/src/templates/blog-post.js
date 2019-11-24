@@ -54,7 +54,7 @@ class BlogPost extends React.Component {
 
 BlogPost.propTypes = {
   data: PropTypes.object.isRequired,
-  location: PropTypes.string.isRequired,
+  location: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 }
 

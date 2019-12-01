@@ -1,8 +1,8 @@
-import React from 'react'
-import PropTypes from 'prop-types'
 import { Link } from 'gatsby'
-import styled from 'styled-components'
+import PropTypes from 'prop-types'
+import React from 'react'
 import { FaChevronRight } from 'react-icons/fa'
+import styled from 'styled-components'
 
 const ReadMoreLink = styled(Link)`
   color: #adadad;

@@ -1,4 +1,3 @@
-import { Link } from 'gatsby'
 import Img from 'gatsby-image'
 import PropTypes from 'prop-types'
 import React from 'react'
@@ -17,7 +16,7 @@ const PostImageCaption = (props) => {
       { props.caption ?
         <CaptionDiv>
           {props.caption}&nbsp;
-          <Link css={{ color: `#0275d8` }} to={props.captionHref}>{props.captionLink}</Link>
+          <a style={{ color: '#0275d8' }} href={props.captionHref}>{props.captionLink}</a>
         </CaptionDiv> :
         ''
       }

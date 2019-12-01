@@ -19,7 +19,7 @@ class BlogAbout extends React.Component {
           keywords={[`blog`, `gatsby`, `javascript`, `react`]}
         />
         <PostArticle>
-          <PostTitle title={post.frontmatter.title}></PostTitle>
+          <PostTitle title={post.frontmatter.title} to="/about/"></PostTitle>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </PostArticle>
       </Layout>

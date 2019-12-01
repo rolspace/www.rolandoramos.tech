@@ -31,7 +31,7 @@ class Layout extends React.Component {
         <GlobalStyle />
         <Flex flexDirection='column' flexWrap='nowrap' alignItems='center'>
           <HeaderBox width={1}>
-            <Header />
+            <Header location={this.props.location} />
           </HeaderBox>
           <Box width={[1, 1/2]} mx='auto' mt='1.5rem' pl='0.75rem' pr='0.75rem'>
             <main>{children}</main>

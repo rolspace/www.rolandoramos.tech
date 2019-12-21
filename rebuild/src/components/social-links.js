@@ -1,6 +1,6 @@
 import React from 'react'
-import styled from 'styled-components'
 import { FaGithub, FaLinkedinIn, FaStackOverflow } from 'react-icons/fa'
+import styled from 'styled-components'
 
 const SocialList = styled.ul`
   display: none;

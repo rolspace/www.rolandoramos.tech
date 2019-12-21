@@ -2,9 +2,9 @@ import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
 import PostArticle from '../components/common/post-article'
+import PostTitle from '../components/common/post-title'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
-import PostTitle from '../components/common/post-title'
 
 class BlogAbout extends React.Component {
   render () {

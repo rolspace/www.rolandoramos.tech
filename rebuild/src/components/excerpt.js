@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types'
 import React from 'react'
+import ReadMore from './common/excerpt-readmore'
 import PostArticle from './common/post-article'
 import PostDate from './common/post-date'
 import PostImageCaption from './common/post-image-caption'
 import PostTitle from './common/post-title'
-import ReadMore from './common/excerpt-readmore'
 
 const Excerpt = (props) => {
   const { node } = props

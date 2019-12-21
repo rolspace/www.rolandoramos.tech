@@ -2,13 +2,13 @@
 import { graphql } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
-import Layout from '../components/layout'
-import Pager from '../components/pager'
-import SEO from '../components/seo'
 import PostArticle from '../components/common/post-article'
 import PostDate from '../components/common/post-date'
 import PostImageCaption from '../components/common/post-image-caption'
 import PostTitle from '../components/common/post-title'
+import Layout from '../components/layout'
+import Pager from '../components/pager'
+import SEO from '../components/seo'
 
 class BlogPost extends React.Component {
   render () {

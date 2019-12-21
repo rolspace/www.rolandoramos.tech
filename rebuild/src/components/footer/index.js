@@ -1,8 +1,8 @@
 /* eslint-disable space-infix-ops */
-import React from 'react'
 import { Box, Flex } from '@rebass/grid'
-import Footnote from './lib/footnote'
+import React from 'react'
 import FooterContainer from './lib/footer-container'
+import Footnote from './lib/footnote'
 
 const Footer = (props) => {
   return (

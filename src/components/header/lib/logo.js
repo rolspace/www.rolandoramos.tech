@@ -20,10 +20,10 @@ const Logo = (props) => {
     <LogoHeader>
       <LogoLink to='/'>
         <img
-          style={{ marginLeft: `-0.5rem`, verticalAlign: `middle` }}
+          style={{ marginLeft: '-0.5rem', verticalAlign: 'middle' }}
           src={logo}
           width={225}
-          alt="www.rolandoramos.tech"
+          alt='www.rolandoramos.tech'
         />
       </LogoLink>
     </LogoHeader>

@@ -16,10 +16,10 @@ class BlogAbout extends React.Component {
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title='About'
-          keywords={[`blog`, `gatsby`, `javascript`, `react`]}
+          keywords={['blog', 'gatsby', 'javascript', 'react']}
         />
         <PostArticle>
-          <PostTitle title={post.frontmatter.title} to="/about/"></PostTitle>
+          <PostTitle title={post.frontmatter.title} to='/about/'></PostTitle>
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </PostArticle>
       </Layout>

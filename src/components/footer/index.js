@@ -13,7 +13,7 @@ const Footer = (props) => {
         </Box>
         <Footnote width={[1, 1, 3/4]}>
           <div>
-            This work is licensed under a <a href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License.</a>
+            This work is licensed under a <a href='http://creativecommons.org/licenses/by-sa/4.0/'>Creative Commons Attribution-ShareAlike 4.0 International License.</a>
           </div>
           <div>
             The opinions expressed in this website are my own, not my employer&apos;s.

@@ -1,6 +1,7 @@
 import React from 'react'
 import { FaGithub, FaLinkedinIn, FaStackOverflow } from 'react-icons/fa'
 import styled from 'styled-components'
+import SocialLink from './common/social-link'
 
 const SocialList = styled.ul`
   display: none;
@@ -19,39 +20,24 @@ const SocialList = styled.ul`
     }
   }`
 
-const SocialLink = styled.a`
-  & svg {
-    fill: #adadad;
-  }
-
-  &:hover svg {
-    fill: #5a5a5a;
-  }
-`
-
-const SocialLinks = () => (
+const SocialSticky = () => (
   <SocialList>
     <li>
-      <SocialLink
-        href='https://www.linkedin.com/in/rolandoramosrestrepo/'
-        rel='noopener' target='_blank'>
+      <SocialLink>
         <FaLinkedinIn />
       </SocialLink>
     </li>
     <li>
-      <SocialLink
-        href='https://github.com/rolspace'
-        rel='noopener' target='_blank'>
+      <SocialLink>
         <FaGithub />
       </SocialLink>
     </li>
     <li>
-      <SocialLink
-        href='https://stackoverflow.com/users/6909765/rolspace'
-        target='_blank' rel='noopener'>
+      <SocialLink>
         <FaStackOverflow />
-      </SocialLink></li>
+      </SocialLink>
+    </li>
   </SocialList>
 )
 
-export default SocialLinks
+export default SocialSticky

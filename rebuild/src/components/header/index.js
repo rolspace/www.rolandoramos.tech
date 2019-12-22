@@ -30,11 +30,11 @@ class Header extends React.Component {
     const aboutActive = location && location.pathname === '/about/'
 
     return (
-      <Flex as="header" flexDirection={['column', 'row']} flexWrap="nowrap" alignItems="center">
+      <Flex as="header" flexDirection={['column', 'row']} flexWrap='nowrap' alignItems='center'>
         <Box width={[1, 1/2, 2/3]}>
           <Logo />
         </Box>
-        <Box style={{ display: `flex` }} width={[1, 1/2, 1/3]}>
+        <Box style={{ display: 'flex' }} width={[1, 1/2, 1/3]}>
           <Menu flexDirection={['column', 'row']} hidden={this.state.menuHidden}>
             <Box pt="0.2rem" pb="0.2rem" width={1}>
               <MenuLink active={postsActive} to='/posts/'>Posts</MenuLink>

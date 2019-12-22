@@ -6,7 +6,7 @@ import styled from 'styled-components'
 import GlobalStyle from '../styles/global-styles'
 import Footer from './footer'
 import Header from './header'
-import SocialLinks from './social-links'
+import SocialSticky from './social-sticky'
 
 const HeaderBox = styled(Box)`
   background-color: #fff;
@@ -30,7 +30,7 @@ class Layout extends React.Component {
     return (
       <Fragment>
         <GlobalStyle />
-        <SocialLinks />
+        <SocialSticky />
         <Flex flexDirection='column' flexWrap='nowrap' alignItems='center'>
           <HeaderBox width={1}>
             <Header location={this.props.location} />

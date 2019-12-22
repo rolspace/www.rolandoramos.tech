@@ -1,3 +1,4 @@
+/* eslint-disable space-infix-ops */
 import { Box, Flex } from '@rebass/grid'
 import React from 'react'
 import { FaGithub, FaLinkedinIn, FaStackOverflow } from 'react-icons/fa'

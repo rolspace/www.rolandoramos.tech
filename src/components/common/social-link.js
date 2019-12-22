@@ -20,7 +20,7 @@ const SocialLink = (props) => (
 )
 
 SocialLink.propTypes = {
-  children: PropTypes.node.isRequired
+  children: PropTypes.node.isRequired,
 }
 
 export default SocialLink

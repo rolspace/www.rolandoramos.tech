@@ -11,3 +11,5 @@ This site was initially launched using Wordpress, but soon after I realized I wa
 Wordpress provides a lot of nice features and extensions to power websites, but I felt I needed something different. I quickly got tired of the plugin system, the theming, and being at the mercy of an application I did not fully control.
 
 Now that this part is done, I hope to have enough time to give a new look to the website sometime in 2017!
+
+<!--more-->

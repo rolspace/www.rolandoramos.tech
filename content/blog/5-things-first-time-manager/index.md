@@ -1,7 +1,7 @@
 ---
-title: 5 actions that helped me as a first time manager
+title: 5 things that helped me as a first time manager
 date: '2017-02-20T00:00:00.000Z'
-image: ./5-tips-first-time-manager.jpg
+image: ./5-things-first-time-manager.jpg
 excerpt: true
 ---
 

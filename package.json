@@ -1,12 +1,8 @@
 {
-  "name": "gatsby-starter-blog",
+  "name": "www.rolandoramos.tech",
   "private": true,
-  "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
-  },
+  "description": "Personal blog from Rolando Ramos",
+  "version": "3.0.0",
   "dependencies": {
     "@rebass/grid": "^6.0.0",
     "babel-plugin-styled-components": "^1.10.0",
@@ -48,15 +44,11 @@
     "gatsby-plugin-s3": "^0.3.2",
     "prettier": "^1.16.4"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
-  "keywords": [
-    "gatsby"
-  ],
+  "homepage": "https://www.rolandoramos.tech",
   "license": "MIT",
-  "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/rolspace/www.rolandoramos.tech.git"
   },
   "scripts": {
     "build": "gatsby build",

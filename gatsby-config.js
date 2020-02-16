@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     title: 'Rolando Ramos | technology lead. problem solver. mentor.',
     author: 'Rolando Ramos',
-    description: 'My name is Rolando Ramos, welcome to my personal website.',
+    description: 'I am Rolando Ramos and welcome to my personal website!',
     siteUrl: 'https://www.rolandoramos.tech/',
   },
   plugins: [

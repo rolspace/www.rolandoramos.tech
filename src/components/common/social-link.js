@@ -13,14 +13,18 @@ const StyledAnchor = styled.a`
     fill: #5a5a5a;
   }`
 
-const SocialLink = (props) => (
-  <StyledAnchor href='https://www.linkedin.com/in/rolandoramosrestrepo/' rel='noopener' target='_blank'>
-    {props.children}
-  </StyledAnchor>
-)
+const SocialLink = (props) => {
+  const { href } = props
+  return (
+    <StyledAnchor href={href} rel='noopener' target='_blank'>
+      {props.children}
+    </StyledAnchor>
+  )
+}
 
 SocialLink.propTypes = {
   children: PropTypes.node.isRequired,
+  href: PropTypes.string.isRequired,
 }
 
 export default SocialLink

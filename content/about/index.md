@@ -26,6 +26,6 @@ I was born and raised in Panama City, Panama, where I lived for most of my life.
 
 I have been a software engineer for more than 10 years. This is not just something I do for work, as I also like to spend some of my free time with code and software!
 
-You can find me on [LinkedIn](https://ch.linkedin.com/in/rolandoramosrestrepo), [Github](https://github.com/rolspace), and [Stack Overflow](https://stackoverflow.com/users/6909765/rolspace).
+You can find me on [LinkedIn](https://www.linkedin.com/in/rolandoramosrestrepo/), [Github](https://github.com/rolspace), and [Stack Overflow](https://stackoverflow.com/users/6909765/rolspace).
 
 Enjoy!

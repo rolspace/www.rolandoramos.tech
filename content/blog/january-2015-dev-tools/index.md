@@ -16,7 +16,7 @@ Using this registry edit, you can open a Command Prompt with Admin privileges fr
 
 <p class="subtitle">VSCommands for Visual Studio</p>
 
-A colleague of mine told me about [this Visual Studio extension](http://vscommands.squaredinfinity.com) some time ago. It provides some very useful features and tools to enhance your Visual Studio productivity.
+A colleague of mine told me about this [Visual Studio extension](http://vscommands.squaredinfinity.com) some time ago. It provides some very useful features and tools to enhance your Visual Studio productivity.
 
 ![VSCommands](./vscommand-locate.jpg)
 

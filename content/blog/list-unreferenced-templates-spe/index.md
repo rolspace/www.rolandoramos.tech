@@ -4,7 +4,7 @@ date: '2016-10-31T00:00:00.000Z'
 excerpt: true
 ---
 
-This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. __Standard Values will not be counted as a referrer.
+This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. `__Standard Values` will not be counted as a referrer.
 
 <!--more-->
 
@@ -32,4 +32,4 @@ foreach ($template in $templates) {
 $myArray | Format-Table Name, @{ Label = 'Path'; Expression={ $_.Paths.Path } }
 ```
 
-This script can be used as a starting point for additional actions like archiving or deleting the unused templates, or setting up a [SPE Report][SPE Reports] to filter a query adding more parameters.
+This script can be used as a starting point for additional actions like archiving or deleting the unused templates, or setting up a [SPE Report](https://sitecorepowershell.gitbooks.io/sitecore-powershell-extensions/reports.html) to filter a query adding more parameters.

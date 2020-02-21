@@ -26,15 +26,15 @@ Once that was completed, I ran the container, following the instructions from th
     -v F:/database/sqlserverlinux:/var/opt/mssql -d microsoft/mssql-server-linux
 ```
 
-The options -e 'ACCEPT_EULA=Y' and -e 'SA_PASSWORD=Password$1' set up two environment flags that are required to start the container: one to accept the End User Agreement and the other to create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port.
+The options `-e 'ACCEPT\_EULA=Y'` and `-e 'SA\_PASSWORD=Password$1'` set up two environment flags that are required to start the container: one to accept the End User Agreement and the other to create an SA account password.  Using -p 1433:1433 publishes the container's 1433 port to the host's 1433 port.
 
-Finally, -v F:/database/sqlserverlinux:/var/opt/mssql will map the container's /var/opt/mssql folder to a folder in the host machine, in this case, a folder in the F drive. We need this to persist the Sitecore databases from my machine in the container.
+Finally, `-v F:/database/sqlserverlinux:/var/opt/mssql` will map the container's `/var/opt/mssql` folder to a folder in the host machine, in this case, a folder in the F drive. We need this to persist the Sitecore databases from my machine in the container.
 
 With the container running, I connected to the database using SQL Server Management Studio.
 
 ![SQL Server Management Studio login screen](./ssms.png)
 
-The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170614). I downloaded the ZIP archive of the root folder and obtained the separate .mdf and .ldf files needed: <a href="https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx" alt="Sitecore 8.2 download link">https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx</a>
+The next step was to obtain the Sitecore DBs, in order to attach them to the SQL Server Linux container. At the time of this writing, the latest Sitecore XP version is 8.2 Update-3 (rev. 170614). I downloaded the ZIP archive of the root folder and obtained the separate .mdf and .ldf files <a href="https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx" alt="Sitecore 8.2 download link">here</a>
 
 I extracted the contents of the ZIP archive and copied the databases to the folder location mapped to the container.
 
@@ -44,7 +44,7 @@ After that, it was just a few clicks to attach each DB file to the server runnin
 
 ![Attach Database dialog](./attach-db.png)
 
-Once this step was completed, I needed to install the Sitecore XP website on the host machine. Even though I already had the root folder contents from the ZIP archive, I preferred to use the Web Application Installer, <a href="https://dev.sitecore.net/~/media/C7FF1EFE55EF42428CA178E3B74FA75D.ashx" alt="Sitecore Web Application Installer download link">https://dev.sitecore.net/~/media/C7FF1EFE55EF42428CA178E3B74FA75D.ashx</a>. There is no need to do a full Sitecore installation, so I selected Client Only.
+Once this step was completed, I needed to install the Sitecore XP website on the host machine. Even though I already had the root folder contents from the ZIP archive, I preferred to use the <a href="https://dev.sitecore.net/~/media/C7FF1EFE55EF42428CA178E3B74FA75D.ashx" alt="Sitecore Web Application Installer download link">Web Application Installer</a>. There is no need to do a full Sitecore installation, so I selected Client Only.
 
 ![Sitecore Installation Type dialog](./client-install.png)
 

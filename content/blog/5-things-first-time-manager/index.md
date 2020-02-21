@@ -25,7 +25,7 @@ There is a vast amount of information on the topics of management, organization,
 
 Of course, not everything you read will apply to your situation. Try to identify which pieces of advice will give you the best return for your team. If you are a new manager, there are some of the aspects of a manager's role that you will be unprepared for: going through performance reviews, how to motivate others, dealing with salary negotiations, speaking to an underachieving team member, etc. It will be better to find  first-hard experiences from others who have been in a similar situation.
 
-There are many sources to look for insight and opinions, some of my current favorites are: [The HBR][The Harvard Business Review], [LinkedIn][LinkedIn], and [Medium][Medium].
+There are many sources to look for insight and opinions, some of my current favorites are: [The Harvard Business Review](https://hbr.org/), [LinkedIn](https://www.linkedin.com/), and [Medium](https://medium.com/).
 
 <p class="subtitle">3. Setting expectations and goals</p>
 
@@ -37,9 +37,9 @@ In the same way, when you setup short-term and long-term goals, the rest of the 
 
 These goals need to be challenging, but they also need to be attainable. It is important that you can support the people in your team as a coach and mentor. Your team members will need help from you to find the time and motivation to achieve these goals.
 
-<p class="subtitle">4. Maximizing the strenghts of the team</p>
+<p class="subtitle">4. Maximizing the strengths of the team</p>
 
-If you are able to recognize your teammates strenghts, then you will be better equipped to help them become more valuable to the team. By devising a plan to build upon their best qualities, you are recognizing that person´s skills and giving them the opportunity to contribute in the best way they can.
+If you are able to recognize your teammates strengths, then you will be better equipped to help them become more valuable to the team. By devising a plan to build upon their best qualities, you are recognizing their skills and giving them the opportunity to contribute in the best way they can.
 
 Nevertheless, it is important to avoid letting team members stay too long in their comfort zone, there need to be challenges for them to hone their skills and test their limits.
 

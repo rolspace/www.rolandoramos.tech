@@ -22,11 +22,11 @@ So...how do you manage to be responsible for the people in your team and at the 
 
 It took me some time to properly answer this question for myself. I believe that in my case, when I took over a management role I did not really take the time to fully understand what was being asked of me. For people that move from a technical, hands-on role to a management position, it is extremely important to know the answers to some of these questions:
 
-- what is the status of the team? is the team performing well?
-- has anyone joined recently? has anyone left recently? why?
-- how many people will you manage? is there a tech lead? or leads?
-- what is your role in hiring? will you have to screen candidate resumes? can you work with recruiters?
-- what is your role in planning? is there a clearly defined agile process in place?
+- What is the status of the team? Is the team performing well?
+- Has anyone joined recently? Has anyone left recently? Why?
+- How many people will you manage? Is there a tech lead? Or leads?
+- What is your role in hiring? Will you have to screen candidate resumes? Can you work with recruiters?
+- What is your role in planning? Is there a clearly defined agile process in place?
 
 These are not all the questions you could ask, but some of the answers will tell you if you have a structure in place to support your growth as a technical manager.
 

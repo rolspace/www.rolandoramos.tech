@@ -150,9 +150,9 @@ public class CustomIEnumerableMapper : AbstractSitecoreFieldMapper
 
 There are three methods that need to be overridden in order to properly implement our custom `IEnumerable<T>` type mapper:
 
-* **GetFieldValue:** this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the `IEnumerable<T>`.
-- **SetFieldValue:** this method will take the value of the `IEnumerable<T>` instance and store it in the field.
-- **CanHandle:** defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type `CustomIEnumerableConfiguration`.
+- GetFieldValue: this method will get the field's value in raw format and convert each of the referenced items to the generic type used in the `IEnumerable<T>`.
+- SetFieldValue: this method will take the value of the `IEnumerable<T>` instance and store it in the field.
+- CanHandle: defines a condition to determine if the custom mapper can be used. In our scenario there is one rule only, apply the custom mapper if the configuration parameter is of type `CustomIEnumerableConfiguration`.
 
 Once this is completed, it is possible to include the custom type mapper in the CreateResolverMethod of the `GlassMapperScCustom` class:
 

@@ -49,7 +49,7 @@ if (context.Customer.FirstOrDefault(c => c.CustomerID == customerId) == null)
 }
 ```
 
-**So which is the right method to use?** Using `IQueryable.Any()` or `IQueryable.SingleOrDefault()` made the exceptions go away. However, the best way to find out the best approach is to measure the execution time for the SQL queries generated through these methods.
+Which is the right method to use? Using `IQueryable.Any()` or `IQueryable.SingleOrDefault()` made the exceptions go away. However, the best way to find out the best approach is to measure the execution time for the SQL queries generated through these methods.
 
 I wrote a small program that would execute each method a total of 1.000 times and log the results using a custom class inheriting from the [DatabaseLogFormatter](http://msdn.microsoft.com/en-us/library/system.data.entity.infrastructure.interception.databaselogformatter(v=vs.113).aspx) class. This way I could obtain information about the average execution time of these methods.
 

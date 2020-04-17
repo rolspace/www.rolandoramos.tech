@@ -11,9 +11,10 @@ const StyledAnchor = styled.a`
 
   &:hover svg {
     fill: #5a5a5a;
-  }`
+  }
+`
 
-const SocialLink = (props) => {
+const SocialLink = props => {
   const { href } = props
   return (
     <StyledAnchor href={href} rel='noopener' target='_blank'>

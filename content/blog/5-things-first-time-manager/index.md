@@ -23,7 +23,7 @@ By encouraging people to voice their opinions and listening to them, it will bec
 
 There is a vast amount of information on the topics of management, organization, and leadership. It would be a waste not to take advantage and use it to be the best manager you can.
 
-Of course, not everything you read will apply to your situation. Try to identify which pieces of advice will give you the best return for your team. If you are a new manager, there are some of the aspects of a manager's role that you will be unprepared for: going through performance reviews, how to motivate others, dealing with salary negotiations, speaking to an underachieving team member, etc. It will be better to find  first-hard experiences from others who have been in a similar situation.
+Of course, not everything you read will apply to your situation. Try to identify which pieces of advice will give you the best return for your team. If you are a new manager, there are some of the aspects of a manager's role that you will be unprepared for: going through performance reviews, how to motivate others, dealing with salary negotiations, speaking to an underachieving team member, etc. It will be better to find first-hard experiences from others who have been in a similar situation.
 
 There are many sources to look for insight and opinions, some of my current favorites are: [The Harvard Business Review](https://hbr.org/), [LinkedIn](https://www.linkedin.com/), and [Medium](https://medium.com/).
 

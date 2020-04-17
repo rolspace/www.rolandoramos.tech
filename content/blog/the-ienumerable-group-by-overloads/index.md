@@ -229,9 +229,9 @@ The items in the collection are being grouped by the Type property into a collec
 
 <p class="subtitle">2. Enumerable.GroupBy&lt;TSource, TKey, TElement&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TSource, TElement&gt;)</p>
 
-The second overload takes three parameters, two of which we have already seen in overload #1. The third parameter is:  `Func<TSource, TElement>`. This parameter defines a delegate that will project the elements in the source collection into a new collection.
+The second overload takes three parameters, two of which we have already seen in overload #1. The third parameter is: `Func<TSource, TElement>`. This parameter defines a delegate that will project the elements in the source collection into a new collection.
 
-In the code sample, the elements in the source collection, of type  `Person`, are being grouped by the Type property into a new anonymous object. This object has two properties, the person’s full name and the age. The new parameter is declared with the type: `Func<Person, “Anonymous Type”>`:
+In the code sample, the elements in the source collection, of type `Person`, are being grouped by the Type property into a new anonymous object. This object has two properties, the person’s full name and the age. The new parameter is declared with the type: `Func<Person, “Anonymous Type”>`:
 
 ```csharp
 //Lambda
@@ -285,7 +285,7 @@ The code sample produces the following grouped result:
 
 <p class="subtitle">3. Enumerable.GroupBy&lt;TSource, TKey, TResult&gt; Method (IEnumerable&lt;TSource&gt;, Func&lt;TSource, TKey&gt;, Func&lt;TKey, IEnumerable&lt;TSource&gt;, TResult&gt;)</p>
 
-The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is:  `Func<TKey, IEnumerable<TSource>, TResult>`. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.
+The next overload also takes 3 parameters, two of which we have seen in overload #1. The third parameter is different from the one shown in overload #2. The new argument is: `Func<TKey, IEnumerable<TSource>, TResult>`. The argument defines a delegate that takes two parameters: an element of the type defined by the Key created for the grouped collection, and a collection of the type defined by the source collection.
 
 Basically, the method will project the key of a specific grouping, and the elements associated to that key. This overload allows the caller to project the grouped collection into a collection of a different type:
 

@@ -4,7 +4,7 @@ import styled from 'styled-components'
 const PageLink = styled(Link)`
   color: #888;
   font-family: Poppins;
-  font-size: 0.70rem;
+  font-size: 0.7rem;
   font-weight: 400;
   letter-spacing: 0.05rem;
   text-decoration: none;
@@ -15,6 +15,7 @@ const PageLink = styled(Link)`
 
   & svg {
     vertical-align: middle;
-  }`
+  }
+`
 
 export default PageLink

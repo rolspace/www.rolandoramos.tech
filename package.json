@@ -6,6 +6,7 @@
   "dependencies": {
     "@rebass/grid": "^6.1.0",
     "babel-plugin-styled-components": "^1.10.7",
+    "eslint-config-prettier": "^6.10.1",
     "gatsby": "^2.19.19",
     "gatsby-image": "^2.2.41",
     "gatsby-plugin-feed": "^2.3.27",
@@ -23,6 +24,7 @@
     "gatsby-source-filesystem": "^2.1.48",
     "gatsby-transformer-remark": "^2.6.53",
     "gatsby-transformer-sharp": "^2.3.14",
+    "prettier-standard": "^16.2.1",
     "prismjs": "^1.19.0",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
@@ -41,8 +43,7 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-react": "^7.18.3",
     "eslint-plugin-standard": "^4.0.1",
-    "gatsby-plugin-s3": "^0.3.2",
-    "prettier": "^1.19.1"
+    "gatsby-plugin-s3": "^0.3.2"
   },
   "homepage": "https://www.rolandoramos.tech",
   "license": "MIT",
@@ -55,7 +56,7 @@
     "deploy": "gatsby-plugin-s3 deploy",
     "develop": "gatsby develop",
     "eslint": "eslint .",
-    "format": "prettier --write src/**/*.{js,jsx}",
+    "format": "prettier --write gatsby-{browser,config,node}.js src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""

@@ -5,20 +5,22 @@ import React from 'react'
 import { FaChevronLeft, FaChevronRight } from 'react-icons/fa'
 import StyledLink from './lib/styled-link'
 
-const Pager = (props) => {
+const Pager = props => {
   return (
     <Flex style={{ marginBottom: '1.5rem' }}>
-      <Box width={[1/2]} style={{ lineHeight: 1 }}>
+      <Box width={[1 / 2]} style={{ lineHeight: 1 }}>
         {props.previousExists && (
           <StyledLink to={props.previousTo} rel='previous'>
-            <FaChevronLeft />&nbsp;{props.previousTitle || 'Previous'}
+            <FaChevronLeft />
+            &nbsp;{props.previousTitle || 'Previous'}
           </StyledLink>
         )}
       </Box>
-      <Box width={[1/2]} style={{ lineHeight: 1, textAlign: 'right' }}>
+      <Box width={[1 / 2]} style={{ lineHeight: 1, textAlign: 'right' }}>
         {props.nextExists && (
           <StyledLink to={props.nextTo} rel='next'>
-            {props.nextTitle || 'Next'}&nbsp;<FaChevronRight />
+            {props.nextTitle || 'Next'}&nbsp;
+            <FaChevronRight />
           </StyledLink>
         )}
       </Box>

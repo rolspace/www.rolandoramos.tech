@@ -33,7 +33,7 @@ There are a total of 24 unique Jobs in the game. You can obtain a new Job by def
 
 Jobs can be combined in interesting ways thanks to the Ability setup in the menu. Once a character is given a Job, additional abilities can be assigned through the Job Command and the Support Abilities options. Using the Job Command option in the menu, you can set an additional group of abilities from a different Job than the one the character is assigned. The Support Abilities option allows you to pick an choose specific skills from various Jobs for your character. There are many combinations available, which really open up options available to you during battle.
 
-One of the best things about Bravely Default is the soundtrack. I  need to get my hands on the game's music at some point, it was that good. Even if you don't enjoy the game that much, the music will keep you in it.
+One of the best things about Bravely Default is the soundtrack. I need to get my hands on the game's music at some point, it was that good. Even if you don't enjoy the game that much, the music will keep you in it.
 
 In regards to the game's art direction, I feel that the style choice was the right decision for this game. All the elements fit well together: character models, weapons, world map, etc. All these elements seem to have a nostalgic quality, giving the impression that you have been here before. For me, the Chibi character style doesn't detract from the game, but it seems at odds with the versions of the characters you see in the game's initial cutscenes. The one real complaint I have about the character models, is that it was a bit strange to see the characters wearing the Job costumes during cutscenes.
 

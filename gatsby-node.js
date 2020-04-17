@@ -21,7 +21,7 @@ const createBlogIndexPages = (createPage, posts) => {
   })
 }
 
-const createBlogTitlesPage = (createPage) => {
+const createBlogTitlesPage = createPage => {
   // Create blog titles page
   const blogTitlesTemplate = path.resolve('./src/templates/blog-titles.js')
 
@@ -51,7 +51,7 @@ const createBlogPostPages = (createPage, posts) => {
   })
 }
 
-const createAboutPage = (createPage) => {
+const createAboutPage = createPage => {
   const blogAboutTemplate = path.resolve('./src/templates/blog-about.js')
 
   createPage({
@@ -64,9 +64,10 @@ exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions
 
   const blogQuery = await graphql(
-    `{
+    `
+      {
         allMarkdownRemark(
-          filter: { fileAbsolutePath: { regex: "/blog/" }}
+          filter: { fileAbsolutePath: { regex: "/blog/" } }
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
@@ -82,7 +83,8 @@ exports.createPages = async ({ graphql, actions }) => {
             }
           }
         }
-      }`
+      }
+    `
   )
 
   const posts = blogQuery.data.allMarkdownRemark.edges

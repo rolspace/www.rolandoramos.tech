@@ -22,11 +22,11 @@ A colleague of mine told me about this [Visual Studio extension](http://vscomman
 
 My three favorite commands from this extension are:
 
-+ Attach to IIS: displays a dialog window in Visual Studio with the available IIS websites you can attach your code to.
+- Attach to IIS: displays a dialog window in Visual Studio with the available IIS websites you can attach your code to.
 
-+ Locate in Solution Explorer: shows the location of a file in the editor on the Solution Explorer.
+- Locate in Solution Explorer: shows the location of a file in the editor on the Solution Explorer.
 
-+ Locate in TFS: finds the location of a file in the editor (or the Solution Explorer) on the Source Control Explorer.
+- Locate in TFS: finds the location of a file in the editor (or the Solution Explorer) on the Source Control Explorer.
 
 <p class="subtitle">Node School</p>
 

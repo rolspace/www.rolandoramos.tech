@@ -21,7 +21,8 @@ const HeaderBox = styled(Box)`
   @media (min-width: 40em) {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }`
+  }
+`
 
 class Layout extends React.Component {
   render () {
@@ -35,7 +36,13 @@ class Layout extends React.Component {
           <HeaderBox width={1}>
             <Header location={this.props.location} />
           </HeaderBox>
-          <Box width={[1, 1/2]} mx='auto' mt='1.5rem' pl='0.75rem' pr='0.75rem'>
+          <Box
+            width={[1, 1 / 2]}
+            mx='auto'
+            mt='1.5rem'
+            pl='0.75rem'
+            pr='0.75rem'
+          >
             <main>{children}</main>
           </Box>
           <Box width={1}>

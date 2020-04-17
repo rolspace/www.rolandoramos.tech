@@ -5,7 +5,8 @@ import logo from '../../../../content/assets/logo.png'
 
 const LogoHeader = styled.h1`
   line-height: 1;
-  margin: 0;`
+  margin: 0;
+`
 
 const LogoLink = styled(Link)`
   display: inline-block;
@@ -13,9 +14,10 @@ const LogoLink = styled(Link)`
   @media (min-width: 40em) {
     padding-bottom: 0.25rem;
     padding-top: 0.25rem;
-  }`
+  }
+`
 
-const Logo = (props) => {
+const Logo = props => {
   return (
     <LogoHeader>
       <LogoLink to='/'>

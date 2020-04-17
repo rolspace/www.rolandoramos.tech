@@ -4,7 +4,9 @@ import React from 'react'
 import styled from 'styled-components'
 
 const InnerMenuLink = ({ active, className, ...props }) => (
-  <Link to={props.to} className={className}>{props.children}</Link>
+  <Link to={props.to} className={className}>
+    {props.children}
+  </Link>
 )
 
 InnerMenuLink.propTypes = {
@@ -25,6 +27,7 @@ const MenuLink = styled(InnerMenuLink)`
 
   @media (min-width: 40em) {
     padding: 0rem 0.5rem;
-  }`
+  }
+`
 
 export default MenuLink

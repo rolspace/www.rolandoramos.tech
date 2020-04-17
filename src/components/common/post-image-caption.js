@@ -7,19 +7,23 @@ const CaptionDiv = styled.div`
   color: #636c72;
   font-family: Poppins;
   font-size: 0.65rem;
-  text-align: right;`
+  text-align: right;
+`
 
-const PostImageCaption = (props) => {
+const PostImageCaption = props => {
   return (
     <div style={{ marginBottom: `1.0rem` }}>
       <Img style={{ marginBottom: `0.250rem` }} fluid={props.fluidImage}></Img>
-      { props.caption ?
+      {props.caption ? (
         <CaptionDiv>
           {props.caption}&nbsp;
-          <a style={{ color: '#0275d8' }} href={props.captionHref}>{props.captionLink}</a>
-        </CaptionDiv> :
+          <a style={{ color: '#0275d8' }} href={props.captionHref}>
+            {props.captionLink}
+          </a>
+        </CaptionDiv>
+      ) : (
         ''
-      }
+      )}
     </div>
   )
 }

@@ -27,15 +27,16 @@ class BlogPost extends React.Component {
         <SEO title={post.frontmatter.title} />
         <PostArticle>
           <PostDate date={post.frontmatter.date} />
-          { fluidImage ?
+          {fluidImage ? (
             <PostImageCaption
               caption={caption}
               captionLink={captionLink}
               captionHref={captionHref}
               fluidImage={fluidImage}
-            /> :
+            />
+          ) : (
             ''
-          }
+          )}
           <PostTitle title={post.frontmatter.title} to={slug} />
           <div dangerouslySetInnerHTML={{ __html: post.html }} />
         </PostArticle>
@@ -77,7 +78,9 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         image {
           childImageSharp {
-            fluid { ...GatsbyImageSharpFluid }
+            fluid {
+              ...GatsbyImageSharpFluid
+            }
           }
         }
         caption

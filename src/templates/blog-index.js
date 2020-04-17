@@ -17,12 +17,15 @@ class BlogIndex extends React.Component {
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
-          keywords={['Rolando Ramos', 'solution architect', 'personal blog', 'software engineering']}
+          keywords={[
+            'Rolando Ramos',
+            'solution architect',
+            'personal blog',
+            'software engineering',
+          ]}
         />
         {posts.map(({ node }, index) => {
-          return (
-            <Excerpt key={index} node={node}></Excerpt>
-          )
+          return <Excerpt key={index} node={node}></Excerpt>
         })}
         <Pager
           nextExists={!(currentPage === pageCount)}
@@ -51,7 +54,7 @@ export const pageQuery = graphql`
       }
     }
     allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/blog/" }}
+      filter: { fileAbsolutePath: { regex: "/blog/" } }
       sort: { fields: [frontmatter___date], order: DESC }
       limit: $limit
       skip: $skip
@@ -67,7 +70,9 @@ export const pageQuery = graphql`
             title
             image {
               childImageSharp {
-                fluid { ...GatsbyImageSharpFluid }
+                fluid {
+                  ...GatsbyImageSharpFluid
+                }
               }
             }
             caption

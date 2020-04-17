@@ -13,6 +13,7 @@ const MenuButton = styled.button`
 
   @media (min-width: 52em) {
     display: none;
-  }`
+  }
+`
 
 export default MenuButton

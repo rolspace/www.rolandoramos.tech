@@ -6,7 +6,7 @@ excerpt: true
 
 The SQL Server Pivot command is quite useful in scenarios that require some manipulation of a table's structure in order to display unique column values as column headers.
 
- Suppose we have a table with the following schema:
+Suppose we have a table with the following schema:
 
 ```sql
 CREATE TABLE [Employee] (
@@ -92,6 +92,7 @@ FROM Employee
 ```
 
 The results:
+
 <div class="table-responsive">
 <table class="table table-bordered">
 <thead>
@@ -126,7 +127,7 @@ The results:
 
 This is a standard relational result set, but what if we needed to display the data a little differently? What if we needed to display the result set using the <em>HireYear</em> as the columns of the result set? This is where the `PIVOT` command comes in.
 
- This command provides a way to modify a result set from a query in a way that allows the unique values from a column to be displayed as the column headers in the pivoted data. In order to start writing a `PIVOT` query, you need a source query expression. For our example, we can use the following query:
+This command provides a way to modify a result set from a query in a way that allows the unique values from a column to be displayed as the column headers in the pivoted data. In order to start writing a `PIVOT` query, you need a source query expression. For our example, we can use the following query:
 
 ```sql
 SELECT DATEPART(YEAR, HireDate) as HireYear
@@ -136,11 +137,11 @@ FROM Employee
 
 This is a simplified version of the query shown previously, since it is not calculating the average value for the age. It will display the <em>HireYear</em> and <em>Age</em> for every Employee, so there would be no average calculation at first. This will be the source query we need to create the result query.
 
- Using the source query, we need to tell the `PIVOT` query the data that we want to use for our rows, as well as the values from the source that we want to use for our columns.
+Using the source query, we need to tell the `PIVOT` query the data that we want to use for our rows, as well as the values from the source that we want to use for our columns.
 
- In the example this is easy to spot, for the data rows we want to use the average Employee age based on the year they were hired, and then, we apply the `AVG` aggregate function to the <em>Age</em> values from the source query.
+In the example this is easy to spot, for the data rows we want to use the average Employee age based on the year they were hired, and then, we apply the `AVG` aggregate function to the <em>Age</em> values from the source query.
 
- For the column headers, we want to use the unique values from the <em>HireYear</em> column in the source query. Once this is ready, all that remains is to perform a `SELECT` on the pivoted data in order to display it.
+For the column headers, we want to use the unique values from the <em>HireYear</em> column in the source query. Once this is ready, all that remains is to perform a `SELECT` on the pivoted data in order to display it.
 
 ```sql
 SELECT 'AverageAge' AS HireYear,

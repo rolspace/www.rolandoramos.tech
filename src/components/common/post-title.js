@@ -12,9 +12,10 @@ const TitleLink = styled(Link)`
 
   &:hover {
     color: #e84145;
-  }`
+  }
+`
 
-const PostTitle = (props) => {
+const PostTitle = props => {
   const { title, to } = props
 
   return (

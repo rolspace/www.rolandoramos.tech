@@ -12,6 +12,7 @@ const Footnote = styled(Box)`
     margin-bottom: 0;
     margin-top: 0;
     text-align: right;
-  }`
+  }
+`
 
 export default Footnote

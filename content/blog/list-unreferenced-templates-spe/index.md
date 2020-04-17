@@ -4,7 +4,7 @@ date: '2016-10-31T00:00:00.000Z'
 excerpt: true
 ---
 
-This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][SPE] in order to find all the templates which are not being referenced. `__Standard Values` will not be counted as a referrer.
+This is a simple PowerShell script that you can use in Sitecore 7+ with the [SPE][spe] in order to find all the templates which are not being referenced. `__Standard Values` will not be counted as a referrer.
 
 <!--more-->
 

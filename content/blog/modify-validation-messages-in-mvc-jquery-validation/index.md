@@ -74,8 +74,7 @@ For this specific scenario we need to modify the Validator's <code>showErrors</c
 
 ```javascript
 $.validator.setDefaults({
-  showErrors: function (errorMap, errorList) {
-  }
+  showErrors: function (errorMap, errorList) {},
 })
 ```
 
@@ -90,14 +89,14 @@ Using this information, it is possible to create a new <code>showErrors</code> m
 ```javascript
 $.validator.setDefaults({
   showErrors: function (errorMap, errorList) {
-     $(".valid").each(function (i, v) {
-        $(v).tooltip('destroy');
-     });
-     $.each(errorList, function (i, v) {
-        $(v.element).tooltip({ title: v.message, placement: 'right' });
-     });
-     this.defaultShowErrors();
-  }
+    $('.valid').each(function (i, v) {
+      $(v).tooltip('destroy')
+    })
+    $.each(errorList, function (i, v) {
+      $(v.element).tooltip({ title: v.message, placement: 'right' })
+    })
+    this.defaultShowErrors()
+  },
 })
 ```
 

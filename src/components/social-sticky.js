@@ -8,7 +8,7 @@ const SocialList = styled.ul`
 
   @media (min-width: 56em) {
     display: block;
-    font-size: 1.10rem;
+    font-size: 1.1rem;
     list-style-type: none;
     margin-top: 80px;
     padding: 0 0 0 30px;
@@ -18,7 +18,8 @@ const SocialList = styled.ul`
     & li {
       padding-bottom: 15px;
     }
-  }`
+  }
+`
 
 const SocialSticky = () => (
   <SocialList>

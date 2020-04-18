@@ -2,7 +2,7 @@
   "name": "www.rolandoramos.tech",
   "private": true,
   "description": "Personal blog from Rolando Ramos",
-  "version": "3.1.0",
+  "version": "3.2.0",
   "dependencies": {
     "@rebass/grid": "^6.1.0",
     "babel-plugin-styled-components": "^1.10.7",

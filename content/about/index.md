@@ -9,12 +9,21 @@ My name is Rolando Ramos and this is my personal website. Occasionally, I will w
     width: 100%;
   }
 
-  @media (min-width: 576px) {
+  @media (min-width: 576px) and (max-width: 1500px) {
     .photo {
       float: right;
       margin-left: 1rem;
       width: 40%;
     }
+  }
+
+  @media (min-width: 1500px) {
+    .photo {
+      float: right;
+      margin-left: 1rem;
+      width: 25%;
+    }
+  }
   }
 </style>
 

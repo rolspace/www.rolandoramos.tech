@@ -8,7 +8,6 @@ const MenuButton = styled.button`
   padding: 0;
   position: absolute;
   right: 6px;
-  top: 6px;
   touch-action: manipulation;
 
   @media (min-width: 52em) {

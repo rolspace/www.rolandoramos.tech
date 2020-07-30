@@ -62,6 +62,10 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  #___gatsby, #gatsby-focus-wrapper {
+    height: 100%;
+  }
+
   .gatsby-highlight {
     font-size: 0.80rem;
   }

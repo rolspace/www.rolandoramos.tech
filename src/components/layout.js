@@ -14,7 +14,7 @@ const HeaderBox = styled(Box)`
   line-height: 1.5;
   padding-left: 0.75rem;
   padding-right: 0.75rem;
-  position: sticky;
+  position: fixed;
   top: 0;
   z-index: 1000;
 
@@ -32,14 +32,14 @@ class Layout extends React.Component {
       <Fragment>
         <GlobalStyle />
         <SocialSticky />
-        <Flex flexDirection='column' flexWrap='nowrap' alignItems='center' css={{ height: "100vh" }}>
+        <Flex flexDirection='column' flexWrap='nowrap' alignItems='center' css={{ height: "100%" }}>
           <HeaderBox width={1} flex='0 1 auto'>
             <Header location={this.props.location} />
           </HeaderBox>
           <Box
             flex='1 1 auto'
             mx='auto'
-            mt='1.5rem'
+            mt='4.0rem'
             pl='0.75rem'
             pr='0.75rem'
             width={[1, 1 / 2]}

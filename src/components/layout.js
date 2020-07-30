@@ -32,20 +32,21 @@ class Layout extends React.Component {
       <Fragment>
         <GlobalStyle />
         <SocialSticky />
-        <Flex flexDirection='column' flexWrap='nowrap' alignItems='center'>
-          <HeaderBox width={1}>
+        <Flex flexDirection='column' flexWrap='nowrap' alignItems='center' css={{ height: "100vh" }}>
+          <HeaderBox width={1} flex='0 1 auto'>
             <Header location={this.props.location} />
           </HeaderBox>
           <Box
-            width={[1, 1 / 2]}
+            flex='1 1 auto'
             mx='auto'
             mt='1.5rem'
             pl='0.75rem'
             pr='0.75rem'
+            width={[1, 1 / 2]}
           >
             <main>{children}</main>
           </Box>
-          <Box width={1}>
+          <Box width={1} flex='0 1 auto'>
             <Footer></Footer>
           </Box>
         </Flex>

@@ -3,12 +3,14 @@ import { createGlobalStyle } from 'styled-components'
 const GlobalStyle = createGlobalStyle`
   html {
     font-size: 20px;
+    height: 100%;
   }
 
   body {
     color: #3c3c3c;
     margin: 0;
     font-family: Amiri;
+    height: 100%;
   }
 
   a {

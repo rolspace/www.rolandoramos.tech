@@ -7,35 +7,33 @@ import Layout from '../components/layout'
 import Pager from '../components/pager'
 import SEO from '../components/seo'
 
-class BlogIndex extends React.Component {
-  render () {
-    const { currentPage, pageCount } = this.props.pageContext
-    const { data } = this.props
-    const siteTitle = data.site.siteMetadata.title
-    const posts = data.allMarkdownRemark.edges
+const BlogIndex = (props) => {
+  const { currentPage, pageCount } = props.pageContext
+  const { data } = props
+  const siteTitle = data.site.siteMetadata.title
+  const posts = data.allMarkdownRemark.edges
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          keywords={[
-            'Rolando Ramos',
-            'solution architect',
-            'personal blog',
-            'software engineering',
-          ]}
-        />
-        {posts.map(({ node }, index) => {
-          return <Excerpt key={index} node={node}></Excerpt>
-        })}
-        <Pager
-          nextExists={!(currentPage === pageCount)}
-          nextTo={`/page/${currentPage + 1}`}
-          previousExists={!(currentPage === 1)}
-          previousTo={currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`}
-        />
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO
+        keywords={[
+          'Rolando Ramos',
+          'solution architect',
+          'personal blog',
+          'software engineering',
+        ]}
+      />
+      {posts.map(({ node }, index) => {
+        return <Excerpt key={index} node={node}></Excerpt>
+      })}
+      <Pager
+        nextExists={!(currentPage === pageCount)}
+        nextTo={`/page/${currentPage + 1}`}
+        previousExists={!(currentPage === 1)}
+        previousTo={currentPage - 1 === 1 ? '/' : `/page/${currentPage - 1}`}
+      />
+    </Layout>
+  )
 }
 
 BlogIndex.propTypes = {

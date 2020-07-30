@@ -6,25 +6,23 @@ import PostTitle from '../components/common/post-title'
 import Layout from '../components/layout'
 import SEO from '../components/seo'
 
-class BlogAbout extends React.Component {
-  render () {
-    const { data } = this.props
-    const post = data.markdownRemark
-    const siteTitle = data.site.siteMetadata.title
+const BlogAbout = (props) => {
+  const { data } = props
+  const post = data.markdownRemark
+  const siteTitle = data.site.siteMetadata.title
 
-    return (
-      <Layout location={this.props.location} title={siteTitle}>
-        <SEO
-          title='About'
-          keywords={['blog', 'gatsby', 'javascript', 'react']}
-        />
-        <PostArticle>
-          <PostTitle title={post.frontmatter.title} to='/about/'></PostTitle>
-          <div dangerouslySetInnerHTML={{ __html: post.html }} />
-        </PostArticle>
-      </Layout>
-    )
-  }
+  return (
+    <Layout location={props.location} title={siteTitle}>
+      <SEO
+        title='About'
+        keywords={['blog', 'gatsby', 'javascript', 'react']}
+      />
+      <PostArticle>
+        <PostTitle title={post.frontmatter.title} to='/about/'></PostTitle>
+        <div dangerouslySetInnerHTML={{ __html: post.html }} />
+      </PostArticle>
+    </Layout>
+  )
 }
 
 BlogAbout.propTypes = {

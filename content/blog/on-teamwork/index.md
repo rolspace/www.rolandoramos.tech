@@ -2,6 +2,9 @@
 title: 'On teamwork'
 date: '2020-08-29T00:00:00.000Z'
 image: './teamwork.jpg'
+caption: 'Photo source:'
+captionLink: Hannah Busing from Unsplash
+captionHref: https://unsplash.com/@hannahbusing?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText
 excerpt: true
 ---
 

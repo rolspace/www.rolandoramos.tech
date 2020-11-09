@@ -1,7 +1,12 @@
-# rolandoramos.tech
+# www.rolandoramos.tech
 
-This repository contains the code for my personal website. The current version of this website, available at [www.rolandoramos.tech](https://www.rolandoramos.tech), is generated using Jekyll.
+This repository contains the code for my personal website. It is hosted at https://www.rolandoramos.tech.
 
-At the moment, the site is being rebuilt with [Gatsby](https://www.gatsbyjs.org/) and, hopefully soon, a completely new version of the code will be released to replace the old version.
+The current version is built with [Gatsby v2](https://www.gatsbyjs.org/).
 
-The code for the rebuild can be found in the /rebuild/ folder of this branch.
+You can use the following commands to run it:
+
+- `npm install` to get the dependencies
+- `npm run dev` to start the development build
+- `npm run build` to trigger a production build
+- `npm run serve` to start the production server

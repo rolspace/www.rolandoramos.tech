@@ -57,7 +57,6 @@
     "eslint": "eslint .",
     "format": "prettier --write gatsby-{browser,config,node}.js src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   }
 }

@@ -18,6 +18,8 @@
     "serve": "gatsby serve"
   },
   "dependencies": {
+    "@fontsource/amiri": "latest",
+    "@fontsource/poppins": "latest",
     "@rebass/grid": "^6.1.0",
     "babel-plugin-styled-components": "^1.12.0",
     "eslint-config-prettier": "^6.10.1",
@@ -43,9 +45,7 @@
     "react-helmet": "^6.1.0",
     "react-icons": "^4.1.0",
     "react-typography": "^0.16.19",
-    "styled-components": "^4.4.1",
-    "typeface-amiri": "0.0.61",
-    "typeface-poppins": "0.0.72"
+    "styled-components": "^4.4.1"
   },
   "devDependencies": {
     "del-cli": "^3.0.1",

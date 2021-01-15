@@ -1,3 +1,3 @@
-import 'typeface-amiri'
-import 'typeface-poppins'
+import '@fontsource/amiri'
+import '@fontsource/poppins'
 import 'prismjs/themes/prism-tomorrow.css'

@@ -1,6 +1,6 @@
 ---
 title: 'A few comments on Head First: Design Patterns'
-date: '2022-05-31T00:00:00.000Z'
+date: '2022-06-08T00:00:00.000Z'
 image: ./a-few-comments-on-head-first-design-patterns.jpg
 excerpt: true
 ---

@@ -1,9 +1,13 @@
 {
   "name": "www.rolandoramos.tech",
-  "description": "Personal blog from Rolando Ramos",
   "version": "3.6.0",
-  "homepage": "https://www.rolandoramos.tech",
+  "author": "Rolando Ramos",
+  "description": "Personal blog from Rolando Ramos",
   "license": "MIT",
+  "homepage": "https://www.rolandoramos.tech",
+  "engines": {
+    "node": ">=12.13.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/rolspace/www.rolandoramos.tech.git"

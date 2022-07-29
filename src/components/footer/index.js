@@ -4,7 +4,7 @@ import React from 'react'
 import FooterContainer from './lib/footer-container'
 import Footnote from './lib/footnote'
 
-const Footer = props => {
+const Footer = (props) => {
   return (
     <FooterContainer>
       <Flex flexDirection={['column', 'column', 'row']}>
@@ -14,7 +14,7 @@ const Footer = props => {
         <Footnote width={[1, 1, 3 / 4]}>
           <div>
             This work is licensed under a{' '}
-            <a href='http://creativecommons.org/licenses/by-sa/4.0/'>
+            <a href="http://creativecommons.org/licenses/by-sa/4.0/">
               Creative Commons Attribution-ShareAlike 4.0 International License.
             </a>
           </div>

@@ -17,7 +17,7 @@ InnerMenuLink.propTypes = {
 }
 
 const MenuLink = styled(InnerMenuLink)`
-  color: ${props => (props.active ? `#000` : `#adadad`)};
+  color: ${(props) => (props.active ? `#000` : `#adadad`)};
   font-family: Poppins;
   font-size: 0.65rem;
   font-weight: 500;

@@ -21,7 +21,7 @@ const createBlogIndexPages = (createPage, posts) => {
   })
 }
 
-const createBlogTitlesPage = createPage => {
+const createBlogTitlesPage = (createPage) => {
   // Create blog titles page
   const blogTitlesTemplate = path.resolve('./src/templates/blog-titles.js')
 
@@ -32,7 +32,7 @@ const createBlogTitlesPage = createPage => {
 }
 
 const createBlogPostPages = (createPage, posts) => {
-  // Create blog posts pages.
+  // Create blog posts pages
   const blogPostTemplate = path.resolve('./src/templates/blog-post.js')
 
   posts.forEach((post, index) => {
@@ -51,7 +51,7 @@ const createBlogPostPages = (createPage, posts) => {
   })
 }
 
-const createAboutPage = createPage => {
+const createAboutPage = (createPage) => {
   const blogAboutTemplate = path.resolve('./src/templates/blog-about.js')
 
   createPage({

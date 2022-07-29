@@ -15,7 +15,7 @@ const TitleLink = styled(Link)`
   }
 `
 
-const PostTitle = props => {
+const PostTitle = (props) => {
   const { title, to } = props
 
   return (

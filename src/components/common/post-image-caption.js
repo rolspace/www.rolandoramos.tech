@@ -10,13 +10,17 @@ const CaptionDiv = styled.div`
   text-align: right;
 `
 
-const PostImageCaption = props => {
+const PostImageCaption = (props) => {
   return (
     <div style={{ marginBottom: `1.0rem` }}>
-      <Img style={{ marginBottom: `0.250rem` }} fluid={{
-        ...props.fluidImage,
-        sizes: "(max-width: 300px) calc(100vw - 30px), (max-width: 600px) calc(100vw - 30px), (max-width: 900px) calc(100vw - 30px), (max-width: 1200px) calc(100vw - 30px) 1600px",
-      }}></Img>
+      <Img
+        style={{ marginBottom: `0.250rem` }}
+        fluid={{
+          ...props.fluidImage,
+          sizes:
+            '(max-width: 300px) calc(100vw - 30px), (max-width: 600px) calc(100vw - 30px), (max-width: 900px) calc(100vw - 30px), (max-width: 1200px) calc(100vw - 30px) 1600px',
+        }}
+      ></Img>
       {props.caption ? (
         <CaptionDiv>
           {props.caption}&nbsp;

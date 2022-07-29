@@ -17,15 +17,15 @@ const LogoLink = styled(Link)`
   }
 `
 
-const Logo = props => {
+const Logo = (props) => {
   return (
     <LogoHeader>
-      <LogoLink to='/'>
+      <LogoLink to="/">
         <img
           style={{ marginLeft: '-0.5rem', verticalAlign: 'middle' }}
           src={logo}
           width={225}
-          alt='www.rolandoramos.tech'
+          alt="www.rolandoramos.tech"
         />
       </LogoLink>
     </LogoHeader>

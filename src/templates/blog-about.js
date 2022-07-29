@@ -13,12 +13,9 @@ const BlogAbout = (props) => {
 
   return (
     <Layout location={props.location} title={siteTitle}>
-      <SEO
-        title='About'
-        keywords={['blog', 'gatsby', 'javascript', 'react']}
-      />
+      <SEO title="About" keywords={['blog', 'gatsby', 'javascript', 'react']} />
       <PostArticle>
-        <PostTitle title={post.frontmatter.title} to='/about/'></PostTitle>
+        <PostTitle title={post.frontmatter.title} to="/about/"></PostTitle>
         <div dangerouslySetInnerHTML={{ __html: post.html }} />
       </PostArticle>
     </Layout>

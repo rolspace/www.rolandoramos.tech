@@ -24,17 +24,17 @@ const SocialList = styled.ul`
 const SocialSticky = () => (
   <SocialList>
     <li>
-      <SocialLink href='https://www.linkedin.com/in/rolandoramosrestrepo/'>
+      <SocialLink href="https://www.linkedin.com/in/rolandoramosrestrepo/">
         <FaLinkedinIn />
       </SocialLink>
     </li>
     <li>
-      <SocialLink href='https://github.com/rolspace'>
+      <SocialLink href="https://github.com/rolspace">
         <FaGithub />
       </SocialLink>
     </li>
     <li>
-      <SocialLink href='https://stackoverflow.com/users/6909765/rolspace'>
+      <SocialLink href="https://stackoverflow.com/users/6909765/rolspace">
         <FaStackOverflow />
       </SocialLink>
     </li>

@@ -10,7 +10,7 @@ import MenuButton from './lib/menu-button'
 import MenuLink from './lib/menu-link'
 
 class Header extends React.Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
@@ -20,21 +20,21 @@ class Header extends React.Component {
     this.onMenuButtonClick = this.onMenuButtonClick.bind(this)
   }
 
-  onMenuButtonClick () {
+  onMenuButtonClick() {
     this.setState({ menuHidden: !this.state.menuHidden })
   }
 
-  render () {
+  render() {
     const { location } = this.props
     const postsActive = location && location.pathname === '/posts/'
     const aboutActive = location && location.pathname === '/about/'
 
     return (
       <Flex
-        as='header'
+        as="header"
         flexDirection={['column', 'row']}
-        flexWrap='nowrap'
-        alignItems='center'
+        flexWrap="nowrap"
+        alignItems="center"
       >
         <Box width={[1, 1 / 2, 2 / 3]}>
           <Logo />
@@ -44,13 +44,13 @@ class Header extends React.Component {
             flexDirection={['column', 'row']}
             hidden={this.state.menuHidden}
           >
-            <Box pt='0.2rem' pb='0.2rem' width={1}>
-              <MenuLink active={postsActive} to='/posts/'>
+            <Box pt="0.2rem" pb="0.2rem" width={1}>
+              <MenuLink active={postsActive} to="/posts/">
                 Posts
               </MenuLink>
             </Box>
-            <Box pt='0.2rem' pb='0.4rem' width={1}>
-              <MenuLink active={aboutActive} to='/about/'>
+            <Box pt="0.2rem" pb="0.4rem" width={1}>
+              <MenuLink active={aboutActive} to="/about/">
                 About
               </MenuLink>
             </Box>

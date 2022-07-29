@@ -25,29 +25,34 @@ const HeaderBox = styled(Box)`
 `
 
 class Layout extends React.Component {
-  render () {
+  render() {
     const { children } = this.props
 
     return (
       <Fragment>
         <GlobalStyle />
         <SocialSticky />
-        <Flex flexDirection='column' flexWrap='nowrap' alignItems='center' css={{ height: '100%' }}>
-          <HeaderBox width={1} flex='0 1 auto'>
+        <Flex
+          flexDirection="column"
+          flexWrap="nowrap"
+          alignItems="center"
+          css={{ height: '100%' }}
+        >
+          <HeaderBox width={1} flex="0 1 auto">
             <Header location={this.props.location} />
           </HeaderBox>
           <Box
-            css={{maxWidth: '60em'}}
-            flex='1 1 auto'
-            mx='auto'
-            mt='4.0rem'
-            pl='0.75rem'
-            pr='0.75rem'
+            css={{ maxWidth: '60em' }}
+            flex="1 1 auto"
+            mx="auto"
+            mt="4.0rem"
+            pl="0.75rem"
+            pr="0.75rem"
             width={[1, 1 / 2]}
           >
             <main>{children}</main>
           </Box>
-          <Box width={1} flex='0 1 auto'>
+          <Box width={1} flex="0 1 auto">
             <Footer></Footer>
           </Box>
         </Flex>

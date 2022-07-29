@@ -6,7 +6,7 @@ import PostDate from './common/post-date'
 import PostImageCaption from './common/post-image-caption'
 import PostTitle from './common/post-title'
 
-const Excerpt = props => {
+const Excerpt = (props) => {
   const { node } = props
   const title = node.frontmatter.title || node.fields.slug
   const { image, caption, captionLink, captionHref } = node.frontmatter

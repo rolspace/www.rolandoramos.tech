@@ -10,7 +10,7 @@ const DateDiv = styled.div`
   margin-bottom: 1rem;
 `
 
-const PostDate = props => {
+const PostDate = (props) => {
   return <DateDiv>{props.date}</DateDiv>
 }
 

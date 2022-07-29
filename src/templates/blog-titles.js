@@ -16,12 +16,12 @@ const BlogTitles = (props) => {
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO
-        title='All Posts'
+        title="All Posts"
         keywords={[`blog`, `gatsby`, `javascript`, `react`]}
       />
       {posts.map(({ node }, index) => {
         return (
-          <PostArticle key={index} paddingBottom='0'>
+          <PostArticle key={index} paddingBottom="0">
             <PostDate date={node.frontmatter.date} />
             <PostTitle title={node.frontmatter.title} to={node.fields.slug} />
           </PostArticle>

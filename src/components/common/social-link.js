@@ -14,10 +14,10 @@ const StyledAnchor = styled.a`
   }
 `
 
-const SocialLink = props => {
+const SocialLink = (props) => {
   const { href } = props
   return (
-    <StyledAnchor href={href} rel='noopener' target='_blank'>
+    <StyledAnchor href={href} rel="noopener" target="_blank">
       {props.children}
     </StyledAnchor>
   )

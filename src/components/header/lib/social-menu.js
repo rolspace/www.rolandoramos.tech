@@ -13,21 +13,21 @@ const StyledBox = styled(Box)`
   }
 `
 
-const SocialMenu = props => {
+const SocialMenu = (props) => {
   return (
     <StyledBox width={1}>
-      <Flex flexDirection='row' flexWrap='nowrap'>
-        <Box width={1 / 3} pl='2em' pr='2em'>
+      <Flex flexDirection="row" flexWrap="nowrap">
+        <Box width={1 / 3} pl="2em" pr="2em">
           <SocialLink>
             <FaLinkedinIn />
           </SocialLink>
         </Box>
-        <Box width={1 / 3} pl='2em' pr='2em'>
+        <Box width={1 / 3} pl="2em" pr="2em">
           <SocialLink>
             <FaGithub />
           </SocialLink>
         </Box>
-        <Box width={1 / 3} pl='2em' pr='2em'>
+        <Box width={1 / 3} pl="2em" pr="2em">
           <SocialLink>
             <FaStackOverflow />
           </SocialLink>

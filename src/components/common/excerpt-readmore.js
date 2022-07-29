@@ -20,7 +20,7 @@ const ReadMoreLink = styled(Link)`
   }
 `
 
-const ReadMore = props => {
+const ReadMore = (props) => {
   return (
     <ReadMoreLink to={props.to}>
       {props.children}&nbsp;

@@ -6,7 +6,7 @@
   "license": "MIT",
   "homepage": "https://www.rolandoramos.tech",
   "engines": {
-    "node": ">=12.13.0"
+    "node": ">=12.x <=14.x"
   },
   "repository": {
     "type": "git",

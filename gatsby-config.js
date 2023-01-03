@@ -1,3 +1,5 @@
+const path = require('path')
+
 module.exports = {
   siteMetadata: {
     title: 'Rolando Ramos | technology lead. problem solver. mentor.',
@@ -18,21 +20,21 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/blog`,
+        path: path.join(__dirname, '/content/blog'),
         name: 'blog',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/about`,
+        path: path.join(__dirname, '/content/about'),
         name: 'about',
       },
     },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        path: `${__dirname}/content/assets`,
+        path: path.join(__dirname, '/content/assets'),
         name: 'assets',
       },
     },

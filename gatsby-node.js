@@ -84,7 +84,7 @@ exports.createPages = async ({ graphql, actions }) => {
           }
         }
       }
-    `
+    `,
   )
 
   const posts = blogQuery.data.allMarkdownRemark.edges

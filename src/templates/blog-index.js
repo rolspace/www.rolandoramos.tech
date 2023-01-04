@@ -44,42 +44,38 @@ BlogIndex.propTypes = {
 
 export default BlogIndex
 
-export const pageQuery = graphql`
-  query BlogIndexes($skip: Int!, $limit: Int!) {
-    site {
-      siteMetadata {
-        title
-      }
+export const pageQuery = graphql`query BlogIndexes($skip: Int!, $limit: Int!) {
+  site {
+    siteMetadata {
+      title
     }
-    allMarkdownRemark(
-      filter: { fileAbsolutePath: { regex: "/blog/" } }
-      sort: { fields: [frontmatter___date], order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
-      edges {
-        node {
-          excerpt(format: HTML)
-          fields {
-            slug
-          }
-          frontmatter {
-            date(formatString: "MMMM DD, YYYY")
-            title
-            image {
-              childImageSharp {
-                fluid {
-                  ...GatsbyImageSharpFluid
-                }
-              }
+  }
+  allMarkdownRemark(
+    filter: {fileAbsolutePath: {regex: "/blog/"}}
+    sort: {fields: [frontmatter___date], order: DESC}
+    limit: $limit
+    skip: $skip
+  ) {
+    edges {
+      node {
+        excerpt(format: HTML)
+        fields {
+          slug
+        }
+        frontmatter {
+          date(formatString: "MMMM DD, YYYY")
+          title
+          image {
+            childImageSharp {
+              gatsbyImageData(layout: FULL_WIDTH)
             }
-            caption
-            captionLink
-            captionHref
-            excerpt
           }
+          caption
+          captionLink
+          captionHref
+          excerpt
         }
       }
     }
   }
-`
+}`

@@ -11,20 +11,15 @@ const Excerpt = (props) => {
   const title = node.frontmatter.title || node.fields.slug
   const { image, caption, captionLink, captionHref } = node.frontmatter
 
-  let fluidImage = null
-  if (image && image.childImageSharp && image.childImageSharp.fluid) {
-    fluidImage = image.childImageSharp.fluid
-  }
-
   return (
     <PostArticle>
       <PostDate date={node.frontmatter.date} />
-      {fluidImage ? (
+      {image ? (
         <PostImageCaption
           caption={caption}
           captionLink={captionLink}
           captionHref={captionHref}
-          fluidImage={fluidImage}
+          image={image}
         />
       ) : (
         ''

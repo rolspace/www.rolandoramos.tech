@@ -1,4 +1,4 @@
-import Img from 'gatsby-image'
+import { GatsbyImage } from 'gatsby-plugin-image'
 import PropTypes from 'prop-types'
 import React from 'react'
 import styled from 'styled-components'
@@ -13,16 +13,13 @@ const CaptionDiv = styled.div`
 const PostImageCaption = (props) => {
   return (
     <div style={{ marginBottom: `1.0rem` }}>
-      <Img
+      <GatsbyImage
+        image={props.image.childImageSharp.gatsbyImageData}
         style={{ marginBottom: `0.250rem` }}
-        fluid={{
-          ...props.fluidImage,
-          sizes:
-            '(max-width: 300px) calc(100vw - 30px), (max-width: 600px) calc(100vw - 30px), (max-width: 900px) calc(100vw - 30px), (max-width: 1200px) calc(100vw - 30px) 1600px',
-        }}
-      ></Img>
+      />
       {props.caption ? (
         <CaptionDiv>
+          {console.log(props)}
           {props.caption}&nbsp;
           <a style={{ color: '#0275d8' }} href={props.captionHref}>
             {props.captionLink}
@@ -39,7 +36,6 @@ PostImageCaption.propTypes = {
   caption: PropTypes.string,
   captionHref: PropTypes.string,
   captionLink: PropTypes.string,
-  fluidImage: PropTypes.object,
 }
 
 export default PostImageCaption

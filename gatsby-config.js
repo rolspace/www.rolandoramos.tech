@@ -1,10 +1,13 @@
+const constants = require('./src/common/constants')
 const path = require('path')
+
+const { title } = constants
 
 module.exports = {
   siteMetadata: {
-    title: 'Rolando Ramos | technology lead. problem solver. mentor.',
+    title,
     author: 'Rolando Ramos',
-    description: 'I am Rolando Ramos and welcome to my personal website!',
+    description: 'I am Rolando Ramos, welcome to my personal website!',
     siteUrl: 'https://www.rolandoramos.tech/',
   },
   plugins: [
@@ -72,7 +75,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Rolando Ramos | technology lead. problem solver. mentor.',
+        name: title,
         short_name: 'Rolando Ramos',
         start_url: '/',
         background_color: '#ffffff',

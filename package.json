@@ -13,9 +13,9 @@
     "url": "git+https://github.com/rolspace/www.rolandoramos.tech.git"
   },
   "scripts": {
-    "build": " del-cli ./public && gatsby build",
-    "deploy": "gatsby-plugin-s3 deploy",
-    "develop": "gatsby develop",
+    "build": "gatsby clean && gatsby build",
+    "deploy": "npm run build && gatsby-plugin-s3 deploy",
+    "develop": "gatsby clean && gatsby develop",
     "eslint": "eslint .",
     "format": "prettier --write gatsby-{browser,config,node}.js src/**/*.{js,jsx}",
     "start": "npm run develop",

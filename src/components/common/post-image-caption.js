@@ -36,6 +36,7 @@ PostImageCaption.propTypes = {
   caption: PropTypes.string,
   captionHref: PropTypes.string,
   captionLink: PropTypes.string,
+  image: PropTypes.object,
 }
 
 export default PostImageCaption

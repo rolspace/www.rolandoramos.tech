@@ -3,7 +3,7 @@ import React from 'react'
 import ReadMore from './common/excerpt-readmore'
 import PostArticle from './common/post-article'
 import PostDate from './common/post-date'
-import PostImageCaption from './common/post-image-caption'
+import PostCaption from './common/post-caption'
 import PostTitle from './common/post-title'
 
 const Excerpt = (props) => {
@@ -15,7 +15,7 @@ const Excerpt = (props) => {
     <PostArticle>
       <PostDate date={node.frontmatter.date} />
       {image ? (
-        <PostImageCaption
+        <PostCaption
           caption={caption}
           captionLink={captionLink}
           captionHref={captionHref}

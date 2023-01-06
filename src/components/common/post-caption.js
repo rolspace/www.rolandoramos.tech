@@ -10,7 +10,7 @@ const CaptionDiv = styled.div`
   text-align: right;
 `
 
-const PostImageCaption = (props) => {
+const PostCaption = (props) => {
   return (
     <div style={{ marginBottom: `1.0rem` }}>
       <GatsbyImage
@@ -32,11 +32,11 @@ const PostImageCaption = (props) => {
   )
 }
 
-PostImageCaption.propTypes = {
+PostCaption.propTypes = {
   caption: PropTypes.string,
   captionHref: PropTypes.string,
   captionLink: PropTypes.string,
   image: PropTypes.object,
 }
 
-export default PostImageCaption
+export default PostCaption

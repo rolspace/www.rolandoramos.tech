@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import React from 'react'
 import PostArticle from '../components/common/post-article'
 import PostDate from '../components/common/post-date'
-import PostImageCaption from '../components/common/post-image-caption'
+import PostCaption from '../components/common/post-caption'
 import PostTitle from '../components/common/post-title'
 import Layout from '../components/layout'
 import Pager from '../components/pager'
@@ -25,7 +25,7 @@ const BlogPost = (props) => {
       <PostArticle>
         <PostDate date={post.frontmatter.date} />
         {imageExists ? (
-          <PostImageCaption
+          <PostCaption
             caption={caption}
             captionLink={captionLink}
             captionHref={captionHref}

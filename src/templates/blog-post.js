@@ -16,22 +16,20 @@ const BlogPost = (props) => {
   const { previous, next, slug } = props.pageContext
   const { image, caption, captionLink, captionHref } = post.frontmatter
 
-  let fluidImage = null
-  if (image && image.childImageSharp && image.childImageSharp.fluid) {
-    fluidImage = image.childImageSharp.fluid
-  }
+  const imageExists =
+    image && image.childImageSharp && image.childImageSharp.gatsbyImageData
 
   return (
     <Layout location={props.location} title={siteTitle}>
       <SEO title={post.frontmatter.title} />
       <PostArticle>
         <PostDate date={post.frontmatter.date} />
-        {fluidImage ? (
+        {imageExists ? (
           <PostImageCaption
             caption={caption}
             captionLink={captionLink}
             captionHref={captionHref}
-            fluidImage={fluidImage}
+            image={image}
           />
         ) : (
           ''
@@ -76,9 +74,7 @@ export const pageQuery = graphql`
         date(formatString: "MMMM DD, YYYY")
         image {
           childImageSharp {
-            fluid(maxWidth: 1600) {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
         caption

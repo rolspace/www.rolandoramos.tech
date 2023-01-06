@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types'
 import React from 'react'
-import ReadMore from './common/excerpt-readmore'
+import ReadMore from './common/read-more'
 import PostArticle from './common/post-article'
 import PostDate from './common/post-date'
 import PostCaption from './common/post-caption'

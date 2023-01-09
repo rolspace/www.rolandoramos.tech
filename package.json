@@ -12,6 +12,7 @@
     "type": "git",
     "url": "git+https://github.com/rolspace/www.rolandoramos.tech.git"
   },
+  "packageManager": "yarn@3.3.1",
   "scripts": {
     "build": "gatsby clean && gatsby build",
     "deploy": "npm run build && gatsby-plugin-s3 deploy",
@@ -47,6 +48,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-icons": "^4.7.1",
+    "react-is": "^18.2.0",
     "react-typography": "^0.16.23",
     "styled-components": "^5.3.6"
   },

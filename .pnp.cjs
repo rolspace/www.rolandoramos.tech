@@ -59,6 +59,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-transformer-sharp", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:5.3.1"],\
             ["prettier-standard", "npm:16.4.1"],\
             ["prismjs", "npm:1.29.0"],\
+            ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:18.2.0"],\
             ["react-helmet", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:6.1.0"],\
@@ -22858,6 +22859,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-transformer-sharp", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:5.3.1"],\
             ["prettier-standard", "npm:16.4.1"],\
             ["prismjs", "npm:1.29.0"],\
+            ["prop-types", "npm:15.8.1"],\
             ["react", "npm:18.2.0"],\
             ["react-dom", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:18.2.0"],\
             ["react-helmet", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:6.1.0"],\

@@ -50,6 +50,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-s3", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:0.3.8"],\
             ["gatsby-plugin-sharp", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:5.3.2"],\
             ["gatsby-plugin-styled-components", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:6.3.0"],\
+            ["gatsby-remark-emoji", "npm:0.0.3"],\
             ["gatsby-remark-images", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:7.3.1"],\
             ["gatsby-remark-prismjs", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:7.3.0"],\
             ["gatsby-remark-responsive-iframe", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:6.3.0"],\
@@ -9076,6 +9077,15 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "linkType": "HARD"\
         }]\
       ]],\
+      ["emojione", [\
+        ["npm:3.1.7", {\
+          "packageLocation": "./.yarn/unplugged/emojione-npm-3.1.7-86c5a3dc22/node_modules/emojione/",\
+          "packageDependencies": [\
+            ["emojione", "npm:3.1.7"]\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
       ["emojis-list", [\
         ["npm:3.0.0", {\
           "packageLocation": "./.yarn/cache/emojis-list-npm-3.0.0-7faa48e6fd-ddaaa02542.zip/node_modules/emojis-list/",\
@@ -12043,6 +12053,17 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             "@types/react",\
             "react-dom",\
             "react"\
+          ],\
+          "linkType": "HARD"\
+        }]\
+      ]],\
+      ["gatsby-remark-emoji", [\
+        ["npm:0.0.3", {\
+          "packageLocation": "./.yarn/cache/gatsby-remark-emoji-npm-0.0.3-f4429b8204-7d1c18e652.zip/node_modules/gatsby-remark-emoji/",\
+          "packageDependencies": [\
+            ["gatsby-remark-emoji", "npm:0.0.3"],\
+            ["bluebird", "npm:3.7.2"],\
+            ["emojione", "npm:3.1.7"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -22850,6 +22871,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["gatsby-plugin-s3", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:0.3.8"],\
             ["gatsby-plugin-sharp", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:5.3.2"],\
             ["gatsby-plugin-styled-components", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:6.3.0"],\
+            ["gatsby-remark-emoji", "npm:0.0.3"],\
             ["gatsby-remark-images", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:7.3.1"],\
             ["gatsby-remark-prismjs", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:7.3.0"],\
             ["gatsby-remark-responsive-iframe", "virtual:ec4a4aa667a7235ba11561facf6bce9ad89b3b9f4c110c0f93ced705ff077f3013b5804228c2ac9ae998f7376aa2d1f0bcb547ef94098168cc232d472c652975#npm:6.3.0"],\

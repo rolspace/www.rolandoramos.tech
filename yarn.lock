@@ -4633,7 +4633,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"bluebird@npm:^3.7.2":
+"bluebird@npm:^3.5.0, bluebird@npm:^3.7.2":
   version: 3.7.2
   resolution: "bluebird@npm:3.7.2"
   checksum: 869417503c722e7dc54ca46715f70e15f4d9c602a423a02c825570862d12935be59ed9c7ba34a9b31f186c017c23cac6b54e35446f8353059c101da73eac22ef
@@ -6601,6 +6601,13 @@ __metadata:
   version: 9.2.2
   resolution: "emoji-regex@npm:9.2.2"
   checksum: 8487182da74aabd810ac6d6f1994111dfc0e331b01271ae01ec1eb0ad7b5ecc2bbbbd2f053c05cb55a1ac30449527d819bbfbf0e3de1023db308cbcb47f86601
+  languageName: node
+  linkType: hard
+
+"emojione@npm:^3.1.2":
+  version: 3.1.7
+  resolution: "emojione@npm:3.1.7"
+  checksum: 8f1c1c6b4b8d12b3273a7d95e7e6cd4b752451e957dba825332bc23c308ec51364905013552c12c09c467b7963bd151d68b77eac91646f345e4e6b308e3f3e87
   languageName: node
   linkType: hard
 
@@ -8650,6 +8657,16 @@ __metadata:
     react: ^18.0.0 || ^0.0.0
     react-dom: ^18.0.0 || ^0.0.0
   checksum: 4439cb281f5b1abf6de5b3120e8b3218464eb3886acc3be35f03da9de22e204bd5bfa158d9ac06c3f61f42a9aec19d402656f1b441dbd0828ba709b6f7c17539
+  languageName: node
+  linkType: hard
+
+"gatsby-remark-emoji@npm:^0.0.3":
+  version: 0.0.3
+  resolution: "gatsby-remark-emoji@npm:0.0.3"
+  dependencies:
+    bluebird: ^3.5.0
+    emojione: ^3.1.2
+  checksum: 7d1c18e65224b2d53ac48bd294a28b3d488a565923f104609f26693ecec6a15baad90fb5c488396ce775ae7c5ca15d78c7a906fef8fc10e720475ec8027d043e
   languageName: node
   linkType: hard
 
@@ -17954,6 +17971,7 @@ __metadata:
     gatsby-plugin-s3: ^0.3.8
     gatsby-plugin-sharp: ^5.3.2
     gatsby-plugin-styled-components: ^6.3.0
+    gatsby-remark-emoji: ^0.0.3
     gatsby-remark-images: ^7.3.1
     gatsby-remark-prismjs: ^7.3.0
     gatsby-remark-responsive-iframe: ^6.3.0

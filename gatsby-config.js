@@ -46,6 +46,7 @@ module.exports = {
       options: {
         excerpt_separator: '<!--more-->',
         plugins: [
+          'gatsby-remark-emoji',
           {
             resolve: 'gatsby-remark-images',
             options: {

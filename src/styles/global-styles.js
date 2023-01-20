@@ -66,6 +66,10 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
   }
 
+  #reddit-embed {
+    width: 100%;
+  }
+
   .gatsby-highlight {
     font-size: 0.80rem;
   }

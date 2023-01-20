@@ -6,7 +6,7 @@ excerpt: true
 
 The memes are out there for a reason :joy:
 
-<iframe id="reddit-embed" src="https://www.redditmedia.com/r/ProgrammerHumor/comments/q6eawf/personal_projects/?ref_source=embed&amp;ref=share&amp;embed=true&amp;theme=dark&amp;showedits=false&amp;created=2023-01-10T21%3A13%3A29.789Z" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="528" width="640" scrolling="no"></iframe>
+<iframe id="reddit-embed" src="https://www.redditmedia.com/r/ProgrammerHumor/comments/q6eawf/personal_projects/?ref_source=embed&amp;ref=share&amp;embed=true&amp;theme=dark&amp;showedits=false&amp;created=2023-01-10T21%3A13%3A29.789Z" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="520" width="500" scrolling="no"></iframe>
 
 It's pretty common for software engineers to invest a significant amount of their time into personal coding projects...well, at least into starting them.
 
@@ -16,7 +16,7 @@ These projects can be a lot of fun, they can also be very rewarding. They can le
 
 On the other hand, as the memes sometimes point out, a lot of these projects end up abandoned and unfinished.
 
-<iframe id="reddit-embed" src="https://www.redditmedia.com/r/ProgrammerHumor/comments/nzi4ba/personal_projects_arent_meant_to_be_finished/?ref_source=embed&amp;ref=share&amp;embed=true&amp;theme=dark&amp;showedits=false&amp;created=2023-01-10T21%3A44%3A25.690Z" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="528" width="640" scrolling="no"></iframe>
+<iframe id="reddit-embed" src="https://www.redditmedia.com/r/ProgrammerHumor/comments/nzi4ba/personal_projects_arent_meant_to_be_finished/?ref_source=embed&amp;ref=share&amp;embed=true&amp;theme=dark&amp;showedits=false&amp;created=2023-01-10T21%3A44%3A25.690Z" sandbox="allow-scripts allow-same-origin allow-popups" style="border: none;" height="520" width="500" scrolling="no"></iframe>
 
 ...but why do they get abandoned?
 

@@ -39,7 +39,7 @@
     "gatsby-remark-emoji": "^0.0.3",
     "gatsby-remark-images": "^7.3.1",
     "gatsby-remark-prismjs": "^7.3.0",
-    "gatsby-remark-responsive-iframe": "^6.3.0",
+    "gatsby-remark-responsive-iframe": "^6.4.0",
     "gatsby-remark-smartypants": "^6.3.0",
     "gatsby-source-filesystem": "^5.3.1",
     "gatsby-transformer-remark": "^6.3.2",

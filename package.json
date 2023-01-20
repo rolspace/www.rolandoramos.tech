@@ -15,11 +15,11 @@
   "packageManager": "yarn@3.3.1",
   "scripts": {
     "build": "gatsby clean && gatsby build",
-    "deploy": "npm run build && gatsby-plugin-s3 deploy",
+    "deploy": "yarn build && gatsby-plugin-s3 deploy",
     "develop": "gatsby clean && gatsby develop",
     "eslint": "eslint .",
-    "format": "prettier --write gatsby-{browser,config,node}.js src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "format": "prettier-standard --write gatsby-{browser,config,node}.js src/**/*.{js,jsx}",
+    "start": "yarn develop",
     "serve": "gatsby serve"
   },
   "dependencies": {

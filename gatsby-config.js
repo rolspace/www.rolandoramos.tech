@@ -52,6 +52,8 @@ module.exports = {
             options: {
               quality: 100,
               maxWidth: 1600,
+              showCaptions: ['title'],
+              markdownCaptions: true,
             },
           },
           {

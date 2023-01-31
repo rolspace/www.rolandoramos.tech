@@ -43,6 +43,18 @@ const GlobalStyle = createGlobalStyle`
     .table-responsive {
       width: 100%;
     }
+
+    figcaption {
+      font-family: Poppins;
+      font-size: 0.65rem;
+      font-style: italic;
+      text-align: right;
+
+      p {
+        margin-top: 0;
+        margin-bottom: 0;
+      }
+    }
   }
 
   table {

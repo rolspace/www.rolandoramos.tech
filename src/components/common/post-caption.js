@@ -7,6 +7,7 @@ const CaptionDiv = styled.div`
   color: #636c72;
   font-family: Poppins;
   font-size: 0.65rem;
+  font-style: italic;
   text-align: right;
 `
 
